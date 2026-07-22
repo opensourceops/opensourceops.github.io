@@ -1,0 +1,7 @@
+node_modules/
+dist-agentctl/
+_site/
+.astro/
+playwright-report/
+test-results/
+.agentctl-docs-server.json

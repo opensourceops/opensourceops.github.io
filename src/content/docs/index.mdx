@@ -1,0 +1,30 @@
+---
+title: Control agent workflows without giving up control
+description: Declarative YAML combines deterministic automation, bounded model reasoning, explicit policy, and durable local state.
+template: splash
+editUrl: false
+hero:
+  tagline: agentctl compiles reviewed YAML into a deterministic task graph, bounds every model task, records effects before execution, and keeps recovery state in local SQLite.
+  actions:
+    - text: Get started
+      link: /agentctl/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/opensourceops/agentctl
+      icon: external
+      variant: minimal
+head:
+  - tag: meta
+    attrs:
+      property: og:title
+      content: agentctl | Deterministic workflows for bounded agents
+  - tag: meta
+    attrs:
+      property: og:description
+      content: Run declarative agent workflows with explicit policy, durable state, resume, and recorded replay.
+---
+
+import Homepage from '../../components/Homepage.astro';
+
+<Homepage />

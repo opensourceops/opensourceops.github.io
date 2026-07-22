@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="OpenSourceOps projects and public documentation.">
+    <meta name="theme-color" content="#0f766e">
+    <title>OpenSourceOps</title>
+    <style>
+      :root { color-scheme: light dark; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      body { background: #f8faf9; color: #102a2d; margin: 0; }
+      main { margin: 0 auto; max-width: 68rem; padding: clamp(2rem, 8vw, 7rem) 1.25rem; }
+      .brand { color: #0f766e; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+      h1 { font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -0.055em; line-height: 1; margin: 1rem 0; }
+      .lead { color: #466166; font-size: 1.15rem; line-height: 1.7; max-width: 38rem; }
+      article { border-block: 1px solid #dce4e3; display: grid; gap: 1rem; grid-template-columns: 1fr auto; margin-top: 4rem; padding: 2rem 0; }
+      article h2 { font-size: 1.5rem; margin: 0; }
+      article p { color: #466166; line-height: 1.6; margin: 0.5rem 0 0; max-width: 42rem; }
+      article a { align-self: center; background: #0f766e; color: white; font-weight: 750; padding: 0.8rem 1rem; text-decoration: none; }
+      a:focus-visible { outline: 3px solid #0f766e; outline-offset: 4px; }
+      @media (prefers-color-scheme: dark) { body { background: #0b1918; color: #f1f7f6; } .lead, article p { color: #a5b9b6; } article { border-color: #29413f; } }
+      @media (max-width: 38rem) { article { grid-template-columns: 1fr; } article a { justify-self: start; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="brand">OpenSourceOps</p>
+      <h1>Open tools for deliberate operations</h1>
+      <p class="lead">Project documentation, implementation notes, and operational guidance from OpenSourceOps.</p>
+      <article>
+        <div>
+          <h2>agentctl</h2>
+          <p>Declarative workflows for deterministic automation and bounded agent reasoning, with explicit policy and durable local state.</p>
+        </div>
+        <a href="/agentctl/">Read the agentctl documentation</a>
+      </article>
+    </main>
+  </body>
+</html>

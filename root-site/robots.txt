@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://opensourceops.github.io/agentctl/sitemap-index.xml
