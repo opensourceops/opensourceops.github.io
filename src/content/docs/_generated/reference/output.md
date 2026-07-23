@@ -39,4 +39,4 @@ agentctl run examples/v1/hello.yaml --db /tmp/hello.db --output json --color nev
 ```
 
 These commands need no credential. `check` writes no runtime database; `run` writes `/tmp/hello.db`.
-> Canonical source: [`docs/reference/CLI_OUTPUT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/CLI_OUTPUT.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.
+> Canonical source: [`docs/reference/CLI_OUTPUT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/CLI_OUTPUT.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.

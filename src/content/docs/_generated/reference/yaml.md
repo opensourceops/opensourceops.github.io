@@ -109,4 +109,4 @@ agentctl run examples/v1/dataflow.yaml --db /tmp/dataflow.db --output json --col
 ```
 
 Related guides: [Workflow authoring](/agentctl/guides/workflow-authoring/), [Policies](/agentctl/concepts/policies/), [Tools](/agentctl/concepts/tools/), and [Workflow DSL](/agentctl/concepts/workflow-model/).
-> Canonical source: [`docs/reference/YAML.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/YAML.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.
+> Canonical source: [`docs/reference/YAML.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/YAML.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.

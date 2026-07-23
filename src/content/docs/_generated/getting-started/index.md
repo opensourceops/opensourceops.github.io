@@ -87,4 +87,4 @@ If a command fails, read [Troubleshooting](/agentctl/troubleshooting/).
 ## Next step
 
 Run [your first bounded agent workflow](/agentctl/getting-started/first-agent/) without a paid API key.
-> Canonical source: [`docs/guides/GETTING_STARTED.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/GETTING_STARTED.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.
+> Canonical source: [`docs/guides/GETTING_STARTED.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/GETTING_STARTED.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.

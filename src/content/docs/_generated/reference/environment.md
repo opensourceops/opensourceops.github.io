@@ -45,4 +45,4 @@ Normal `cargo xtask docs-verify`, `cargo xtask verify`, and `cargo xtask accepta
 | `/tmp` | small runtime tmpfs when the root filesystem is read-only |
 
 State and artifacts must be writable by UID/GID 65532 in the production image.
-> Canonical source: [`docs/reference/ENVIRONMENT_AND_PATHS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/ENVIRONMENT_AND_PATHS.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.
+> Canonical source: [`docs/reference/ENVIRONMENT_AND_PATHS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/ENVIRONMENT_AND_PATHS.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
