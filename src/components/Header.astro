@@ -1,0 +1,97 @@
+---
+import config from 'virtual:starlight/user-config';
+import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
+import Search from '@astrojs/starlight/components/Search.astro';
+import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
+import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+
+const shouldRenderSearch =
+  config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="site-header">
+  <div class="title-wrapper sl-flex">
+    <SiteTitle />
+    <span class="maturity" aria-label="Workflow API maturity: version 1 alpha 1">v1alpha1</span>
+  </div>
+  <nav class="top-links" aria-label="Primary">
+    <a href={`${base}overview/`}>Docs</a>
+    <a href={`${base}guides/workflow-authoring/`}>Guides</a>
+    <a href={`${base}examples/`}>Examples</a>
+    <a href={`${base}architecture/`}>Architecture</a>
+    <a href={`${base}contributing/`}>Contributing</a>
+  </nav>
+  <div class="search sl-flex print:hidden">{shouldRenderSearch && <Search />}</div>
+  <div class="sl-hidden md:sl-flex print:hidden right-group">
+    <div class="sl-flex social-icons"><SocialIcons /></div>
+    <ThemeSelect />
+    <LanguageSelect />
+  </div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .site-header {
+      display: grid;
+      grid-template-columns: auto minmax(20rem, 1fr) minmax(12rem, 24rem) auto;
+      gap: 1.25rem;
+      align-items: center;
+      height: 100%;
+    }
+    .title-wrapper,
+    .right-group,
+    .social-icons {
+      gap: 0.7rem;
+      align-items: center;
+    }
+    .title-wrapper {
+      flex-shrink: 0;
+      min-width: 0;
+      overflow: clip;
+      padding: 0.25rem;
+      margin: -0.25rem;
+    }
+    .maturity {
+      border: 1px solid var(--sl-color-accent-low);
+      border-radius: 999px;
+      color: var(--sl-color-accent-high);
+      font-size: 0.65rem;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.45rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .top-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      font-size: 0.84rem;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+    .top-links a {
+      color: var(--sl-color-gray-2);
+      text-decoration: none;
+    }
+    .top-links a:hover,
+    .top-links a:focus-visible {
+      color: var(--sl-color-accent-high);
+    }
+    .social-icons::after {
+      border-inline-end: 1px solid var(--sl-color-gray-5);
+      content: '';
+      height: 2rem;
+    }
+    @media (max-width: 78rem) {
+      .site-header { grid-template-columns: auto 1fr auto; }
+      .top-links { display: none; }
+    }
+    @media (max-width: 50rem) {
+      .site-header { display: flex; justify-content: space-between; }
+      .maturity { display: none; }
+    }
+  }
+</style>

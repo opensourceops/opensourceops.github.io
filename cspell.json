@@ -1,0 +1,25 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "useGitignore": true,
+  "ignorePaths": [
+    "pnpm-lock.yaml",
+    "docs/execution/**",
+    "src/content/docs/_generated/reference/cli.md",
+    "public/downloads/workflow.schema.json"
+  ],
+  "words": [
+    "agentctl", "OpenSourceOps", "Starlight", "Astro", "Pagefind", "Playwright",
+    "Anthropic", "Gemini", "OpenAI", "A2A", "MCP", "SQLite", "JSONL", "OCI",
+    "Kubernetes", "CronJob", "systemd", "runbook", "allowlist", "allowlists",
+    "idempotency", "idempotent", "toolchain", "checkpoints", "subprocess",
+    "worktree", "rustls", "Clippy", "Rustfmt", "CycloneDX", "Gitleaks", "Trivy",
+    "Cargo", "SHA", "v1alpha1", "tmpfs", "noexec", "nosuid", "runAsNonRoot",
+    "fsGroup", "backoffLimit", "concurrencyPolicy", "apiVersion", "prev", "frontmatter",
+    "astrojs", "basenames", "checkpointed", "checksummed", "Containerfile", "distroless",
+    "effectful", "exfiltration", "inspectable", "ledgered", "lockfiles", "misexecutes",
+    "msvc", "noninteractive", "nonroot", "oneshot", "proptest", "rustdoc", "sandboxing",
+    "schedulable", "Streamable", "subpaths", "TOCTOU", "transactionally", "uncheckpointed",
+    "unpushed", "xtask", "MSRV", "nojekyll", "accDescr"
+  ]
+}

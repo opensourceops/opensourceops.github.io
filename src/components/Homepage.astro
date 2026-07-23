@@ -1,0 +1,216 @@
+---
+import workflow from '../data/home-workflow.yaml?raw';
+import source from '../data/agentctl-source.json';
+
+const base = import.meta.env.BASE_URL;
+const shortCommit = source.commit.slice(0, 8);
+---
+
+<div class="landing">
+  <section class="trust-strip" aria-label="Core product properties">
+    <span>Deterministic graph</span>
+    <span>Bounded model tasks</span>
+    <span>Explicit effects</span>
+    <span>Durable local state</span>
+    <span>Provider-neutral core</span>
+  </section>
+
+  <section class="section intro" aria-labelledby="what-title">
+    <div class="section-heading">
+      <p class="eyebrow">What agentctl is</p>
+      <h2 id="what-title">A control layer between reviewed intent and uncertain execution</h2>
+      <p>
+        Ordinary automation is predictable but cannot reason. Agent scripts can reason but often hide
+        control flow, retries, authority, and recovery. agentctl gives deterministic orchestration the
+        final say while a model handles only the tasks you assign to it.
+      </p>
+    </div>
+    <div class="problem-grid">
+      <article>
+        <span class="card-index">01</span>
+        <h3>Declare the whole run</h3>
+        <p>Inputs, tasks, dependencies, agents, tools, policy, memory, and outputs live in strict versioned YAML.</p>
+      </article>
+      <article>
+        <span class="card-index">02</span>
+        <h3>Bound every uncertain part</h3>
+        <p>Models receive explicit instructions, tools, token limits, turn limits, timeouts, and provider capabilities.</p>
+      </article>
+      <article>
+        <span class="card-index">03</span>
+        <h3>Recover from evidence</h3>
+        <p>SQLite records tasks, effects, approvals, checkpoints, audit events, and trace correlation before recovery is needed.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section mechanics" aria-labelledby="how-title">
+    <div class="section-heading narrow">
+      <p class="eyebrow">How it works</p>
+      <h2 id="how-title">Compile first. Execute within policy. Persist before guessing.</h2>
+    </div>
+    <ol class="steps">
+      <li><strong>Check</strong><span>Reject invalid YAML, references, templates, policy, and capability mismatches.</span></li>
+      <li><strong>Plan</strong><span>Build a declaration-ordered DAG and classify what can be predicted.</span></li>
+      <li><strong>Run</strong><span>Execute deterministic actions and bounded agents through explicit effect boundaries.</span></li>
+      <li><strong>Recover</strong><span>Resume safe work, replay recorded truth, or fork only when fresh effects are intentional.</span></li>
+    </ol>
+  </section>
+
+  <section class="section example" aria-labelledby="example-title">
+    <div class="example-copy">
+      <p class="eyebrow">Verified workflow</p>
+      <h2 id="example-title">A bounded repository check, not a free-running agent</h2>
+      <p>
+        This exact file is imported from <code>examples/acceptance/mock-tool/workflow.yaml</code>.
+        The acceptance suite copies it to a clean directory and runs it without credentials.
+      </p>
+      <dl>
+        <div><dt>Deterministic</dt><dd>The graph, assertion, and artifact write.</dd></div>
+        <div><dt>Bounded agent</dt><dd>Two turns, one read tool call, 32 output tokens, five seconds.</dd></div>
+        <div><dt>Persisted</dt><dd>Run state, effects, tool correlation, checkpoints, audit, and trace IDs.</dd></div>
+        <div><dt>Verified</dt><dd>An assertion rejects any verdict other than the expected fixture marker.</dd></div>
+      </dl>
+      <a class="text-link" href={`${base}examples/repository-audit/`}>Run the repository audit example <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="code-card">
+      <div class="code-toolbar">
+        <span>workflow.yaml</span>
+        <button type="button" data-copy="home-workflow" aria-label="Copy workflow YAML">Copy</button>
+      </div>
+      <pre id="home-workflow" tabindex="0"><code>{workflow}</code></pre>
+    </div>
+  </section>
+
+  <section class="section capabilities" aria-labelledby="control-title">
+    <div class="section-heading narrow">
+      <p class="eyebrow">Trust and control</p>
+      <h2 id="control-title">The model proposes. The runtime decides what can happen.</h2>
+    </div>
+    <div class="capability-grid">
+      <article><h3>Policy outside prompts</h3><p>Filesystem, process, environment, network, provider, tool, and approval rules are runtime decisions.</p></article>
+      <article><h3>Effect identity</h3><p>Non-pure requests are recorded before dispatch with stable identity, risk, idempotency, and confirmation.</p></article>
+      <article><h3>Durable approvals</h3><p>Non-interactive runs pause and exit 3. An operator resolves the exact request and resumes the same run.</p></article>
+      <article><h3>Native providers</h3><p>OpenAI, Azure OpenAI, Anthropic, and Gemini map native APIs behind a neutral core. Capabilities still differ.</p></article>
+      <article><h3>Local-first state</h3><p>One process and SQLite keep the correctness boundary inspectable without a hosted control plane.</p></article>
+      <article><h3>Honest uncertainty</h3><p>A crash after dispatch can leave an uncertain effect. agentctl stops instead of silently repeating it.</p></article>
+    </div>
+  </section>
+
+  <section class="section use-cases" aria-labelledby="uses-title">
+    <div class="section-heading">
+      <p class="eyebrow">Use cases</p>
+      <h2 id="uses-title">Add bounded reasoning where deterministic automation needs judgment</h2>
+    </div>
+    <div class="use-case-grid">
+      <a href={`${base}examples/repository-audit/`}><strong>Repository audit</strong><span>Read reviewed files and verify the report.</span></a>
+      <a href={`${base}examples/release-readiness/`}><strong>Release readiness</strong><span>Gate model analysis behind deterministic evidence.</span></a>
+      <a href={`${base}examples/scheduled-review/`}><strong>Scheduled review</strong><span>Persist a bounded run invoked by cron or Kubernetes.</span></a>
+      <a href={`${base}examples/ci-quality-gate/`}><strong>CI quality gate</strong><span>Return stable JSON and process status to a pipeline.</span></a>
+      <a href={`${base}examples/approval-gated/`}><strong>Approval-gated action</strong><span>Pause a proposed mutation for operator review.</span></a>
+      <a href={`${base}examples/recorded-replay/`}><strong>Offline replay</strong><span>Reconstruct a terminal run without network or credentials.</span></a>
+    </div>
+  </section>
+
+  <section class="section execution" aria-labelledby="paths-title">
+    <div class="section-heading narrow">
+      <p class="eyebrow">One runtime, three invocation paths</p>
+      <h2 id="paths-title">Run it where your work already lives</h2>
+    </div>
+    <div class="execution-grid">
+      <article><span>Local</span><h3>Review before execution</h3><p>Use check, plan, check mode, run, inspect, and resume from a normal terminal.</p><a href={`${base}guides/local-operation/`}>Operate locally</a></article>
+      <article><span>Scheduled</span><h3>Bring your own clock</h3><p>Cron, systemd, or Kubernetes owns triggers and overlap. agentctl owns one durable bounded run.</p><a href={`${base}operations/scheduled/`}>Schedule runs</a></article>
+      <article><span>CI and containers</span><h3>Use a generic OCI step</h3><p>Mount config, workspace, state, and artifacts. Consume one versioned JSON result and exit code.</p><a href={`${base}guides/container/`}>Run the container</a></article>
+    </div>
+  </section>
+
+  <section class="section durable" aria-labelledby="durable-title">
+    <div>
+      <p class="eyebrow">Durable execution</p>
+      <h2 id="durable-title">What happens if a run stops after it already did something?</h2>
+      <p>
+        agentctl records an effect request before execution. A confirmed result can be reused on resume.
+        A started result without confirmation becomes uncertain, which stops automatic recovery until an
+        operator reconciles the external system.
+      </p>
+      <a class="text-link" href={`${base}durable-execution/`}>Understand resume and recorded replay <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="durable-path" role="img" aria-label="Requested effect becomes started, then either confirmed and reusable or uncertain and stopped for reconciliation">
+      <span>requested</span><i aria-hidden="true"></i><span>started</span><i aria-hidden="true"></i><span class="ok">confirmed</span>
+      <b aria-hidden="true">or</b><span class="warn">uncertain</span>
+    </div>
+  </section>
+
+  <section class="section comparison" aria-labelledby="compare-title">
+    <div class="section-heading">
+      <p class="eyebrow">Choose the right boundary</p>
+      <h2 id="compare-title">agentctl complements scripts, CI, and workflow systems</h2>
+    </div>
+    <div class="table-wrap" tabindex="0">
+      <table>
+        <thead><tr><th>Approach</th><th>Best at</th><th>Where agentctl differs</th></tr></thead>
+        <tbody>
+          <tr><th>Shell script plus model API</th><td>Small direct integrations</td><td>Adds strict graph compilation, external policy, effects, approvals, and durable recovery.</td></tr>
+          <tr><th>Chat-agent framework</th><td>Interactive conversations and dynamic handoffs</td><td>Keeps reviewed workflow control flow authoritative instead of model-owned.</td></tr>
+          <tr><th>General workflow engine</th><td>Broad scheduling and distributed execution</td><td>Focuses on one local durable run with bounded model and tool semantics.</td></tr>
+          <tr><th>Ansible</th><td>Configuration management and idempotent convergence</td><td>Uses agent tasks and an effect ledger, but is not a configuration-management replacement.</td></tr>
+          <tr><th>CI/CD pipeline</th><td>Runners, triggers, secrets, and artifact retention</td><td>Runs inside CI as one step; CI still owns the surrounding job lifecycle.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section maturity-section" aria-labelledby="maturity-title">
+    <div>
+      <p class="eyebrow">Current maturity</p>
+      <h2 id="maturity-title">Production-oriented alpha, preparing for hosted RC validation</h2>
+      <p>
+        The workflow API is <code>agentctl.dev/v1alpha1</code>. The deterministic core, fake provider,
+        local persistence, and credential-free journeys have executable evidence. Native providers and
+        protocols have mock coverage at documented levels. Hosted multi-platform workflows are configured,
+        but the current candidate has not completed those remote runs.
+      </p>
+    </div>
+    <ul>
+      <li>No stable v1 compatibility promise</li>
+      <li>No exactly-once or in-process sandbox claim</li>
+      <li>No distributed scheduler or parallel task execution</li>
+      <li>No claim of live validation across every provider</li>
+    </ul>
+  </section>
+
+  <section class="final-cta" aria-labelledby="cta-title">
+    <div>
+      <p class="eyebrow">Start with evidence</p>
+      <h2 id="cta-title">Run a credential-free workflow in a clean directory</h2>
+      <p>Validate the YAML, inspect the deterministic plan, execute it, then read the durable run record.</p>
+    </div>
+    <a class="primary-cta" href={`${base}getting-started/`}>Get started <span aria-hidden="true">→</span></a>
+  </section>
+
+  <footer class="product-footer" aria-label="Project links">
+    <div><strong>agentctl {source.version}</strong><span>Docs verified against <a href={`https://github.com/opensourceops/agentctl/commit/${source.commit}`}>{shortCommit}</a>{source.dirty ? ' with local changes' : ''}</span></div>
+    <nav>
+      <a href="https://github.com/opensourceops/agentctl">GitHub</a>
+      <a href="https://github.com/opensourceops/agentctl/blob/main/LICENSE">Apache-2.0</a>
+      <a href={`${base}contributing/`}>Contributing</a>
+      <a href={`${base}security/`}>Security</a>
+      <a href={`${base}reference/limitations/`}>Release status</a>
+    </nav>
+  </footer>
+</div>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const targetId = button.getAttribute('data-copy');
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      await navigator.clipboard.writeText(target.textContent || '');
+      const previous = button.textContent;
+      button.textContent = 'Copied';
+      window.setTimeout(() => { button.textContent = previous; }, 1500);
+    });
+  });
+</script>

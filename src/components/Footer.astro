@@ -1,0 +1,57 @@
+---
+import EditLink from '@astrojs/starlight/components/EditLink.astro';
+import LastUpdated from '@astrojs/starlight/components/LastUpdated.astro';
+import Pagination from '@astrojs/starlight/components/Pagination.astro';
+
+const publicPageUrl = `https://opensourceops.github.io${Astro.url.pathname}`;
+const documentationIssue = new URL('https://github.com/opensourceops/agentctl/issues/new');
+documentationIssue.searchParams.set('labels', 'documentation');
+documentationIssue.searchParams.set('title', `Docs: ${Astro.url.pathname}`);
+documentationIssue.searchParams.set(
+  'body',
+  `Page: ${publicPageUrl}\n\nSection:\n\nExpected behavior:\n\nActual behavior:\n`,
+);
+const usageQuestion = new URL('https://github.com/opensourceops/agentctl/issues/new');
+usageQuestion.searchParams.set('labels', 'question');
+usageQuestion.searchParams.set('title', `Question about ${Astro.url.pathname}`);
+usageQuestion.searchParams.set('body', `Documentation page: ${publicPageUrl}\n\nQuestion:\n`);
+---
+
+<footer class="docs-footer">
+  <div class="meta sl-flex"><EditLink /><LastUpdated /></div>
+  <Pagination />
+  <nav aria-label="Documentation feedback and project links">
+    <a href={documentationIssue.toString()}>Report a documentation issue</a>
+    <a href={usageQuestion.toString()}>Ask a usage question</a>
+    <a href="https://github.com/opensourceops/agentctl/security/advisories/new">Report a vulnerability privately</a>
+  </nav>
+</footer>
+
+<script>
+  function enableKeyboardCodeScrolling() {
+    for (const block of document.querySelectorAll<HTMLElement>('pre:not([tabindex])')) {
+      block.tabIndex = 0;
+    }
+  }
+  enableKeyboardCodeScrolling();
+  window.addEventListener('resize', enableKeyboardCodeScrolling, { passive: true });
+</script>
+
+<style>
+  @layer starlight.core {
+    .docs-footer { display: grid; gap: 1.5rem; }
+    .meta {
+      color: var(--sl-color-gray-3);
+      font-size: var(--sl-text-sm);
+      gap: 0.75rem 3rem;
+      justify-content: space-between;
+      margin-top: 3rem;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: var(--sl-text-xs); }
+    nav a { color: var(--sl-color-gray-3); }
+    :global(pre[tabindex="0"]:focus-visible) {
+      outline: 2px solid var(--sl-color-accent-high);
+      outline-offset: 3px;
+    }
+  }
+</style>
