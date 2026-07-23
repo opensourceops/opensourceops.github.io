@@ -24,4 +24,4 @@ Legacy workflows depending on packs, broad built-in tool profiles, remote MCP/A2
 ## Deferred product decisions
 
 Parallel execution, foreach/matrix, loops, routers, sub-workflows, teams/handoffs, compensation execution, a public pack registry/resolver, vector memory, automatic MCP reconnection, general A2A resubmission, and streamed model output are not compatibility promises for v1alpha1.
-> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
+> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
