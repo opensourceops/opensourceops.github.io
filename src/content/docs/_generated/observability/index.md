@@ -47,4 +47,4 @@ Sensitive field names and registered secret values are redacted before trace att
 Keep provider credentials in environment references, never workflow inputs or command arguments. Apply access control and retention to the database, collected artifacts, CI logs, and trace backend. Before sharing diagnostics, remove credentials, prompt content, file content, remote payloads, and identifying metadata; a run ID alone is sufficient for local correlation.
 
 See [CLI output and exit codes](/agentctl/reference/output/), [local operation](/agentctl/guides/local-operation/), and [runtime database and migrations](/agentctl/reference/database/) for the complete operating contract.
-> Canonical source: [`docs/OBSERVABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OBSERVABILITY.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/OBSERVABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OBSERVABILITY.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.

@@ -44,6 +44,20 @@ if (!agentctlRoot) {
   );
 }
 
+const trackedPaths = new Set(
+  execFileSync('git', ['ls-files'], {
+    cwd: agentctlRoot,
+    encoding: 'utf8',
+  })
+    .trim()
+    .split('\n'),
+);
+for (const [source] of contentManifest) {
+  if (!trackedPaths.has(source)) {
+    throw new Error(`Canonical source path must exactly match Git: ${source}`);
+  }
+}
+
 const sourceMap = new Map();
 for (const [source, target] of contentManifest) {
   const slug = target

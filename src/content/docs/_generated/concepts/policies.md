@@ -1,7 +1,7 @@
 ---
 title: "Policies and approvals"
 description: "Keep authority outside the model with explicit grants and durable decisions."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/POLICIES.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/policies.md"
 ---
 Policy is evaluated by the runtime, never by a model. A policy defines a canonical workspace root, writable roots, allowed environment names, network host patterns, process basenames, providers, tool allow/deny lists, approval mode, and non-interactive behavior.
 
@@ -12,4 +12,4 @@ Tool visibility, tool/capability authorization, resource checks, effect risk, an
 An approval stores the run/trace/task/agent, tool, capability, risk, redacted input, expected effect, reason, and resolution actor/reason. The associated task waits durably. Use `approvals list`, `approve`, or `reject`, then `resume`. Resolution and effect status are auditable.
 
 Provider, MCP, A2A, filesystem, process, and environment allowlists are necessary controls, not a containment boundary. Run untrusted executors inside an external OS/container sandbox.
-> Canonical source: [`docs/POLICIES.md`](https://github.com/opensourceops/agentctl/blob/main/docs/POLICIES.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/policies.md`](https://github.com/opensourceops/agentctl/blob/main/docs/policies.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.

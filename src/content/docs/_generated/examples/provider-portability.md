@@ -112,4 +112,4 @@ Both workflows share the provider-neutral agent shape. Each provider still needs
 ## Current limitation
 
 Provider portability does not mean identical behavior or equal maturity. Fake is deterministic, OpenAI has retained bounded live evidence, and Azure OpenAI, Anthropic, and Google are mock-protocol tested only in this release.
-> Canonical source: [`docs/use-cases/PROVIDER_PORTABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/PROVIDER_PORTABILITY.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/use-cases/PROVIDER_PORTABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/PROVIDER_PORTABILITY.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
