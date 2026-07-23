@@ -67,4 +67,4 @@ A oneshot service has one active invocation at a time. Use distinct databases on
 6. For an uncertain effect, reconcile the remote system first. The runtime intentionally refuses unsafe resume.
 
 Use `agentctl gc --db PATH --older-than-days N` for expired memory and old terminal histories after the organization's retention/backup requirements are satisfied. SQLite WAL files belong with the database during backup. A future schedule-run key may improve deduplication; today the external scheduler owns overlap prevention.
-> Canonical source: [`docs/OPERATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OPERATIONS.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/OPERATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OPERATIONS.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.

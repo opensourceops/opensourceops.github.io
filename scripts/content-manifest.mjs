@@ -1,7 +1,7 @@
 export const contentManifest = [
   ['docs/PRODUCT.md', '_generated/concepts/product.md', 'Product definition', 'What agentctl does, who it serves, and where its boundary ends.'],
   ['docs/DSL.md', '_generated/concepts/workflow-model.md', 'Workflow model', 'Strict YAML, tasks, templates, actions, agents, and validation.'],
-  ['docs/POLICIES.md', '_generated/concepts/policies.md', 'Policies and approvals', 'Keep authority outside the model with explicit grants and durable decisions.'],
+  ['docs/policies.md', '_generated/concepts/policies.md', 'Policies and approvals', 'Keep authority outside the model with explicit grants and durable decisions.'],
   ['docs/TOOLS.md', '_generated/concepts/tools.md', 'Tools and effects', 'Tool contracts, effect classes, idempotency, and deterministic checks.'],
   ['docs/MEMORY.md', '_generated/concepts/memory.md', 'State and memory', 'Separate runtime state, working memory, long-term memory, and prompt cache.'],
   ['docs/PACKS.md', '_generated/concepts/packs.md', 'Reusable packs', 'Use versioned local content with integrity verification.'],

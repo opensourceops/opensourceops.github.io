@@ -8,4 +8,4 @@ The client pins the stable MCP protocol version `2025-11-25` from the [official 
 Authentication headers are environment secret references. The endpoint must pass network policy. Redirects are disabled and an `Origin` header is sent. Remote descriptions, schemas, content, and annotations are untrusted; annotations are exposed only as metadata and never authorize an effect.
 
 The client initializes lazily and does not automatically reconnect after session expiry because repeating a remote operation could be unsafe. The caller must reconcile and resume or fork. Streaming transport is parsed, but tool results are delivered to the runtime only when complete. Deterministic local mock-server tests cover negotiation, sessions, listing/call, structured results, version mismatch, and timeout.
-> Canonical source: [`docs/MCP.md`](https://github.com/opensourceops/agentctl/blob/main/docs/MCP.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/MCP.md`](https://github.com/opensourceops/agentctl/blob/main/docs/MCP.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.

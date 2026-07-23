@@ -51,4 +51,4 @@ These are useful extensions but are not required by the product thesis. They nee
 - Anthropic, Google, Azure OpenAI, MCP, and A2A are native and mock-tested in this release, not live-tested. Only the OpenAI GPT-5.6 tool path has live end-to-end evidence.
 - The current local OCI runtime, vulnerability-scan, and SBOM evidence is Linux arm64. Linux x64 is configured in the unpushed Ubuntu workflow but has not executed.
 - GitHub runner availability, organization action policy, branch protection, and required-check configuration are repository-owner operations and cannot be proven by repository-local lint.
-> Canonical source: [`docs/LIMITATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/LIMITATIONS.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/LIMITATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/LIMITATIONS.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.

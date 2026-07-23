@@ -80,4 +80,4 @@ Reviewers focus on correctness, deterministic behavior, explicit effects, safe f
 ## Release process
 
 Maintainers follow [Release process](/agentctl/contributing/release/). Candidate promotion requires the exact remote commit to pass required hosted checks and artifact verification. Contributors must not create tags, publish packages, or describe a local build as released.
-> Canonical source: [`docs/CONTRIBUTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTRIBUTING.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/CONTRIBUTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTRIBUTING.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.

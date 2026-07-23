@@ -37,4 +37,4 @@ The workspace uses Rust edition 2024, pins Rust 1.88 as the MSRV, forbids unsafe
 The OCI build is multi-stage: only the optimized Rust binary enters a maintained distroless runtime with CA roots and a non-root identity. `/config` is workflow configuration, `/workspace` is the read-only working tree, `/state` holds SQLite, and `/artifacts` receives declared outputs. State must be mounted again for inspect/resume/replay. The root filesystem may be read-only. See [Container contract](/agentctl/guides/container/) and ADR 0007.
 
 See the [architecture diagrams](/agentctl/architecture/diagrams/), [ADRs](https://github.com/opensourceops/agentctl/blob/main/docs/adr/), and [Durable execution](/agentctl/durable-execution/) for failure semantics.
-> Canonical source: [`docs/ARCHITECTURE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/ARCHITECTURE.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/ARCHITECTURE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/ARCHITECTURE.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.

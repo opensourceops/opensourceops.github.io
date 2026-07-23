@@ -18,4 +18,4 @@ The compiler validates missing references, duplicate tasks, cycles, task-aware t
 The parser translates a limited unversioned `playbook:` document and emits a migration warning. Use `agentctl migrate old.yaml --write new.yaml`. Legacy pack-backed, MCP, A2A, provider-specific, and broad module configurations need manual migration; see [Migrating from TypeScript](/agentctl/reference/migration/).
 
 Not implemented in v1alpha1: `foreach`, matrix expansion, parallel groups, routers, loops, sub-workflows, `finally`, handlers, event triggers, or compensation execution. They remain excluded until their deterministic state, merge, and recovery semantics are specified.
-> Canonical source: [`docs/DSL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/DSL.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/DSL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/DSL.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.

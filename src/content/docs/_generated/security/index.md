@@ -25,4 +25,4 @@ Prompts, file content, model output, remote artifacts, and tool output may be co
 MCP reconnection and A2A resubmission are intentionally not automatic. Streaming is bounded but completed results, not token deltas, enter workflow state. Windows cannot express Unix database mode bits; rely on the user profile ACL and CI tests.
 
 Report vulnerabilities privately to the repository maintainer. Do not include credentials, database contents, or production prompts in a report.
-> Canonical source: [`docs/SECURITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/SECURITY.md). Verified against agentctl commit `0ae1e381b87ea815f0d4ca66689db10bb1129e4a`.
+> Canonical source: [`docs/SECURITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/SECURITY.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.
