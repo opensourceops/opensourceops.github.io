@@ -26,4 +26,4 @@ The local operator and reviewed binary are trusted. Workflow authors are only as
 | Dependency compromise | locked registry-only deps, cargo-deny, license/source checks | registry compromise and zero-days remain possible |
 
 No unresolved critical or high-severity defect is knowingly accepted for the implemented boundary. Deferred sandboxing, signature verification, distributed concurrency, and encrypted storage are explicit product limitations, not implied controls.
-> Canonical source: [`docs/THREAT_MODEL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/THREAT_MODEL.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
+> Canonical source: [`docs/THREAT_MODEL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/THREAT_MODEL.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.

@@ -24,4 +24,4 @@ Create the previous schema in a temporary database, insert representative durabl
 ## 5. Document operator impact
 
 Update the database reference, compatibility policy, release notes or status evidence, and backup guidance. Explain whether downgrade remains possible. Run the complete store tests and `cargo xtask verify`.
-> Canonical source: [`docs/development/ADD_MIGRATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_MIGRATION.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
+> Canonical source: [`docs/development/ADD_MIGRATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_MIGRATION.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.

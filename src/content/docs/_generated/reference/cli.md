@@ -482,4 +482,4 @@ Options:
       --verbose
   -h, --help             Print help
 ```
-> Canonical source: [`docs/generated/CLI.md`](https://github.com/opensourceops/agentctl/blob/main/docs/generated/CLI.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
+> Canonical source: [`docs/generated/CLI.md`](https://github.com/opensourceops/agentctl/blob/main/docs/generated/CLI.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.

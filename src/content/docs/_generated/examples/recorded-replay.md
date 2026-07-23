@@ -60,4 +60,4 @@ Replay needs only the database, but the stored record may contain confidential i
 ## Current limitation
 
 Replay is not a new validation, retry, or exactly-once guarantee. It rejects non-terminal source runs. Use resume for safe continuation and fork only when fresh effects are intentional.
-> Canonical source: [`docs/use-cases/RECORDED_REPLAY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/RECORDED_REPLAY.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
+> Canonical source: [`docs/use-cases/RECORDED_REPLAY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/RECORDED_REPLAY.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.

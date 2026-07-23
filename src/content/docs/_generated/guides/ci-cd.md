@@ -67,4 +67,4 @@ Do not set a pipeline retry policy that blindly repeats exit `5`, `6`, or `130`.
 - Treat remote content and model output as untrusted.
 - Retain state for approval or recovery, then delete it under policy.
 - Set the external platform's overlap and timeout controls.
-> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa`.
+> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.

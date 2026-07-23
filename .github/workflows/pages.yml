@@ -15,6 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  AGENTCTL_COMMIT: "f3181f93afac7546f01923491f77dabdf26b5ace"
   NODE_VERSION: "24.4.1"
   PNPM_VERSION: "11.9.0"
   RUST_TOOLCHAIN: "1.88.0"
@@ -36,6 +37,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: opensourceops/agentctl
+          ref: ${{ env.AGENTCTL_COMMIT }}
           path: agentctl
 
       - name: Install pinned Node.js
