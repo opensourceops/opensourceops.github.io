@@ -12,4 +12,4 @@ Tool visibility, tool/capability authorization, resource checks, effect risk, an
 An approval stores the run/trace/task/agent, tool, capability, risk, redacted input, expected effect, reason, and resolution actor/reason. The associated task waits durably. Use `approvals list`, `approve`, or `reject`, then `resume`. Resolution and effect status are auditable.
 
 Provider, MCP, A2A, filesystem, process, and environment allowlists are necessary controls, not a containment boundary. Run untrusted executors inside an external OS/container sandbox.
-> Canonical source: [`docs/policies.md`](https://github.com/opensourceops/agentctl/blob/main/docs/policies.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/policies.md`](https://github.com/opensourceops/agentctl/blob/main/docs/policies.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

@@ -12,4 +12,4 @@ Built-in model-callable tools are workspace read, workspace write, and echo. The
 Built-in actions are assign, assert, file read/write, direct process execution, run working-memory read/write, SQLite long-term-memory read/write, MCP call, and A2A delegation. File writes use a temporary file plus rename and return before/after/diff. Shell execution uses a direct executable and argv, never an implicit shell, clears inherited environment, applies allowlisted variables, and is not an OS sandbox.
 
 Check mode executes pure/internal simulation and observation needed for dataflow but never filesystem, process, remote, or model mutation. Results say fully predictable, partially predictable, or requires execution; unknown external work is never reported as predicted.
-> Canonical source: [`docs/TOOLS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TOOLS.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/TOOLS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TOOLS.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

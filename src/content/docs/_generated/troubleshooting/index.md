@@ -15,7 +15,7 @@ flowchart TD
   D --> E{Pending approval?}
   E -->|Yes| F[Review and resolve approval, then resume]
   E -->|No| G{Uncertain effect?}
-  G -->|Yes| H[Reconcile the external system before any fork]
+  G -->|Yes| H[Reconcile the external system before repair or fork]
   G -->|No| I[Use task, effect, provider, and audit evidence]
 ```
 
@@ -112,6 +112,22 @@ ls -ld /state /state/runtime.db
 
 **Resolve:** Resume only a safe non-terminal run. Replay only a terminal run. Reconcile uncertain external state before an explicit fork.
 
+## Repair plan blocked
+
+**Symptom:** `repair --plan` emits a valid `RepairPlan` with `compatible: false` and exits `3`.
+
+**Diagnose:**
+
+```text
+agentctl repair target.yaml SOURCE_RUN_ID --from TASK --plan \
+  --db .agentctl/runtime.db --output json --color never
+agentctl effects --db .agentctl/runtime.db inspect SOURCE_RUN_ID --task TASK
+```
+
+**Expected evidence:** Each `blockedReuse` item names the task, compatibility rule, safe source/target fingerprints, suggested root, and whether a full fork is required.
+
+**Resolve:** Choose the earliest changed/incompatible producer as another repair root, restore the exact verified artifact, add a structured output contract and create a fresh source result, or reconcile an uncertain effect only after checking external reality. Do not edit task rows or use fork as a generic force option. See [Repair a failed workflow](/agentctl/guides/selective-repair/).
+
 ## Container permission or read-only failure
 
 **Symptom:** The image cannot create `/state/runtime.db` or write `/artifacts`.
@@ -135,4 +151,4 @@ ls -ld /state /state/runtime.db
 ## Safe issue report
 
 Include the exact `agentctl version`, operating system, redacted command, exit code, diagnostic code, workflow API version, minimal non-secret workflow, and relevant run/trace IDs. Share a narrow redacted `inspect` excerpt only when needed. Report security problems through the private process in [Security](/agentctl/security/), not a public issue.
-> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

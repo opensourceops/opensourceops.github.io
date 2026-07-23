@@ -11,4 +11,4 @@ Four mechanisms remain intentionally separate:
 - Provider prompt cache is an optional performance optimization. Cache keys/options and usage counts are provider metadata, never correctness or memory.
 
 Long-term retrieval is exact namespace/key lookup in this release. Vector search and automatic promotion are not implemented. A workflow promotes a value explicitly by reading long-term memory and then writing working memory. Retention is applied by expiration/GC, not by replay.
-> Canonical source: [`docs/memory.md`](https://github.com/opensourceops/agentctl/blob/main/docs/memory.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/memory.md`](https://github.com/opensourceops/agentctl/blob/main/docs/memory.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

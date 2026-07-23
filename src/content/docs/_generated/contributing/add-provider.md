@@ -36,4 +36,4 @@ Add local mock-protocol tests for request mapping, authentication, headers, redi
 ## Documentation claims
 
 Update the provider guide and matrix with the exact level: implemented, mock-protocol tested, retained live evidence, or deferred. Add an example that passes `check` without resolving a secret. Run `cargo xtask generate`, `cargo xtask docs-verify`, and `cargo xtask verify`.
-> Canonical source: [`docs/development/ADD_PROVIDER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_PROVIDER.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/development/ADD_PROVIDER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_PROVIDER.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

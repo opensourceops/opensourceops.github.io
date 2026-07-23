@@ -82,6 +82,7 @@ export default defineConfig({
           items: [
             { slug: 'guides/local-operation', label: 'Local operation' },
             { slug: 'durable-execution', label: 'Resume, replay, retry, and fork' },
+            { slug: 'guides/selective-repair', label: 'Repair a failed workflow' },
             { slug: 'operations/scheduled', label: 'Scheduled execution' },
           ],
         },
@@ -123,6 +124,7 @@ export default defineConfig({
             { slug: 'examples/ci-quality-gate', label: 'CI quality gate' },
             { slug: 'examples/approval-gated', label: 'Approval-gated action' },
             { slug: 'examples/recorded-replay', label: 'Recorded replay' },
+            { slug: 'guides/selective-repair', label: 'Selective workflow repair' },
             { slug: 'examples/provider-portability', label: 'Provider portability' },
           ],
         },

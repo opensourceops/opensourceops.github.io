@@ -69,4 +69,4 @@ For the candidate workflow run:
 ## Release decision
 
 The local recommendation is **Ready for hosted RC validation**. Promote to an RC only after the exact remote commit has all required hosted checks and artifacts. Stable `v1.0` remains outside this `v1alpha1` gate.
-> Canonical source: [`docs/RELEASE_PROCESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/RELEASE_PROCESS.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/RELEASE_PROCESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/RELEASE_PROCESS.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

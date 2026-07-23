@@ -1,6 +1,6 @@
 ---
 title: Examples and use cases
-description: Start from complete checked workflows for repository review, release gates, scheduled runs, CI, approvals, replay, and providers.
+description: Start from complete checked workflows for repository review, release gates, scheduled runs, CI, approvals, repair, replay, and providers.
 ---
 
 Every prominent YAML block on this site is imported from a checked file in the `agentctl` repository. Normal verification uses deterministic actions, the fake provider, or local protocol mocks. Live provider examples are opt-in and labeled.
@@ -12,6 +12,7 @@ Every prominent YAML block on this site is imported from a checked file in the `
 - [Scheduled operational review](/agentctl/examples/scheduled-review/): an external scheduler invokes one durable non-interactive run.
 - [CI quality gate](/agentctl/examples/ci-quality-gate/): typed evidence becomes a stable exit code and JSON result.
 - [Approval-gated action](/agentctl/examples/approval-gated/): policy pauses a mutation for operator review.
+- [Selective workflow repair](/agentctl/guides/selective-repair/): reuse compatible upstream output and execute a corrected failed suffix.
 - [Offline recorded replay](/agentctl/examples/recorded-replay/): a terminal result is reconstructed without executors.
 - [Provider portability](/agentctl/examples/provider-portability/): one neutral agent shape uses fake and OpenAI configurations with distinct evidence levels.
 

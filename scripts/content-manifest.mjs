@@ -10,6 +10,7 @@ export const contentManifest = [
   ['docs/guides/FIRST_AGENT_WORKFLOW.md', '_generated/getting-started/first-agent.md', 'First agent workflow', 'Run a bounded tool-using agent without a paid API key.'],
   ['docs/guides/WORKFLOW_AUTHORING.md', '_generated/guides/workflow-authoring.md', 'Author workflows', 'Learn workflow YAML in execution order.'],
   ['docs/guides/LOCAL_OPERATION.md', '_generated/guides/local-operation.md', 'Local operation', 'Manage paths, state, outputs, interruption, recovery, and retention.'],
+  ['docs/guides/repair-a-failed-workflow.md', '_generated/guides/selective-repair.md', 'Repair a failed workflow', 'Reuse compatible upstream results and safely execute a corrected suffix.'],
   ['docs/guides/CI_CD.md', '_generated/guides/ci-cd.md', 'CI/CD integration', 'Use the generic OCI contract in pipelines and Kubernetes.'],
   ['docs/CONTAINER.md', '_generated/guides/container.md', 'Container guide', 'Run the non-root, read-only OCI image with durable mounts.'],
   ['docs/OPERATIONS.md', '_generated/operations/scheduled.md', 'Scheduled execution', 'Use cron, systemd, or Kubernetes as the external scheduler.'],

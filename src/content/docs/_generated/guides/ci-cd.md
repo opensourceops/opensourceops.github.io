@@ -13,7 +13,7 @@ Every platform uses the same paths:
 | --- | --- | --- |
 | `/config` | read-only | reviewed workflow, inputs, and packs |
 | `/workspace` | normally read-only | checked-out source and fixtures |
-| `/state` | writable and retained | SQLite database, resume, replay, approvals |
+| `/state` | writable and retained | SQLite database, resume, replay, repair, approvals |
 | `/artifacts` | writable and collected | declared reports and outputs |
 
 Use `--output json --color never`. A successful workflow exits `0`. Validation exits `2`; policy or a pending approval exits `3`; run failure exits `4`; persistence exits `5`; provider or protocol failure exits `6`; cancellation exits `130`.
@@ -51,6 +51,17 @@ Mount an ordinary JSON file under `/config` and pass `--inputs-file /config/inpu
 
 A non-interactive approval does not wait for stdin. It persists a request, exits `3`, and requires the same `/state` data in a later operator-controlled job. That job lists and resolves the approval, then calls `resume`. If your pipeline cannot retain protected state between jobs, configure policy to deny or fail instead of using approvals.
 
+## Selective repair in pipelines
+
+Keep the failed terminal `/state` and durable workspace, publish a reviewed corrected workflow, and run an effect-free planning step first:
+
+```text
+agentctl repair /config/repaired.yaml SOURCE_RUN_ID --from failed_task --plan \
+  --workspace /workspace --db /state/runtime.db --output json --color never
+```
+
+Permit the execution step only when the plan exits `0` and the machine output's source run, target digest, roots, fresh effects, and approvals match the review. Exit `3` can also mean a blocked repair plan, so distinguish `kind: RepairPlan` from a pending run approval. Retain the new repair run ID as independent audit evidence.
+
 ## Retention and recovery
 
 Collect `/state` even on failure when recovery or audit matters. It can contain confidential prompts and outputs, so apply protected artifact access and a short, documented retention period. Keep `/artifacts` according to the report's classification.
@@ -67,4 +78,4 @@ Do not set a pipeline retry policy that blindly repeats exit `5`, `6`, or `130`.
 - Treat remote content and model output as untrusted.
 - Retain state for approval or recovery, then delete it under policy.
 - Set the external platform's overlap and timeout controls.
-> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

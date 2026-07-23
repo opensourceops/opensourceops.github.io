@@ -3,12 +3,12 @@ title: "Database and migrations"
 description: "SQLite records, schema migration, locking, backup, and retention."
 editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/reference/DATABASE.md"
 ---
-The local SQLite database is both history and part of the correctness boundary. The current database schema version is `4`.
+The local SQLite database is both history and part of the correctness boundary. The current database schema version is `5`.
 
 ## Stored records
 
-- runs, source workflow, compiled plan, inputs, output, mode, state, and parent linkage
-- task states, attempts, output, and errors
+- runs, source workflow, compiled plan, inputs, output, mode, state, parent linkage, and repair source/root metadata
+- task states, attempts, output, errors, disposition, source attempt, versioned fingerprints/digests, state delta, artifact manifest, and reuse decision
 - effects, request/result/error, confirmation, and uncertainty
 - approvals and resolutions
 - checksummed checkpoints
@@ -17,6 +17,10 @@ The local SQLite database is both history and part of the correctness boundary. 
 - namespaced long-term memory with optional expiry
 
 Working memory is stored on the run and in checkpoints. Provider credentials are not stored. Other confidential content may be stored, including prompts, tool output, and remote artifacts.
+
+Migration 5 adds `source_run_id`, `source_workflow_digest`, repair roots/reason/version, and task-boundary metadata used by repair. A repair transaction creates the run, materializes every reused task, creates pending fresh tasks, records provenance audit events, and writes its first checkpoint atomically. The source identifier is durable lineage rather than a foreign-key dependency, so source garbage collection does not delete a repair run.
+
+Artifact manifests contain policy-resolved paths, byte sizes, and SHA-256 digests. The bytes remain in the configured durable workspace. Retain that workspace for as long as a task result may be repaired or audited.
 
 ## Migrations
 
@@ -42,4 +46,4 @@ Delete old terminal history only after retention requirements are met:
 ```text
 agentctl gc --db .agentctl/runtime.db --older-than-days 30 --output json --color never
 ```
-> Canonical source: [`docs/reference/DATABASE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/DATABASE.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/reference/DATABASE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/DATABASE.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.

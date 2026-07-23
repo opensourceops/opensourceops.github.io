@@ -24,7 +24,7 @@ agentctl inspect RUN_ID --db .agentctl/runtime.db --output json --color never
 agentctl db stats --db .agentctl/runtime.db --output json --color never
 ```
 
-Inspection includes task attempts, checkpoints, effect state, approvals, provider and protocol records, ordered audit events, and trace correlation. Use `agentctl approvals list RUN_ID` when the run exited pending approval. Preserve the database and its WAL files together when the history is operational evidence.
+Inspection includes task attempts, disposition, repair source/roots, per-task reuse provenance and compatibility evidence, fingerprints/digests, checkpoints, effect state, approvals, provider and protocol records, ordered audit events, and trace correlation. A reused task emits a durable `task.reused` trace event and `repair.task_reused` audit event but no fresh effect, provider-session, or tool-call row. Use `agentctl approvals list RUN_ID` when the run exited pending approval. Preserve the database and its WAL files together when the history is operational evidence.
 
 ## Runtime events
 
@@ -47,4 +47,4 @@ Sensitive field names and registered secret values are redacted before trace att
 Keep provider credentials in environment references, never workflow inputs or command arguments. Apply access control and retention to the database, collected artifacts, CI logs, and trace backend. Before sharing diagnostics, remove credentials, prompt content, file content, remote payloads, and identifying metadata; a run ID alone is sufficient for local correlation.
 
 See [CLI output and exit codes](/agentctl/reference/output/), [local operation](/agentctl/guides/local-operation/), and [runtime database and migrations](/agentctl/reference/database/) for the complete operating contract.
-> Canonical source: [`docs/OBSERVABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OBSERVABILITY.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/OBSERVABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OBSERVABILITY.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
