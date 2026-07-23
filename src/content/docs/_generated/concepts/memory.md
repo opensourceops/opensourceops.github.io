@@ -1,7 +1,7 @@
 ---
 title: "State and memory"
 description: "Separate runtime state, working memory, long-term memory, and prompt cache."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/MEMORY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/memory.md"
 ---
 Four mechanisms remain intentionally separate:
 
@@ -11,4 +11,4 @@ Four mechanisms remain intentionally separate:
 - Provider prompt cache is an optional performance optimization. Cache keys/options and usage counts are provider metadata, never correctness or memory.
 
 Long-term retrieval is exact namespace/key lookup in this release. Vector search and automatic promotion are not implemented. A workflow promotes a value explicitly by reading long-term memory and then writing working memory. Retention is applied by expiration/GC, not by replay.
-> Canonical source: [`docs/MEMORY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/MEMORY.md). Verified against agentctl commit `3fcd4bc7394975d923773141eb139324494d4f9a`.
+> Canonical source: [`docs/memory.md`](https://github.com/opensourceops/agentctl/blob/main/docs/memory.md). Verified against agentctl commit `a1ebcadcc2557136cb82633862c50854223981fa with local changes`.

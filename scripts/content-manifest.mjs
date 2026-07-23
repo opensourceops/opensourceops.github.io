@@ -3,7 +3,7 @@ export const contentManifest = [
   ['docs/DSL.md', '_generated/concepts/workflow-model.md', 'Workflow model', 'Strict YAML, tasks, templates, actions, agents, and validation.'],
   ['docs/policies.md', '_generated/concepts/policies.md', 'Policies and approvals', 'Keep authority outside the model with explicit grants and durable decisions.'],
   ['docs/TOOLS.md', '_generated/concepts/tools.md', 'Tools and effects', 'Tool contracts, effect classes, idempotency, and deterministic checks.'],
-  ['docs/MEMORY.md', '_generated/concepts/memory.md', 'State and memory', 'Separate runtime state, working memory, long-term memory, and prompt cache.'],
+  ['docs/memory.md', '_generated/concepts/memory.md', 'State and memory', 'Separate runtime state, working memory, long-term memory, and prompt cache.'],
   ['docs/PACKS.md', '_generated/concepts/packs.md', 'Reusable packs', 'Use versioned local content with integrity verification.'],
   ['docs/guides/INSTALLATION.md', '_generated/getting-started/installation.md', 'Installation', 'Build or install the current v1alpha1 candidate from reviewed source.'],
   ['docs/guides/GETTING_STARTED.md', '_generated/getting-started/index.md', 'Getting started', 'Run and inspect a credential-free deterministic workflow.'],
