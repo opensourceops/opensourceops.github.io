@@ -71,4 +71,4 @@ Persist the database and artifact directory with restrictive permissions. Config
 ## Current limitation
 
 `agentctl` is a schedulable runtime, not a scheduling service. It does not provide clocks, calendars, distributed leases, or log rotation.
-> Canonical source: [`docs/use-cases/SCHEDULED_REVIEW.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/SCHEDULED_REVIEW.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/use-cases/SCHEDULED_REVIEW.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/SCHEDULED_REVIEW.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

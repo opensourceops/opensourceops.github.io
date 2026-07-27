@@ -1248,4 +1248,4 @@ Options:
       --locked           Require agentctl.pack.lock and reject all source or graph drift
   -h, --help             Print help
 ```
-> Canonical source: [`docs/generated/CLI.md`](https://github.com/opensourceops/agentctl/blob/main/docs/generated/CLI.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/generated/CLI.md`](https://github.com/opensourceops/agentctl/blob/main/docs/generated/CLI.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

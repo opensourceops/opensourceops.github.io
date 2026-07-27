@@ -21,4 +21,4 @@ actions:
 SQLite schema 13 records session generation, immutable call identity, idempotency, status, selected remote, and encrypted-capable protocol state. `agentctl inspect RUN_ID` exposes `protocolSessions`, `protocolCalls`, and bounded protocol stream events. Recorded replay copies source-linked protocol evidence but performs no network effect.
 
 Streaming progress is persisted with backpressure before the next frame is consumed. A final tool result enters workflow state only after complete JSON-RPC validation. Deterministic mock-server coverage includes server restart, one-reconnect bounds, stable and changed schemas, authentication refresh, unsafe-call refusal, SSE parsing, cancellation, timeout, inspection, and replay.
-> Canonical source: [`docs/MCP.md`](https://github.com/opensourceops/agentctl/blob/main/docs/MCP.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/MCP.md`](https://github.com/opensourceops/agentctl/blob/main/docs/MCP.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

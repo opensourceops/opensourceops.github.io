@@ -15,6 +15,8 @@ Every prominent YAML block on this site is imported from a checked file in the `
 - [Selective workflow repair](/agentctl/guides/selective-repair/): reuse compatible upstream output and execute a corrected failed suffix.
 - [Offline recorded replay](/agentctl/examples/recorded-replay/): a terminal result is reconstructed without executors.
 - [Provider portability](/agentctl/examples/provider-portability/): one neutral agent shape uses fake and OpenAI configurations with distinct evidence levels.
+- [Framework completeness](/agentctl/concepts/framework-completeness/): combine parallel tasks, bounded expansion, routing, loops, sub-workflows, compensation, protocols, and typed handoffs.
+- [Live framework verification](/agentctl/reference/live-framework-verification/): inspect sanitized GPT-5.6 recovery, replay, streaming, usage, and container evidence.
 
 ## Verification levels
 

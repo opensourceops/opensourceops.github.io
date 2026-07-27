@@ -23,6 +23,8 @@
     "unpushed", "xtask", "MSRV", "nojekyll", "accDescr", "backpressure", "bubblewrap",
     "hardlinks", "Microusd", "Millis", "networkless", "pids", "preflighted", "redispatch",
     "redispatched", "replayable", "Sigstore", "subworkflows", "Unreviewed", "workstreams",
-    "zeroizing"
+    "zeroizing", "nonterminal", "Kolkata", "libkrun", "gvproxy", "Workstream",
+    "undispatched", "XPLAT", "roundtrips", "keylessly", "unallowlisted", "embedder",
+    "reindexing", "zeroization", "BURNDOWN"
   ]
 }

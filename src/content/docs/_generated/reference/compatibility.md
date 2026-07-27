@@ -1,6 +1,6 @@
 ---
 title: "Compatibility"
-description: "Preserved, migrated, changed, removed, and deferred contracts."
+description: "Preserved, migrated, changed, removed, and explicit non-goal contracts."
 editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/COMPATIBILITY.md"
 ---
 ## Preserved
@@ -56,4 +56,4 @@ persisted task ID. Bounded loops, namespaced sub-workflows, explicit
 source-linked compensation, graph-native structured handoffs, durable
 streaming, and protocol continuation records are additive; hidden or
 model-controlled orchestration is intentionally unsupported.
-> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

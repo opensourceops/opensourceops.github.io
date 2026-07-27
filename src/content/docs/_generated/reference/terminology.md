@@ -36,4 +36,4 @@ Use these terms consistently in workflows, documentation, issues, and reviews.
 | Pack | A local versioned manifest and reviewed reusable content with integrity checking. |
 
 Do not use resume, replay, retry, repair, and fork interchangeably. None of them means exactly-once execution.
-> Canonical source: [`docs/reference/TERMINOLOGY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/TERMINOLOGY.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/reference/TERMINOLOGY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/TERMINOLOGY.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

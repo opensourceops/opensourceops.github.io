@@ -16,7 +16,11 @@ Push the review branch and open a pull request only after the local gates below 
 - `container-security / container`
 - `supply-chain-security / security`
 
-The three platform jobs run `cargo xtask verify`, `cargo xtask acceptance`, and `cargo xtask package`. The other jobs enforce the Linux container contract, HIGH/CRITICAL image vulnerability policy, production and image CycloneDX SBOMs, complete-history and checked-out-tree secret scans, dependency policy, immutable action pins, and workflow lint.
+The three platform jobs run `cargo xtask verify`, `cargo xtask acceptance`,
+`cargo xtask completeness`, and `cargo xtask package`. The other jobs enforce
+the Linux container contract, HIGH/CRITICAL image vulnerability policy,
+production and image CycloneDX SBOMs, complete-history and checked-out-tree
+secret scans, dependency policy, immutable action pins, and workflow lint.
 
 The repository owner must enable GitHub Actions and required checks after the workflows reach the remote. This repository-local change does not modify remote settings or claim a hosted run.
 
@@ -29,6 +33,8 @@ env -u OPENAI_API_KEY -u AZURE_OPENAI_API_KEY -u ANTHROPIC_API_KEY \
   -u GOOGLE_API_KEY -u GEMINI_API_KEY cargo xtask verify
 env -u OPENAI_API_KEY -u AZURE_OPENAI_API_KEY -u ANTHROPIC_API_KEY \
   -u GOOGLE_API_KEY -u GEMINI_API_KEY cargo xtask acceptance
+env -u OPENAI_API_KEY -u AZURE_OPENAI_API_KEY -u ANTHROPIC_API_KEY \
+  -u GOOGLE_API_KEY -u GEMINI_API_KEY cargo xtask completeness
 cargo xtask package
 ```
 
@@ -69,4 +75,4 @@ For the candidate workflow run:
 ## Release decision
 
 The local recommendation is **Ready for hosted RC validation**. Promote to an RC only after the exact remote commit has all required hosted checks and artifacts. Stable `v1.0` remains outside this `v1alpha1` gate.
-> Canonical source: [`docs/RELEASE_PROCESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/RELEASE_PROCESS.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/RELEASE_PROCESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/RELEASE_PROCESS.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

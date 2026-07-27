@@ -85,4 +85,4 @@ Streaming persists each accepted fragment before reading more transport data.
 Records are bounded and redacted, while the terminal response still follows
 the normal validation path. See [Durable provider
 streaming](https://github.com/opensourceops/agentctl/blob/main/docs/guides/DURABLE_STREAMING.md).
-> Canonical source: [`docs/PROVIDERS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/PROVIDERS.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/PROVIDERS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/PROVIDERS.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

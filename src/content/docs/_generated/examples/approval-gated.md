@@ -58,4 +58,4 @@ The approval includes redacted input, tool or action, capability, risk, expected
 ## Current limitation
 
 The CLI stores operator-provided identity text but does not provide a hosted identity or role system. The invoking platform must authenticate and authorize the operator.
-> Canonical source: [`docs/use-cases/APPROVAL_GATED_ACTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/APPROVAL_GATED_ACTION.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/use-cases/APPROVAL_GATED_ACTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/APPROVAL_GATED_ACTION.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

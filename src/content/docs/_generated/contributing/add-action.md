@@ -42,4 +42,4 @@ cargo xtask generate
 cargo xtask docs-verify
 cargo xtask verify
 ```
-> Canonical source: [`docs/development/ADD_ACTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_ACTION.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/development/ADD_ACTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_ACTION.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

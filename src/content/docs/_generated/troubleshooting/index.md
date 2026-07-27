@@ -142,6 +142,31 @@ agentctl effects --db .agentctl/runtime.db inspect SOURCE_RUN_ID --task TASK
 
 **Resolve:** Provision and mount `/state` and `/artifacts` with appropriate ownership. Keep the root filesystem read-only and use `/tmp` as a small `noexec,nosuid` tmpfs.
 
+## Podman machine or forwarding unavailable
+
+**Symptom:** `podman info` reports connection refused even though Podman is
+installed, or `cargo xtask acceptance-container` cannot reach the engine.
+
+**Diagnose:**
+
+```text
+podman machine list
+podman system connection list
+podman machine start podman-machine-default
+podman info
+```
+
+**Expected evidence:** The existing machine is running and the configured
+forwarded socket answers `podman info`.
+
+**Resolve:** Start the existing machine without deleting or recreating it. Some
+macOS command harnesses terminate libkrun and `gvproxy` children when the
+starting shell exits; keep that terminal open and probe from another terminal.
+If `machine stop` reports a stale `gvproxy` PID, first prove the recorded PID
+does not exist, move only that temporary PID file aside, stop cleanly, and
+start again. Do not delete the machine, images, or connection configuration
+and do not weaken TLS to make the probe pass.
+
 ## Corporate CA failure
 
 **Symptom:** The image build cannot verify the intercepted dependency-network certificate.
@@ -157,4 +182,4 @@ agentctl effects --db .agentctl/runtime.db inspect SOURCE_RUN_ID --task TASK
 ## Safe issue report
 
 Include the exact `agentctl version`, operating system, redacted command, exit code, diagnostic code, workflow API version, minimal non-secret workflow, and relevant run/trace IDs. Share a narrow redacted `inspect` excerpt only when needed. Report security problems through the private process in [Security](/agentctl/security/), not a public issue.
-> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

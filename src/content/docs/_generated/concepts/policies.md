@@ -43,4 +43,4 @@ An approval stores the run/trace/task/agent, tool, capability, risk, redacted in
 Provider, MCP, A2A, filesystem, process, and environment allowlists are
 necessary controls, not a containment boundary. Use `isolation: container` or
 an externally managed container/VM boundary for untrusted executors.
-> Canonical source: [`docs/policies.md`](https://github.com/opensourceops/agentctl/blob/main/docs/policies.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
+> Canonical source: [`docs/policies.md`](https://github.com/opensourceops/agentctl/blob/main/docs/policies.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.

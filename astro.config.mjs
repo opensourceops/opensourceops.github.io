@@ -59,6 +59,7 @@ export default defineConfig({
             { slug: 'overview', label: 'Overview', badge: 'v1alpha1' },
             { slug: 'why-agentctl', label: 'Why agentctl' },
             { slug: 'concepts/product', label: 'Product definition' },
+            { slug: 'concepts/framework-completeness', label: 'Framework completeness' },
             { slug: 'getting-started/installation', label: 'Installation' },
             { slug: 'getting-started', label: 'Getting started' },
             { slug: 'getting-started/first-agent', label: 'First agent workflow' },
@@ -145,6 +146,9 @@ export default defineConfig({
             { slug: 'reference/compatibility', label: 'Compatibility' },
             { slug: 'reference/migration', label: 'Migrate from TypeScript' },
             { slug: 'reference/limitations', label: 'Limitations' },
+            { slug: 'reference/limitation-burndown', label: 'Limitation burn-down' },
+            { slug: 'reference/completeness-verification', label: 'Completeness verification' },
+            { slug: 'reference/live-framework-verification', label: 'Live framework verification' },
           ],
         },
         {
