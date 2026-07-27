@@ -42,4 +42,4 @@ The local operator and reviewed binary are trusted. Workflow authors are only as
 No unresolved critical or high-severity defect is knowingly accepted for the implemented boundary. Host process policy, native OS sandboxing, signature verification, and distributed concurrency are not implied controls. Container isolation is claimed only for actions that explicitly request and successfully preflight that mode. State encryption protects its documented columns only and is not described as full-database encryption.
 
 Run access control is the database file and operating-system identity. `agentctl` has no multi-tenant authorization layer; do not let an untrusted principal select another tenant's source run from a shared database.
-> Canonical source: [`docs/THREAT_MODEL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/THREAT_MODEL.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/THREAT_MODEL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/THREAT_MODEL.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

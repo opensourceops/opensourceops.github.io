@@ -121,4 +121,4 @@ The database records the provider session, strict tool call, read effect, assert
 ## Current limitation
 
 The checked journey proves orchestration and tool boundaries, not the quality of a live model's repository analysis. Production workflows need task-specific verification stronger than a fixed marker.
-> Canonical source: [`docs/use-cases/REPOSITORY_AUDIT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/REPOSITORY_AUDIT.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/use-cases/REPOSITORY_AUDIT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/REPOSITORY_AUDIT.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

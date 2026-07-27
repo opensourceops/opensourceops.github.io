@@ -43,4 +43,4 @@ dispatch, then proves that the next requested effect is denied.
 including the failed two-agent source, selective repair, and keyless replay,
 with a 40-request and conservative USD 10 guard. Never run these commands for
 debugging loops, fuzzing, load, or normal CI.
-> Canonical source: [`docs/TESTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TESTING.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/TESTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TESTING.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

@@ -31,4 +31,4 @@ agentctl effects --db .agentctl/runtime.db continue-remote EFFECT_ID \
 The command observes the existing remote task, ingests completed inline or same-origin URL artifacts into the local CAS, and records an applied effect reconciliation. A following failed-only retry materializes that completed boundary and executes only its descendants. Repair, retry, and replay retain source-linked protocol evidence without submitting the task again.
 
 Each artifact part must contain exactly one of `text`, `raw`, `data`, or `url`. Retrieval is bounded to 16 MiB per part and same-origin URL policy. Mock peers cover known-task continuation, ambiguous-send refusal, task polling, artifacts, streaming fallback, cancellation, protocol mismatch, origin enforcement, timeout, and zero-resubmission retry.
-> Canonical source: [`docs/A2A.md`](https://github.com/opensourceops/agentctl/blob/main/docs/A2A.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/A2A.md`](https://github.com/opensourceops/agentctl/blob/main/docs/A2A.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

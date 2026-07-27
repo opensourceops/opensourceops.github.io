@@ -19,4 +19,4 @@ implicit shell, clears inherited environment, applies allowlisted variables,
 and is not an OS sandbox.
 
 Check mode executes pure/internal simulation and observation needed for dataflow but never filesystem, process, remote, or model mutation. Results say fully predictable, partially predictable, or requires execution; unknown external work is never reported as predicted.
-> Canonical source: [`docs/TOOLS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TOOLS.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/TOOLS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TOOLS.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

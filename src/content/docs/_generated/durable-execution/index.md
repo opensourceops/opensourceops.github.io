@@ -77,4 +77,4 @@ reconciled as compensated. This is best-effort inverse execution, not
 transactional rollback.
 
 The artifact root is `artifacts/` beside the database. `agentctl artifacts` lists references and blobs, verifies hashes, exports bytes atomically, and performs reachability-based collection. GC excludes referenced blobs and active ingestion leases, recovers interrupted quarantine operations on startup, and cleans stale untracked blobs and partial temporary files.
-> Canonical source: [`docs/DURABLE_EXECUTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/DURABLE_EXECUTION.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/DURABLE_EXECUTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/DURABLE_EXECUTION.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

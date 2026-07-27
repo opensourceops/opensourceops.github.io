@@ -23,7 +23,7 @@ docker build --secret id=agentctl_ca,src=/protected/path/build-ca.pem \
   --tag agentctl:local --file Containerfile .
 ```
 
-For the repository acceptance wrapper, set `AGENTCTL_BUILD_CA_FILE=/protected/path/build-ca.pem` before `cargo xtask acceptance-container`. Hosted CI accepts the protected secret `AGENTCTL_BUILD_CA_PEM`, materializes it only in the runner's temporary directory, and removes it after the build.
+For the repository acceptance wrapper, set `AGENTCTL_BUILD_CA_FILE=/protected/path/build-ca.pem` before `cargo xtask acceptance-container`. Hosted `main` and manually dispatched runs accept the protected secret `AGENTCTL_BUILD_CA_PEM`, materialize it only in the runner's temporary directory, and remove it after the build. Pull-request runs never receive that secret.
 
 The `Containerfile` combines the secret with public roots on a tmpfs mount for the single Cargo build step. The CA value is not a build argument, image environment value, build-context file, layer, history value, runtime file, or artifact. Never use `--insecure`, `CARGO_HTTP_CHECK_REVOKE=false`, a TLS-verification disable flag, or a committed certificate.
 
@@ -359,4 +359,4 @@ effects/tool calls/provider sessions, and explicit source-effect audit links.
 GitHub, GitLab, Jenkins, Harness, and Kubernetes examples remain
 documentation-reviewed only; the automatic Ubuntu Linux x64 build, scan, and
 SBOM job is locally linted but has not been dispatched.
-> Canonical source: [`docs/CONTAINER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTAINER.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/CONTAINER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTAINER.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

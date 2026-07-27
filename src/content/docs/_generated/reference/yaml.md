@@ -228,4 +228,4 @@ sub-workflows](https://github.com/opensourceops/agentctl/blob/main/docs/guides/S
 [Compensation](https://github.com/opensourceops/agentctl/blob/main/docs/guides/COMPENSATION.md), [Secret
 references](https://github.com/opensourceops/agentctl/blob/main/docs/guides/SECRET_REFERENCES.md), [Policies](/agentctl/concepts/policies/),
 [Tools](/agentctl/concepts/tools/), and [Workflow DSL](/agentctl/concepts/workflow-model/).
-> Canonical source: [`docs/reference/YAML.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/YAML.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/reference/YAML.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/YAML.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

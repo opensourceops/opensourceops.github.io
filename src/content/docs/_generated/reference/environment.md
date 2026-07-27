@@ -30,7 +30,7 @@ State encryption accepts an environment-variable reference through `--key-env`. 
 | --- | --- | --- |
 | `AGENTCTL_CONTAINER_ENGINE` | local acceptance | Select `docker` or `podman` when auto-detection is unsuitable. |
 | `AGENTCTL_BUILD_CA_FILE` | local container build | Path to a reviewed CA bundle supplied as a build secret. |
-| `AGENTCTL_BUILD_CA_PEM` | hosted container workflow | Protected secret materialized temporarily by CI. |
+| `AGENTCTL_BUILD_CA_PEM` | non-PR hosted container workflow | Protected secret materialized temporarily by `main` or manually dispatched CI; pull-request runs never receive it. |
 
 Normal `cargo xtask docs-verify`, `cargo xtask verify`, and `cargo xtask acceptance` need no provider credential.
 
@@ -56,4 +56,4 @@ Normal `cargo xtask docs-verify`, `cargo xtask verify`, and `cargo xtask accepta
 | `/tmp` | small runtime tmpfs when the root filesystem is read-only |
 
 State and artifacts must be writable by UID/GID 65532 in the production image.
-> Canonical source: [`docs/reference/ENVIRONMENT_AND_PATHS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/ENVIRONMENT_AND_PATHS.md). Verified against agentctl commit `c6a031015eed6ea7188c02b4ce28f7b451ea94f8`.
+> Canonical source: [`docs/reference/ENVIRONMENT_AND_PATHS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/ENVIRONMENT_AND_PATHS.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.

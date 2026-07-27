@@ -8,7 +8,7 @@ const source = JSON.parse(await readFile(path.join(root, 'src/data/agentctl-sour
 const errors = [];
 
 const actions = [...workflow.matchAll(/^\s*uses:\s*([^@\s]+)@([^\s#]+)(?:\s+#\s+(.+))?$/gm)];
-if (actions.length !== 6) errors.push(`expected 6 action references, found ${actions.length}`);
+if (actions.length !== 7) errors.push(`expected 7 action references, found ${actions.length}`);
 for (const [, action, revision, comment] of actions) {
   if (!/^[0-9a-f]{40}$/.test(revision)) errors.push(`${action} is not pinned to a full commit SHA`);
   if (!/^v\d/.test(comment || '')) errors.push(`${action} has no release comment`);
@@ -20,10 +20,19 @@ if (!pinnedCommit) {
 } else if (pinnedCommit !== source.commit) {
   errors.push(`AGENTCTL_COMMIT ${pinnedCommit} does not match synchronized source ${source.commit}`);
 }
+if (!workflow.includes('ref: ${{ github.event.pull_request.head.sha || github.sha }}')) {
+  errors.push('Pages source checkout must select the exact pull-request head or event revision');
+}
+if ((workflow.match(/persist-credentials: false/g) || []).length !== 2) {
+  errors.push('both repository checkouts must disable credential persistence');
+}
 
 for (const required of [
   'repository: opensourceops/agentctl',
+  "if: github.event_name == 'pull_request'",
   "if: github.event_name != 'pull_request'",
+  'name: agentctl-pages-validation',
+  'if-no-files-found: error',
   'pages: write',
   'id-token: write',
   'path: site/_site',
