@@ -78,4 +78,4 @@ The workflow API is `agentctl.dev/v1alpha1`. Pin the CLI or image version, read 
 ## Next step
 
 Continue with [Getting started](/agentctl/getting-started/).
-> Canonical source: [`docs/guides/INSTALLATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/INSTALLATION.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/guides/INSTALLATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/INSTALLATION.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

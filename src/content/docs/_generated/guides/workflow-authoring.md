@@ -126,4 +126,4 @@ agentctl run workflow.yaml --check --diff --db .agentctl/preview.db
 ```
 
 The preview may write run history to its database, but it does not perform filesystem, process, remote, or model mutation. Read [Workflow DSL](/agentctl/concepts/workflow-model/) and the [YAML reference](/agentctl/reference/yaml/) for the complete contract.
-> Canonical source: [`docs/guides/WORKFLOW_AUTHORING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/WORKFLOW_AUTHORING.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/guides/WORKFLOW_AUTHORING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/WORKFLOW_AUTHORING.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

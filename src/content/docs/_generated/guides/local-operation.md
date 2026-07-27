@@ -22,7 +22,9 @@ This writes the SQLite database and any declared artifacts. Network calls occur 
 
 Human output is for terminals. `--output json --color never` emits one versioned final document on stdout; an error uses the same envelope shape on stderr. Exit codes distinguish success, validation, policy or approval, run failure, persistence, remote failure, and cancellation.
 
-JSONL progress output is not supported in this release. Use durable audit and trace records for event-level inspection.
+`--output jsonl` emits durable provider stream events followed by the final
+outcome. Human stream progress uses stderr. Use `--output json` when an
+automation requires exactly one final document.
 
 ## Interrupt safely
 
@@ -71,4 +73,4 @@ agentctl gc --db .agentctl/runtime.db --older-than-days 30 --output json --color
 ```
 
 Garbage collection deletes eligible terminal history and expired long-term memory. Back up before deletion when the history is audit evidence.
-> Canonical source: [`docs/guides/LOCAL_OPERATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/LOCAL_OPERATION.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/guides/LOCAL_OPERATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/LOCAL_OPERATION.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

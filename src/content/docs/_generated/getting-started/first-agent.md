@@ -84,4 +84,4 @@ The live command makes a paid network request to `api.openai.com` and writes pro
 ## Next step
 
 Read [Workflow authoring](/agentctl/guides/workflow-authoring/) to replace the scripted journey with your own reviewed workflow.
-> Canonical source: [`docs/guides/FIRST_AGENT_WORKFLOW.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/FIRST_AGENT_WORKFLOW.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/guides/FIRST_AGENT_WORKFLOW.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/FIRST_AGENT_WORKFLOW.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

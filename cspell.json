@@ -20,6 +20,9 @@
     "effectful", "exfiltration", "inspectable", "ledgered", "lockfiles", "misexecutes",
     "msvc", "noninteractive", "nonroot", "oneshot", "proptest", "rustdoc", "sandboxing",
     "schedulable", "Streamable", "subpaths", "TOCTOU", "transactionally", "uncheckpointed",
-    "unpushed", "xtask", "MSRV", "nojekyll", "accDescr"
+    "unpushed", "xtask", "MSRV", "nojekyll", "accDescr", "backpressure", "bubblewrap",
+    "hardlinks", "Microusd", "Millis", "networkless", "pids", "preflighted", "redispatch",
+    "redispatched", "replayable", "Sigstore", "subworkflows", "Unreviewed", "workstreams",
+    "zeroizing"
   ]
 }

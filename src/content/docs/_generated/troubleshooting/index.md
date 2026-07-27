@@ -40,9 +40,11 @@ agentctl schema --write /tmp/workflow.schema.json --output json --color never
 
 ## Provider authentication failure
 
-**Symptom:** Exit `6` reports a missing environment reference or authentication response.
+**Symptom:** Exit `6` reports an unavailable secret reference or authentication response.
 
-**Likely cause:** The workflow names a credential environment variable that is absent or the provider rejected it.
+**Likely cause:** The workflow names an absent environment value, unavailable
+or denied file/process source, or the provider rejected the resolved
+credential.
 
 **Diagnose:**
 
@@ -51,9 +53,13 @@ agentctl auth check workflow.yaml --output json --color never
 agentctl providers inspect workflow.yaml --output json --color never
 ```
 
-**Expected evidence:** The environment variable name and provider capability, never the secret value.
+**Expected evidence:** The safe source description and provider capability,
+never the secret value. Process references report `unchecked` and are not
+executed by diagnostics.
 
-**Resolve:** Inject the named secret through the shell, scheduler, or CI secret facility. Do not add a key to YAML or a command argument.
+**Resolve:** Inject the named environment value, mount the file under an allowed
+root, or repair the process policy/helper. Do not add a key to YAML or a command
+argument.
 
 ## Provider capability mismatch
 
@@ -151,4 +157,4 @@ agentctl effects --db .agentctl/runtime.db inspect SOURCE_RUN_ID --task TASK
 ## Safe issue report
 
 Include the exact `agentctl version`, operating system, redacted command, exit code, diagnostic code, workflow API version, minimal non-secret workflow, and relevant run/trace IDs. Share a narrow redacted `inspect` excerpt only when needed. Report security problems through the private process in [Security](/agentctl/security/), not a public issue.
-> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

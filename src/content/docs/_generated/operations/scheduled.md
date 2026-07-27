@@ -66,8 +66,9 @@ A oneshot service has one active invocation at a time. Use distinct databases on
 5. Use `repair TARGET SOURCE --from TASK --plan` before executing a corrected terminal workflow from a task boundary.
 6. Use `fork` for a broader new run that may execute fresh effects.
 7. For an uncertain effect, reconcile the remote system first. The runtime intentionally refuses unsafe resume or repair.
+8. Verify retained bytes with `agentctl artifacts --db PATH verify --all`; export a digest with `agentctl artifacts --db PATH export DIGEST DESTINATION`.
 
 Repair planning exits `3` when compatibility or effect safety blocks reuse. Read `blockedReuse`, choose an earlier/additional root, restore a verified artifact, or reconcile an effect. Do not bypass the plan with a fresh fork unless repeating all effects is an intentional operator decision.
 
-Use `agentctl gc --db PATH --older-than-days N` for expired memory and old terminal histories after the organization's retention/backup requirements are satisfied. SQLite WAL files belong with the database during backup. A future schedule-run key may improve deduplication; today the external scheduler owns overlap prevention.
-> Canonical source: [`docs/OPERATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OPERATIONS.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+Use `agentctl gc --db PATH --older-than-days N` for expired memory and old terminal histories. Then use `agentctl artifacts --db PATH gc --older-than-days N --dry-run` to preview unreferenced blobs before running it without `--dry-run`. SQLite WAL files and the sibling artifact root belong together during backup. A future schedule-run key may improve deduplication; today the external scheduler owns overlap prevention.
+> Canonical source: [`docs/OPERATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OPERATIONS.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

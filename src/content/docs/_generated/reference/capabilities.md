@@ -40,4 +40,4 @@ The compiler verifies that a built-in tool declaration matches its executor sema
 | `a2a.delegate` | remote agent | recorded result, no fresh delegation in replay |
 
 See [Providers](/agentctl/providers/), [Tools](/agentctl/concepts/tools/), and [Durable execution](/agentctl/durable-execution/).
-> Canonical source: [`docs/reference/MATRICES.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/MATRICES.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/reference/MATRICES.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/MATRICES.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

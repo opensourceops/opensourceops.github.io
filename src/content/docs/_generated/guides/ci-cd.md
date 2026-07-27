@@ -45,7 +45,11 @@ Their current evidence level is documentation or syntax review unless stated oth
 
 ## Inputs and structured output
 
-Mount an ordinary JSON file under `/config` and pass `--inputs-file /config/inputs.json`, or use repeated non-secret `--input KEY=VALUE`. Provider credentials must be environment references. Capture stdout as one `agentctl.dev/cli/v1` JSON envelope and archive declared files from `/artifacts`.
+Mount an ordinary JSON file under `/config` and pass `--inputs-file
+/config/inputs.json`, or use repeated non-secret `--input KEY=VALUE`. Provider
+credentials must be typed environment or mounted-file references. Capture
+stdout as one `agentctl.dev/cli/v1` JSON envelope and archive declared files
+from `/artifacts`.
 
 ## Approvals in pipelines
 
@@ -74,8 +78,8 @@ Do not set a pipeline retry policy that blindly repeats exit `5`, `6`, or `130`.
 - Run as non-root with a read-only root filesystem.
 - Drop capabilities and deny unneeded egress.
 - Mount the workspace read-only unless a reviewed write is required.
-- Inject secrets by environment reference and never echo them.
+- Inject secrets by environment reference or read-only mounted file and never echo them.
 - Treat remote content and model output as untrusted.
 - Retain state for approval or recovery, then delete it under policy.
 - Set the external platform's overlap and timeout controls.
-> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.

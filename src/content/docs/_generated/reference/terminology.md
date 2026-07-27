@@ -10,9 +10,15 @@ Use these terms consistently in workflows, documentation, issues, and reviews.
 | Workflow | One versioned declarative YAML document and its compiled graph. |
 | Task | One ordered graph node that invokes an action or agent. |
 | Action | A typed runtime operation selected directly by a task. |
+| Process mode | Bounded direct execution with the agentctl host identity. It is not a sandbox. |
+| Container mode | Explicit process-action isolation in a local digest-pinned Docker/Podman image with the fixed agentctl container contract. |
+| Isolation | An operating-system or container authority boundary. Policy and allowlists alone are not isolation. |
 | Agent | A bounded provider-backed executor for one task. |
+| Role | A named agent task with explicit provider, tool visibility, limits, and output contract. |
+| Handoff | A typed durable task output consumed by an explicitly dependent role task. |
 | Tool | A strict capability contract that an agent may request. |
 | Provider | A native model API adapter behind provider-neutral contracts. |
+| Stream event | One bounded, redacted provider progress record ordered within a task attempt. |
 | Effect | A durably identified operation that observes or changes state outside pure computation. |
 | Run | One durable execution, check, replay, repair, or fork record. |
 | Attempt | One bounded execution attempt for a task. |
@@ -30,4 +36,4 @@ Use these terms consistently in workflows, documentation, issues, and reviews.
 | Pack | A local versioned manifest and reviewed reusable content with integrity checking. |
 
 Do not use resume, replay, retry, repair, and fork interchangeably. None of them means exactly-once execution.
-> Canonical source: [`docs/reference/TERMINOLOGY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/TERMINOLOGY.md). Verified against agentctl commit `1e8b133f13e9325bc00dbfcdcdfd5d8dd5517889`.
+> Canonical source: [`docs/reference/TERMINOLOGY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/TERMINOLOGY.md). Verified against agentctl commit `21e919da592b426992df76be37c892b70d073f9e`.
