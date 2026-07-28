@@ -56,7 +56,7 @@ export default defineConfig({
         {
           label: 'Start here',
           items: [
-            { slug: 'overview', label: 'Overview', badge: 'v1alpha1' },
+            { slug: 'overview', label: 'Overview', badge: 'v1' },
             { slug: 'why-agentctl', label: 'Why agentctl' },
             { slug: 'concepts/product', label: 'Product definition' },
             { slug: 'concepts/framework-completeness', label: 'Framework completeness' },

@@ -17,7 +17,7 @@ Source: `examples/docs/provider-portability/fake.yaml`.
 
 
 ```yaml
-apiVersion: agentctl.dev/v1alpha1
+apiVersion: agentctl.dev/v1
 kind: Workflow
 metadata:
   name: portable-summary-fake
@@ -62,7 +62,7 @@ Source: `examples/docs/provider-portability/openai.yaml`.
 
 
 ```yaml
-apiVersion: agentctl.dev/v1alpha1
+apiVersion: agentctl.dev/v1
 kind: Workflow
 metadata:
   name: portable-summary-openai
@@ -112,4 +112,4 @@ Both workflows share the provider-neutral agent shape. Each provider still needs
 ## Current limitation
 
 Provider portability does not mean identical behavior or equal maturity. Fake is deterministic, OpenAI has retained bounded live evidence, and Azure OpenAI, Anthropic, and Google are mock-protocol tested only in this release.
-> Canonical source: [`docs/use-cases/PROVIDER_PORTABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/PROVIDER_PORTABILITY.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/use-cases/PROVIDER_PORTABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/PROVIDER_PORTABILITY.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

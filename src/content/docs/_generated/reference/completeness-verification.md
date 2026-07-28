@@ -225,4 +225,4 @@ were fixed and covered by focused tests or local validation. The final
 credential-free gates, actionlint, deterministic secret scan, native Linux
 arm64 OCI acceptance, exact-image Trivy/SBOM checks, and retained GPT-5.6
 evidence are green.
-> Canonical source: [`docs/execution/COMPLETENESS_VERIFICATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/COMPLETENESS_VERIFICATION.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/execution/COMPLETENESS_VERIFICATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/COMPLETENESS_VERIFICATION.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

@@ -40,7 +40,7 @@ test('homepage workflow copy control works', async ({ page }) => {
   await page.getByRole('button', { name: 'Copy workflow YAML' }).click();
   await expect(page.getByRole('button', { name: 'Copy workflow YAML' })).toHaveText('Copied');
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
-  expect(clipboard).toContain('apiVersion: agentctl.dev/v1alpha1');
+  expect(clipboard).toContain('apiVersion: agentctl.dev/v1');
 });
 
 test('navigation and sidebar reach important sections', async ({ page }) => {

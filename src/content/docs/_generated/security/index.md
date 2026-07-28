@@ -94,4 +94,4 @@ encryption is enabled. The local hash provider is deterministic lexical
 indexing and must not be described as a confidential local neural model.
 
 Report vulnerabilities privately to the repository maintainer. Do not include credentials, database contents, or production prompts in a report.
-> Canonical source: [`docs/SECURITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/SECURITY.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/SECURITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/SECURITY.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

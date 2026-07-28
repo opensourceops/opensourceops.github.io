@@ -9,6 +9,12 @@ Declaration-order scheduling among ready tasks, `needs` dataflow, exact typed te
 
 ## Migrated
 
+Agentctl 0.3 promotes the workflow document identifier from
+`agentctl.dev/v1alpha1` to `agentctl.dev/v1` without changing the document
+shape. Update the `apiVersion` line before upgrading; the retired identifier is
+rejected with an explicit diagnostic. The separate pack-manifest identifier
+remains `agentctl.dev/pack/v1alpha1`.
+
 Unversioned `playbook:` YAML can be translated by `agentctl migrate`; `modules` become `actions`, `module:x` becomes `action:x`, heuristic agents map to the fake provider, and core memory/policy fields are normalized. Rust JSON output is a stable `agentctl.dev/cli/v1` envelope rather than the prototype JSONL/YAML mixture. The additive JSONL mode uses the same versioned envelopes for bounded progress and a final result. The production executable and runtime are Rust.
 
 ## Intentionally changed
@@ -49,11 +55,12 @@ guess security-sensitive intent.
 ## Separate product decisions
 
 A public pack registry, in-process plugin ABI, and general A2A resubmission are
-not compatibility promises for v1alpha1. Pack lock v1, the bounded process
-protocol v1, and source/trust policy are additive. MCP reconnect is bounded by
-explicit idempotency and schema stability. A2A continuation observes only a
-persisted task ID. Bounded loops, namespaced sub-workflows, explicit
+not part of the workflow API v1 compatibility promise. Pack lock v1, the
+bounded process protocol v1, and source/trust policy are additive. MCP
+reconnect is bounded by explicit idempotency and schema stability. A2A
+continuation observes only a persisted task ID. Bounded loops, namespaced
+sub-workflows, explicit
 source-linked compensation, graph-native structured handoffs, durable
 streaming, and protocol continuation records are additive; hidden or
 model-controlled orchestration is intentionally unsupported.
-> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

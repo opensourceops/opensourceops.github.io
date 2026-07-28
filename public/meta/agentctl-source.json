@@ -1,8 +1,8 @@
 {
   "product": "agentctl",
-  "version": "0.2.0",
-  "workflowApi": "agentctl.dev/v1alpha1",
-  "commit": "736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47",
+  "version": "0.3.0",
+  "workflowApi": "agentctl.dev/v1",
+  "commit": "2aeaa88fba71162206b5f08f5bda4f0150247e4f",
   "dirty": false,
   "sourceRepository": "https://github.com/opensourceops/agentctl",
   "importedFiles": 61

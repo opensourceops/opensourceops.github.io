@@ -100,4 +100,4 @@ was used.
 
 Sanitized machine-readable evidence is retained at the ignored path
 `.release-evidence/selective-repair/live-summary.json`.
-> Canonical source: [`docs/execution/LIVE_FRAMEWORK_VERIFICATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/LIVE_FRAMEWORK_VERIFICATION.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/execution/LIVE_FRAMEWORK_VERIFICATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/LIVE_FRAMEWORK_VERIFICATION.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.
