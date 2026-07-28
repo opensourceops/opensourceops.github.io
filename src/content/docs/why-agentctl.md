@@ -31,4 +31,8 @@ A direct model call is easy to start. It becomes harder to review when prompts i
 
 ## Reasons not to choose it
 
-Do not choose the current release when you require a stable workflow API, distributed execution, parallel tasks, a hosted scheduler, a visual builder, an in-process sandbox, encrypted persistence, or a live support claim for every provider. Read [Limitations](/agentctl/reference/limitations/) before adopting the `v1alpha1` API.
+Do not choose the current release when you require a 1.0 CLI or long-term
+support contract, distributed execution, a hosted scheduler, a visual builder,
+an operating-system-enforced in-process sandbox, or live support evidence for
+every provider. Read [Limitations](/agentctl/reference/limitations/) before
+adopting workflow API `agentctl.dev/v1`.

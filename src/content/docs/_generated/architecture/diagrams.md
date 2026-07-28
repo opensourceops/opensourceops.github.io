@@ -3,7 +3,8 @@ title: "Architecture diagrams"
 description: "Fourteen verified diagrams for compilation, state, effects, recovery, deployment, and crates."
 editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/architecture/DIAGRAMS.md"
 ---
-These diagrams explain implemented `v1alpha1` behavior. Each diagram is paired with text so the relationship is available when Mermaid cannot render.
+These diagrams explain implemented workflow API v1 behavior. Each diagram is
+paired with text so the relationship is available when Mermaid cannot render.
 
 ## High-level system architecture
 
@@ -313,4 +314,4 @@ flowchart TD
 ```
 
 `agentctl-core` has no dependency on HTTP, SQLite, CLI parsing, or concrete executor types. `xtask` drives the built CLI for generation and acceptance.
-> Canonical source: [`docs/architecture/DIAGRAMS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/architecture/DIAGRAMS.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/architecture/DIAGRAMS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/architecture/DIAGRAMS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

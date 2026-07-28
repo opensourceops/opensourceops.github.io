@@ -28,7 +28,12 @@ A checked manifest maps canonical source files to public routes. The importer fa
 
 Status: accepted, 2026-07-23.
 
-Public pages distinguish deterministic tests, mock-protocol tests, retained live OpenAI evidence, locally executed container evidence, hosted CI configuration, hosted CI execution, syntax validation, deferred work, and unsupported work. The site calls the project a `v1alpha1` release candidate preparation, not stable or production proven.
+Public pages distinguish deterministic tests, mock-protocol tests, retained
+live OpenAI evidence, locally executed container evidence, hosted CI execution,
+syntax validation, deferred work, and unsupported work. The site identifies
+`agentctl.dev/v1` as the stable workflow document API while keeping the 0.3 CLI
+and crates explicitly pre-1.0 and avoiding unsupported production or provider
+claims.
 
 ## D006: Static and restrained design
 

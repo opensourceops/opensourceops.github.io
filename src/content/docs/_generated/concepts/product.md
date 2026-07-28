@@ -29,13 +29,22 @@ Workflow and pack authors are trusted to request work, but their requests remain
 
 ## Compatibility and maturity
 
-The current document API is `agentctl.dev/v1alpha1`; breaking changes may occur with explicit diagnostics and migration support. Machine output, plan, effects, runtime state, checkpoints, database schema, audit events, and protocol continuation all carry independent versions. Deprecations are documented for at least one compatibility window; incompatible durable state fails explicitly.
+The current document API is `agentctl.dev/v1`. Additive compatible changes may
+extend it; incompatible workflow changes require a new document API version and
+explicit migration diagnostics. Machine output, plan, effects, runtime state,
+checkpoints, database schema, audit events, and protocol continuation all carry
+independent versions. Deprecations are documented for at least one compatibility
+window; incompatible durable state fails explicitly.
 
-Version 0.2 is a production-oriented alpha with executable evidence for the stated local, scheduled, and generic-container journeys. The workflow schema remains `v1alpha1`, so callers must pin the binary/image version. A stable release requires a frozen v1 workflow schema, accumulated cross-platform CI history, documented long-horizon database upgrade support, expanded compatibility fixtures, and a security review of any newly added executor.
+Version 0.3 freezes the workflow schema as `agentctl.dev/v1` and has executable
+evidence for the stated local, scheduled, and generic-container journeys. The
+CLI and crates remain pre-1.0, so callers must still pin the binary or image
+version for runtime, provider, and storage behavior outside the workflow
+document contract.
 
 ## Differentiation
 
 This is not a chat-agent or multi-agent conversation framework: workflows, not conversations, own control flow. It is not CI/CD: it can run inside CI but does not manage runners or deployment environments. It borrows idempotence and check/diff vocabulary from Ansible without becoming configuration management. It borrows plan/effect separation from Terraform without owning infrastructure state. It is not a hosted orchestrator or general scripting language: one local process, SQLite, constrained templates, typed actions, and explicit remote effects are intentional boundaries.
 
 The differentiator is the combination of deterministic compilation, honest predictability, durable effect identity, recorded no-effect replay, compatibility-checked task-boundary repair, native provider portability, and policy decisions made outside the model.
-> Canonical source: [`docs/PRODUCT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/PRODUCT.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/PRODUCT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/PRODUCT.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

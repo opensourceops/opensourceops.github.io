@@ -221,7 +221,7 @@ await copyFile(
 const metadata = {
   product: 'agentctl',
   version,
-  workflowApi: 'agentctl.dev/v1alpha1',
+  workflowApi: 'agentctl.dev/v1',
   commit,
   dirty,
   sourceRepository: 'https://github.com/opensourceops/agentctl',

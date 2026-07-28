@@ -30,7 +30,7 @@ docker run --rm --read-only --user 65532:65532 \
   --mount type=bind,src="$PWD",dst=/workspace,readonly \
   --mount type=bind,src="$PWD/.agentctl-state",dst=/state \
   --mount type=bind,src="$PWD/artifacts",dst=/artifacts \
-  ghcr.io/OWNER/agentctl:0.2.0 \
+  ghcr.io/OWNER/agentctl:0.3.0 \
   run /config/workflow.yaml --workspace /workspace \
   --db /state/runtime.db --output json --color never
 ```
@@ -82,4 +82,4 @@ Do not set a pipeline retry policy that blindly repeats exit `5`, `6`, or `130`.
 - Treat remote content and model output as untrusted.
 - Retain state for approval or recovery, then delete it under policy.
 - Set the external platform's overlap and timeout controls.
-> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/guides/CI_CD.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/CI_CD.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

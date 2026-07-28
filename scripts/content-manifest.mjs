@@ -6,7 +6,7 @@ export const contentManifest = [
   ['docs/TOOLS.md', '_generated/concepts/tools.md', 'Tools and effects', 'Tool contracts, effect classes, idempotency, and deterministic checks.'],
   ['docs/memory.md', '_generated/concepts/memory.md', 'State and memory', 'Separate runtime state, working memory, long-term memory, and prompt cache.'],
   ['docs/PACKS.md', '_generated/concepts/packs.md', 'Reusable packs', 'Use versioned local content with integrity verification.'],
-  ['docs/guides/INSTALLATION.md', '_generated/getting-started/installation.md', 'Installation', 'Build or install the current v1alpha1 candidate from reviewed source.'],
+  ['docs/guides/INSTALLATION.md', '_generated/getting-started/installation.md', 'Installation', 'Build or install agentctl 0.3 with workflow API v1 from reviewed source.'],
   ['docs/guides/GETTING_STARTED.md', '_generated/getting-started/index.md', 'Getting started', 'Run and inspect a credential-free deterministic workflow.'],
   ['docs/guides/FIRST_AGENT_WORKFLOW.md', '_generated/getting-started/first-agent.md', 'First agent workflow', 'Run a bounded tool-using agent without a paid API key.'],
   ['docs/guides/WORKFLOW_AUTHORING.md', '_generated/guides/workflow-authoring.md', 'Author workflows', 'Learn workflow YAML in execution order.'],
@@ -42,7 +42,7 @@ export const contentManifest = [
   ['docs/execution/COMPLETENESS_VERIFICATION.md', '_generated/reference/completeness-verification.md', 'Completeness verification', 'Deterministic, container, security, and independent review evidence.'],
   ['docs/execution/LIVE_FRAMEWORK_VERIFICATION.md', '_generated/reference/live-framework-verification.md', 'Live framework verification', 'Sanitized GPT-5.6 scenario, recovery, replay, usage, and container evidence.'],
   ['docs/COMPATIBILITY.md', '_generated/reference/compatibility.md', 'Compatibility', 'Preserved, migrated, changed, removed, and explicit non-goal contracts.'],
-  ['docs/MIGRATING_FROM_TYPESCRIPT.md', '_generated/reference/migration.md', 'Migrate from TypeScript', 'Translate supported legacy workflows to strict v1alpha1 YAML.'],
+  ['docs/MIGRATING_FROM_TYPESCRIPT.md', '_generated/reference/migration.md', 'Migrate from TypeScript', 'Translate supported legacy workflows to strict workflow API v1 YAML.'],
   ['docs/ARCHITECTURE.md', '_generated/architecture/index.md', 'Architecture overview', 'Crate boundaries, execution, determinism, concurrency, and packaging.'],
   ['docs/architecture/DIAGRAMS.md', '_generated/architecture/diagrams.md', 'Architecture diagrams', 'Fourteen verified diagrams for compilation, state, effects, recovery, deployment, and crates.'],
   ['docs/adr/0001-deterministic-core-explicit-effects.md', '_generated/architecture/decisions/0001.md', 'ADR 0001: Deterministic core', 'Keep graph, policy, state, and replay model-independent.'],
@@ -59,5 +59,5 @@ export const contentManifest = [
   ['docs/development/ADD_MIGRATION.md', '_generated/contributing/add-migration.md', 'Add a store migration', 'Version and test forward SQLite migrations.'],
   ['docs/development/DOCUMENTATION.md', '_generated/contributing/documentation.md', 'Write documentation', 'Own content in the right repository and verify it end to end.'],
   ['docs/TESTING.md', '_generated/contributing/testing.md', 'Testing strategy', 'Credential-free gates, acceptance layers, fuzzing, and live evidence.'],
-  ['docs/RELEASE_PROCESS.md', '_generated/contributing/release.md', 'Release process', 'Prepare and verify a v1alpha1 release candidate without overstating evidence.']
+  ['docs/RELEASE_PROCESS.md', '_generated/contributing/release.md', 'Release process', 'Prepare and verify an exact-commit release without overstating evidence.']
 ];

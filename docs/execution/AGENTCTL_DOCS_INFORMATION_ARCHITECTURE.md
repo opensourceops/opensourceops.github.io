@@ -16,7 +16,7 @@
 - Architecture
 - Contributing
 - GitHub
-- `v1alpha1` maturity indicator
+- workflow API `v1` indicator
 
 ## Learning paths
 

@@ -1,9 +1,10 @@
 ---
 title: "Installation"
-description: "Build or install the current v1alpha1 candidate from reviewed source."
+description: "Build or install agentctl 0.3 with workflow API v1 from reviewed source."
 editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/guides/INSTALLATION.md"
 ---
-This guide installs the `v1alpha1` Rust CLI from crates.io, reviewed source, or a locally built OCI image.
+This guide installs the agentctl 0.3 Rust CLI with workflow API v1 from
+crates.io, reviewed source, or a locally built OCI image.
 
 ## Prerequisites
 
@@ -73,9 +74,9 @@ Expected evidence includes `valid: hello`, task order `greet`, and `FullyPredict
 
 ## Upgrade safely
 
-The workflow API is `agentctl.dev/v1alpha1`. Pin the CLI or image version, read [compatibility](/agentctl/reference/compatibility/) and [limitations](/agentctl/reference/limitations/), back up the SQLite database with its WAL files, then validate workflows before replacing a binary. `agentctl update` explains supported update paths but does not modify the installation.
+The workflow API is `agentctl.dev/v1`. Pin the CLI or image version, read [compatibility](/agentctl/reference/compatibility/) and [limitations](/agentctl/reference/limitations/), back up the SQLite database with its WAL files, then validate workflows before replacing a binary. `agentctl update` explains supported update paths but does not modify the installation.
 
 ## Next step
 
 Continue with [Getting started](/agentctl/getting-started/).
-> Canonical source: [`docs/guides/INSTALLATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/INSTALLATION.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/guides/INSTALLATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/INSTALLATION.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

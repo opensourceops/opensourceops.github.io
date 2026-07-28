@@ -42,4 +42,4 @@ Update the provider guide and matrix with the exact level: implemented,
 mock-protocol tested, retained live evidence, or outside the current supported
 surface. Add an example that passes `check` without resolving a secret. Run
 `cargo xtask generate`, `cargo xtask docs-verify`, and `cargo xtask verify`.
-> Canonical source: [`docs/development/ADD_PROVIDER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_PROVIDER.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
+> Canonical source: [`docs/development/ADD_PROVIDER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_PROVIDER.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.
