@@ -182,4 +182,4 @@ and do not weaken TLS to make the probe pass.
 ## Safe issue report
 
 Include the exact `agentctl version`, operating system, redacted command, exit code, diagnostic code, workflow API version, minimal non-secret workflow, and relevant run/trace IDs. Share a narrow redacted `inspect` excerpt only when needed. Report security problems through the private process in [Security](/agentctl/security/), not a public issue.
-> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

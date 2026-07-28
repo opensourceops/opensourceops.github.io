@@ -68,4 +68,4 @@ Delete old terminal history only after retention requirements are met:
 agentctl gc --db .agentctl/runtime.db --older-than-days 30 --output json --color never
 agentctl artifacts --db .agentctl/runtime.db gc --older-than-days 30 --output json --color never
 ```
-> Canonical source: [`docs/reference/DATABASE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/DATABASE.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/reference/DATABASE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/DATABASE.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

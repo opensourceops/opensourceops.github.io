@@ -359,4 +359,4 @@ effects/tool calls/provider sessions, and explicit source-effect audit links.
 GitHub, GitLab, Jenkins, Harness, and Kubernetes examples remain
 documentation-reviewed only; the automatic Ubuntu Linux x64 build, scan, and
 SBOM job is locally linted but has not been dispatched.
-> Canonical source: [`docs/CONTAINER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTAINER.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/CONTAINER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTAINER.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

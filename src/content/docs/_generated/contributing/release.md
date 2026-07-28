@@ -22,7 +22,9 @@ the Linux container contract, HIGH/CRITICAL image vulnerability policy,
 production and image CycloneDX SBOMs, complete-history and checked-out-tree
 secret scans, dependency policy, immutable action pins, and workflow lint.
 
-The repository owner must enable GitHub Actions and required checks after the workflows reach the remote. This repository-local change does not modify remote settings or claim a hosted run.
+The repository owner must enable required checks on the protected release
+branch. Repository-local changes and green pull-request jobs do not modify or
+prove that remote governance setting.
 
 ## Local preflight
 
@@ -74,5 +76,7 @@ For the candidate workflow run:
 
 ## Release decision
 
-The local recommendation is **Ready for hosted RC validation**. Promote to an RC only after the exact remote commit has all required hosted checks and artifacts. Stable `v1.0` remains outside this `v1alpha1` gate.
-> Canonical source: [`docs/RELEASE_PROCESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/RELEASE_PROCESS.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+Promote an exact commit to a framework candidate only after it has all required
+hosted checks and artifacts. Stable `v1.0` remains outside this `v1alpha1`
+gate.
+> Canonical source: [`docs/RELEASE_PROCESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/RELEASE_PROCESS.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

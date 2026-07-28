@@ -60,4 +60,4 @@ content, remote payloads, and identifying metadata; a run ID alone is
 sufficient for local correlation.
 
 See [CLI output and exit codes](/agentctl/reference/output/), [local operation](/agentctl/guides/local-operation/), and [runtime database and migrations](/agentctl/reference/database/) for the complete operating contract.
-> Canonical source: [`docs/OBSERVABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OBSERVABILITY.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/OBSERVABILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/OBSERVABILITY.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

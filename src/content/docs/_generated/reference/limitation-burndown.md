@@ -17,9 +17,9 @@ complete, every entry must have exactly one final disposition:
 - `removed from supported surface`
 - `externally blocked`
 
-Closure count: 29 limitations, comprising 22 implemented, 2 redesigned, 4
-removed from the supported surface, and 1 externally blocked. All 29 program
-states are verified.
+Closure count: 30 limitations, comprising 24 implemented, 2 redesigned, and 4
+removed from the supported surface. No limitation remains externally blocked.
+All 30 program states are verified.
 
 ## Dependency order
 
@@ -66,7 +66,7 @@ states are verified.
 | MEM-001 | Semantic memory | verified | implemented |
 | PROV-001 | Stateless provider continuation | verified | implemented |
 | OCI-001 | Container execution | verified | implemented |
-| XPLAT-001 | Cross-platform hosted evidence | verified | externally blocked |
+| XPLAT-001 | Cross-platform hosted evidence | verified | implemented |
 | EVENT-001 | Event triggers and calendars | verified | removed from supported surface |
 | DIST-001 | Distributed execution and storage | verified | removed from supported surface |
 | REG-001 | Hosted public registry | verified | removed from supported surface |
@@ -825,8 +825,8 @@ states are verified.
   inspection, plus hosted multi-architecture configuration are present.
 - Migration impact: the container documentation defines the corrected mount
   contract; no state migration is required.
-- Tests: deterministic mount/command tests and native Linux arm64 execution are
-  labeled separately from still-undispatched hosted Linux x64 evidence.
+- Tests: deterministic mount/command tests, native Linux arm64 execution, and
+  hosted Linux x64 execution are labeled separately.
 - Examples: the credential-free container workflows cover a strict tool call,
   declared artifact, durable inspection, parallel ordered commit, a four-child
   matrix, approval, failed-only retry, selective repair after workspace
@@ -851,36 +851,36 @@ states are verified.
   `.runtime/scan/agentctl-framework-completeness.cdx.json`; its SHA-256 is
   `0ee27f16491108f0f018ac2bc7ad201b3f97bdb539cd6b78584264c9eedd67ff`.
   Image configuration and history scans found no credential or authorization
-  markers. Hosted architecture execution remains isolated under XPLAT-001.
+  markers. Hosted architecture execution is tracked under XPLAT-001.
 
 ### XPLAT-001: Hosted platform evidence
 
-- Current behavior: GitHub workflows are locally linted but undispatched.
-- User impact: Linux x64, hosted macOS, and Windows claims lack exact-commit
-  evidence.
+- Current behavior: pull requests run exact-head Linux x64, macOS arm64,
+  Windows x64, container, security, package, and SBOM validation. A separate
+  manual release-preparation workflow produces the three release packages.
+- User impact: platform claims have exact-commit hosted evidence and retained
+  package/SBOM artifacts rather than configuration-only coverage.
 - Security or durability impact: platform-specific path, process, packaging, and
   migration bugs may remain.
-- Product decision: configure complete least-privilege hosted matrices but do
-  not claim execution during this no-push task.
+- Product decision: require complete least-privilege hosted matrices on the
+  exact pull-request head and retain artifact digests.
 - Required implementation: build/test/acceptance/package/examples/completeness
-  jobs for macOS ARM64, Linux ARM64/x64, Windows x64, and container/security
-  jobs with artifacts and digests.
+  jobs for macOS ARM64, Linux x64, Windows x64, and container/security jobs
+  with artifacts and digests. Native Linux ARM64 OCI evidence remains
+  separately labeled.
 - Migration impact: none.
-- Tests: local workflow lint, action pin scan, and matrix completeness check.
+- Tests: local workflow lint, action pin scan, matrix completeness check, and
+  exact-head hosted execution on all three supported targets.
 - Examples: all public examples inventoried by jobs.
-- Live evidence: not run because hosted dispatch is explicitly prohibited.
-- Documentation: exact blocker and continuation.
-- Final disposition: `externally blocked`. The exact continuation would first
-  push this local branch and then run
-  `gh workflow run release-prep.yml --ref feat/framework-completeness`.
-  Neither command was executed because the governing task explicitly says
-  `Do not push or dispatch hosted CI during this task.` Local substitutes were
-  exhausted: all workflow YAML and full-SHA action pins passed the repository
-  gate, the existing three-platform matrices now include
-  `cargo xtask completeness`, macOS arm64 passed locally, and native Linux
-  arm64 OCI/runtime/security evidence passed. Once push/dispatch authority is
-  available, run the command above, wait for all three matrix jobs, then record
-  each package digest and update this entry with the run URL.
+- Live evidence: provider credentials are neither required nor exposed by
+  these hosted jobs. Historical OpenAI evidence remains separately labeled.
+- Documentation: hosted workflow inventory, exact-head checkout contract,
+  artifact verification, and release process.
+- Final disposition: implemented and verified by the automatic pull-request
+  gates plus the exact-commit manual release-preparation gate. The independent
+  candidate report records immutable run IDs and artifact digests. Repository
+  branch protection remains an owner-controlled governance setting, not a
+  product implementation limitation.
 
 ## Removed unsupported surface
 
@@ -942,4 +942,4 @@ Recorded on 2026-07-23 before framework-completeness implementation:
   OCI binary, acceptance failed with exit 3 because
   `/artifacts/report.txt` escaped the authorized workspace root. No credential
   was supplied and no OpenAI call occurred.
-> Canonical source: [`docs/execution/LIMITATION_BURNDOWN.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/LIMITATION_BURNDOWN.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/execution/LIMITATION_BURNDOWN.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/LIMITATION_BURNDOWN.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

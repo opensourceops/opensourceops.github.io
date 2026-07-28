@@ -56,4 +56,4 @@ persisted task ID. Bounded loops, namespaced sub-workflows, explicit
 source-linked compensation, graph-native structured handoffs, durable
 streaming, and protocol continuation records are additive; hidden or
 model-controlled orchestration is intentionally unsupported.
-> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

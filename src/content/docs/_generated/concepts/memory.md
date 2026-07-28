@@ -83,4 +83,4 @@ Entries are capped at 1 MiB, queries at 64 KiB, results at 100, embedding
 dimensions from 8 through 4096, and a local search scan at 10,000 active
 candidates. Corrupt or mismatched vector dimensions fail closed. Retention is
 applied during reads/search and by garbage collection, not by replay.
-> Canonical source: [`docs/memory.md`](https://github.com/opensourceops/agentctl/blob/main/docs/memory.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/memory.md`](https://github.com/opensourceops/agentctl/blob/main/docs/memory.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

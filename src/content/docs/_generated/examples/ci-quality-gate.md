@@ -64,4 +64,4 @@ on failure only when its potentially confidential content is protected.
 ## Current limitation
 
 This workflow does not run tests itself. A surrounding pipeline can supply results, or a reviewed `builtin.shell.exec` action can run a specifically allowed executable.
-> Canonical source: [`docs/use-cases/CI_QUALITY_GATE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/CI_QUALITY_GATE.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/use-cases/CI_QUALITY_GATE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/CI_QUALITY_GATE.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.

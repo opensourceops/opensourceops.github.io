@@ -73,4 +73,4 @@ agentctl gc --db .agentctl/runtime.db --older-than-days 30 --output json --color
 ```
 
 Garbage collection deletes eligible terminal history and expired long-term memory. Back up before deletion when the history is audit evidence.
-> Canonical source: [`docs/guides/LOCAL_OPERATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/LOCAL_OPERATION.md). Verified against agentctl commit `1e2a8b3437edf5f2e6dac3c29e14616ee20b619f`.
+> Canonical source: [`docs/guides/LOCAL_OPERATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/LOCAL_OPERATION.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
