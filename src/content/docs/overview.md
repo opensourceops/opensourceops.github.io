@@ -24,7 +24,7 @@ description: Understand the problem agentctl solves, its control model, current 
 
 ## Current maturity
 
-The workflow API is `agentctl.dev/v1alpha1`. The current source is production-oriented alpha software preparing for hosted release-candidate validation. Deterministic and fake-provider journeys have executable local evidence. Native provider and protocol evidence varies by adapter and is stated in the [capability matrices](/agentctl/reference/capabilities/).
+The workflow API is `agentctl.dev/v1alpha1`. The current source is production-oriented alpha software with exact-commit local and hosted release-candidate evidence. Deterministic and fake-provider journeys have executable local evidence, while Linux x64, macOS arm64, Windows x64, container, security, package, SBOM, and release-preparation gates have hosted evidence. Native provider and protocol evidence varies by adapter and is stated in the [capability matrices](/agentctl/reference/capabilities/).
 
 This site does not claim stable v1 compatibility, exactly-once execution, an operating-system sandbox, distributed scheduling, parallel task execution, or live validation across every provider.
 
