@@ -108,6 +108,7 @@ const shortCommit = source.commit.slice(0, 8);
       <a href={`${base}examples/scheduled-review/`}><strong>Scheduled review</strong><span>Persist a bounded run invoked by cron or Kubernetes.</span></a>
       <a href={`${base}examples/ci-quality-gate/`}><strong>CI quality gate</strong><span>Return stable JSON and process status to a pipeline.</span></a>
       <a href={`${base}examples/approval-gated/`}><strong>Approval-gated action</strong><span>Pause a proposed mutation for operator review.</span></a>
+      <a href={`${base}guides/selective-repair/`}><strong>Selective repair</strong><span>Reuse compatible upstream results and execute a corrected suffix.</span></a>
       <a href={`${base}examples/recorded-replay/`}><strong>Offline replay</strong><span>Reconstruct a terminal run without network or credentials.</span></a>
     </div>
   </section>
@@ -163,18 +164,19 @@ const shortCommit = source.commit.slice(0, 8);
   <section class="section maturity-section" aria-labelledby="maturity-title">
     <div>
       <p class="eyebrow">Current maturity</p>
-      <h2 id="maturity-title">Production-oriented alpha, preparing for hosted RC validation</h2>
+      <h2 id="maturity-title">Exact-commit evidence across local and hosted gates</h2>
       <p>
-        The workflow API is <code>agentctl.dev/v1alpha1</code>. The deterministic core, fake provider,
-        local persistence, and credential-free journeys have executable evidence. Native providers and
-        protocols have mock coverage at documented levels. Hosted multi-platform workflows are configured,
-        but the current candidate has not completed those remote runs.
+        The workflow API is <code>agentctl.dev/v1alpha1</code>. Deterministic composition, durable recovery,
+        local persistence, native Linux arm64 containers, and bounded GPT-5.6 journeys have executable evidence.
+        The pinned candidate also passed hosted Linux x64, macOS arm64, Windows x64, container, security,
+        package, SBOM, and release-preparation gates. Other native providers and protocols have mock coverage
+        at documented levels.
       </p>
     </div>
     <ul>
       <li>No stable v1 compatibility promise</li>
       <li>No exactly-once or in-process sandbox claim</li>
-      <li>No distributed scheduler or parallel task execution</li>
+      <li>No distributed or cross-run scheduler claim</li>
       <li>No claim of live validation across every provider</li>
     </ul>
   </section>

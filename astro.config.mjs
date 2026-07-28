@@ -59,6 +59,7 @@ export default defineConfig({
             { slug: 'overview', label: 'Overview', badge: 'v1alpha1' },
             { slug: 'why-agentctl', label: 'Why agentctl' },
             { slug: 'concepts/product', label: 'Product definition' },
+            { slug: 'concepts/framework-completeness', label: 'Framework completeness' },
             { slug: 'getting-started/installation', label: 'Installation' },
             { slug: 'getting-started', label: 'Getting started' },
             { slug: 'getting-started/first-agent', label: 'First agent workflow' },
@@ -82,6 +83,7 @@ export default defineConfig({
           items: [
             { slug: 'guides/local-operation', label: 'Local operation' },
             { slug: 'durable-execution', label: 'Resume, replay, retry, and fork' },
+            { slug: 'guides/selective-repair', label: 'Repair a failed workflow' },
             { slug: 'operations/scheduled', label: 'Scheduled execution' },
           ],
         },
@@ -123,6 +125,7 @@ export default defineConfig({
             { slug: 'examples/ci-quality-gate', label: 'CI quality gate' },
             { slug: 'examples/approval-gated', label: 'Approval-gated action' },
             { slug: 'examples/recorded-replay', label: 'Recorded replay' },
+            { slug: 'guides/selective-repair', label: 'Selective workflow repair' },
             { slug: 'examples/provider-portability', label: 'Provider portability' },
           ],
         },
@@ -143,6 +146,9 @@ export default defineConfig({
             { slug: 'reference/compatibility', label: 'Compatibility' },
             { slug: 'reference/migration', label: 'Migrate from TypeScript' },
             { slug: 'reference/limitations', label: 'Limitations' },
+            { slug: 'reference/limitation-burndown', label: 'Limitation burn-down' },
+            { slug: 'reference/completeness-verification', label: 'Completeness verification' },
+            { slug: 'reference/live-framework-verification', label: 'Live framework verification' },
           ],
         },
         {

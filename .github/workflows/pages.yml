@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  AGENTCTL_COMMIT: "f3181f93afac7546f01923491f77dabdf26b5ace"
+  AGENTCTL_COMMIT: "736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47"
   NODE_VERSION: "24.4.1"
   PNPM_VERSION: "11.9.0"
   RUST_TOOLCHAIN: "1.88.0"
@@ -31,6 +31,8 @@ jobs:
       - name: Check out Pages source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
           path: site
 
       - name: Check out canonical agentctl source
@@ -38,6 +40,7 @@ jobs:
         with:
           repository: opensourceops/agentctl
           ref: ${{ env.AGENTCTL_COMMIT }}
+          persist-credentials: false
           path: agentctl
 
       - name: Install pinned Node.js
@@ -62,6 +65,20 @@ jobs:
         env:
           AGENTCTL_REPO: ${{ github.workspace }}/agentctl
         run: pnpm verify:agentctl
+
+      - name: Upload validated pull-request artifact
+        if: github.event_name == 'pull_request'
+        id: validation_artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: agentctl-pages-validation
+          path: site/_site
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Record validation artifact digest
+        if: github.event_name == 'pull_request'
+        run: echo "agentctl-pages-validation artifact digest ${{ steps.validation_artifact.outputs.artifact-digest }}" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'

@@ -15,7 +15,7 @@ flowchart LR
   accDescr: A workflow author uses the CLI, which joins deterministic core contracts to runtime providers, protocols, executors, tracing, and SQLite.
   User[Workflow author or operator] --> CLI[agentctl CLI]
   CLI --> Core[Core parser compiler policy state]
-  CLI --> Runtime[Sequential runtime]
+  CLI --> Runtime[Bounded deterministic runtime]
   Runtime --> Store[SQLite store]
   Runtime --> Providers[Native model providers]
   Runtime --> Protocols[MCP and A2A clients]
@@ -51,9 +51,9 @@ A normal run moves through durable states and ends in one terminal result or a d
 flowchart TD
   accTitle: Run lifecycle
   accDescr: A run creates durable records, executes ready tasks, persists results, and reaches success, approval, failure, or cancellation.
-  Create[Create run and task records] --> Ready[Find next ready task]
-  Ready --> Execute[Execute action or bounded agent]
-  Execute --> Persist[Commit task output checkpoint and audit]
+  Create[Create run and task records] --> Ready[Select stable ready batch]
+  Ready --> Execute[Execute independent tasks]
+  Execute --> Persist[Commit ordered batch checkpoint and audit]
   Persist --> More{More ready tasks?}
   More -->|Yes| Ready
   More -->|No| Success[Succeeded]
@@ -61,7 +61,9 @@ flowchart TD
   Execute --> Failure[Failed or cancelled]
 ```
 
-The current scheduler runs one ready task at a time in declaration order. A pending approval is non-terminal and can later resume.
+The scheduler selects up to `maxConcurrency` ready tasks in declaration order.
+Every task reads a durable isolated snapshot. Results commit atomically in plan
+order. A pending approval is non-terminal and can later resume.
 
 ## Runtime state machine
 
@@ -145,6 +147,26 @@ flowchart LR
 ```
 
 Replay reports historical truth. It does not observe current files, rerun verification, or contact a provider.
+
+## Selective repair flow
+
+Selective repair is a new source-linked run. It is distinct from both effect-free recorded replay and broad fresh fork execution.
+
+```mermaid
+flowchart LR
+  accTitle: Selective repair flow
+  accDescr: Repair verifies successful upstream task boundaries, materializes compatible outputs and state, and executes selected roots and descendants from a target workflow.
+  Source[Terminal source run] --> Plan[Effect-free compatibility plan]
+  Target[Target workflow] --> Plan
+  Plan --> Reuse[Materialize compatible upstream tasks]
+  Plan --> Fresh[Execute roots and descendants]
+  Reuse --> Boundary[Reconstructed task-boundary state]
+  Boundary --> Fresh
+  Fresh --> Repair[New repair run and trace]
+  Source -. remains immutable .-> Repair
+```
+
+The detailed failed-run, plan, reuse, invalidation, lineage, and effect-safety diagrams are in [Repair a failed workflow](/agentctl/guides/selective-repair/).
 
 ## Fork or rerun flow
 
@@ -291,4 +313,4 @@ flowchart TD
 ```
 
 `agentctl-core` has no dependency on HTTP, SQLite, CLI parsing, or concrete executor types. `xtask` drives the built CLI for generation and acceptance.
-> Canonical source: [`docs/architecture/DIAGRAMS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/architecture/DIAGRAMS.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/architecture/DIAGRAMS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/architecture/DIAGRAMS.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

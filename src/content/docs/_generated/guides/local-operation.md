@@ -3,7 +3,7 @@ title: "Local operation"
 description: "Manage paths, state, outputs, interruption, recovery, and retention."
 editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/guides/LOCAL_OPERATION.md"
 ---
-Use explicit paths and retain the database whenever you may need inspection, approval, resume, replay, or audit evidence.
+Use explicit paths and retain the database whenever you may need inspection, approval, resume, replay, repair, or audit evidence.
 
 ## Default and custom paths
 
@@ -22,7 +22,9 @@ This writes the SQLite database and any declared artifacts. Network calls occur 
 
 Human output is for terminals. `--output json --color never` emits one versioned final document on stdout; an error uses the same envelope shape on stderr. Exit codes distinguish success, validation, policy or approval, run failure, persistence, remote failure, and cancellation.
 
-JSONL progress output is not supported in this release. Use durable audit and trace records for event-level inspection.
+`--output jsonl` emits durable provider stream events followed by the final
+outcome. Human stream progress uses stderr. Use `--output json` when an
+automation requires exactly one final document.
 
 ## Interrupt safely
 
@@ -37,14 +39,15 @@ agentctl approvals list RUN_ID --db /var/lib/agentctl/runtime.db --output json -
 
 Use the run ID and trace ID when correlating logs. Treat database output as sensitive because prompts, file content, tool output, and remote artifacts may be present even when secret values were redacted.
 
-## Resume, replay, retry, and fork
+## Resume, replay, retry, repair, and fork
 
 - Resume continues the same non-terminal run and reuses confirmed effects.
 - Retry is bounded within a task and never guesses about an ambiguous effect.
 - Recorded replay creates a new record from terminal stored results and calls no executor.
+- Repair creates a new source-linked run, reuses only compatible successful tasks before selected roots, and executes every root and descendant from a supplied target workflow.
 - Fork creates a new child run and permits fresh effects.
 
-Do not use these terms interchangeably. Read [Durable execution](/agentctl/durable-execution/) before recovering a workflow that may have changed an external system.
+Do not use these terms interchangeably. Read [Durable execution](/agentctl/durable-execution/) before recovering a workflow that may have changed an external system. For a corrected terminal workflow, follow [Repair a failed workflow](/agentctl/guides/selective-repair/).
 
 ## Resolve an approval
 
@@ -70,4 +73,4 @@ agentctl gc --db .agentctl/runtime.db --older-than-days 30 --output json --color
 ```
 
 Garbage collection deletes eligible terminal history and expired long-term memory. Back up before deletion when the history is audit evidence.
-> Canonical source: [`docs/guides/LOCAL_OPERATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/LOCAL_OPERATION.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/guides/LOCAL_OPERATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/LOCAL_OPERATION.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

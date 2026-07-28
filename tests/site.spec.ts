@@ -55,7 +55,7 @@ test('Mermaid diagrams render without client errors', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/agentctl/architecture/diagrams/');
-  await expect(page.locator('pre.mermaid svg')).toHaveCount(14, { timeout: 20_000 });
+  await expect(page.locator('pre.mermaid svg')).toHaveCount(15, { timeout: 20_000 });
   await expect(page.locator('.error-icon')).toHaveCount(0);
   expect(errors).toEqual([]);
 });

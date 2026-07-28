@@ -57,9 +57,11 @@ The default exits `0` with verdict `pass`. Run with `--input checksPassed=false`
 
 ## State and security
 
-Use ordinary typed inputs for non-secret gate evidence. Inject provider secrets only by environment reference. Archive the database on failure only when its potentially confidential content is protected.
+Use ordinary typed inputs for non-secret gate evidence. Inject provider secrets
+only through typed environment or mounted-file references. Archive the database
+on failure only when its potentially confidential content is protected.
 
 ## Current limitation
 
 This workflow does not run tests itself. A surrounding pipeline can supply results, or a reviewed `builtin.shell.exec` action can run a specifically allowed executable.
-> Canonical source: [`docs/use-cases/CI_QUALITY_GATE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/CI_QUALITY_GATE.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/use-cases/CI_QUALITY_GATE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/CI_QUALITY_GATE.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

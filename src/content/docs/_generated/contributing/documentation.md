@@ -18,7 +18,9 @@ Place public journeys in `examples/docs/` with a README entry, provider classifi
 - Use sentence-case headings, active voice, short paragraphs, and descriptive links.
 - State the working directory, writes, credentials, and network effect for commands.
 - Use exact commands and complete valid YAML.
-- Distinguish implemented, deterministic, mock-tested, live evidence, hosted configuration, hosted execution, and deferred work.
+- Distinguish implemented, deterministic, mock-tested, live evidence, hosted
+  configuration, hosted execution, and functionality outside the supported
+  surface.
 - Never use an em dash in public copy.
 - Avoid hype, generic AI claims, and unsupported maturity language.
 - Explain every Mermaid diagram before and after it.
@@ -42,4 +44,4 @@ The site command imports canonical content, records the source commit, validates
 ## Review
 
 Review technical claims against source, generated help, schema, tests, and evidence. Check keyboard navigation, heading order, link purpose, alt text, diagram explanations, mobile code blocks, and direct deep links. Do not claim accessibility certification from automated tooling alone.
-> Canonical source: [`docs/development/DOCUMENTATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/DOCUMENTATION.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/development/DOCUMENTATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/DOCUMENTATION.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

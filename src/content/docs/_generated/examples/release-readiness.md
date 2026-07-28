@@ -81,4 +81,4 @@ The database records which gate failed and whether the analysis task started. A 
 ## Current limitation
 
 The example uses the fake provider. It demonstrates graph and policy behavior, not a live model quality claim or a release approval system.
-> Canonical source: [`docs/use-cases/RELEASE_READINESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/RELEASE_READINESS.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/use-cases/RELEASE_READINESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/RELEASE_READINESS.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

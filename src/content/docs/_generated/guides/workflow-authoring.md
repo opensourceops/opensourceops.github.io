@@ -88,6 +88,8 @@ agents:
 
 The model does not own the graph, policy, or persistence.
 
+When an agent result feeds another task, declare `structuredOutput` as a JSON Schema. It becomes the task's durable output contract and lets selective repair verify and reuse the result. A task-level `outputSchema` is available when the complete task contract must differ from the agent or action default.
+
 ## 7. Define tool contracts
 
 A model sees only tools listed on its agent. Each tool requires strict input and output schema, capability, risk, effect class, idempotency, retry safety, timeout, and approval requirement. Runtime policy makes the final authorization decision.
@@ -111,7 +113,7 @@ Start with the minimum grant. Add a host, writable root, executable, or secret n
 
 ## 10. Plan for state and recovery
 
-Choose an explicit database path for scheduled or CI runs. A confirmed effect can be reused during resume. An effect that started without a confirmed result becomes uncertain and stops automatic recovery. Recorded replay calls no executor. Fork intentionally permits fresh effects.
+Choose an explicit database path for scheduled or CI runs. A confirmed effect can be reused during resume. An effect that started without a confirmed result becomes uncertain and stops automatic recovery. Recorded replay calls no executor. Repair can reuse compatible successful task boundaries and execute a corrected suffix. Fork intentionally permits a broader fresh execution.
 
 ## Validate your workflow
 
@@ -124,4 +126,4 @@ agentctl run workflow.yaml --check --diff --db .agentctl/preview.db
 ```
 
 The preview may write run history to its database, but it does not perform filesystem, process, remote, or model mutation. Read [Workflow DSL](/agentctl/concepts/workflow-model/) and the [YAML reference](/agentctl/reference/yaml/) for the complete contract.
-> Canonical source: [`docs/guides/WORKFLOW_AUTHORING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/WORKFLOW_AUTHORING.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/guides/WORKFLOW_AUTHORING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/WORKFLOW_AUTHORING.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

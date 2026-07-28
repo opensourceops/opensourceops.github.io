@@ -11,7 +11,7 @@ The production implementation is a Rust workspace. The remaining top-level TypeS
 | --- | --- |
 | `agentctl-core` | strict DSL, migration, compiler, templates, state, effects, policy, provider and tool contracts |
 | `agentctl-store` | versioned SQLite persistence, migrations, checkpoints, approvals, audit, trace, sessions, tool calls, memory |
-| `agentctl-runtime` | sequential scheduler, actions, bounded agent loop, resume, replay, fork, cancellation |
+| `agentctl-runtime` | bounded deterministic scheduler, actions, bounded agent loop, resume, replay, fork, cancellation |
 | `agentctl-providers` | native OpenAI, Azure OpenAI, Anthropic, Google, and fake adapters |
 | `agentctl-protocols` | MCP and A2A clients |
 | `agentctl-observability` | typed events, test sink, and OpenTelemetry bridge |
@@ -64,4 +64,4 @@ Provider adapters implement the neutral model contract and publish typed capabil
 Run `cargo xtask generate` whenever CLI help or the DSL changes. Run `cargo xtask docs-verify` for public content and examples. Update the Pages site's content manifest when adding a new canonical public page. Release decisions depend on hosted evidence for the exact candidate commit; local success alone does not approve an RC.
 
 Related guides: [Add an action](/agentctl/contributing/add-action/), [Add a provider](/agentctl/contributing/add-provider/), [Add a store migration](/agentctl/contributing/add-migration/), [Write documentation](/agentctl/contributing/documentation/), [Testing](/agentctl/contributing/testing/), and [Release process](/agentctl/contributing/release/).
-> Canonical source: [`docs/development/REPOSITORY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/REPOSITORY.md). Verified against agentctl commit `f3181f93afac7546f01923491f77dabdf26b5ace`.
+> Canonical source: [`docs/development/REPOSITORY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/REPOSITORY.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
