@@ -90,4 +90,4 @@ budgets](https://github.com/opensourceops/agentctl/blob/main/docs/guides/RESOURC
 The parser translates a limited unversioned `playbook:` document and emits a migration warning. Use `agentctl migrate old.yaml --write new.yaml`. Legacy pack-backed, MCP, A2A, provider-specific, and broad module configurations need manual migration; see [Migrating from TypeScript](/agentctl/reference/migration/).
 
 Not implemented in v1alpha1: `finally`, handlers, or event triggers. Parallelism is expressed by independent graph tasks rather than a separate parallel-group construct.
-> Canonical source: [`docs/DSL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/DSL.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+> Canonical source: [`docs/DSL.md`](https://github.com/opensourceops/agentctl/blob/main/docs/DSL.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

@@ -356,7 +356,8 @@ markers.
 The exact retained GPT-5.6 live database had previously replayed with no
 credential and no network, identical output and artifact digest, zero fresh
 effects/tool calls/provider sessions, and explicit source-effect audit links.
-GitHub, GitLab, Jenkins, Harness, and Kubernetes examples remain
-documentation-reviewed only; the automatic Ubuntu Linux x64 build, scan, and
-SBOM job is locally linted but has not been dispatched.
-> Canonical source: [`docs/CONTAINER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTAINER.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+GitLab, Jenkins, Harness, and Kubernetes examples remain
+documentation-reviewed only. The automatic Ubuntu Linux x64 build, scan, and
+SBOM job passed on the exact pull-request head and retained its image SBOM
+artifact and digest.
+> Canonical source: [`docs/CONTAINER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTAINER.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

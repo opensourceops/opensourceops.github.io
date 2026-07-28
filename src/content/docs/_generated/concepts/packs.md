@@ -121,4 +121,4 @@ bundles, identity policy, unsigned process denial, and dependency reachability.
 Packaged acceptance scenario 42 verifies the checked-in transitive example,
 locks an extension pack, proves that its process cannot start before explicit
 trust authorization, executes it once, and replays without another invocation.
-> Canonical source: [`docs/PACKS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/PACKS.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+> Canonical source: [`docs/PACKS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/PACKS.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

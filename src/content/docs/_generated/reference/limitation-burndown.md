@@ -942,4 +942,4 @@ Recorded on 2026-07-23 before framework-completeness implementation:
   OCI binary, acceptance failed with exit 3 because
   `/artifacts/report.txt` escaped the authorized workspace root. No credential
   was supplied and no OpenAI call occurred.
-> Canonical source: [`docs/execution/LIMITATION_BURNDOWN.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/LIMITATION_BURNDOWN.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+> Canonical source: [`docs/execution/LIMITATION_BURNDOWN.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/LIMITATION_BURNDOWN.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

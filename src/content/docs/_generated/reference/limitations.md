@@ -144,4 +144,4 @@ These are extension points, not incomplete core runtime behavior:
   vulnerability scan, and image SBOM run on Linux x64 and are labeled
   separately from that local evidence.
 - GitHub runner availability, organization action policy, branch protection, and required-check configuration are repository-owner operations and cannot be proven by repository-local lint.
-> Canonical source: [`docs/LIMITATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/LIMITATIONS.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+> Canonical source: [`docs/LIMITATIONS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/LIMITATIONS.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

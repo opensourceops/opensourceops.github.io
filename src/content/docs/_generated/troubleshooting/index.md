@@ -177,9 +177,12 @@ and do not weaken TLS to make the probe pass.
 
 **Symptom:** A workspace or database path parses differently from a Unix example.
 
-**Resolve:** Use native absolute paths and quote paths with spaces. Windows cannot express Unix database mode bits, so rely on the user profile ACL. Hosted Windows evidence is configured but still pending for the current candidate.
+**Resolve:** Use native absolute paths and quote paths with spaces. Windows
+cannot express Unix database mode bits, so rely on the user profile ACL. The
+exact-head hosted Windows verification, acceptance, completeness, and package
+gates pass for the current candidate.
 
 ## Safe issue report
 
 Include the exact `agentctl version`, operating system, redacted command, exit code, diagnostic code, workflow API version, minimal non-secret workflow, and relevant run/trace IDs. Share a narrow redacted `inspect` excerpt only when needed. Report security problems through the private process in [Security](/agentctl/security/), not a public issue.
-> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

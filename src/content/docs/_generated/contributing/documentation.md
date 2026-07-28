@@ -44,4 +44,4 @@ The site command imports canonical content, records the source commit, validates
 ## Review
 
 Review technical claims against source, generated help, schema, tests, and evidence. Check keyboard navigation, heading order, link purpose, alt text, diagram explanations, mobile code blocks, and direct deep links. Do not claim accessibility certification from automated tooling alone.
-> Canonical source: [`docs/development/DOCUMENTATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/DOCUMENTATION.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+> Canonical source: [`docs/development/DOCUMENTATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/DOCUMENTATION.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.

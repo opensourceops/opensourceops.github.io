@@ -33,7 +33,14 @@ cargo install cargo-fuzz
 cargo fuzz run workflow_yaml -- -max_total_time=60
 ```
 
-The local hosted-CI configuration runs the canonical suite, credential-free acceptance, and packaging on Rust 1.88 for Linux x64, macOS arm64, and Windows x64. Separate automatic jobs cover the Linux x64 container, current vulnerability scan, two CycloneDX SBOM artifacts, complete-history/tree secret scans, dependency policy, and workflow lint. The workflows are locally linted but have not been pushed or dispatched, so this is configured evidence rather than validated hosted-platform support. Provider/protocol conformance uses local mock HTTP servers. Normal examples are deterministic; MCP/A2A runtime behavior is covered by mocks rather than requiring a background service.
+Hosted CI runs the canonical suite, credential-free acceptance, and packaging
+on Rust 1.88 for Linux x64, macOS arm64, and Windows x64. Separate automatic
+jobs cover the Linux x64 container, current vulnerability scan, two CycloneDX
+SBOM artifacts, complete-history/tree secret scans, dependency policy, and
+workflow lint. Exact-head pull-request and release-preparation runs provide
+validated hosted-platform evidence. Provider/protocol conformance uses local
+mock HTTP servers. Normal examples are deterministic; MCP/A2A runtime behavior
+is covered by mocks rather than requiring a background service.
 
 Live gates are separately invoked and described in [Providers](/agentctl/providers/).
 The original acceptance performs one tool-call/continuation journey locally
@@ -43,4 +50,4 @@ dispatch, then proves that the next requested effect is denied.
 including the failed two-agent source, selective repair, and keyless replay,
 with a 40-request and conservative USD 10 guard. Never run these commands for
 debugging loops, fuzzing, load, or normal CI.
-> Canonical source: [`docs/TESTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TESTING.md). Verified against agentctl commit `cca8f2f98401bb0b0b4c484aedde11dcc37d99c5`.
+> Canonical source: [`docs/TESTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TESTING.md). Verified against agentctl commit `736379ed5f49b0dbe1ad79ac4e4ba794e2c73c47`.
