@@ -20,6 +20,9 @@ if (!pinnedCommit) {
 } else if (pinnedCommit !== source.commit) {
   errors.push(`AGENTCTL_COMMIT ${pinnedCommit} does not match synchronized source ${source.commit}`);
 }
+if (source.dirty !== false) {
+  errors.push('final verification requires a clean framework checkout; commit source changes and synchronize again');
+}
 if (!workflow.includes('ref: ${{ github.event.pull_request.head.sha || github.sha }}')) {
   errors.push('Pages source checkout must select the exact pull-request head or event revision');
 }

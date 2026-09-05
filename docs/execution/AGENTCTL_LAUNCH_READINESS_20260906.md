@@ -22,6 +22,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 - Preserve exact source provenance in synchronized JSON, expanded with a manifest of source paths, public routes, and SHA-256 digests of generated Markdown including expanded examples and rewritten assets/links.
 - Extend the artifact gate to verify complete metadata coverage, content digests, generated routes, metadata copy equality, and absence of the removed phrase in all built HTML.
 - Document reviewed generated-file staging and paired framework/workflow pins so intentional updates can pass the existing strict freshness gate.
+- Require clean framework metadata in the workflow gate: a matching commit ID alone cannot establish final source provenance when local changes were imported. Preview builds remain available for dirty checkouts.
 - Retain historical execution documents with their original dates; point repository onboarding to this continuation ledger.
 
 ## Incremental verification
