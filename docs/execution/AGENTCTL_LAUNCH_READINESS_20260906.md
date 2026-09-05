@@ -5,7 +5,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 ## Scope and starting state
 
 - Site: `codex/agentctl-launch-docs-20260906`, starting commit `b1484ef7cc073e6cc756a5eca37a7ff3f6144cee`.
-- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; current source pin `0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494`.
+- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; current source pin `db7b59b63332dff2c2714e49196185402b5a46d4`.
 - No repository or ancestor `AGENTS.md` was found in the inspected checkout.
 - Authorized scope: importer, internal provenance, documentation onboarding, exact-checkout synchronization, build, and browser validation. No deployment, release, or organization settings changes.
 - Runtime: Node 26.0.0; repository pnpm 11.9.0 invoked with `npx --yes pnpm@11.9.0` because Corepack is unavailable. Frozen-lockfile installation and Playwright Chromium installation passed without changing the dependency lockfile.
@@ -128,7 +128,7 @@ links, anchors, reachability, source metadata, and all 64 imported digests.
 Its content-manifest SHA-256 is
 `f339efafe197de8cefed8e2dcadf8b3059d9e20406bcfc87b36ffab239283037`.
 
-## Current integration: 0eef26a
+## Integration checkpoint: 0eef26a
 
 The new clean framework source is
 `0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494`. Import the revised testing guide
@@ -146,3 +146,29 @@ running the full paired gate, then verify the uploaded artifact again.
 - All 53 required browser cases passed in 42.8 seconds; the existing duplicate mobile-search case remains the only skip. This includes accessibility and actual keyboard table scrolling.
 - Local artifact: 280 files; sorted content-manifest SHA-256 `a2528a07205900e498fb2304143b150d814d19bb4289d8defc3174d52b7c9392`.
 - This following ledger update is evidence-only. Hosted validation and downloaded ZIP verification remain required for this latest pin; previous complete checkpoints are recorded above.
+
+## Verified hosted artifact: 0eef26a
+
+[Hosted run 33997148424](https://github.com/opensourceops/opensourceops.github.io/actions/runs/33997148424)
+passed at site head `e8a8ca7d9c50d5a08f2c693e04fa489ac731b527`; deployment was
+skipped. Downloaded artifact `9978449534` matched ZIP SHA-256
+`c4451ea0d1b68529518076e81c9fc4412b119c06592a61514752d700ca7615a1`.
+Its 280 files include `.nojekyll`; the real artifact checker passed against the
+extracted ZIP, including all 73 HTML pages and 64 imported content digests.
+Hosted content-manifest SHA-256:
+`64d1595cd7ad5eb2812e9de5c998ba7af5f365b0449e4ecc21a572a9b9909152`.
+
+## Final candidate integration: db7b59b
+
+Pin the clean final framework code commit
+`db7b59b63332dff2c2714e49196185402b5a46d4`, including its Windows source-path
+hardening, fixture portability/schema fixes, and updated limitation review.
+Commit the synchronized site source before the full paired gate, preserve its
+code SHA separately from later evidence-only commits, and verify the actual
+uploaded ZIP. No framework files or deployment settings are changed by this
+site work.
+
+Later evidence-only updates to the framework feature matrix, execution ledger,
+example verification matrix, or DevOps `validation.json` do not change imported
+content. Retain the final code pin instead of creating another metadata-only
+pin loop; if needed, verify using a clean checkout at that pinned commit.

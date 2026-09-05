@@ -2,7 +2,7 @@
   "product": "agentctl",
   "version": "0.3.0",
   "workflowApi": "agentctl.dev/v1",
-  "commit": "0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494",
+  "commit": "db7b59b63332dff2c2714e49196185402b5a46d4",
   "dirty": false,
   "sourceRepository": "https://github.com/opensourceops/agentctl",
   "importedFiles": 64,
@@ -215,7 +215,7 @@
     {
       "source": "docs/execution/LAUNCH_LIMITATION_REVIEW.md",
       "route": "/agentctl/reference/launch-limitation-review/",
-      "contentSha256": "69a27523bcd44b9144898c6d896f2c4cfab80dcdcb2504f7aa0b72944afb8862"
+      "contentSha256": "b5dbc8598210b2a6a11b3baa79f11a048c947cd9cd49a103cd92d30b2dc8b0e5"
     },
     {
       "source": "docs/execution/LIMITATION_BURNDOWN.md",

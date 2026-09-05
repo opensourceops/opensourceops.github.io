@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  AGENTCTL_COMMIT: "0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494"
+  AGENTCTL_COMMIT: "db7b59b63332dff2c2714e49196185402b5a46d4"
   NODE_VERSION: "24.4.1"
   PNPM_VERSION: "11.9.0"
   RUST_TOOLCHAIN: "1.88.0"
