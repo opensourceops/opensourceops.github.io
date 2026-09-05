@@ -5,7 +5,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 ## Scope and starting state
 
 - Site: `codex/agentctl-launch-docs-20260906`, starting commit `b1484ef7cc073e6cc756a5eca37a7ff3f6144cee`.
-- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; current source pin `db7b59b63332dff2c2714e49196185402b5a46d4`.
+- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; current source pin `ce94443a6b0a840eb9cd0e5f5b2e128dfe8f15c8`.
 - No repository or ancestor `AGENTS.md` was found in the inspected checkout.
 - Authorized scope: importer, internal provenance, documentation onboarding, exact-checkout synchronization, build, and browser validation. No deployment, release, or organization settings changes.
 - Runtime: Node 26.0.0; repository pnpm 11.9.0 invoked with `npx --yes pnpm@11.9.0` because Corepack is unavailable. Frozen-lockfile installation and Playwright Chromium installation passed without changing the dependency lockfile.
@@ -158,7 +158,7 @@ extracted ZIP, including all 73 HTML pages and 64 imported content digests.
 Hosted content-manifest SHA-256:
 `64d1595cd7ad5eb2812e9de5c998ba7af5f365b0449e4ecc21a572a9b9909152`.
 
-## Final candidate integration: db7b59b
+## Candidate checkpoint: db7b59b
 
 Pin the clean final framework code commit
 `db7b59b63332dff2c2714e49196185402b5a46d4`, including its Windows source-path
@@ -172,3 +172,24 @@ Later evidence-only updates to the framework feature matrix, execution ledger,
 example verification matrix, or DevOps `validation.json` do not change imported
 content. Retain the final code pin instead of creating another metadata-only
 pin loop; if needed, verify using a clean checkout at that pinned commit.
+
+## Retained local checkpoint: db7b59b
+
+The full paired gate passed at clean documentation code
+`5f0cd561ae06b0da16fcc9c28efbbcc5836c5f60`: 64 imports, 73 HTML pages, all source
+freshness/link/anchor/search/Mermaid/accessibility checks, and 53 browser passes
+in 43.8 seconds. The only skip was the existing duplicate mobile search case.
+The local 280-file artifact's content-manifest SHA-256 was
+`9d413cd3b08a1be1110747f518e789c61a62fdce301ec37c3ac47e58593ecf0e`.
+This checkpoint was deliberately not pushed while the final remediation
+schema and Windows fixture cleanup fixes were prepared. It is local evidence,
+not a hosted result for that source.
+
+## Final candidate integration: ce94443
+
+Pin clean framework code `ce94443a6b0a840eb9cd0e5f5b2e128dfe8f15c8`, including
+the completed source-path security fixes, remediation schema correction, and
+owned SQLite-handle cleanup. Synchronize the updated limitation review before
+committing the site code under test and running the full paired gate. Keep
+later evidence-only framework commits separate from this code pin. Site work
+makes no provider requests and does not modify framework files or deploy.
