@@ -5,7 +5,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 ## Scope and starting state
 
 - Site: `codex/agentctl-launch-docs-20260906`, starting commit `b1484ef7cc073e6cc756a5eca37a7ff3f6144cee`.
-- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; current source pin `29429de051cbc9ad0e47fff8a35f260d07daccdf`.
+- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; current source pin `0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494`.
 - No repository or ancestor `AGENTS.md` was found in the inspected checkout.
 - Authorized scope: importer, internal provenance, documentation onboarding, exact-checkout synchronization, build, and browser validation. No deployment, release, or organization settings changes.
 - Runtime: Node 26.0.0; repository pnpm 11.9.0 invoked with `npx --yes pnpm@11.9.0` because Corepack is unavailable. Frozen-lockfile installation and Playwright Chromium installation passed without changing the dependency lockfile.
@@ -77,8 +77,7 @@ Playwright covers direct routes/reload, navigation, workflow copy, provenance fo
 
 ## Review and remaining evidence
 
-The local documentation gate passes for the paired source. Push the task branch
-and open a draft pull request linked to framework PR 7; inspect its
+The local documentation gate passes for the paired source. [Documentation draft PR 6](https://github.com/opensourceops/opensourceops.github.io/pull/6) is open and linked to framework PR 7; inspect the latest exact-source
 credential-free hosted validation and artifact before review. Do not dispatch
 Pages manually, merge, or deploy. Hosted results are recorded on the draft PR
 and in the primary framework execution ledger. Framework release readiness
@@ -116,3 +115,25 @@ claiming the final documentation artifact is complete.
 - Browser results: 53 passed in 43.6 seconds, with the same one existing duplicate mobile search skip. No assertions or required gates were removed.
 - Local artifact: 280 files; sorted content-manifest SHA-256 `068c41ff0e7d0c3f9643f704f83eaca0d7d182066e72ddb639093243c9e4d831`. The earlier source's manifest and results remain retained separately.
 - The following commit only records this evidence. Hosted validation and downloaded ZIP completeness must be observed at the corrected source before concluding the documentation artifact gate.
+
+## Verified hosted artifact: 29429de
+
+Hosted [run 33995829784](https://github.com/opensourceops/opensourceops.github.io/actions/runs/33995829784)
+passed at site head `afa5f5315a3200dd2310db52a995dbfd36a719d7` with deployment
+skipped. Downloaded artifact `9978067719` matched ZIP SHA-256
+`c9be9336cf62aa3b6155d409bb9f8f2ec5de9dfb58db6b36279174a137e1a2fc`.
+The corrected ZIP contains all 280 files, including `.nojekyll`. The actual
+artifact checker passed against its extracted contents: 73 HTML pages,
+links, anchors, reachability, source metadata, and all 64 imported digests.
+Its content-manifest SHA-256 is
+`f339efafe197de8cefed8e2dcadf8b3059d9e20406bcfc87b36ffab239283037`.
+
+## Current integration: 0eef26a
+
+The new clean framework source is
+`0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494`. Import the revised testing guide
+with its explicitly labeled composite live continuation and preserve the
+distinction between that subset and a complete legacy live inventory. Prior
+Astra and independent Sol evidence remains identified by the framework ledger;
+site validation makes no paid provider requests. Commit this source pin before
+running the full paired gate, then verify the uploaded artifact again.

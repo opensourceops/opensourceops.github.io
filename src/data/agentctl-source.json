@@ -2,7 +2,7 @@
   "product": "agentctl",
   "version": "0.3.0",
   "workflowApi": "agentctl.dev/v1",
-  "commit": "29429de051cbc9ad0e47fff8a35f260d07daccdf",
+  "commit": "0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494",
   "dirty": false,
   "sourceRepository": "https://github.com/opensourceops/agentctl",
   "importedFiles": 64,
@@ -140,7 +140,7 @@
     {
       "source": "examples/devops/README.md",
       "route": "/agentctl/examples/devops/",
-      "contentSha256": "3512bc72482fc537f729f92ea49e3d213fe76325f441df924a4ceb4775b06ee0"
+      "contentSha256": "ea2e81be3ae2b9c4fa32bef0907b0665ff0a3c81045787521e4668d898bd2274"
     },
     {
       "source": "docs/use-cases/RELEASE_READINESS.md",
@@ -320,7 +320,7 @@
     {
       "source": "docs/TESTING.md",
       "route": "/agentctl/contributing/testing/",
-      "contentSha256": "5a7ac1bf6d4287c26262cd729f090c0f85e8bcf83212e1b78f53c0778b55e6c2"
+      "contentSha256": "8fb7323aac40d18b16d1df4b1d944a1232a65a96a9f2aeb34ea490bfe8a539aa"
     },
     {
       "source": "docs/RELEASE_PROCESS.md",
