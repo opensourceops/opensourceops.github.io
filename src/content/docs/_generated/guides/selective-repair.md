@@ -197,4 +197,3 @@ Recorded replay has a new replay run ID but the same semantic outputs. It dispat
 | `unreconciled_effect` | Fresh execution may duplicate a mutation. | Inspect and reconcile external reality first. |
 
 Use [`agentctl retry`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TERMINAL_RETRY.md) instead when the workflow definition is unchanged and the intent is to rerun failed or explicitly selected boundaries of a terminal source. Use repair for a corrected definition and fork for a broader intentionally fresh execution.
-> Canonical source: [`docs/guides/repair-a-failed-workflow.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/repair-a-failed-workflow.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

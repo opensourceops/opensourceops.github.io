@@ -80,4 +80,3 @@ For the candidate workflow run:
 Promote an exact commit only after it has all required hosted checks and
 artifacts. Shipping workflow API `agentctl.dev/v1` does not imply a 1.0 CLI,
 crate, storage, provider, or long-term-support contract.
-> Canonical source: [`docs/RELEASE_PROCESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/RELEASE_PROCESS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

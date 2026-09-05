@@ -2,8 +2,330 @@
   "product": "agentctl",
   "version": "0.3.0",
   "workflowApi": "agentctl.dev/v1",
-  "commit": "2aeaa88fba71162206b5f08f5bda4f0150247e4f",
+  "commit": "266eb44360886aa3019e5d42eb9cd28d26f97246",
   "dirty": false,
   "sourceRepository": "https://github.com/opensourceops/agentctl",
-  "importedFiles": 61
+  "importedFiles": 64,
+  "imports": [
+    {
+      "source": "docs/PRODUCT.md",
+      "route": "/agentctl/concepts/product/",
+      "contentSha256": "08a9ce907d8baa16d6231d0e136301a0752d14eb56f5eb7d25a156ad3cb7c1db"
+    },
+    {
+      "source": "docs/execution/FRAMEWORK_COMPLETENESS.md",
+      "route": "/agentctl/concepts/framework-completeness/",
+      "contentSha256": "fc02da198a4ad6327012d242ecac737aaa1539f678e189bc2e2f76ffed595afa"
+    },
+    {
+      "source": "docs/DSL.md",
+      "route": "/agentctl/concepts/workflow-model/",
+      "contentSha256": "ff7da569247140493b8f048f2e9eadf86306d1346685c53b313a23c786fde7fa"
+    },
+    {
+      "source": "docs/VARIABLES.md",
+      "route": "/agentctl/guides/variables/",
+      "contentSha256": "78b25e1c0e0aca9e2024a6239b5bfa7cf31860beac1332e94b1ac2a86255290d"
+    },
+    {
+      "source": "docs/policies.md",
+      "route": "/agentctl/concepts/policies/",
+      "contentSha256": "c070705ef7b7986d66bc12499a1adccc6583805c33bde4828f32aa8608e51abc"
+    },
+    {
+      "source": "docs/TOOLS.md",
+      "route": "/agentctl/concepts/tools/",
+      "contentSha256": "fd47105a89f86c4b796876e72bb5ec4c29b790a6a33874336415c6c0ce0151a6"
+    },
+    {
+      "source": "docs/memory.md",
+      "route": "/agentctl/concepts/memory/",
+      "contentSha256": "eb7955c5295803ca8a51e9762242a17bc1859b95db40fa720b8cc3c4e079b105"
+    },
+    {
+      "source": "docs/PACKS.md",
+      "route": "/agentctl/concepts/packs/",
+      "contentSha256": "cecdc6ad384b3519d17ffaf7e2c0d6d8efed57f78a2856b518dff42054df2dbb"
+    },
+    {
+      "source": "docs/guides/INSTALLATION.md",
+      "route": "/agentctl/getting-started/installation/",
+      "contentSha256": "daa6afc1ea6711dfaccd7bafd8ac60ad111b14096826a554b9250049b8b032be"
+    },
+    {
+      "source": "docs/guides/GETTING_STARTED.md",
+      "route": "/agentctl/getting-started/",
+      "contentSha256": "cb6c0d0081aa17f45b57cf85708ddd64a81f9e0f9fbeef4ce98da4b2777b5be6"
+    },
+    {
+      "source": "docs/guides/FIRST_AGENT_WORKFLOW.md",
+      "route": "/agentctl/getting-started/first-agent/",
+      "contentSha256": "32170c890fb1c58514d073925cfe32ec5dd5fdd08a167f540faf57500f194947"
+    },
+    {
+      "source": "docs/guides/WORKFLOW_AUTHORING.md",
+      "route": "/agentctl/guides/workflow-authoring/",
+      "contentSha256": "adcb6ba030c8c27560de52b1371a363368d3f531448413c855e080c3acfbe4ea"
+    },
+    {
+      "source": "docs/guides/LOCAL_OPERATION.md",
+      "route": "/agentctl/guides/local-operation/",
+      "contentSha256": "942a99339c842dc21d6705490dd7e039bf1f3789b0cda194a766cdd3d05c20a0"
+    },
+    {
+      "source": "docs/guides/repair-a-failed-workflow.md",
+      "route": "/agentctl/guides/selective-repair/",
+      "contentSha256": "1c18a62e1c09b2538670e17c827040f9aa15887cd7aefa7b85cdc7b8b7392868"
+    },
+    {
+      "source": "docs/guides/CI_CD.md",
+      "route": "/agentctl/guides/ci-cd/",
+      "contentSha256": "b2be3f22c7d70c461d5833fe0372ef2632b5d17c519df605195d54040c15836d"
+    },
+    {
+      "source": "docs/CONTAINER.md",
+      "route": "/agentctl/guides/container/",
+      "contentSha256": "52fd3482aeb4bd306b13da3737f33fd2facea9a6ae06a36dc91d07a11e8781f7"
+    },
+    {
+      "source": "docs/OPERATIONS.md",
+      "route": "/agentctl/operations/scheduled/",
+      "contentSha256": "9dfcf31c1c94c4350f7ab74186567e5e5135f5706d50ebc17ce5b382cd54a8c7"
+    },
+    {
+      "source": "docs/DURABLE_EXECUTION.md",
+      "route": "/agentctl/durable-execution/",
+      "contentSha256": "543edff12e28cfafa0e2c0bb40087b1005ee923c356e199e83ba9c93f0ddb5c1"
+    },
+    {
+      "source": "docs/OBSERVABILITY.md",
+      "route": "/agentctl/observability/",
+      "contentSha256": "9f74c4192c826bdeeee4162c9163ad1349e09383035325713616ffebfcc26a23"
+    },
+    {
+      "source": "docs/PROVIDERS.md",
+      "route": "/agentctl/providers/",
+      "contentSha256": "3bd3feb58296d90e3623f0c7da5a931d201bdeea9c9229bc827d48deece0b1f8"
+    },
+    {
+      "source": "docs/MCP.md",
+      "route": "/agentctl/providers/mcp/",
+      "contentSha256": "e18569f7fda1c4135bcb3f2213d39b22c75f477d79495d9a18ffa96dc20be7f9"
+    },
+    {
+      "source": "docs/A2A.md",
+      "route": "/agentctl/providers/a2a/",
+      "contentSha256": "8940b520031f6ede892f581767f6624bdb28293c27b7dbc95be301333014dd70"
+    },
+    {
+      "source": "docs/SECURITY.md",
+      "route": "/agentctl/security/",
+      "contentSha256": "4be5cf185895fc9d38e68fda335de2a1ab6dc9772e1f9b7b7115a6d25c6d65d6"
+    },
+    {
+      "source": "docs/THREAT_MODEL.md",
+      "route": "/agentctl/security/threat-model/",
+      "contentSha256": "f451009fea0ecc9d23926c31051d3c2294c011337af0eebb5585197a646940ac"
+    },
+    {
+      "source": "docs/guides/TROUBLESHOOTING.md",
+      "route": "/agentctl/troubleshooting/",
+      "contentSha256": "9f717cd45a2d74702516bababe97b9f411a14e5a45d5aae1475decc6af6682cf"
+    },
+    {
+      "source": "docs/use-cases/REPOSITORY_AUDIT.md",
+      "route": "/agentctl/examples/repository-audit/",
+      "contentSha256": "ab44ba612913dc840ce091d397ea0912a8d0c64a18445372326b7edd1056154c"
+    },
+    {
+      "source": "examples/devops/README.md",
+      "route": "/agentctl/examples/devops/",
+      "contentSha256": "3512bc72482fc537f729f92ea49e3d213fe76325f441df924a4ceb4775b06ee0"
+    },
+    {
+      "source": "docs/use-cases/RELEASE_READINESS.md",
+      "route": "/agentctl/examples/release-readiness/",
+      "contentSha256": "89453869e6c260c0efe3c8a1d640aed1c3eb2cf5b44a059dca4fa31fde6feb92"
+    },
+    {
+      "source": "docs/use-cases/SCHEDULED_REVIEW.md",
+      "route": "/agentctl/examples/scheduled-review/",
+      "contentSha256": "e0bf6c04d21749e6326af6cc1376764d547c2af599815e63e4e25d2fd5152738"
+    },
+    {
+      "source": "docs/use-cases/CI_QUALITY_GATE.md",
+      "route": "/agentctl/examples/ci-quality-gate/",
+      "contentSha256": "4c1576584e39dcae6ebe80c0ad28d0da232f93c530f77ec11255e4f9dbe93d37"
+    },
+    {
+      "source": "docs/use-cases/APPROVAL_GATED_ACTION.md",
+      "route": "/agentctl/examples/approval-gated/",
+      "contentSha256": "653d5124fb662b37f06d902da64d1e481ad970004cec836586de445fb472cd56"
+    },
+    {
+      "source": "docs/use-cases/RECORDED_REPLAY.md",
+      "route": "/agentctl/examples/recorded-replay/",
+      "contentSha256": "902b5a6b440562e21a18377452a1e6b532dd42e066c21168748cf0590bd10bb8"
+    },
+    {
+      "source": "docs/use-cases/PROVIDER_PORTABILITY.md",
+      "route": "/agentctl/examples/provider-portability/",
+      "contentSha256": "09e54c0d4e0c201fc120848b57038dc23345d6e204faed2d611d542dcc697e0a"
+    },
+    {
+      "source": "docs/reference/YAML.md",
+      "route": "/agentctl/reference/yaml/",
+      "contentSha256": "94f746d5d7d654e1cb54e12ca680130c21252b90776efdf76c2fa79816b989a7"
+    },
+    {
+      "source": "docs/generated/CLI.md",
+      "route": "/agentctl/reference/cli/",
+      "contentSha256": "e6926413330683a19ede42f247c51278ec90531ea39e474c8bf21b6d579bb4c8"
+    },
+    {
+      "source": "docs/reference/CLI_OUTPUT.md",
+      "route": "/agentctl/reference/output/",
+      "contentSha256": "bdb2eb8e02097117397720fcb778f62a1d1be4a84eb12f281820213b9146b09a"
+    },
+    {
+      "source": "docs/reference/ENVIRONMENT_AND_PATHS.md",
+      "route": "/agentctl/reference/environment/",
+      "contentSha256": "5e20c8f648514c23e333f5b9332e731c9341995bfe3a03d845e150eb183d0f06"
+    },
+    {
+      "source": "docs/reference/MATRICES.md",
+      "route": "/agentctl/reference/capabilities/",
+      "contentSha256": "4cfa309b0776b1aea12a8bcea7f21ce017c251051113738165507c7450b143ed"
+    },
+    {
+      "source": "docs/reference/DATABASE.md",
+      "route": "/agentctl/reference/database/",
+      "contentSha256": "c35c0ca4aa8fe40208796e7b94564b5f36c1eca3a62742040af84b2205773203"
+    },
+    {
+      "source": "docs/reference/TERMINOLOGY.md",
+      "route": "/agentctl/reference/terminology/",
+      "contentSha256": "1fbac9ae8e68c2eacd5df80012dc8d770e9228d3ecfc0aa1a7a5bb7276b744f4"
+    },
+    {
+      "source": "docs/LIMITATIONS.md",
+      "route": "/agentctl/reference/limitations/",
+      "contentSha256": "670529dc688ab213a73df7be8bce82301a6d5aecb6d900b46648331767ad96c0"
+    },
+    {
+      "source": "docs/execution/LAUNCH_LIMITATION_REVIEW.md",
+      "route": "/agentctl/reference/launch-limitation-review/",
+      "contentSha256": "69a27523bcd44b9144898c6d896f2c4cfab80dcdcb2504f7aa0b72944afb8862"
+    },
+    {
+      "source": "docs/execution/LIMITATION_BURNDOWN.md",
+      "route": "/agentctl/reference/limitation-burndown/",
+      "contentSha256": "60551e4f94e877400b35263bbac7dc2cc7cc1a5cc9ca8ec52f7dcbc5a601419d"
+    },
+    {
+      "source": "docs/execution/COMPLETENESS_VERIFICATION.md",
+      "route": "/agentctl/reference/completeness-verification/",
+      "contentSha256": "3bd431b9740d7146ba63169d2f815d912e036b85c07540a6c5499a2fddec24c6"
+    },
+    {
+      "source": "docs/execution/LIVE_FRAMEWORK_VERIFICATION.md",
+      "route": "/agentctl/reference/live-framework-verification/",
+      "contentSha256": "1ef3cb5330822859e67dfd996c98d26bf9f0f67687861b07bb697c33ca982733"
+    },
+    {
+      "source": "docs/COMPATIBILITY.md",
+      "route": "/agentctl/reference/compatibility/",
+      "contentSha256": "51a78c48a0a272556e3ca52cffb1f2b5047c6b7334c0ae18a1d73973523f1ad1"
+    },
+    {
+      "source": "docs/MIGRATING_FROM_TYPESCRIPT.md",
+      "route": "/agentctl/reference/migration/",
+      "contentSha256": "e268b331af03a8d733ab63707447bed4073c1f90ed8b8d405a60fc5ebc9bd07b"
+    },
+    {
+      "source": "docs/ARCHITECTURE.md",
+      "route": "/agentctl/architecture/",
+      "contentSha256": "8e78086a85653e229a012e8d330f35d4f37786450df1a6efdaa6bd486d809c7e"
+    },
+    {
+      "source": "docs/architecture/DIAGRAMS.md",
+      "route": "/agentctl/architecture/diagrams/",
+      "contentSha256": "ac3f4a059d5501465dd035c27d02e24e95174f6a4bc3fad113f79530d44ca8ae"
+    },
+    {
+      "source": "docs/adr/0001-deterministic-core-explicit-effects.md",
+      "route": "/agentctl/architecture/decisions/0001/",
+      "contentSha256": "b146e1b91dc32ed5b17c8aa09aa5f3d2a4e288c635d342714d2851bb53cb3848"
+    },
+    {
+      "source": "docs/adr/0002-versioned-strict-workflow-envelope.md",
+      "route": "/agentctl/architecture/decisions/0002/",
+      "contentSha256": "33919ce2dacf836b311ec7aa096d5df5700e8dfd7895938015eb42ea66103b43"
+    },
+    {
+      "source": "docs/adr/0003-sqlite-history-and-conservative-recovery.md",
+      "route": "/agentctl/architecture/decisions/0003/",
+      "contentSha256": "7f1bc3e008d7e51f11272dea37f52243979ec61ebb2f618ba2932fe550fcdad2"
+    },
+    {
+      "source": "docs/adr/0004-native-provider-adapters.md",
+      "route": "/agentctl/architecture/decisions/0004/",
+      "contentSha256": "90ab9714f1b196859cff7b24d7a1187702f9a3d4ff0e5e1a7ce1485d1956e2e4"
+    },
+    {
+      "source": "docs/adr/0005-narrow-v1-scheduling-and-extensions.md",
+      "route": "/agentctl/architecture/decisions/0005/",
+      "contentSha256": "479c1e1dc7d30f50a1173655212fa845524d430ce57e4837a2563a99e1aa69d9"
+    },
+    {
+      "source": "docs/adr/0006-schedulable-runtime-and-noninteractive-contract.md",
+      "route": "/agentctl/architecture/decisions/0006/",
+      "contentSha256": "3107b4f3e4b33e4dcf28ffdf54b2d1acebe94bf68ae2f439441d01d85eb2ffa4"
+    },
+    {
+      "source": "docs/adr/0007-generic-oci-step-contract.md",
+      "route": "/agentctl/architecture/decisions/0007/",
+      "contentSha256": "ebb7d3d610a319e63e6a2e8f671f8ab5a75852a74a8fd713f39f2e04218035cb"
+    },
+    {
+      "source": "docs/CONTRIBUTING.md",
+      "route": "/agentctl/contributing/",
+      "contentSha256": "9e5704289ab95ac65cd602ae10335490c234272ce17e8e3fa8852994737347e4"
+    },
+    {
+      "source": "docs/development/REPOSITORY.md",
+      "route": "/agentctl/contributing/developer-guide/",
+      "contentSha256": "69beda0a811763e8ed84b16ab76c81688263cc125db08eaa44cf23207ac639c9"
+    },
+    {
+      "source": "docs/development/ADD_ACTION.md",
+      "route": "/agentctl/contributing/add-action/",
+      "contentSha256": "925e65f5cbea45b750ec4455c3a17005b202f26af33265f8f744b132ddf5f42d"
+    },
+    {
+      "source": "docs/development/ADD_PROVIDER.md",
+      "route": "/agentctl/contributing/add-provider/",
+      "contentSha256": "cf7e16fdf29a593198868b428e650a67925a0b39cf240614c0907cdbc9e0a2b7"
+    },
+    {
+      "source": "docs/development/ADD_MIGRATION.md",
+      "route": "/agentctl/contributing/add-migration/",
+      "contentSha256": "f0a69679ac940db30596e0137da5cde4beb4cbceacbeb15a8e8351edd9969a9c"
+    },
+    {
+      "source": "docs/development/DOCUMENTATION.md",
+      "route": "/agentctl/contributing/documentation/",
+      "contentSha256": "664e72928b4fa3e6cb46ccd7036756e81847fbea7790af83194afb4d033c8484"
+    },
+    {
+      "source": "docs/TESTING.md",
+      "route": "/agentctl/contributing/testing/",
+      "contentSha256": "5a7ac1bf6d4287c26262cd729f090c0f85e8bcf83212e1b78f53c0778b55e6c2"
+    },
+    {
+      "source": "docs/RELEASE_PROCESS.md",
+      "route": "/agentctl/contributing/release/",
+      "contentSha256": "353d88070661eb0edb4879c72cb78973aa600ad6aa6be41262c3b12a5d2b821b"
+    }
+  ]
 }

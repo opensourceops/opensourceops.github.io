@@ -314,4 +314,3 @@ flowchart TD
 ```
 
 `agentctl-core` has no dependency on HTTP, SQLite, CLI parsing, or concrete executor types. `xtask` drives the built CLI for generation and acceptance.
-> Canonical source: [`docs/architecture/DIAGRAMS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/architecture/DIAGRAMS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

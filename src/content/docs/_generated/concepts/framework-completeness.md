@@ -143,4 +143,3 @@ restricted-token/job-object backend is claimed.
 External schedulers own triggers and overlap policy. Containers, VMs, platform
 identities, and egress controls remain the strongest isolation boundary for
 hostile workloads.
-> Canonical source: [`docs/execution/FRAMEWORK_COMPLETENESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/FRAMEWORK_COMPLETENESS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

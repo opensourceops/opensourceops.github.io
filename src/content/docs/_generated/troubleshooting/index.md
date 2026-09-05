@@ -186,4 +186,3 @@ gates pass for the current candidate.
 ## Safe issue report
 
 Include the exact `agentctl version`, operating system, redacted command, exit code, diagnostic code, workflow API version, minimal non-secret workflow, and relevant run/trace IDs. Share a narrow redacted `inspect` excerpt only when needed. Report security problems through the private process in [Security](/agentctl/security/), not a public issue.
-> Canonical source: [`docs/guides/TROUBLESHOOTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TROUBLESHOOTING.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

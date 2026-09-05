@@ -63,4 +63,3 @@ sub-workflows, explicit
 source-linked compensation, graph-native structured handoffs, durable
 streaming, and protocol continuation records are additive; hidden or
 model-controlled orchestration is intentionally unsupported.
-> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

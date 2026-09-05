@@ -5,7 +5,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 ## Scope and starting state
 
 - Site: `codex/agentctl-launch-docs-20260906`, starting commit `b1484ef7cc073e6cc756a5eca37a7ff3f6144cee`.
-- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; final source pin pending framework integration.
+- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; final source pin `266eb44360886aa3019e5d42eb9cd28d26f97246`.
 - No repository or ancestor `AGENTS.md` was found in the inspected checkout.
 - Authorized scope: importer, internal provenance, documentation onboarding, exact-checkout synchronization, build, and browser validation. No deployment, release, or organization settings changes.
 - Runtime: Node 26.0.0; repository pnpm 11.9.0 invoked with `npx --yes pnpm@11.9.0` because Corepack is unavailable. Frozen-lockfile installation and Playwright Chromium installation passed without changing the dependency lockfile.
@@ -48,7 +48,7 @@ imports and 73 HTML files, with artifact links/anchors passing. Expanded
 browser coverage initially failed the mobile variables page's keyboard access
 check for a horizontally scrolling table. A build-time Markdown transform now
 adds keyboard focus to tables while preserving their native table semantics
-and the existing visible focus outline. The regression checks exercise actual
+and the existing visible focus outline. The transform uses Astro 7's existing native Markdown processor; its already-resolved package is now an explicit exact dependency, avoiding a deprecated processor switch. The regression checks exercise actual
 arrow-key scrolling and retain the full axe assertion. All six affected desktop/tablet/mobile
 route and accessibility checks then passed. New desktop and mobile variables
 and DevOps screenshots were captured, with mobile variables and desktop DevOps

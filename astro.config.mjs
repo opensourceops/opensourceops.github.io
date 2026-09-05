@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
-import rehypeFocusableTables from './scripts/rehype-focusable-tables.mjs';
+import { satteri } from '@astrojs/markdown-satteri';
+import focusableTables from './scripts/focusable-tables.mjs';
 
 const github = 'https://github.com/opensourceops/agentctl';
 
@@ -9,7 +10,7 @@ export default defineConfig({
   site: 'https://opensourceops.github.io',
   base: '/agentctl/',
   outDir: './dist-agentctl',
-  markdown: { rehypePlugins: [rehypeFocusableTables] },
+  markdown: { processor: satteri({ hastPlugins: [focusableTables()] }) },
   integrations: [
     mermaid({
       autoTheme: true,

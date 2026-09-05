@@ -360,4 +360,3 @@ GitLab, Jenkins, Harness, and Kubernetes examples remain
 documentation-reviewed only. The automatic Ubuntu Linux x64 build, scan, and
 SBOM job passed on the exact pull-request head and retained its image SBOM
 artifact and digest.
-> Canonical source: [`docs/CONTAINER.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTAINER.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.
