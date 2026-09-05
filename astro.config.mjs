@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
+import rehypeFocusableTables from './scripts/rehype-focusable-tables.mjs';
 
 const github = 'https://github.com/opensourceops/agentctl';
 
@@ -8,6 +9,7 @@ export default defineConfig({
   site: 'https://opensourceops.github.io',
   base: '/agentctl/',
   outDir: './dist-agentctl',
+  markdown: { rehypePlugins: [rehypeFocusableTables] },
   integrations: [
     mermaid({
       autoTheme: true,
@@ -72,6 +74,7 @@ export default defineConfig({
           items: [
             { slug: 'concepts/workflow-model', label: 'Workflow document' },
             { slug: 'guides/workflow-authoring', label: 'Author workflows' },
+            { slug: 'guides/variables', label: 'Variables and instruction files' },
             { slug: 'concepts/tools', label: 'Actions, tools, and effects' },
             { slug: 'concepts/policies', label: 'Policies and approvals' },
             { slug: 'concepts/memory', label: 'Memory' },
@@ -119,6 +122,7 @@ export default defineConfig({
           label: 'Examples and use cases',
           items: [
             { slug: 'examples', label: 'Examples overview' },
+            { slug: 'examples/devops', label: 'DevOps and CI/CD suite' },
             { slug: 'examples/repository-audit', label: 'Repository audit' },
             { slug: 'examples/release-readiness', label: 'Release readiness' },
             { slug: 'examples/scheduled-review', label: 'Scheduled review' },
@@ -146,6 +150,7 @@ export default defineConfig({
             { slug: 'reference/compatibility', label: 'Compatibility' },
             { slug: 'reference/migration', label: 'Migrate from TypeScript' },
             { slug: 'reference/limitations', label: 'Limitations' },
+            { slug: 'reference/launch-limitation-review', label: 'Current launch limitation review' },
             { slug: 'reference/limitation-burndown', label: 'Limitation burn-down' },
             { slug: 'reference/completeness-verification', label: 'Completeness verification' },
             { slug: 'reference/live-framework-verification', label: 'Live framework verification' },

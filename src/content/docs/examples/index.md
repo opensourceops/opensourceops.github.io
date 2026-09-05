@@ -3,7 +3,19 @@ title: Examples and use cases
 description: Start from complete checked workflows for repository review, release gates, scheduled runs, CI, approvals, repair, replay, and providers.
 ---
 
-Every prominent YAML block on this site is imported from a checked file in the `agentctl` repository. Normal verification uses deterministic actions, the fake provider, or local protocol mocks. Live provider examples are opt-in and labeled.
+This site imports guides and examples from the framework checkout recorded in its source metadata. Normal verification uses deterministic actions, the fake provider, or local protocol mocks. Live provider examples are opt-in and labeled; a successful static check does not establish execution evidence.
+
+## DevOps and CI/CD suite
+
+The [twenty-example DevOps suite](/agentctl/examples/devops/) covers build and test diagnosis, configuration reviews, release decisions, drift, incident timelines, governed local deployment, and recovery. Its [machine-readable catalog](https://github.com/opensourceops/agentctl/blob/main/examples/devops/catalog.json) records platforms, prerequisites, expected exit codes, fixture or live modes, artifacts, and evidence status.
+
+From the framework checkout, run:
+
+```text
+cargo xtask devops-examples
+```
+
+Read the suite guide for clean-directory execution, per-example commands, bounded OpenAI variants, and cleanup. Local service fixtures demonstrate policy and recovery behavior; their results do not establish a production deployment. Live evidence applies only to the exact workflow, provider, and source revision recorded by its run.
 
 ## Choose an example
 

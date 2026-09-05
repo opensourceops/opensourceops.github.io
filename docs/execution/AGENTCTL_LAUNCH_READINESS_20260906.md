@@ -14,7 +14,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 
 - `pnpm verify` failed at generated freshness: checked-in source metadata referenced `2aeaa88fba71162206b5f08f5bda4f0150247e4f`, while the actual sibling checkout was `ec7e220820ed169c005aff5344d81fe4d292cdb6` with local changes. This is a pre-existing source mismatch, not passing current evidence.
 - Baseline `astro check` passed with zero errors, warnings, or hints. Baseline build passed; all 44 existing Playwright cases passed with the one documented duplicate mobile-search skip.
-- The manifest imports 61 pages. All received a visible source footer from `scripts/sync-agentctl.mjs`; editing generated pages alone would not repair it.
+- The baseline manifest imported 61 pages. All received a visible source footer from `scripts/sync-agentctl.mjs`; editing generated pages alone would not repair it.
 
 ## Changes and compatibility
 
@@ -24,6 +24,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 - Document reviewed generated-file staging and paired framework/workflow pins so intentional updates can pass the existing strict freshness gate.
 - Require clean framework metadata in the workflow gate: a matching commit ID alone cannot establish final source provenance when local changes were imported. Preview builds remain available for dirty checkouts.
 - Retain historical execution documents with their original dates; point repository onboarding to this continuation ledger.
+- Add discoverable variable/instruction, twenty-example DevOps suite, and current limitation-review guides to the import manifest and navigation. Keep historical live evidence clearly labeled.
 
 ## Incremental verification
 
@@ -37,17 +38,33 @@ Against the working framework checkout at `ec7e220820ed169c005aff5344d81fe4d292c
 - Pagefind index presence passed. Search behavior was executed in the baseline and remains required after final integration.
 - Getting-started screenshots were captured at 1440 x 1000, 1024 x 768, and 390 x 844. Desktop and mobile images were visually inspected; no page-width overflow or visible source paragraph remained. Code blocks retain their horizontal scrolling behavior.
 
+A later preview added the variable and DevOps guides: writing, Markdown,
+spelling, build, artifact checks for 63 imports and 72 HTML files, and 15
+external targets passed. The variable guide's credential-free CLI example was
+also executed against the integrated development binary: check, explain,
+doctor, default run, invocation override run, source deletion, replay, and
+inspection verified the stated values and zero provider usage. Adding the current limitation-review guide brought preview coverage to 64
+imports and 73 HTML files, with artifact links/anchors passing. Expanded
+browser coverage initially failed the mobile variables page's keyboard access
+check for a horizontally scrolling table. A build-time Markdown transform now
+adds keyboard focus to tables while preserving their native table semantics
+and the existing visible focus outline. The regression checks exercise actual
+arrow-key scrolling and retain the full axe assertion. All six affected desktop/tablet/mobile
+route and accessibility checks then passed. New desktop and mobile variables
+and DevOps screenshots were captured, with mobile variables and desktop DevOps
+visually inspected.
+
 These are incremental local results, not final-commit or hosted evidence. Provider credentials are neither read nor used by these site gates.
 
 ## Required final gates
 
 The canonical command is `AGENTCTL_REPO=/absolute/path/to/agentctl pnpm verify:agentctl`. It runs framework `cargo xtask docs-verify` followed by generated freshness, writing, Mermaid source checks, workflow pins and permissions, Markdown, spelling, Astro types, build, artifact paths/links/anchors/reachability, external links, Pagefind, and Playwright.
 
-Playwright covers direct routes/reload, navigation, workflow copy, source footer on the homepage, architecture Mermaid rendering, 404 recovery, axe accessibility, and eight search terms. It runs desktop (1440 x 1000), tablet, and mobile profiles; the existing mobile duplicate search matrix is intentionally skipped. Any warning from inconclusive external HTTP checks must remain visible in evidence.
+Playwright covers direct routes/reload, navigation, workflow copy, provenance footer on the homepage, absence of the removed article footer, keyboard table scrolling, architecture Mermaid rendering, 404 recovery, axe accessibility, and ten search terms, including `varsFiles` and DevOps. It runs desktop (1440 x 1000), tablet, and mobile profiles; the existing mobile duplicate search matrix is intentionally skipped. Any warning from inconclusive external HTTP checks must remain visible in evidence.
 
 ## Remaining work and next commands
 
-1. Finish independent site baseline and verify importer changes against the integrated framework checkout.
+1. Completed independent baseline, importer regression checks, and new-guide preview builds. Final integrated verification remains separate.
 2. Receive final framework code commit, update `AGENTCTL_COMMIT`, synchronize from the clean exact checkout, and stage reviewed generated files.
 3. Run full cross-repository verification, inspect responsive screenshots, record artifact digest and exact source commit, and commit site changes.
 4. Coordinate draft pull request creation and hosted validation with the primary agent. Do not dispatch the site workflow because manual dispatch also deploys.

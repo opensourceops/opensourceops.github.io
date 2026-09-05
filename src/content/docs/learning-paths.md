@@ -21,7 +21,7 @@ description: Follow a short path for evaluation, first use, workflow authoring, 
 
 1. Learn to [author a workflow](/agentctl/guides/workflow-authoring/).
 2. Read the [YAML reference](/agentctl/reference/yaml/).
-3. Study [tools and effects](/agentctl/concepts/tools/) and [policies and approvals](/agentctl/concepts/policies/).
+3. Configure [variables and instruction files](/agentctl/guides/variables/), then study [tools and effects](/agentctl/concepts/tools/) and [policies and approvals](/agentctl/concepts/policies/).
 4. Start from a [verified use case](/agentctl/examples/).
 
 ## I want to operate agentctl
@@ -36,7 +36,7 @@ description: Follow a short path for evaluation, first use, workflow authoring, 
 1. Read the [container contract](/agentctl/guides/container/).
 2. Apply the [CI/CD integration guide](/agentctl/guides/ci-cd/).
 3. Review the [CI quality gate example](/agentctl/examples/ci-quality-gate/).
-4. Plan protected state retention for approvals and recovery.
+4. Run the [DevOps and CI/CD suite](/agentctl/examples/devops/) and plan protected state retention for approvals and recovery.
 
 ## I want to contribute
 

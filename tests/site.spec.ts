@@ -1,10 +1,13 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-const routes = [
+const routes: ReadonlyArray<readonly [string, string]> = [
   ['/agentctl/', 'Control agent workflows'],
   ['/agentctl/getting-started/', 'Getting started'],
   ['/agentctl/guides/workflow-authoring/', 'Author workflows'],
+  ['/agentctl/guides/variables/', 'Variables and instruction files'],
+  ['/agentctl/examples/devops/', 'DevOps and CI/CD examples'],
+  ['/agentctl/reference/launch-limitation-review/', 'Current launch limitation review'],
   ['/agentctl/guides/container/', 'Container guide'],
   ['/agentctl/durable-execution/', 'Durable execution'],
   ['/agentctl/troubleshooting/', 'Troubleshooting'],
@@ -18,6 +21,24 @@ test.describe('final artifact routes', () => {
       const response = await page.goto(route);
       expect(response?.status()).toBe(200);
       await expect(page.getByRole('heading', { name: heading, exact: false }).first()).toBeVisible();
+      await expect(page.locator('body')).not.toContainText('Canonical source:');
+      const widths = await page.evaluate(() => ({
+        content: document.documentElement.scrollWidth,
+        viewport: document.documentElement.clientWidth,
+      }));
+      expect(widths.content, `${route} should fit the viewport`).toBeLessThanOrEqual(widths.viewport + 1);
+      if (route === '/agentctl/guides/variables/') {
+        const tables = page.locator('.sl-markdown-content table');
+        for (const table of await tables.all()) {
+          if (await table.evaluate((element) => element.scrollWidth > element.clientWidth)) {
+            await expect(table).toHaveAttribute('tabindex', '0');
+            await table.focus();
+            await expect(table).toBeFocused();
+            await page.keyboard.press('ArrowRight');
+            await expect.poll(() => table.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
+          }
+        }
+      }
       await page.reload();
       await expect(page).toHaveURL(new RegExp(`${route.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`));
     });
@@ -49,6 +70,8 @@ test('navigation and sidebar reach important sections', async ({ page }) => {
   if (await menuButton.isVisible()) await menuButton.click();
   await expect(page.getByRole('link', { name: 'Provider overview', exact: true })).toBeVisible();
   await expect(page.getByRole('link', { name: 'CLI reference', exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Variables and instruction files', exact: true }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: 'DevOps and CI/CD suite', exact: true })).toBeVisible();
 });
 
 test('Mermaid diagrams render without client errors', async ({ page }) => {
@@ -70,7 +93,7 @@ test('404 offers useful recovery links', async ({ page }) => {
 });
 
 test('representative pages have no serious automated accessibility violations', async ({ page }) => {
-  for (const route of ['/agentctl/', '/agentctl/getting-started/', '/agentctl/guides/container/', '/agentctl/troubleshooting/']) {
+  for (const route of ['/agentctl/', '/agentctl/getting-started/', '/agentctl/guides/container/', '/agentctl/troubleshooting/', '/agentctl/guides/variables/', '/agentctl/examples/devops/']) {
     await page.goto(route);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
@@ -86,7 +109,7 @@ test.describe('desktop and tablet search', () => {
     test.setTimeout(90_000);
     await page.goto('/agentctl/');
     const searchButton = page.getByRole('button', { name: /search/i }).first();
-    const queries = ['replay', 'OPENAI_API_KEY', 'approval', 'container', 'exit code', 'database locked', 'MCP', 'Gemini'];
+    const queries = ['replay', 'OPENAI_API_KEY', 'approval', 'container', 'exit code', 'database locked', 'MCP', 'Gemini', 'varsFiles', 'DevOps'];
     for (const query of queries) {
       await searchButton.click();
       const dialog = page.getByRole('dialog');
