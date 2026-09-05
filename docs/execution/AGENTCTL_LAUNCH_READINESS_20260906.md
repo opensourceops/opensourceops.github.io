@@ -62,11 +62,25 @@ The canonical command is `AGENTCTL_REPO=/absolute/path/to/agentctl pnpm verify:a
 
 Playwright covers direct routes/reload, navigation, workflow copy, provenance footer on the homepage, absence of the removed article footer, keyboard table scrolling, architecture Mermaid rendering, 404 recovery, axe accessibility, and ten search terms, including `varsFiles` and DevOps. It runs desktop (1440 x 1000), tablet, and mobile profiles; the existing mobile duplicate search matrix is intentionally skipped. Any warning from inconclusive external HTTP checks must remain visible in evidence.
 
-## Remaining work and next commands
+## Final local verification
 
-1. Completed independent baseline, importer regression checks, and new-guide preview builds. Final integrated verification remains separate.
-2. Receive final framework code commit, update `AGENTCTL_COMMIT`, synchronize from the clean exact checkout, and stage reviewed generated files.
-3. Run full cross-repository verification, inspect responsive screenshots, record artifact digest and exact source commit, and commit site changes.
-4. Coordinate draft pull request creation and hosted validation with the primary agent. Do not dispatch the site workflow because manual dispatch also deploys.
+- Framework source: `266eb44360886aa3019e5d42eb9cd28d26f97246`, clean, paired with [framework draft PR 7](https://github.com/opensourceops/agentctl/pull/7).
+- Site code tree: `c76b49402cf2df28c771a45e3a28306bd2d5163a`. This ledger update is evidence-only; it changes no rendered source or executable code.
+- `AGENTCTL_REPO=/absolute/path/to/agentctl npx --yes pnpm@11.9.0 verify:agentctl` passed. The command initially waited during a local macOS executable-startup stall, then completed without skipping a gate.
+- Framework documentation verification passed all six stages: binary build, CLI/schema freshness, current examples, documentation journeys, public writing/inclusions, and local Markdown links.
+- Site freshness, writing, 22 Mermaid source blocks, workflow pins/permissions, Markdown, spelling, and Astro diagnostics passed. Frozen-lockfile installation passed after making the already-resolved native Markdown processor an explicit exact dependency.
+- Final artifact verification passed for 64 imported guides and 73 HTML files, including content digests, routes, links, anchors, reachability, and absence of the removed article footer. All 15 external targets passed without inconclusive warnings; Pagefind exists and search exercised ten terms.
+- Full Playwright suite: 53 passed in 43.5 seconds; the sole skip is the existing duplicate mobile search matrix. All three device profiles passed direct navigation/reload, page-width checks, sidebar access, workflow copy, 15 rendered architecture diagrams, 404 recovery, and serious/critical axe checks. The variables table also passed actual keyboard scrolling.
+- Final screenshots were captured for getting started, variables, and DevOps at desktop, tablet, and mobile sizes. Mobile variables, desktop DevOps, and tablet getting started were visually inspected.
+- Local assembled artifact: 280 files. SHA-256 of its sorted content-hash manifest: `e96480446b219dffe328fb20d6bbe966a8fc089c623059f96264851b77e93971`. The manifest uses one `SHA256(file bytes)`, two spaces, POSIX relative path, and LF per file, sorted by relative path. This identifies the local artifact, not an unobserved hosted artifact.
+- Existing build warnings for the Mermaid chunk size and duplicate 404 route remain visible; they did not fail the repository's gates.
 
-Current verdict: documentation release evidence is incomplete until the final integrated source pin and all required gates pass.
+## Review and remaining evidence
+
+The local documentation gate passes for the paired source. Push the task branch
+and open a draft pull request linked to framework PR 7; inspect its
+credential-free hosted validation and artifact before review. Do not dispatch
+Pages manually, merge, or deploy. Hosted results are recorded on the draft PR
+and in the primary framework execution ledger. Framework release readiness
+still requires its own final-source live, platform, image, package, security,
+and SBOM gates; this documentation result does not certify them.
