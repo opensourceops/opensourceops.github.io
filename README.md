@@ -16,7 +16,7 @@ Set `AGENTCTL_REPO` when the agentctl checkout is not in a documented sibling lo
 
 ```text
 corepack enable
-pnpm install
+pnpm install --frozen-lockfile
 pnpm exec playwright install chromium
 AGENTCTL_REPO=/path/to/agentctl pnpm docs:sync
 pnpm dev:agentctl
@@ -35,4 +35,6 @@ AGENTCTL_REPO=/path/to/agentctl pnpm verify:agentctl
 
 Common failures are a missing `AGENTCTL_REPO`, stale generated source or CLI references, a missing Playwright browser, or another process using port 4173. No verification command needs a provider API key.
 
-See [deployment settings](docs/DEPLOYMENT.md) and the [documentation execution ledger](docs/execution/AGENTCTL_DOCS_STATUS.md).
+Source ownership, routes, content digests, and the exact framework commit remain in `public/meta/agentctl-source.json`; imported pages keep their source edit links. The importer does not append provenance boilerplate to the page body. When updating framework content, follow the [paired source update](docs/DEPLOYMENT.md#paired-source-updates) before running the freshness gate.
+
+See [deployment settings](docs/DEPLOYMENT.md) and the [current documentation execution ledger](docs/execution/AGENTCTL_LAUNCH_READINESS_20260906.md). The older execution documents retain evidence from their stated dates.

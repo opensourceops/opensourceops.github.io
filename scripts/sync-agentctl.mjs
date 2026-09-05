@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import {
   copyFile,
   mkdir,
@@ -132,7 +133,7 @@ async function expandIncludes(sourcePath, markdown) {
   return result + markdown.slice(cursor);
 }
 
-async function transform(sourcePath, title, description, commit, dirty) {
+async function transform(sourcePath, title, description) {
   const absolute = path.join(agentctlRoot, sourcePath);
   let markdown;
   try {
@@ -147,7 +148,6 @@ async function transform(sourcePath, title, description, commit, dirty) {
     return `${label}(${sourceRoute(sourcePath, destination)})`;
   });
 
-  const verified = dirty ? `${commit} with local changes` : commit;
   const frontmatter = [
     '---',
     `title: ${yamlQuote(title)}`,
@@ -156,12 +156,7 @@ async function transform(sourcePath, title, description, commit, dirty) {
     '---',
     '',
   ].join('\n');
-  const provenance = [
-    '',
-    `> Canonical source: [\`${sourcePath}\`](https://github.com/opensourceops/agentctl/blob/main/${sourcePath}). Verified against agentctl commit \`${verified}\`.`,
-    '',
-  ].join('\n');
-  return `${frontmatter}${markdown.trim()}${provenance}`;
+  return `${frontmatter}${markdown.trim()}\n`;
 }
 
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], {
@@ -182,10 +177,17 @@ await rm(nextRoot, { recursive: true, force: true });
 await rm(backupRoot, { recursive: true, force: true });
 await mkdir(nextRoot, { recursive: true });
 
+const imports = [];
 for (const [source, target, title, description] of contentManifest) {
   const output = path.join(nextRoot, target.replace(/^_generated\//, ''));
   await mkdir(path.dirname(output), { recursive: true });
-  await writeFile(output, await transform(source, title, description, commit, dirty));
+  const content = await transform(source, title, description);
+  await writeFile(output, content);
+  imports.push({
+    source,
+    route: sourceMap.get(source),
+    contentSha256: createHash('sha256').update(content).digest('hex'),
+  });
 }
 
 try {
@@ -226,6 +228,7 @@ const metadata = {
   dirty,
   sourceRepository: 'https://github.com/opensourceops/agentctl',
   importedFiles: contentManifest.length,
+  imports,
 };
 await writeFile(
   path.join(siteRoot, 'src/data/agentctl-source.json'),
