@@ -107,3 +107,12 @@ The framework fixture portability fix is now pinned as clean source
 `29429de051cbc9ad0e47fff8a35f260d07daccdf`. The paired gate and downloaded ZIP
 verification must pass again for this source and the corrected upload before
 claiming the final documentation artifact is complete.
+
+## Final local verification: 29429de
+
+- Framework: `29429de051cbc9ad0e47fff8a35f260d07daccdf`, clean.
+- Site code under test: `c4ac6c795b6752e5cf6210e48afc54bc3d76886a`, committed before the paired gate.
+- Full `AGENTCTL_REPO=/absolute/path/to/agentctl npx --yes pnpm@11.9.0 verify:agentctl` passed again, including all framework documentation stages and site checks. Generated freshness, 64 imports, 73 HTML pages, 15 external targets, and source metadata are tied to this exact framework commit.
+- Browser results: 53 passed in 43.6 seconds, with the same one existing duplicate mobile search skip. No assertions or required gates were removed.
+- Local artifact: 280 files; sorted content-manifest SHA-256 `068c41ff0e7d0c3f9643f704f83eaca0d7d182066e72ddb639093243c9e4d831`. The earlier source's manifest and results remain retained separately.
+- The following commit only records this evidence. Hosted validation and downloaded ZIP completeness must be observed at the corrected source before concluding the documentation artifact gate.
