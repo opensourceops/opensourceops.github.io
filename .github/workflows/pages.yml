@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  AGENTCTL_COMMIT: "266eb44360886aa3019e5d42eb9cd28d26f97246"
+  AGENTCTL_COMMIT: "29429de051cbc9ad0e47fff8a35f260d07daccdf"
   NODE_VERSION: "24.4.1"
   PNPM_VERSION: "11.9.0"
   RUST_TOOLCHAIN: "1.88.0"
@@ -74,6 +74,7 @@ jobs:
           name: agentctl-pages-validation
           path: site/_site
           if-no-files-found: error
+          include-hidden-files: true
           retention-days: 14
 
       - name: Record validation artifact digest

@@ -36,6 +36,7 @@ for (const required of [
   "if: github.event_name != 'pull_request'",
   'name: agentctl-pages-validation',
   'if-no-files-found: error',
+  'include-hidden-files: true',
   'pages: write',
   'id-token: write',
   'path: site/_site',

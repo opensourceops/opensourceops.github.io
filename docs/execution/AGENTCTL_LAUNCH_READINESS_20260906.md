@@ -5,7 +5,7 @@ Updated: 2026-09-06, Asia/Kolkata. This ledger covers the current continuation; 
 ## Scope and starting state
 
 - Site: `codex/agentctl-launch-docs-20260906`, starting commit `b1484ef7cc073e6cc756a5eca37a7ff3f6144cee`.
-- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; final source pin `266eb44360886aa3019e5d42eb9cd28d26f97246`.
+- Framework checkout: sibling `../agentctl`, starting commit `ec7e220820ed169c005aff5344d81fe4d292cdb6`; current source pin `29429de051cbc9ad0e47fff8a35f260d07daccdf`.
 - No repository or ancestor `AGENTS.md` was found in the inspected checkout.
 - Authorized scope: importer, internal provenance, documentation onboarding, exact-checkout synchronization, build, and browser validation. No deployment, release, or organization settings changes.
 - Runtime: Node 26.0.0; repository pnpm 11.9.0 invoked with `npx --yes pnpm@11.9.0` because Corepack is unavailable. Frozen-lockfile installation and Playwright Chromium installation passed without changing the dependency lockfile.
@@ -62,7 +62,7 @@ The canonical command is `AGENTCTL_REPO=/absolute/path/to/agentctl pnpm verify:a
 
 Playwright covers direct routes/reload, navigation, workflow copy, provenance footer on the homepage, absence of the removed article footer, keyboard table scrolling, architecture Mermaid rendering, 404 recovery, axe accessibility, and ten search terms, including `varsFiles` and DevOps. It runs desktop (1440 x 1000), tablet, and mobile profiles; the existing mobile duplicate search matrix is intentionally skipped. Any warning from inconclusive external HTTP checks must remain visible in evidence.
 
-## Final local verification
+## Verified source checkpoint: 266eb443
 
 - Framework source: `266eb44360886aa3019e5d42eb9cd28d26f97246`, clean, paired with [framework draft PR 7](https://github.com/opensourceops/agentctl/pull/7).
 - Site code tree: `c76b49402cf2df28c771a45e3a28306bd2d5163a`. This ledger update is evidence-only; it changes no rendered source or executable code.
@@ -84,3 +84,26 @@ Pages manually, merge, or deploy. Hosted results are recorded on the draft PR
 and in the primary framework execution ledger. Framework release readiness
 still requires its own final-source live, platform, image, package, security,
 and SBOM gates; this documentation result does not certify them.
+
+## Hosted checkpoint and artifact correction
+
+Hosted [run 33995001549](https://github.com/opensourceops/opensourceops.github.io/actions/runs/33995001549)
+passed at site head `c6debc15ca45e4ee839b5dca2fdcfabfff7d0b01`, paired with
+framework `266eb44360886aa3019e5d42eb9cd28d26f97246`. It repeated the full
+cross-repository gate, with 53 browser passes and the existing duplicate
+mobile-search skip. Deployment was skipped.
+
+The uploaded validation ZIP, artifact `9977833070`, matched its advertised
+SHA-256 `5388259b5227f22710d7f60e5d8b31e5c7f0a21b2a5bcb608db8bfe077db335b`.
+Downloading it exposed a packaging gap: the uploader's default hidden-file
+exclusion omitted the required `.nojekyll` file, although the pre-upload
+artifact check had passed. The validation upload now explicitly includes
+hidden files within the generated `_site` directory; the workflow gate checks
+that setting. This changes no deployment trigger or permission. Other observed
+local/hosted byte differences were limited to platform-generated Pagefind
+outputs; HTML, source metadata, and other public assets matched.
+
+The framework fixture portability fix is now pinned as clean source
+`29429de051cbc9ad0e47fff8a35f260d07daccdf`. The paired gate and downloaded ZIP
+verification must pass again for this source and the corrected upload before
+claiming the final documentation artifact is complete.
