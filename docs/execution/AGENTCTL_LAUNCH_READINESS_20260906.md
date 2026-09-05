@@ -193,3 +193,12 @@ owned SQLite-handle cleanup. Synchronize the updated limitation review before
 committing the site code under test and running the full paired gate. Keep
 later evidence-only framework commits separate from this code pin. Site work
 makes no provider requests and does not modify framework files or deploy.
+
+## Final local verification: ce94443
+
+- Framework source: `ce94443a6b0a840eb9cd0e5f5b2e128dfe8f15c8`, clean.
+- Site code under test: `e2f766449d6c278247b7ab8b8fb3e92a2e5d88a3`, committed before validation.
+- Full `AGENTCTL_REPO=/absolute/path/to/agentctl npx --yes pnpm@11.9.0 verify:agentctl` passed. Framework documentation stages, imported freshness, all 64 source digests, 73 HTML pages, 15 external targets, workflow upload settings, writing, Mermaid, search, and Astro checks passed.
+- All 53 required browser cases passed in 42.3 seconds; the existing duplicate mobile search case remains the only skip. This includes accessibility and actual keyboard table scrolling.
+- Local artifact: 280 files; sorted content-manifest SHA-256 `ef2673394104dd00ab116981e621555446b75540f0427114ab6a64624bc237a6`.
+- The following ledger commit is evidence-only. Hosted validation and verification of the actual downloaded ZIP remain required for this final pin; prior checkpoints above remain historical evidence.
