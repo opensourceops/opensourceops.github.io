@@ -137,3 +137,12 @@ distinction between that subset and a complete legacy live inventory. Prior
 Astra and independent Sol evidence remains identified by the framework ledger;
 site validation makes no paid provider requests. Commit this source pin before
 running the full paired gate, then verify the uploaded artifact again.
+
+## Final local verification: 0eef26a
+
+- Framework source: `0eef26ae1d8034c8c8f49d5de4bdaa359a4ec494`, clean.
+- Site code under test: `e813d1650731a89bfb7cc83eca7762491dad7a5f`, committed before validation.
+- Full `AGENTCTL_REPO=/absolute/path/to/agentctl npx --yes pnpm@11.9.0 verify:agentctl` passed. Framework documentation stages, imported freshness, all 64 source digests, 73 HTML pages, 15 external targets, workflow upload settings, writing, Mermaid, search, and Astro checks passed.
+- All 53 required browser cases passed in 42.8 seconds; the existing duplicate mobile-search case remains the only skip. This includes accessibility and actual keyboard table scrolling.
+- Local artifact: 280 files; sorted content-manifest SHA-256 `a2528a07205900e498fb2304143b150d814d19bb4289d8defc3174d52b7c9392`.
+- This following ledger update is evidence-only. Hosted validation and downloaded ZIP verification remain required for this latest pin; previous complete checkpoints are recorded above.
