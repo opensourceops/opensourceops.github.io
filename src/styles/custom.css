@@ -49,7 +49,6 @@
   .sl-markdown-content h3 { margin-top: 2rem; }
   .sl-markdown-content table { font-size: 0.9rem; }
   .sl-markdown-content th { text-align: left; }
-  .sl-markdown-content pre { max-height: 42rem; }
   .mermaid { overflow-x: auto; padding: 1rem 0; }
   .mermaid svg { height: auto; max-width: 100%; }
 
@@ -135,4 +134,9 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
   }
+}
+
+/* Keep copy confirmation opaque throughout its visible animation. */
+.sl-markdown-content .expressive-code .copy .feedback {
+  transition-property: transform;
 }

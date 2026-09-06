@@ -1,13 +1,13 @@
 ---
 title: "Repair a failed workflow"
 description: "Reuse compatible upstream results and safely execute a corrected suffix."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/guides/repair-a-failed-workflow.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/repair-a-failed-workflow.md"
 ---
 Suppose `analyze` and `publish` are agent tasks. `analyze` succeeded and stored validated JSON. `publish` called its read-only tool but failed because its turn limit was too small. You corrected only `publish`.
 
 Do not resume the failed terminal run. Resume continues the same non-terminal run with the same compiled definition. Do not replay it to execute the fix. Recorded replay copies terminal recorded results and emits no fresh effects. Use repair to create a linked run that reuses compatible `analyze` data and executes `publish` plus its descendants from the corrected workflow.
 
-The runnable example is in [`examples/selective-repair-openai/`](https://github.com/opensourceops/agentctl/blob/main/examples/selective-repair-openai/README.md).
+The runnable example is in [`examples/selective-repair-openai/`](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/selective-repair-openai/README.md).
 
 ## 1. Understand the failed source
 
@@ -156,7 +156,7 @@ agentctl effects --db .agentctl/runtime.db reconcile EFFECT_ID \
   --actor operator-name
 ```
 
-Use `--status applied --result-file result.json` when the effect happened and resume needs its externally confirmed result. Use `--status compensated --compensation-effect EFFECT_ID` only after a distinct compensation effect is confirmed. There is no generic force option and no exactly-once claim. An applied non-idempotent effect stays blocked from duplicate fresh execution until it has a valid compensation record. Normal policy, approval, timeout, retry, and cancellation behavior applies to every fresh task. See [Effect reconciliation](https://github.com/opensourceops/agentctl/blob/main/docs/guides/EFFECT_RECONCILIATION.md).
+Use `--status applied --result-file result.json` when the effect happened and resume needs its externally confirmed result. Use `--status compensated --compensation-effect EFFECT_ID` only after a distinct compensation effect is confirmed. There is no generic force option and no exactly-once claim. An applied non-idempotent effect stays blocked from duplicate fresh execution until it has a valid compensation record. Normal policy, approval, timeout, retry, and cancellation behavior applies to every fresh task. See [Effect reconciliation](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/EFFECT_RECONCILIATION.md).
 
 A repaired agent begins a new provider session. It receives target instructions
 and tools plus validated upstream output and reconstructed memory. It never
@@ -196,5 +196,4 @@ Recorded replay has a new replay run ID but the same semantic outputs. It dispat
 | `new_task_outside_repair_closure` | A new unrelated task has no result. | Add it as a root or choose an earlier common boundary. |
 | `unreconciled_effect` | Fresh execution may duplicate a mutation. | Inspect and reconcile external reality first. |
 
-Use [`agentctl retry`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/TERMINAL_RETRY.md) instead when the workflow definition is unchanged and the intent is to rerun failed or explicitly selected boundaries of a terminal source. Use repair for a corrected definition and fork for a broader intentionally fresh execution.
-> Canonical source: [`docs/guides/repair-a-failed-workflow.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/repair-a-failed-workflow.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.
+Use [`agentctl retry`](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/TERMINAL_RETRY.md) instead when the workflow definition is unchanged and the intent is to rerun failed or explicitly selected boundaries of a terminal source. Use repair for a corrected definition and fork for a broader intentionally fresh execution.

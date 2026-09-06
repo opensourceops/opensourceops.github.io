@@ -1,7 +1,7 @@
 ---
 title: "State and memory"
 description: "Separate runtime state, working memory, long-term memory, and prompt cache."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/memory.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/memory.md"
 ---
 Four mechanisms remain intentionally separate:
 
@@ -83,4 +83,3 @@ Entries are capped at 1 MiB, queries at 64 KiB, results at 100, embedding
 dimensions from 8 through 4096, and a local search scan at 10,000 active
 candidates. Corrupt or mismatched vector dimensions fail closed. Retention is
 applied during reads/search and by garbage collection, not by replay.
-> Canonical source: [`docs/memory.md`](https://github.com/opensourceops/agentctl/blob/main/docs/memory.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

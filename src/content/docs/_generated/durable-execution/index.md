@@ -1,7 +1,7 @@
 ---
 title: "Durable execution"
 description: "Understand checkpoints, effects, resume, replay, fork, and uncertain outcomes."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/DURABLE_EXECUTION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/DURABLE_EXECUTION.md"
 ---
 SQLite is the local history and correctness boundary. Run, task, effect, approval, checkpoint, audit, provider-session, tool-call, and long-term-memory records are schema-versioned. Future database, runtime, plan, effect, or checkpoint versions fail explicitly instead of being ignored.
 
@@ -11,7 +11,7 @@ with actual usage. Parallel tasks share the same SQLite coordinator. The
 wall-time deadline is derived from run creation, so pause and resume cannot
 reset it. Recorded replay and reused retry or repair boundaries dispatch
 nothing and consume no fresh effect units. See [Resource and cost
-budgets](https://github.com/opensourceops/agentctl/blob/main/docs/guides/RESOURCE_BUDGETS.md).
+budgets](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/RESOURCE_BUDGETS.md).
 
 ## Operations
 
@@ -77,4 +77,3 @@ reconciled as compensated. This is best-effort inverse execution, not
 transactional rollback.
 
 The artifact root is `artifacts/` beside the database. `agentctl artifacts` lists references and blobs, verifies hashes, exports bytes atomically, and performs reachability-based collection. GC excludes referenced blobs and active ingestion leases, recovers interrupted quarantine operations on startup, and cleans stale untracked blobs and partial temporary files.
-> Canonical source: [`docs/DURABLE_EXECUTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/DURABLE_EXECUTION.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

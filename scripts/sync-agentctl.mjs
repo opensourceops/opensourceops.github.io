@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import {
   copyFile,
   mkdir,
@@ -17,6 +18,7 @@ const generatedRoot = path.join(siteRoot, 'src/content/docs/_generated');
 const nextRoot = path.join(siteRoot, 'src/content/docs/_generated.next');
 const backupRoot = path.join(siteRoot, 'src/content/docs/_generated.previous');
 const basePath = '/agentctl/';
+const sourceRepository = 'https://github.com/opensourceops/agentctl';
 
 const candidates = [
   process.env.AGENTCTL_REPO,
@@ -85,7 +87,7 @@ function sourceRoute(sourcePath, destination) {
   const resolved = path.posix.normalize(path.posix.join(path.posix.dirname(sourcePath), rawPath));
   const route = sourceMap.get(resolved) || specialRoutes.get(resolved);
   if (route) return `${route}${anchor ? `#${anchor}` : ''}`;
-  return `https://github.com/opensourceops/agentctl/blob/main/${resolved}${anchor ? `#${anchor}` : ''}`;
+  return `${sourceRepository}/blob/${commit}/${resolved}${anchor ? `#${anchor}` : ''}`;
 }
 
 async function rewriteImages(sourcePath, markdown) {
@@ -132,7 +134,7 @@ async function expandIncludes(sourcePath, markdown) {
   return result + markdown.slice(cursor);
 }
 
-async function transform(sourcePath, title, description, commit, dirty) {
+async function transform(sourcePath, title, description) {
   const absolute = path.join(agentctlRoot, sourcePath);
   let markdown;
   try {
@@ -141,27 +143,33 @@ async function transform(sourcePath, title, description, commit, dirty) {
     throw new Error(`Missing canonical source ${sourcePath}: ${error.message}`);
   }
   markdown = markdown.replace(/^#\s+[^\n]+\n+/, '');
+  markdown = markdown.replace(
+    '<!-- agentctl-candidate-install -->',
+    dirty
+      ? `\nThis local preview includes uncommitted framework changes after [\`${commit}\`](${sourceRepository}/tree/${commit}). Use the local-checkout installation below to try those changes. A Git installation at the recorded commit cannot include them.\n`
+      : `\nThis documentation describes candidate source [\`${commit}\`](${sourceRepository}/tree/${commit}). The CLI and crates are pre-1.0; workflow API \`agentctl.dev/v1\` names the document format. Install this exact candidate:\n\n\`\`\`sh\ncargo install --locked --git ${sourceRepository} --rev ${commit} agentctl-cli\nagentctl version\n\`\`\`\n`,
+  );
   markdown = await expandIncludes(sourcePath, markdown);
   markdown = await rewriteImages(sourcePath, markdown);
   markdown = markdown.replace(/(?<!!)(\[[^\]]*\])\(([^)]+)\)/g, (_all, label, destination) => {
     return `${label}(${sourceRoute(sourcePath, destination)})`;
   });
+  markdown = markdown.replaceAll(`${sourceRepository}/blob/main/`, `${sourceRepository}/blob/${commit}/`);
+  const cookbook = sourcePath.match(/^examples\/devops\/(\d\d-[^/]+)\/README\.md$/);
+  if (cookbook) {
+    const example = cookbook[1];
+    markdown = `> **Candidate example package:** [Download all files](${basePath}downloads/devops/${example}.zip). Built from source [\`${commit.slice(0, 12)}\`](${sourceRepository}/tree/${commit}/examples/devops/${example})${dirty ? ' with uncommitted local changes' : ''}. It includes the helper and setup step used below; download the complete package before editing a workflow.\n\n${markdown}`;
+  }
 
-  const verified = dirty ? `${commit} with local changes` : commit;
   const frontmatter = [
     '---',
     `title: ${yamlQuote(title)}`,
     `description: ${yamlQuote(description)}`,
-    `editUrl: ${yamlQuote(`https://github.com/opensourceops/agentctl/edit/main/${sourcePath}`)}`,
+    `editUrl: ${yamlQuote(`${sourceRepository}/edit/${commit}/${sourcePath}`)}`,
     '---',
     '',
   ].join('\n');
-  const provenance = [
-    '',
-    `> Canonical source: [\`${sourcePath}\`](https://github.com/opensourceops/agentctl/blob/main/${sourcePath}). Verified against agentctl commit \`${verified}\`.`,
-    '',
-  ].join('\n');
-  return `${frontmatter}${markdown.trim()}${provenance}`;
+  return `${frontmatter}${markdown.trim()}\n`;
 }
 
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], {
@@ -182,10 +190,17 @@ await rm(nextRoot, { recursive: true, force: true });
 await rm(backupRoot, { recursive: true, force: true });
 await mkdir(nextRoot, { recursive: true });
 
+const imports = [];
 for (const [source, target, title, description] of contentManifest) {
   const output = path.join(nextRoot, target.replace(/^_generated\//, ''));
   await mkdir(path.dirname(output), { recursive: true });
-  await writeFile(output, await transform(source, title, description, commit, dirty));
+  const content = await transform(source, title, description);
+  await writeFile(output, content);
+  imports.push({
+    source,
+    route: sourceMap.get(source),
+    contentSha256: createHash('sha256').update(content).digest('hex'),
+  });
 }
 
 try {
@@ -218,14 +233,46 @@ await copyFile(
   path.join(siteRoot, 'src/data/home-workflow.yaml'),
 );
 
+const cookbookPackages = [];
+const packageRoot = path.join(siteRoot, 'work/cookbook-packages');
+const downloadRoot = path.join(siteRoot, 'public/downloads/devops');
+await rm(packageRoot, { recursive: true, force: true });
+await rm(downloadRoot, { recursive: true, force: true });
+await mkdir(downloadRoot, { recursive: true });
+for (const [source] of contentManifest) {
+  const match = source.match(/^examples\/devops\/(\d\d-[^/]+)\/README\.md$/);
+  if (!match) continue;
+  const directory = match[1];
+  const archive = path.join(downloadRoot, `${directory}.zip`);
+  execFileSync('python3', [
+    path.join(agentctlRoot, 'examples/devops/package.py'),
+    '--example', directory.slice(0, 2),
+    '--output', path.join(packageRoot, directory),
+    '--archive', archive,
+  ], { cwd: agentctlRoot, stdio: 'pipe' });
+  const bytes = await readFile(archive);
+  cookbookPackages.push({
+    directory,
+    route: `${basePath}examples/devops/${directory}/`,
+    download: `${basePath}downloads/devops/${directory}.zip`,
+    sourceCommit: commit,
+    sha256: createHash('sha256').update(bytes).digest('hex'),
+    bytes: bytes.length,
+  });
+}
+if (cookbookPackages.length !== 20) throw new Error('The site must package all twenty cookbook tutorials.');
+await writeFile(path.join(downloadRoot, 'catalog.json'), `${JSON.stringify(cookbookPackages, null, 2)}\n`);
+
 const metadata = {
   product: 'agentctl',
   version,
   workflowApi: 'agentctl.dev/v1',
   commit,
   dirty,
-  sourceRepository: 'https://github.com/opensourceops/agentctl',
+  sourceRepository,
   importedFiles: contentManifest.length,
+  imports,
+  cookbookPackages,
 };
 await writeFile(
   path.join(siteRoot, 'src/data/agentctl-source.json'),

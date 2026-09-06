@@ -1,9 +1,9 @@
 ---
 title: "Limitation burn-down"
-description: "Authoritative disposition of every identified framework limitation."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/execution/LIMITATION_BURNDOWN.md"
+description: "Historical disposition of the thirty-item framework limitation register."
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/execution/LIMITATION_BURNDOWN.md"
 ---
-This is the authoritative register for the framework-completeness program. It
+This is the retained register for the earlier framework-completeness program. It
 supersedes roadmap language that classified core durability, recovery,
 orchestration, security, or operability work as deferred merely because the
 workflow API is young.
@@ -17,9 +17,13 @@ complete, every entry must have exactly one final disposition:
 - `removed from supported surface`
 - `externally blocked`
 
-Closure count: 30 limitations, comprising 24 implemented, 2 redesigned, and 4
-removed from the supported surface. No limitation remains externally blocked.
-All 30 program states are verified.
+Historical closure count: 30 limitations, comprising 24 implemented, 2
+redesigned, and 4 removed from the supported surface. All 30 program states
+were recorded as verified in that program. These dispositions do not certify a
+new source commit or close the expanded September 2026 launch requirements.
+The [current limitation review](/agentctl/reference/launch-limitation-review/) and
+[execution ledger](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) record discovered gaps,
+current evidence, and the release decision for the continuation.
 
 ## Dependency order
 
@@ -942,4 +946,3 @@ Recorded on 2026-07-23 before framework-completeness implementation:
   OCI binary, acceptance failed with exit 3 because
   `/artifacts/report.txt` escaped the authorized workspace root. No credential
   was supplied and no OpenAI call occurred.
-> Canonical source: [`docs/execution/LIMITATION_BURNDOWN.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/LIMITATION_BURNDOWN.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

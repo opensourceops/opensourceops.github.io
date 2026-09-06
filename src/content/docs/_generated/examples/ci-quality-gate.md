@@ -1,7 +1,7 @@
 ---
 title: "CI quality gate"
 description: "Turn typed evidence into stable process output."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/use-cases/CI_QUALITY_GATE.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/use-cases/CI_QUALITY_GATE.md"
 ---
 ## Problem
 
@@ -64,4 +64,3 @@ on failure only when its potentially confidential content is protected.
 ## Current limitation
 
 This workflow does not run tests itself. A surrounding pipeline can supply results, or a reviewed `builtin.shell.exec` action can run a specifically allowed executable.
-> Canonical source: [`docs/use-cases/CI_QUALITY_GATE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/CI_QUALITY_GATE.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

@@ -1,7 +1,7 @@
 ---
 title: "Developer guide"
 description: "Understand the Rust workspace, deterministic core, effects, persistence, and tests."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/development/REPOSITORY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/development/REPOSITORY.md"
 ---
 ## Repository layout
 
@@ -64,4 +64,3 @@ Provider adapters implement the neutral model contract and publish typed capabil
 Run `cargo xtask generate` whenever CLI help or the DSL changes. Run `cargo xtask docs-verify` for public content and examples. Update the Pages site's content manifest when adding a new canonical public page. Release decisions depend on hosted evidence for the exact candidate commit; local success alone does not approve an RC.
 
 Related guides: [Add an action](/agentctl/contributing/add-action/), [Add a provider](/agentctl/contributing/add-provider/), [Add a store migration](/agentctl/contributing/add-migration/), [Write documentation](/agentctl/contributing/documentation/), [Testing](/agentctl/contributing/testing/), and [Release process](/agentctl/contributing/release/).
-> Canonical source: [`docs/development/REPOSITORY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/REPOSITORY.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

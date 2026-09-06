@@ -1,7 +1,7 @@
 ---
 title: "MCP"
 description: "Use pinned MCP Streamable HTTP tools under explicit policy."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/MCP.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/MCP.md"
 ---
 The client pins the stable MCP protocol version `2025-11-25` from the [official specification](https://modelcontextprotocol.io/specification/2025-11-25). It uses Streamable HTTP JSON-RPC and implements initialization/version negotiation, initialized notification, session IDs, protocol headers, tool listing, input/output schemas, tool calls, structured content, bounded SSE response parsing, timeout, and best-effort cancellation notification.
 
@@ -21,4 +21,3 @@ actions:
 SQLite schema 13 records session generation, immutable call identity, idempotency, status, selected remote, and encrypted-capable protocol state. `agentctl inspect RUN_ID` exposes `protocolSessions`, `protocolCalls`, and bounded protocol stream events. Recorded replay copies source-linked protocol evidence but performs no network effect.
 
 Streaming progress is persisted with backpressure before the next frame is consumed. A final tool result enters workflow state only after complete JSON-RPC validation. Deterministic mock-server coverage includes server restart, one-reconnect bounds, stable and changed schemas, authentication refresh, unsafe-call refusal, SSE parsing, cancellation, timeout, inspection, and replay.
-> Canonical source: [`docs/MCP.md`](https://github.com/opensourceops/agentctl/blob/main/docs/MCP.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

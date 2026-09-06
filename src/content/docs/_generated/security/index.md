@@ -1,7 +1,7 @@
 ---
 title: "Security model"
 description: "Review controls, trust boundaries, and residual risks."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/SECURITY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/SECURITY.md"
 ---
 ## Controls
 
@@ -94,4 +94,3 @@ encryption is enabled. The local hash provider is deterministic lexical
 indexing and must not be described as a confidential local neural model.
 
 Report vulnerabilities privately to the repository maintainer. Do not include credentials, database contents, or production prompts in a report.
-> Canonical source: [`docs/SECURITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/SECURITY.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

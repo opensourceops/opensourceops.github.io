@@ -1,7 +1,7 @@
 ---
 title: "Add an action or tool"
 description: "Define contracts, policy, effects, recovery, tests, and documentation."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/development/ADD_ACTION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/development/ADD_ACTION.md"
 ---
 An action is selected directly by a task. A tool is requested by a model. Both need explicit data, policy, effect, persistence, replay, and test contracts.
 
@@ -42,4 +42,3 @@ cargo xtask generate
 cargo xtask docs-verify
 cargo xtask verify
 ```
-> Canonical source: [`docs/development/ADD_ACTION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_ACTION.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

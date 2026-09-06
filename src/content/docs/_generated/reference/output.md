@@ -1,7 +1,7 @@
 ---
 title: "Output and exit codes"
 description: "Versioned machine output, streams, and stable exit categories."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/reference/CLI_OUTPUT.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/reference/CLI_OUTPUT.md"
 ---
 The [generated CLI reference](/agentctl/reference/cli/) is produced from Clap help by `cargo xtask generate`. This page explains the stable process contract used by scripts and CI.
 
@@ -50,4 +50,3 @@ agentctl run examples/v1/hello.yaml --db /tmp/hello.db --output json --color nev
 ```
 
 These commands need no credential. `check` writes no runtime database; `run` writes `/tmp/hello.db`.
-> Canonical source: [`docs/reference/CLI_OUTPUT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/CLI_OUTPUT.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

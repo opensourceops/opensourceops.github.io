@@ -1,7 +1,7 @@
 ---
 title: "Contributing"
 description: "Set up, test, review, and prepare focused changes."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/CONTRIBUTING.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/CONTRIBUTING.md"
 ---
 Thank you for improving `agentctl`. Keep changes narrow, add executable evidence for public behavior, and preserve the deterministic and security boundaries.
 
@@ -80,4 +80,3 @@ Reviewers focus on correctness, deterministic behavior, explicit effects, safe f
 ## Release process
 
 Maintainers follow [Release process](/agentctl/contributing/release/). Candidate promotion requires the exact remote commit to pass required hosted checks and artifact verification. Contributors must not create tags, publish packages, or describe a local build as released.
-> Canonical source: [`docs/CONTRIBUTING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/CONTRIBUTING.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

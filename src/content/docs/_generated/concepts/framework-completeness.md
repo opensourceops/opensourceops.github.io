@@ -1,7 +1,7 @@
 ---
 title: "Framework completeness"
 description: "The implemented deterministic workflow surface and explicit product boundaries."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/execution/FRAMEWORK_COMPLETENESS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/execution/FRAMEWORK_COMPLETENESS.md"
 ---
 ## Product contract
 
@@ -143,4 +143,3 @@ restricted-token/job-object backend is claimed.
 External schedulers own triggers and overlap policy. Containers, VMs, platform
 identities, and egress controls remain the strongest isolation boundary for
 hostile workloads.
-> Canonical source: [`docs/execution/FRAMEWORK_COMPLETENESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/execution/FRAMEWORK_COMPLETENESS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

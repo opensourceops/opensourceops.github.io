@@ -1,7 +1,7 @@
 ---
 title: "Add a store migration"
 description: "Version and test forward SQLite migrations."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/development/ADD_MIGRATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/development/ADD_MIGRATION.md"
 ---
 The SQLite schema is versioned with `PRAGMA user_version`. Migrations are forward-only and run in order.
 
@@ -24,4 +24,3 @@ Create the previous schema in a temporary database, insert representative durabl
 ## 5. Document operator impact
 
 Update the database reference, compatibility policy, release notes or status evidence, and backup guidance. Explain whether downgrade remains possible. Run the complete store tests and `cargo xtask verify`.
-> Canonical source: [`docs/development/ADD_MIGRATION.md`](https://github.com/opensourceops/agentctl/blob/main/docs/development/ADD_MIGRATION.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

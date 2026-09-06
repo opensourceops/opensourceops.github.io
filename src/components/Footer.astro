@@ -27,15 +27,6 @@ usageQuestion.searchParams.set('body', `Documentation page: ${publicPageUrl}\n\n
   </nav>
 </footer>
 
-<script>
-  function enableKeyboardCodeScrolling() {
-    for (const block of document.querySelectorAll<HTMLElement>('pre:not([tabindex])')) {
-      block.tabIndex = 0;
-    }
-  }
-  enableKeyboardCodeScrolling();
-  window.addEventListener('resize', enableKeyboardCodeScrolling, { passive: true });
-</script>
 
 <style>
   @layer starlight.core {

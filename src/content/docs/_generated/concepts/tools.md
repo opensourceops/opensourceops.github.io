@@ -1,7 +1,7 @@
 ---
 title: "Tools and effects"
 description: "Tool contracts, effect classes, idempotency, and deterministic checks."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/TOOLS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/TOOLS.md"
 ---
 A tool contract has a stable ID, description, input and output JSON Schema, capability, risk, effect class, idempotency, retry-safety flag, timeout, secret and network requirements, and approval mode. Inputs are validated before an executor is called; outputs are validated before entering messages or task state. Executor errors remain errors.
 
@@ -19,4 +19,3 @@ implicit shell, clears inherited environment, applies allowlisted variables,
 and is not an OS sandbox.
 
 Check mode executes pure/internal simulation and observation needed for dataflow but never filesystem, process, remote, or model mutation. Results say fully predictable, partially predictable, or requires execution; unknown external work is never reported as predicted.
-> Canonical source: [`docs/TOOLS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/TOOLS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

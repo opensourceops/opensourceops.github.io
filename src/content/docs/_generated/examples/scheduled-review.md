@@ -1,7 +1,7 @@
 ---
 title: "Scheduled operational review"
 description: "Produce durable state and artifacts from an external schedule."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/use-cases/SCHEDULED_REVIEW.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/use-cases/SCHEDULED_REVIEW.md"
 ---
 ## Problem
 
@@ -71,4 +71,3 @@ Persist the database and artifact directory with restrictive permissions. Config
 ## Current limitation
 
 `agentctl` is a schedulable runtime, not a scheduling service. It does not provide clocks, calendars, distributed leases, or log rotation.
-> Canonical source: [`docs/use-cases/SCHEDULED_REVIEW.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/SCHEDULED_REVIEW.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

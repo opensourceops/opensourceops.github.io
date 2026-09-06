@@ -1,7 +1,7 @@
 ---
 title: "Migrate from TypeScript"
 description: "Translate supported legacy workflows to strict workflow API v1 YAML."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/MIGRATING_FROM_TYPESCRIPT.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/MIGRATING_FROM_TYPESCRIPT.md"
 ---
 1. Preserve a copy of the old workflow and run the archived test suite if its behavior matters: `NODE_OPTIONS=--no-deprecation npm test`.
 2. Run `cargo run -p agentctl-cli -- migrate old.yaml --write workflow.yaml`.
@@ -16,4 +16,3 @@ editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/MIGRATING_FRO
 The automatic translator covers simple top-level metadata, modules/actions, tasks, heuristic agents, common approval mode, and initial working memory. It discards unsupported legacy provider endpoint/cache/profile fields with a migration warning rather than preserving unsafe or obsolete semantics. Pack-backed actions, remote transports, MongoDB/vector memory, arbitrary profiles, and custom TypeScript executors must be rewritten against the Rust contracts.
 
 Use `fixtures/compat/v0/assign.playbook.yaml` as the minimum preserved contract and compare changes against [Compatibility](/agentctl/reference/compatibility/). The old source is non-production reference material; do not add new behavior to it.
-> Canonical source: [`docs/MIGRATING_FROM_TYPESCRIPT.md`](https://github.com/opensourceops/agentctl/blob/main/docs/MIGRATING_FROM_TYPESCRIPT.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

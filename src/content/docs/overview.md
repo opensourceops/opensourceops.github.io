@@ -31,7 +31,7 @@ container, security, package, SBOM, and release-preparation gates have hosted
 evidence. Native provider and protocol evidence varies by adapter and is stated
 in the [capability matrices](/agentctl/reference/capabilities/).
 
-The workflow document API is stable. The CLI and crates remain pre-1.0, and
+Workflow API `v1` names the document contract. The CLI and crates remain pre-1.0, and
 this site does not claim long-term support, exactly-once execution, an
 operating-system sandbox, distributed scheduling, or live validation across
 every provider.
@@ -39,3 +39,5 @@ every provider.
 ## Source of truth
 
 Technical behavior comes from the [`agentctl` repository](https://github.com/opensourceops/agentctl). This site imports canonical guides, checked examples, generated CLI help, and the generated workflow schema during each build. The source commit is available in the homepage footer and at [`/agentctl/meta/agentctl-source.json`](/agentctl/meta/agentctl-source.json).
+
+The candidate installation command and cookbook downloads match this build's framework revision. A draft PR preview can therefore describe files that are not on the repository's `main` branch or the deployed public site yet. Use the revision shown in this build; do not substitute a previously published binary or assets from a different revision.

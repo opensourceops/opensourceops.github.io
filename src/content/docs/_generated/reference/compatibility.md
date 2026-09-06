@@ -1,7 +1,7 @@
 ---
 title: "Compatibility"
 description: "Preserved, migrated, changed, removed, and explicit non-goal contracts."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/COMPATIBILITY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/COMPATIBILITY.md"
 ---
 ## Preserved
 
@@ -34,11 +34,11 @@ Unversioned YAML is compatibility-only and warns. The TypeScript package exposes
 
 Tool-level `compensation` metadata was never executable and is rejected. Declare
 an effectful inverse action on each source task with `compensate`; see
-[Compensation](https://github.com/opensourceops/agentctl/blob/main/docs/guides/COMPENSATION.md).
+[Compensation](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/COMPENSATION.md).
 
 Free-form `team:` orchestration is rejected. Convert each role to an explicit
 agent task and each payload transfer to a typed handoff task; see
-[Structured role handoffs](https://github.com/opensourceops/agentctl/blob/main/docs/guides/STRUCTURED_HANDOFFS.md).
+[Structured role handoffs](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/STRUCTURED_HANDOFFS.md).
 
 Legacy exact local pack references remain readable and warn until
 `agentctl packs lock` writes `agentctl.pack.lock`. Convert `path` and
@@ -63,4 +63,3 @@ sub-workflows, explicit
 source-linked compensation, graph-native structured handoffs, durable
 streaming, and protocol continuation records are additive; hidden or
 model-controlled orchestration is intentionally unsupported.
-> Canonical source: [`docs/COMPATIBILITY.md`](https://github.com/opensourceops/agentctl/blob/main/docs/COMPATIBILITY.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

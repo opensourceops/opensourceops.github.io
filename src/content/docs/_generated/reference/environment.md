@@ -1,7 +1,7 @@
 ---
 title: "Environment and paths"
 description: "Credential references, repository variables, and default paths."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/reference/ENVIRONMENT_AND_PATHS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/reference/ENVIRONMENT_AND_PATHS.md"
 ---
 ## Provider credentials
 
@@ -18,7 +18,7 @@ another valid environment reference or use a mounted-file or policy-gated
 process reference. Primary provider credential environment names do not require
 a duplicate environment allowlist entry; custom headers and action environment
 values do. Values never belong in YAML, CLI arguments, ordinary inputs, logs,
-or committed fixtures. See [Secret references](https://github.com/opensourceops/agentctl/blob/main/docs/guides/SECRET_REFERENCES.md).
+or committed fixtures. See [Secret references](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/SECRET_REFERENCES.md).
 
 ## State-encryption keys
 
@@ -56,4 +56,3 @@ Normal `cargo xtask docs-verify`, `cargo xtask verify`, and `cargo xtask accepta
 | `/tmp` | small runtime tmpfs when the root filesystem is read-only |
 
 State and artifacts must be writable by UID/GID 65532 in the production image.
-> Canonical source: [`docs/reference/ENVIRONMENT_AND_PATHS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/ENVIRONMENT_AND_PATHS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

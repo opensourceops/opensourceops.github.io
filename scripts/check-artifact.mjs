@@ -1,6 +1,9 @@
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { contentManifest } from './content-manifest.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const artifact = path.join(root, '_site');
@@ -10,6 +13,7 @@ const required = [
   'agentctl/reference/cli/index.html', 'agentctl/troubleshooting/index.html',
   'agentctl/pagefind/pagefind.js', 'agentctl/meta/agentctl-source.json',
   'agentctl/downloads/workflow.schema.json',
+  'agentctl/downloads/devops/catalog.json',
 ];
 
 for (const relative of required) {
@@ -39,8 +43,52 @@ for (const file of files) {
 }
 
 const errors = [];
+for (const [file, { html }] of records) {
+  for (const [tag] of html.matchAll(/<pre\b[^>]*\bdata-language="[^"]*"[^>]*>/g)) {
+    if (!/\btabindex="0"/.test(tag)) errors.push(`${file}: code block lacks initial keyboard access`);
+  }
+}
+const sourceMetadata = await readFile(path.join(root, 'src/data/agentctl-source.json'), 'utf8');
+const artifactMetadata = await readFile(path.join(artifact, 'agentctl/meta/agentctl-source.json'), 'utf8');
+if (artifactMetadata !== sourceMetadata) errors.push('built source metadata differs from synchronized metadata');
+const source = JSON.parse(artifactMetadata);
+if (!/^[0-9a-f]{40}$/.test(source.commit) || typeof source.dirty !== 'boolean') {
+  errors.push('source metadata lacks a valid commit and working-tree status');
+}
+if (source.importedFiles !== contentManifest.length || source.imports?.length !== contentManifest.length) {
+  errors.push('source metadata does not cover the complete import manifest');
+}
+const packages = JSON.parse(await readFile(path.join(artifact, 'agentctl/downloads/devops/catalog.json'), 'utf8'));
+if (packages.length !== 20 || JSON.stringify(packages) !== JSON.stringify(source.cookbookPackages)) {
+  errors.push('download catalog must cover all twenty source-matched packages');
+}
+for (const item of packages) {
+  const bytes = await readFile(path.join(artifact, item.download));
+  if (item.sourceCommit !== source.commit || item.bytes !== bytes.length || item.sha256 !== createHash('sha256').update(bytes).digest('hex')) {
+    errors.push(`stale or mismatched cookbook package: ${item.directory}`);
+  }
+  if (!records.has(path.join(artifact, item.route, 'index.html'))) errors.push(`package has no tutorial: ${item.directory}`);
+}
+for (const [sourcePath, target] of contentManifest) {
+  const imported = source.imports?.filter((item) => item.source === sourcePath) || [];
+  if (imported.length !== 1) {
+    errors.push(`source metadata must contain exactly one entry for ${sourcePath}`);
+    continue;
+  }
+  const slug = target.replace(/^_generated\//, '').replace(/\.md$/, '').replace(/\/index$/, '');
+  const route = `/agentctl/${slug ? `${slug}/` : ''}`;
+  const content = await readFile(path.join(root, 'src/content/docs', target));
+  const digest = createHash('sha256').update(content).digest('hex');
+  if (imported[0].route !== route || imported[0].contentSha256 !== digest) {
+    errors.push(`source metadata has a stale route or content digest for ${sourcePath}`);
+  }
+  if (!records.has(path.join(artifact, route, 'index.html'))) {
+    errors.push(`imported page is missing from final artifact: ${route}`);
+  }
+}
 for (const [file, record] of records) {
   const relative = path.relative(artifact, file);
+  if (record.html.includes('Canonical source:')) errors.push(`${relative}: rendered source boilerplate`);
   if (record.html.includes('/Users/')) errors.push(`${relative}: absolute local path`);
   if (record.html.includes('http://localhost')) errors.push(`${relative}: localhost canonical or link`);
 
@@ -106,4 +154,5 @@ for (const file of records.keys()) {
 }
 
 if (errors.length) throw new Error(errors.slice(0, 100).join('\n'));
+execFileSync('python3', [path.join(root, 'scripts/check-cookbook-packages.py')], { stdio: 'inherit' });
 console.log(`Artifact structure, routes, ${files.length} HTML pages, links, anchors, and reachability passed.`);

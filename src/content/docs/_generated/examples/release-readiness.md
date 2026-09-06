@@ -1,7 +1,7 @@
 ---
 title: "Release readiness"
 description: "Combine deterministic gates with bounded analysis."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/use-cases/RELEASE_READINESS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/use-cases/RELEASE_READINESS.md"
 ---
 ## Problem
 
@@ -81,4 +81,3 @@ The database records which gate failed and whether the analysis task started. A 
 ## Current limitation
 
 The example uses the fake provider. It demonstrates graph and policy behavior, not a live model quality claim or a release approval system.
-> Canonical source: [`docs/use-cases/RELEASE_READINESS.md`](https://github.com/opensourceops/agentctl/blob/main/docs/use-cases/RELEASE_READINESS.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

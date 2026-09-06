@@ -1,7 +1,7 @@
 ---
 title: "Database and migrations"
 description: "SQLite records, schema migration, locking, backup, and retention."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/reference/DATABASE.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/reference/DATABASE.md"
 ---
 The local SQLite database and its sibling artifact root are history and part of the correctness boundary. The current database schema version is `15`.
 
@@ -68,4 +68,3 @@ Delete old terminal history only after retention requirements are met:
 agentctl gc --db .agentctl/runtime.db --older-than-days 30 --output json --color never
 agentctl artifacts --db .agentctl/runtime.db gc --older-than-days 30 --output json --color never
 ```
-> Canonical source: [`docs/reference/DATABASE.md`](https://github.com/opensourceops/agentctl/blob/main/docs/reference/DATABASE.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

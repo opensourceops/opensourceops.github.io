@@ -1,7 +1,7 @@
 ---
 title: "A2A"
 description: "Delegate bounded work to pinned A2A peers."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/A2A.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/A2A.md"
 ---
 The client pins [A2A `1.0`](https://a2a-protocol.org/latest/specification/) and discovers an Agent Card. It selects a same-origin JSON-RPC interface advertising version `1.0`, then supports `SendMessage`, bounded `GetTask` polling, `SubscribeToTask` SSE updates, `CancelTask`, terminal states, messages, structured parts, and artifacts.
 
@@ -31,4 +31,3 @@ agentctl effects --db .agentctl/runtime.db continue-remote EFFECT_ID \
 The command observes the existing remote task, ingests completed inline or same-origin URL artifacts into the local CAS, and records an applied effect reconciliation. A following failed-only retry materializes that completed boundary and executes only its descendants. Repair, retry, and replay retain source-linked protocol evidence without submitting the task again.
 
 Each artifact part must contain exactly one of `text`, `raw`, `data`, or `url`. Retrieval is bounded to 16 MiB per part and same-origin URL policy. Mock peers cover known-task continuation, ambiguous-send refusal, task polling, artifacts, streaming fallback, cancellation, protocol mismatch, origin enforcement, timeout, and zero-resubmission retry.
-> Canonical source: [`docs/A2A.md`](https://github.com/opensourceops/agentctl/blob/main/docs/A2A.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.

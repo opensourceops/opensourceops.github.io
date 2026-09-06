@@ -20,6 +20,9 @@ if (!pinnedCommit) {
 } else if (pinnedCommit !== source.commit) {
   errors.push(`AGENTCTL_COMMIT ${pinnedCommit} does not match synchronized source ${source.commit}`);
 }
+if (source.dirty !== false) {
+  errors.push('final verification requires a clean framework checkout; commit source changes and synchronize again');
+}
 if (!workflow.includes('ref: ${{ github.event.pull_request.head.sha || github.sha }}')) {
   errors.push('Pages source checkout must select the exact pull-request head or event revision');
 }
@@ -33,6 +36,7 @@ for (const required of [
   "if: github.event_name != 'pull_request'",
   'name: agentctl-pages-validation',
   'if-no-files-found: error',
+  'include-hidden-files: true',
   'pages: write',
   'id-token: write',
   'path: site/_site',

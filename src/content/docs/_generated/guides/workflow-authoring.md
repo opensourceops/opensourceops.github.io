@@ -1,7 +1,7 @@
 ---
 title: "Author workflows"
 description: "Learn workflow YAML in execution order."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/guides/WORKFLOW_AUTHORING.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/WORKFLOW_AUTHORING.md"
 ---
 This guide teaches the YAML model in the order you need it. The generated JSON Schema is the field authority, but start with the execution model rather than the schema dump.
 
@@ -126,4 +126,3 @@ agentctl run workflow.yaml --check --diff --db .agentctl/preview.db
 ```
 
 The preview may write run history to its database, but it does not perform filesystem, process, remote, or model mutation. Read [Workflow DSL](/agentctl/concepts/workflow-model/) and the [YAML reference](/agentctl/reference/yaml/) for the complete contract.
-> Canonical source: [`docs/guides/WORKFLOW_AUTHORING.md`](https://github.com/opensourceops/agentctl/blob/main/docs/guides/WORKFLOW_AUTHORING.md). Verified against agentctl commit `2aeaa88fba71162206b5f08f5bda4f0150247e4f`.
