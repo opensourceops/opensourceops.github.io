@@ -33,6 +33,20 @@ export default defineConfig({
       credits: false,
       customCss: ['./src/styles/custom.css'],
       expressiveCode: {
+        plugins: [{
+          name: 'Initial keyboard access',
+          hooks: {
+            postprocessRenderedBlock: ({ renderData }) => {
+              function enableFocus(node) {
+                if (node.type === 'element' && node.tagName === 'pre') {
+                  node.properties.tabIndex = 0;
+                }
+                for (const child of node.children ?? []) enableFocus(child);
+              }
+              enableFocus(renderData.blockAst);
+            },
+          },
+        }],
         styleOverrides: {
           frames: { tooltipSuccessBackground: '#115e59', tooltipSuccessForeground: '#ffffff' },
         },

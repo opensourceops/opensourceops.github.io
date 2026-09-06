@@ -1,7 +1,7 @@
 ---
 title: "Limitations"
 description: "Current supported boundary, operational limits, and non-goals."
-editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/LIMITATIONS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/LIMITATIONS.md"
 ---
 This classification is part of the product contract. The
 [framework limitation burn-down](/agentctl/reference/limitation-burndown/) retains the
@@ -15,7 +15,7 @@ Capabilities outside the product thesis remain explicit non-goals.
 The expanded launch-readiness task requires fresh evidence for its final
 source commit, all twenty DevOps examples, bounded live OpenAI workflows,
 hosted platform/security/container/package/SBOM gates, and the exact-source
-documentation build. The [execution ledger](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md)
+documentation build. The [execution ledger](https://github.com/opensourceops/agentctl/blob/9090a761f819014b905db6bb448388a534bb3943/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md)
 records completed checks, failures, and remaining requirements. Historical
 passing runs do not establish that this new candidate passes. Version 0.3 uses
 workflow API `agentctl.dev/v1`; the CLI and crates remain pre-1.0 and do not
@@ -166,8 +166,8 @@ These are extension points, not incomplete core runtime behavior:
 - The DevOps catalog labels deterministic/fake-provider workflows, isolated
   local services, and opt-in OpenAI variants separately. Its Terraform,
   Kubernetes, canary, and deployment fixtures do not establish live cloud or
-  production deployment coverage. See the [suite catalog](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/catalog.json)
-  and its [validation evidence](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/validation.json).
+  production deployment coverage. See the [suite catalog](https://github.com/opensourceops/agentctl/blob/9090a761f819014b905db6bb448388a534bb3943/examples/devops/catalog.json)
+  and its [validation evidence](https://github.com/opensourceops/agentctl/blob/9090a761f819014b905db6bb448388a534bb3943/examples/devops/validation.json).
 - Local Linux arm64 OCI evidence and hosted Linux x64 container, vulnerability,
   and image-SBOM evidence are distinct. Each result applies only to its recorded
   source, image digest, runtime, and architecture.

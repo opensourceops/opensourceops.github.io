@@ -1,7 +1,7 @@
 ---
 title: "Scheduled operational review"
 description: "Produce durable state and artifacts from an external schedule."
-editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/use-cases/SCHEDULED_REVIEW.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/use-cases/SCHEDULED_REVIEW.md"
 ---
 ## Problem
 

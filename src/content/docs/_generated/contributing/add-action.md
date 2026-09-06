@@ -1,7 +1,7 @@
 ---
 title: "Add an action or tool"
 description: "Define contracts, policy, effects, recovery, tests, and documentation."
-editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/development/ADD_ACTION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/development/ADD_ACTION.md"
 ---
 An action is selected directly by a task. A tool is requested by a model. Both need explicit data, policy, effect, persistence, replay, and test contracts.
 

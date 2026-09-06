@@ -1,7 +1,7 @@
 ---
 title: "Tools and effects"
 description: "Tool contracts, effect classes, idempotency, and deterministic checks."
-editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/TOOLS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/TOOLS.md"
 ---
 A tool contract has a stable ID, description, input and output JSON Schema, capability, risk, effect class, idempotency, retry-safety flag, timeout, secret and network requirements, and approval mode. Inputs are validated before an executor is called; outputs are validated before entering messages or task state. Executor errors remain errors.
 

@@ -1,7 +1,7 @@
 ---
 title: "Contributing"
 description: "Set up, test, review, and prepare focused changes."
-editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/CONTRIBUTING.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/CONTRIBUTING.md"
 ---
 Thank you for improving `agentctl`. Keep changes narrow, add executable evidence for public behavior, and preserve the deterministic and security boundaries.
 

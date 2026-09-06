@@ -43,6 +43,11 @@ for (const file of files) {
 }
 
 const errors = [];
+for (const [file, { html }] of records) {
+  for (const [tag] of html.matchAll(/<pre\b[^>]*\bdata-language="[^"]*"[^>]*>/g)) {
+    if (!/\btabindex="0"/.test(tag)) errors.push(`${file}: code block lacks initial keyboard access`);
+  }
+}
 const sourceMetadata = await readFile(path.join(root, 'src/data/agentctl-source.json'), 'utf8');
 const artifactMetadata = await readFile(path.join(artifact, 'agentctl/meta/agentctl-source.json'), 'utf8');
 if (artifactMetadata !== sourceMetadata) errors.push('built source metadata differs from synchronized metadata');
