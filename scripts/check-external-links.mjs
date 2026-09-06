@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { externalLinkStatus } from './external-link-status.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const artifact = path.join(root, '_site');
@@ -81,27 +82,14 @@ const warnings = [];
 const queue = [...urls];
 
 async function check(url) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
-    const response = await fetch(url, {
-      method: 'GET',
-      redirect: 'follow',
-      signal: controller.signal,
-      headers: {
-        'User-Agent': 'opensourceops-docs-link-check/1.0',
-        Range: 'bytes=0-1023',
-      },
-    });
-    if ([404, 410].includes(response.status)) failures.push(`${response.status} ${url}`);
-    else if (response.status >= 400 && ![401, 403, 429].includes(response.status)) {
-      warnings.push(`${response.status} ${url}`);
+    const status = await externalLinkStatus(url);
+    if ([404, 410].includes(status)) failures.push(`${status} ${url}`);
+    else if (status >= 400 && ![401, 403, 429].includes(status)) {
+      warnings.push(`${status} ${url}`);
     }
-    await response.body?.cancel();
   } catch (error) {
     warnings.push(`${error.name}: ${url}`);
-  } finally {
-    clearTimeout(timeout);
   }
 }
 

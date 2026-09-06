@@ -4,6 +4,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { contentManifest } from './content-manifest.mjs';
+import { publicBrandingIssues, visibleHtmlText } from './public-branding.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const artifact = path.join(root, '_site');
@@ -14,6 +15,8 @@ const required = [
   'agentctl/pagefind/pagefind.js', 'agentctl/meta/agentctl-source.json',
   'agentctl/downloads/workflow.schema.json',
   'agentctl/downloads/devops/catalog.json',
+  'agentctl/downloads/remediation/catalog.json',
+  'agentctl/downloads/remediation/21-container-remediation.zip',
 ];
 
 for (const relative of required) {
@@ -69,6 +72,17 @@ for (const item of packages) {
   }
   if (!records.has(path.join(artifact, item.route, 'index.html'))) errors.push(`package has no tutorial: ${item.directory}`);
 }
+const remediationPackages = JSON.parse(await readFile(path.join(artifact, 'agentctl/downloads/remediation/catalog.json'), 'utf8'));
+if (remediationPackages.length !== 1 || JSON.stringify(remediationPackages[0]) !== JSON.stringify(source.remediationPackage)) {
+  errors.push('remediation download must match its independent source metadata');
+}
+for (const item of remediationPackages) {
+  const bytes = await readFile(path.join(artifact, item.download));
+  if (item.sourceCommit !== source.commit || item.bytes !== bytes.length || item.sha256 !== createHash('sha256').update(bytes).digest('hex')) {
+    errors.push('stale or mismatched remediation package');
+  }
+  if (!records.has(path.join(artifact, item.route, 'index.html'))) errors.push('remediation package has no tutorial');
+}
 for (const [sourcePath, target] of contentManifest) {
   const imported = source.imports?.filter((item) => item.source === sourcePath) || [];
   if (imported.length !== 1) {
@@ -88,6 +102,7 @@ for (const [sourcePath, target] of contentManifest) {
 }
 for (const [file, record] of records) {
   const relative = path.relative(artifact, file);
+  for (const issue of publicBrandingIssues(visibleHtmlText(record.html))) errors.push(`${relative}: ${issue}`);
   if (record.html.includes('Canonical source:')) errors.push(`${relative}: rendered source boilerplate`);
   if (record.html.includes('/Users/')) errors.push(`${relative}: absolute local path`);
   if (record.html.includes('http://localhost')) errors.push(`${relative}: localhost canonical or link`);
@@ -155,4 +170,5 @@ for (const file of records.keys()) {
 
 if (errors.length) throw new Error(errors.slice(0, 100).join('\n'));
 execFileSync('python3', [path.join(root, 'scripts/check-cookbook-packages.py')], { stdio: 'inherit' });
+execFileSync('python3', [path.join(root, 'scripts/check-remediation-package.py')], { stdio: 'inherit' });
 console.log(`Artifact structure, routes, ${files.length} HTML pages, links, anchors, and reachability passed.`);

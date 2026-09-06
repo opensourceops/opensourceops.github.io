@@ -8,7 +8,11 @@ const routes: ReadonlyArray<readonly [string, string]> = [
   ['/agentctl/guides/variables/', 'Variables and instruction files'],
   ['/agentctl/examples/devops/', 'DevOps and CI/CD examples'],
   ['/agentctl/examples/', 'Cookbook'],
-  ['/agentctl/reference/launch-limitation-review/', 'Current launch limitation review'],
+  ['/agentctl/reference/launch-limitation-review/', 'Validation and limitations'],
+  ['/agentctl/concepts/framework-completeness/', 'Supported framework contract'],
+  ['/agentctl/reference/limitation-burndown/', 'Boundary review records'],
+  ['/agentctl/reference/completeness-verification/', 'Verification records'],
+  ['/agentctl/reference/live-framework-verification/', 'Provider validation records'],
   ['/agentctl/guides/container/', 'Container guide'],
   ['/agentctl/durable-execution/', 'Durable execution'],
   ['/agentctl/troubleshooting/', 'Troubleshooting'],
@@ -23,6 +27,7 @@ test.describe('final artifact routes', () => {
       expect(response?.status()).toBe(200);
       await expect(page.getByRole('heading', { name: heading, exact: false }).first()).toBeVisible();
       await expect(page.locator('body')).not.toContainText('Canonical source:');
+      await expect(page.locator('body')).not.toContainText(/pre[ -]1\.0|launch[ -]ready candidate|agentctl\s+v?\d+\.\d+/i);
       const widths = await page.evaluate(() => ({
         content: document.documentElement.scrollWidth,
         viewport: document.documentElement.clientWidth,
@@ -75,7 +80,7 @@ test('navigation and sidebar reach important sections', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'DevOps cookbook and packages', exact: true })).toBeVisible();
   const sidebar = page.locator('#starlight__sidebar');
   const text = (await sidebar.textContent()) ?? '';
-  expect(text.indexOf('Install the candidate')).toBeLessThan(text.indexOf('Framework completeness'));
+  expect(text.indexOf('Install agentctl')).toBeLessThan(text.indexOf('Supported framework contract'));
   await expect(page.getByRole('link', { name: 'What agentctl solves', exact: true })).not.toContainText('v1');
 });
 
@@ -201,4 +206,37 @@ test('installed-binary quickstart contains copyable complete YAML', async ({ pag
   expect(copied).toContain('kind: Workflow');
   expect(copied).toContain('kind: builtin.assign');
   expect(copied).not.toContain('cp examples/');
+});
+
+test('container quickstart exposes complete readable configuration', async ({ page }) => {
+  await page.goto('/agentctl/guides/container/');
+  const block = page.locator('.expressive-code').filter({ hasText: 'name: container-greeting' });
+  await expect(block).toHaveCount(1);
+  await block.locator('.copy button').click();
+  const copied = await page.evaluate(() => navigator.clipboard.readText());
+  expect(copied).toContain('apiVersion: agentctl.dev/v1');
+  expect(copied).toContain('varsFiles: [defaults.yaml]');
+  expect(copied).toContain('writableRoots: [/artifacts]');
+  await expect(page.locator('.sl-markdown-content')).toContainText('--entrypoint /bin/sh');
+  await expect(page.locator('.sl-markdown-content')).toContainText('Harness coverage is vendor syntax review');
+});
+
+test('independent remediation tutorial offers a complete searchable download', async ({ page, request }) => {
+  const route = '/agentctl/examples/devops/21-container-remediation/';
+  await page.goto(route);
+  await expect(page.getByRole('heading', { name: 'Remediate a container vulnerability', exact: true })).toBeVisible();
+  const archive = page.locator('.sl-markdown-content').getByRole('link', { name: 'Download all files', exact: true });
+  const download = '/agentctl/downloads/remediation/21-container-remediation.zip';
+  await expect(archive).toHaveAttribute('href', download);
+  const response = await request.get(download);
+  expect(response.ok()).toBe(true);
+  expect((await response.body()).subarray(0, 2).toString()).toBe('PK');
+  const widths = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+  expect(widths[0]).toBeLessThanOrEqual(widths[1] + 1);
+  const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
+  expect(results.violations.filter((item) => ['serious', 'critical'].includes(item.impact || ''))).toEqual([]);
+  await page.getByRole('button', { name: /search/i }).first().click();
+  const dialog = page.getByRole('dialog');
+  await dialog.getByRole('textbox', { name: 'Search' }).fill('Remediate a container vulnerability');
+  await expect(dialog.locator(`a[href*="${route}"]`).first()).toBeVisible({ timeout: 10_000 });
 });

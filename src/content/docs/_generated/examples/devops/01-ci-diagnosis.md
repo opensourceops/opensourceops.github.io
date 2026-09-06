@@ -1,9 +1,9 @@
 ---
 title: "Diagnose a failed CI build"
 description: "Separate parsed failure evidence from advisory recommendations."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/01-ci-diagnosis/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/01-ci-diagnosis/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/01-ci-diagnosis.zip). Built from source [`4a22f7f733c5`](https://github.com/opensourceops/agentctl/tree/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/01-ci-diagnosis). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/01-ci-diagnosis.zip). Built from source [`68e5b8e738f0`](https://github.com/opensourceops/agentctl/tree/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/01-ci-diagnosis). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** CI developer. **Level and evidence:** Beginner; deterministic offline parsing and decision validation. A separate OpenAI workflow is opt-in.
 
@@ -11,7 +11,7 @@ A build log contains an exception, but the failing line is buried in unrelated o
 
 ## Get the complete example
 
-Install the [matching candidate binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
+Install the [matching agentctl binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
 
 ```sh
 python3 examples/devops/package.py --example 01 --output ./example-01
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/01-ci-diagnosis/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/01-ci-diagnosis/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -68,7 +68,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The parser distinguishes missing imports, test assertions, malformed configuration, and unknown or mixed evidence. The decision names an allowed action and the exact lines supporting it. A deterministic verifier creates the recommendation from that action; arbitrary advisory prose is retained with `validated: false`.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/01-ci-diagnosis/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/01-ci-diagnosis/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

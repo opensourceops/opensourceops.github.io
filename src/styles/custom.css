@@ -80,7 +80,7 @@
   .steps li { align-items: baseline; border-top: 1px solid var(--sl-color-hairline); display: grid; gap: 1rem; grid-template-columns: 3rem 9rem 1fr; padding: 1.4rem 0; }
   .steps li::before { color: var(--sl-color-accent-high); content: "0" counter(process); counter-increment: process; font-family: var(--sl-font-mono); font-size: 0.8rem; }
   .steps li span { color: var(--sl-color-gray-2); }
-  .example, .durable, .maturity-section, .final-cta { align-items: start; display: grid; gap: clamp(2rem, 6vw, 5rem); grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .example, .durable, .boundaries-section, .final-cta { align-items: start; display: grid; gap: clamp(2rem, 6vw, 5rem); grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
   .example-copy > * + * { margin-top: 1.25rem; }
   .example-copy h2 { font-size: clamp(2rem, 4vw, 3.1rem); letter-spacing: -0.045em; line-height: 1.05; }
   .example-copy > p:not(.eyebrow) { color: var(--sl-color-gray-2); line-height: 1.7; }
@@ -109,8 +109,8 @@
   .comparison thead th { color: var(--sl-color-gray-2); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
   .comparison tbody th { width: 16rem; }
   .comparison td { color: var(--sl-color-gray-2); }
-  .maturity-section ul { border-left: 2px solid var(--sl-color-accent); display: grid; gap: 0.8rem; list-style: none; margin: 0; padding: 0.3rem 0 0.3rem 1.5rem; }
-  .maturity-section li { color: var(--sl-color-gray-2); }
+  .boundaries-section ul { border-left: 2px solid var(--sl-color-accent); display: grid; gap: 0.8rem; list-style: none; margin: 0; padding: 0.3rem 0 0.3rem 1.5rem; }
+  .boundaries-section li { color: var(--sl-color-gray-2); }
   .final-cta { align-items: center; background: var(--sl-color-accent-low); border-bottom: 0; margin-top: 5rem; padding: clamp(2rem, 6vw, 4rem); }
   .primary-cta { background: var(--sl-color-accent); color: #fff; font-weight: 800; justify-self: end; padding: 0.9rem 1.2rem; text-decoration: none; }
   .product-footer { align-items: center; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; padding: 2rem 0 0; }
@@ -122,7 +122,7 @@
   @media (max-width: 58rem) {
     .problem-grid, .capability-grid, .use-case-grid { grid-template-columns: repeat(2, 1fr); }
     .execution-grid { grid-template-columns: 1fr; }
-    .example, .durable, .maturity-section, .final-cta { grid-template-columns: 1fr; }
+    .example, .durable, .boundaries-section, .final-cta { grid-template-columns: 1fr; }
     .primary-cta { justify-self: start; }
   }
   @media (max-width: 38rem) {

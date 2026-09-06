@@ -1,7 +1,7 @@
 ---
 title: "YAML reference"
 description: "Readable field groups, defaults, validation, and examples."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/reference/YAML.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/reference/YAML.md"
 ---
 The generated [workflow JSON Schema](/agentctl/downloads/workflow.schema.json) is authoritative. This page explains the field groups, defaults, and validation behavior that matter when writing YAML.
 
@@ -62,7 +62,7 @@ Required provider, MCP, and A2A URLs are checked before a run record is
 created. Agentctl resolves the destination, rejects the complete answer if any
 address is forbidden, and pins all accepted addresses into the direct client.
 Redirects and Unix-socket transports are disabled. See [Network
-policy](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/NETWORK_POLICY.md).
+policy](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/NETWORK_POLICY.md).
 
 ## Tasks
 
@@ -90,7 +90,7 @@ Each task requires `id` and `uses`. `uses` is `action:name`, `agent:name`,
 `extension.process` actions require
 `protocolVersion: agentctl.dev/process-extension/v1`, explicit idempotency,
 input and output JSON Schemas, a declared capability list, direct command/args,
-and bounded process limits. See [Extensions](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/EXTENSIONS.md).
+and bounded process limits. See [Extensions](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/EXTENSIONS.md).
 
 Ready tasks are selected in YAML declaration order up to `maxConcurrency`.
 They read isolated durable snapshots and commit in compiled order. There is no
@@ -133,7 +133,7 @@ Capability negotiation happens during compilation. A provider must explicitly su
 `runtime.pricing.models` entry for every cost-limited `provider/model`.
 Input and output rates are integer micro-US-dollars per million tokens.
 Optional reasoning and cache rates fall back to output and input rates. See
-[Resource and cost budgets](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/RESOURCE_BUDGETS.md).
+[Resource and cost budgets](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/RESOURCE_BUDGETS.md).
 
 ## Actions
 
@@ -170,7 +170,7 @@ means bounded host execution, not sandboxing. `container` requires a
 Container mode fixes a read-only root and workspace mount, non-root user,
 network none, dropped capabilities, `no-new-privileges`, bounded `/tmp`, and
 direct entrypoint/arguments. The compiled plan exposes process requirements.
-See [Process isolation](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/PROCESS_ISOLATION.md).
+See [Process isolation](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/PROCESS_ISOLATION.md).
 
 `mcp.call` accepts an optional `idempotency` declaration. Only `pure`,
 `idempotent`, or `keyed` permits the bounded reconnect path, and a refreshed
@@ -220,7 +220,7 @@ Provider credentials, action environment values, and protocol headers use
 The source description is stored in the workflow, but the value is resolved
 only at the execution boundary. File and process sources require explicit
 `secretFileRoots` or `secretProcessAllowlist` policy. See
-[Secret references](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/SECRET_REFERENCES.md).
+[Secret references](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/SECRET_REFERENCES.md).
 
 ## Example and validation
 
@@ -233,10 +233,10 @@ agentctl run examples/v1/dataflow.yaml --db /tmp/dataflow.db --output json --col
 ```
 
 Related guides: [Workflow authoring](/agentctl/guides/workflow-authoring/), [Matrix
-and foreach](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/MATRIX_AND_FOREACH.md), [Conditions and
-routers](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/CONDITIONS_AND_ROUTERS.md), [Bounded
-loops](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/BOUNDED_LOOPS.md), [Reusable
-sub-workflows](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/SUB_WORKFLOWS.md),
-[Compensation](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/COMPENSATION.md), [Secret
-references](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/SECRET_REFERENCES.md), [Policies](/agentctl/concepts/policies/),
+and foreach](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/MATRIX_AND_FOREACH.md), [Conditions and
+routers](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/CONDITIONS_AND_ROUTERS.md), [Bounded
+loops](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/BOUNDED_LOOPS.md), [Reusable
+sub-workflows](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/SUB_WORKFLOWS.md),
+[Compensation](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/COMPENSATION.md), [Secret
+references](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/SECRET_REFERENCES.md), [Policies](/agentctl/concepts/policies/),
 [Tools](/agentctl/concepts/tools/), and [Workflow DSL](/agentctl/concepts/workflow-model/).

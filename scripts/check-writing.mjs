@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { publicBrandingIssues } from './public-branding.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const roots = ['src/content/docs', 'src/components', 'root-site', 'docs'].map((entry) => path.join(root, entry));
@@ -29,6 +30,9 @@ for (const directory of roots) {
     if (source.includes('—')) errors.push(`${relative}: contains an em dash`);
     if (!relative.startsWith('docs/execution/') && source.includes('/Users/')) {
       errors.push(`${relative}: contains an absolute local path`);
+    }
+    if (!relative.startsWith('docs/execution/')) {
+      for (const issue of publicBrandingIssues(source)) errors.push(`${relative}: ${issue}`);
     }
     const lower = source.toLowerCase();
     for (const phrase of discouraged) {

@@ -1,9 +1,9 @@
 ---
 title: "Review a proposed change with bounded roles"
 description: "Connect planner, reviewer, and executor through typed handoffs."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/19-role-subworkflow/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/19-role-subworkflow/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/19-role-subworkflow.zip). Built from source [`4a22f7f733c5`](https://github.com/opensourceops/agentctl/tree/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/19-role-subworkflow). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/19-role-subworkflow.zip). Built from source [`68e5b8e738f0`](https://github.com/opensourceops/agentctl/tree/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/19-role-subworkflow). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** Platform engineer. **Level and evidence:** Advanced; deterministic offline change review with typed handoffs. Separate fake-agent and paid OpenAI variants.
 
@@ -11,7 +11,7 @@ Connect planner, reviewer and executor through typed handoffs for a substantive,
 
 ## Get the complete example
 
-Install the [matching candidate binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
+Install the [matching agentctl binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
 
 ```sh
 python3 examples/devops/package.py --example 19 --output ./example-19
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/19-role-subworkflow/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/19-role-subworkflow/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -71,7 +71,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The primary workflow prepares a source digest and requested change, then calls a reusable sub-workflow with explicit plan, review, validation and handoff tasks. A failed review assertion blocks the executor. The final action accepts only the matching reviewed timeout and source digest, writes an output copy and verifies it. The separate agent variants assign planner, reviewer and executor roles distinct tool visibility; they must pass the same deterministic review boundary.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/19-role-subworkflow/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/19-role-subworkflow/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

@@ -14,7 +14,6 @@ const base = import.meta.env.BASE_URL;
 <div class="site-header">
   <div class="title-wrapper sl-flex">
     <SiteTitle />
-    <span class="maturity" aria-label="CLI and crates are pre-1.0">pre-1.0</span>
   </div>
   <nav class="top-links" aria-label="Primary">
     <a href={`${base}overview/`}>Docs</a>
@@ -53,17 +52,6 @@ const base = import.meta.env.BASE_URL;
       padding: 0.25rem;
       margin: -0.25rem;
     }
-    .maturity {
-      border: 1px solid var(--sl-color-accent-low);
-      border-radius: 999px;
-      color: var(--sl-color-accent-high);
-      font-size: 0.65rem;
-      font-weight: 750;
-      letter-spacing: 0.06em;
-      padding: 0.2rem 0.45rem;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
     .top-links {
       display: flex;
       gap: 1rem;
@@ -91,7 +79,6 @@ const base = import.meta.env.BASE_URL;
     }
     @media (max-width: 50rem) {
       .site-header { display: flex; justify-content: space-between; }
-      .maturity { display: none; }
     }
   }
 </style>

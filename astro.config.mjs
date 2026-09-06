@@ -78,8 +78,9 @@ export default defineConfig({
           label: 'Start',
           items: [
             { slug: 'overview', label: 'What agentctl solves' },
-            { slug: 'getting-started/installation', label: 'Install the candidate' },
+            { slug: 'getting-started/installation', label: 'Install agentctl' },
             { slug: 'getting-started', label: 'First credential-free workflow' },
+            { slug: 'guides/container', label: 'First container workflow' },
             { slug: 'getting-started/first-agent', label: 'First bounded agent' },
             { slug: 'why-agentctl', label: 'Why agentctl' },
             { slug: 'learning-paths', label: 'Choose a learning path' },
@@ -138,6 +139,7 @@ export default defineConfig({
               label: 'Release and security practitioners',
               items: [
                 { slug: 'examples/devops/08-sbom-triage', label: 'Triage an SBOM' },
+                { slug: 'examples/devops/21-container-remediation', label: 'Remediate a container finding' },
                 { slug: 'examples/devops/09-release-notes', label: 'Write evidenced release notes' },
                 { slug: 'examples/devops/10-release-readiness', label: 'Enforce release gates' },
               ],
@@ -172,7 +174,7 @@ export default defineConfig({
             { slug: 'providers/a2a', label: 'A2A' },
             { slug: 'reference/environment', label: 'Authentication and paths' },
             { slug: 'reference/limitations', label: 'Operational limits' },
-            { slug: 'reference/compatibility', label: 'Compatibility and maturity' },
+            { slug: 'reference/compatibility', label: 'Compatibility contracts' },
             { slug: 'security', label: 'Security contracts' },
             { slug: 'security/threat-model', label: 'Threat model' },
             { slug: 'reference/terminology', label: 'Terminology' },
@@ -195,13 +197,13 @@ export default defineConfig({
             { slug: 'contributing/testing', label: 'Build and test' },
             { slug: 'contributing/release', label: 'Release process' },
             {
-              label: 'Release evidence and historical records',
+              label: 'Contracts and validation',
               items: [
-                { slug: 'concepts/framework-completeness', label: 'Framework completeness' },
-                { slug: 'reference/launch-limitation-review', label: 'Launch limitation review' },
-                { slug: 'reference/limitation-burndown', label: 'Limitation burn-down' },
-                { slug: 'reference/completeness-verification', label: 'Completeness verification' },
-                { slug: 'reference/live-framework-verification', label: 'Historical live evidence' },
+                { slug: 'concepts/framework-completeness', label: 'Supported framework contract' },
+                { slug: 'reference/launch-limitation-review', label: 'Validation and limitations' },
+                { slug: 'reference/limitation-burndown', label: 'Boundary review records' },
+                { slug: 'reference/completeness-verification', label: 'Verification records' },
+                { slug: 'reference/live-framework-verification', label: 'Provider validation records' },
               ],
             },
             {
