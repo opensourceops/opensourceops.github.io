@@ -5,3 +5,4 @@ _site/
 playwright-report/
 test-results/
 .agentctl-docs-server.json
+work/

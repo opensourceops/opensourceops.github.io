@@ -44,3 +44,9 @@ description: Follow a short path for evaluation, first use, workflow authoring, 
 2. Learn the [Rust workspace and effect boundaries](/agentctl/contributing/developer-guide/).
 3. Run the [testing strategy](/agentctl/contributing/testing/).
 4. Use the focused guide for an [action or tool](/agentctl/contributing/add-action/), [provider](/agentctl/contributing/add-provider/), [migration](/agentctl/contributing/add-migration/), or [documentation](/agentctl/contributing/documentation/) change.
+
+## Follow a complete cookbook journey
+
+For CI work, start with [JUnit triage](/agentctl/examples/devops/02-junit-triage/) and then [explicit release gating](/agentctl/examples/devops/10-release-readiness/). For SRE work, start with [canary decisions](/agentctl/examples/devops/13-canary-evaluation/), then inspect a failed source run in [retry and repair](/agentctl/examples/devops/16-retry-repair/) before touching uncertain effects in [interrupted deployment recovery](/agentctl/examples/devops/15-interrupted-deployment/).
+
+Each tutorial downloads as a complete source-matched package. Read the authored YAML, prepare its explicit local prerequisites, then use direct CLI commands. Acceptance-suite evidence belongs in the contributor/testing material and does not replace a first-time operator walkthrough.

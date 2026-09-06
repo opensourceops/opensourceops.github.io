@@ -1,7 +1,7 @@
 ---
 title: "Variables and instruction files"
 description: "Resolve ordered variables, instruction templates, read policy, and captured recovery inputs."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/VARIABLES.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/VARIABLES.md"
 ---
 Use `varsFiles` for ordinary configuration shared across workflow tasks, agent defaults, and task overrides. Use `instructionsFile` for an agent's reviewed instruction text. Both are captured configuration inputs; they grant no filesystem, process, network, tool, or approval authority.
 
@@ -47,7 +47,7 @@ An ordinary object such as `{file: report.txt}` or `{env: REGION}` remains data;
 
 Variable values are data, not recursively evaluated expressions. A string that contains template syntax does not trigger another expansion pass after it is selected by a template. Put template expressions in the consuming task fields or instruction text.
 
-Do not put credentials, tokens, or confidential secret material in ordinary variables or CLI flags. Use dedicated [secret references](https://github.com/opensourceops/agentctl/blob/main/docs/guides/SECRET_REFERENCES.md). Variable values can enter prompts, task outputs, artifacts, and retained execution state. [Sensitive-state encryption](https://github.com/opensourceops/agentctl/blob/main/docs/guides/SENSITIVE_STATE_ENCRYPTION.md) protects selected persisted fields when configured; it does not turn an ordinary variable file into a secret reference.
+Do not put credentials, tokens, or confidential secret material in ordinary variables or CLI flags. Use dedicated [secret references](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/guides/SECRET_REFERENCES.md). Variable values can enter prompts, task outputs, artifacts, and retained execution state. [Sensitive-state encryption](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/guides/SENSITIVE_STATE_ENCRYPTION.md) protects selected persisted fields when configured; it does not turn an ordinary variable file into a secret reference.
 
 ## A credential-free example
 
@@ -153,3 +153,9 @@ Inline-only workflows omit unused capture fields and preserve existing digest co
 `agentctl doctor workflow.yaml --output json` adds non-dispatching prerequisite checks. A missing provider credential fails readiness without showing the value. A process secret that would require running an external command remains unverified and makes readiness false. For container actions, the doctor checks the engine and pinned local image with bounded inspection; it does not pull an image or run a container. These checks establish available prerequisites, not successful workflow execution. A failed or unverified prerequisite uses exit code `6`; inspect the structured checks before scheduling a live run.
 
 See [Workflow DSL](/agentctl/concepts/workflow-model/), the [YAML reference](/agentctl/reference/yaml/), [scheduled operation](/agentctl/operations/scheduled/), and [selective repair](/agentctl/guides/selective-repair/).
+
+## Practice with a complete example
+
+The [configuration drift tutorial](/agentctl/examples/devops/11-configuration-drift/) includes editable YAML variable files, direct `explain` and `run` commands, and expected winning values. Use it to see whole-key replacement and invocation overrides without introducing a model or credentials.
+
+The [CI diagnosis](/agentctl/examples/devops/01-ci-diagnosis/) and [incident timeline](/agentctl/examples/devops/12-incident-timeline/) tutorials keep file paths in the typed `inputs` namespace. Their optional agent variants keep instructions in captured external files. Changing a path or variable never grants authority to read a new location or execute a new command.

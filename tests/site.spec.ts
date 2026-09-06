@@ -7,6 +7,7 @@ const routes: ReadonlyArray<readonly [string, string]> = [
   ['/agentctl/guides/workflow-authoring/', 'Author workflows'],
   ['/agentctl/guides/variables/', 'Variables and instruction files'],
   ['/agentctl/examples/devops/', 'DevOps and CI/CD examples'],
+  ['/agentctl/examples/', 'Cookbook'],
   ['/agentctl/reference/launch-limitation-review/', 'Current launch limitation review'],
   ['/agentctl/guides/container/', 'Container guide'],
   ['/agentctl/durable-execution/', 'Durable execution'],
@@ -71,7 +72,11 @@ test('navigation and sidebar reach important sections', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Provider overview', exact: true })).toBeVisible();
   await expect(page.getByRole('link', { name: 'CLI reference', exact: true })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Variables and instruction files', exact: true }).first()).toBeVisible();
-  await expect(page.getByRole('link', { name: 'DevOps and CI/CD suite', exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'DevOps cookbook and packages', exact: true })).toBeVisible();
+  const sidebar = page.locator('#starlight__sidebar');
+  const text = (await sidebar.textContent()) ?? '';
+  expect(text.indexOf('Install the candidate')).toBeLessThan(text.indexOf('Framework completeness'));
+  await expect(page.getByRole('link', { name: 'What agentctl solves', exact: true })).not.toContainText('v1');
 });
 
 test('Mermaid diagrams render without client errors', async ({ page }) => {
@@ -119,4 +124,81 @@ test.describe('desktop and tablet search', () => {
       await page.keyboard.press('Escape');
     }
   });
+});
+
+const cookbook: ReadonlyArray<readonly [string, string]> = [
+  ['01-ci-diagnosis', 'Diagnose a failed CI build'],
+  ['02-junit-triage', 'Triage JUnit test results'],
+  ['03-pipeline-review', 'Review a GitHub Actions pipeline'],
+  ['04-dockerfile-review', 'Review a Dockerfile'],
+  ['05-kubernetes-review', 'Validate Kubernetes manifests'],
+  ['06-terraform-plan', 'Review a Terraform plan'],
+  ['07-dependency-update', 'Validate a vendored-code patch'],
+  ['08-sbom-triage', 'Triage an SBOM and vulnerability report'],
+  ['09-release-notes', 'Generate evidenced release notes'],
+  ['10-release-readiness', 'Evaluate and enforce release readiness'],
+  ['11-configuration-drift', 'Explain configuration drift'],
+  ['12-incident-timeline', 'Build an incident timeline'],
+  ['13-canary-evaluation', 'Evaluate a canary'],
+  ['14-local-deployment', 'Approve a disposable local deployment'],
+  ['15-interrupted-deployment', 'Recover an interrupted deployment'],
+  ['16-retry-repair', 'Retry and selectively repair a workflow'],
+  ['17-compensated-rollout', 'Compensate a failed local rollout'],
+  ['18-parallel-matrix', 'Run bounded checks across services'],
+  ['19-role-subworkflow', 'Review a proposed change with bounded roles'],
+  ['20-bounded-remediation', 'Run a bounded remediation loop'],
+];
+
+for (const [directory, heading] of cookbook) {
+  test(`cookbook ${directory}: direct commands, YAML, assets, and accessibility`, async ({ page, request }) => {
+    await page.goto(`/agentctl/examples/devops/${directory}/`);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(heading);
+    const content = page.locator('.sl-markdown-content');
+    await expect(content).toContainText('agentctl check local.workflow.yaml');
+    await expect(content).toContainText('agentctl plan local.workflow.yaml');
+    await expect(content).toContainText('agentctl inspect');
+    await expect(content).toContainText('apiVersion: agentctl.dev/v1');
+    await expect(content).not.toContainText('blob/main/');
+    const workflowBlock = content.locator('.expressive-code').filter({ hasText: 'apiVersion: agentctl.dev/v1' });
+    await expect(workflowBlock).toHaveCount(1);
+    const renderedLines = await workflowBlock.locator('pre .ec-line > .code').allTextContents();
+    await workflowBlock.locator('.copy button').click();
+    const copied = await page.evaluate(() => navigator.clipboard.readText());
+    expect(copied.trimEnd()).toBe(renderedLines.join('\n').trimEnd());
+    expect(copied).toContain('kind: Workflow');
+    expect(copied).toContain('  tasks:');
+    expect(copied).toContain('  policy:');
+    const archive = content.getByRole('link', { name: 'Download all files', exact: true });
+    await expect(archive).toHaveAttribute('href', `/agentctl/downloads/devops/${directory}.zip`);
+    const response = await request.get(`/agentctl/downloads/devops/${directory}.zip`);
+    expect(response.ok()).toBe(true);
+    expect((await response.body()).subarray(0, 2).toString()).toBe('PK');
+    const widths = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+    expect(widths[0]).toBeLessThanOrEqual(widths[1] + 1);
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
+    expect(results.violations.filter((item) => ['serious', 'critical'].includes(item.impact || ''))).toEqual([]);
+  });
+}
+
+test('every cookbook tutorial has a searchable entry', async ({ page }) => {
+  test.setTimeout(120_000);
+  await page.goto('/agentctl/examples/');
+  for (const [directory, heading] of cookbook) {
+    await page.getByRole('button', { name: /search/i }).first().click();
+    const dialog = page.getByRole('dialog');
+    await dialog.getByRole('textbox', { name: 'Search' }).fill(heading);
+    await expect(dialog.locator(`a[href*="/examples/devops/${directory}/"]`).first()).toBeVisible({ timeout: 10_000 });
+    await page.keyboard.press('Escape');
+  }
+});
+
+test('installed-binary quickstart contains copyable complete YAML', async ({ page }) => {
+  await page.goto('/agentctl/getting-started/');
+  const block = page.locator('.expressive-code').filter({ hasText: 'apiVersion: agentctl.dev/v1' });
+  await expect(block).toHaveCount(1);
+  await block.locator('.copy button').click();
+  const copied = await page.evaluate(() => navigator.clipboard.readText());
+  expect(copied).toContain('kind: Workflow');
+  expect(copied).toContain('kind: builtin.assign');
+  expect(copied).not.toContain('cp examples/');
 });

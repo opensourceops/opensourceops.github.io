@@ -1,7 +1,7 @@
 ---
 title: "Live framework verification"
 description: "Historical GPT-5.6 scenario, recovery, replay, usage, and container evidence."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/execution/LIVE_FRAMEWORK_VERIFICATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/execution/LIVE_FRAMEWORK_VERIFICATION.md"
 ---
 Date: 2026-07-27, Asia/Kolkata.
 
@@ -10,7 +10,7 @@ Status: passed.
 This is historical evidence for the dated matrix below. It is not a current
 launch-readiness verdict, and its usage is separate from the September 2026
 suite allowance. Consult the [current execution
-ledger](https://github.com/opensourceops/agentctl/blob/main/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) for the exact new source commit, tested
+ledger](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) for the exact new source commit, tested
 model IDs, results, failures, and shared-budget accounting.
 
 The packaged macOS arm64 CLI and the production Linux arm64 OCI image executed
@@ -43,7 +43,7 @@ USD 0.07 for this retained matrix and its hard ceiling is USD 10.
 ## Composite feature proof
 
 The public
-[`live-composite.yaml`](https://github.com/opensourceops/agentctl/blob/main/examples/framework-completeness/live-composite.yaml)
+[`live-composite.yaml`](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/framework-completeness/live-composite.yaml)
 compiled to 21 tasks and made 11 bounded provider requests:
 
 - two independent agent branches executed under `maxConcurrency: 4`;

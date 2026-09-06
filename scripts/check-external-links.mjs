@@ -33,17 +33,27 @@ async function files(directory) {
 }
 
 const urls = new Set();
+const checkedSourceObjects = new Set();
 for (const file of await files(artifact)) {
   const html = await readFile(file, 'utf8');
   for (const match of html.matchAll(/href="(https?:[^"#]+)(?:#[^"]*)?"/g)) {
     const url = new URL(match[1].replaceAll('&amp;', '&'));
     if (url.hostname === 'opensourceops.github.io') continue;
-    const source = url.pathname.match(/^\/opensourceops\/agentctl\/(?:blob|edit)\/main\/(.+)$/);
+    const source = url.pathname.match(/^\/opensourceops\/agentctl\/(?:blob|edit|tree)\/(main|[0-9a-f]{40})(?:\/(.+))?$/);
     if (source && agentctlRoot) {
       try {
-        const sourcePath = path.resolve(agentctlRoot, decodeURIComponent(source[1]));
-        if (!sourcePath.startsWith(`${agentctlRoot}${path.sep}`)) throw new Error('path escape');
-        if ((await stat(sourcePath)).isFile()) continue;
+        const relative = decodeURIComponent(source[2] || '');
+        if (relative.split('/').includes('..')) throw new Error('path escape');
+        if (source[1] === 'main') {
+          const sourcePath = path.resolve(agentctlRoot, relative);
+          if (!sourcePath.startsWith(`${agentctlRoot}${path.sep}`)) throw new Error('path escape');
+          if ((await stat(sourcePath)).isFile()) continue;
+        } else {
+          const object = relative ? `${source[1]}:${relative}` : `${source[1]}^{tree}`;
+          execFileSync('git', ['cat-file', '-e', object], { cwd: agentctlRoot, stdio: 'ignore' });
+          checkedSourceObjects.add(object);
+          continue;
+        }
       } catch {
         // Let the public URL check report the missing source.
       }
@@ -103,4 +113,4 @@ await Promise.all(
 
 if (warnings.length) console.warn(`External links not conclusively checked:\n${warnings.join('\n')}`);
 if (failures.length) throw new Error(`Broken external links:\n${failures.join('\n')}`);
-console.log(`External link check found no definite failures across ${urls.size} unique URLs.`);
+console.log(`Verified ${checkedSourceObjects.size} exact source objects locally. External link check found no definite failures across ${urls.size} remaining unique URLs.`);

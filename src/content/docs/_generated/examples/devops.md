@@ -1,98 +1,81 @@
 ---
 title: "DevOps and CI/CD examples"
 description: "Run twenty bounded local examples and inspect their semantic evidence, artifacts, and recovery behavior."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/examples/devops/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/README.md"
 ---
-These twenty `agentctl.dev/v1` examples execute actual parsers, local patches,
-tests, policy decisions and recovery commands. Every run produces structured
-evidence. They use disposable local fixtures; none applies infrastructure or
-deploys an external service.
+Choose a complete local workflow for a concrete CI, platform, SRE, release or security problem. The twenty tutorials below lead with editable YAML, input files and direct `agentctl` commands. The CLI is pre-1.0; `agentctl.dev/v1` names its workflow document format.
 
-From the repository checkout, run the complete credential-free suite:
+## Get a complete package
+
+Install the [matching candidate binary](/agentctl/getting-started/installation/). On the documentation site, each tutorial offers a ZIP containing its workflow, fixtures, instructions, schemas and reviewed helper. From a source checkout, the equivalent packaging command is:
 
 ```sh
-cargo build -p agentctl-cli --locked
-python3 examples/devops/run.py --agentctl target/debug/agentctl --report /tmp/agentctl-devops.json
+python3 examples/devops/package.py --example 02 --output ./junit-example
+cd junit-example
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python setup.py
+agentctl check local.workflow.yaml --workspace .
+agentctl plan local.workflow.yaml --workspace .
+agentctl run local.workflow.yaml --workspace . --db state.db --output json
 ```
 
-Use `--only 01` to select an example; repeat it to select several. `--keep`
-retains the fresh workspaces and prints their locations. Failed workspaces are
-always retained. The runner invokes the real CLI from a separate, empty working
-directory, uses explicit workflow/workspace/database paths, and records check,
-plan, execution, inspection, denial, replay and relevant recovery commands.
-Each JSON envelope and exit code is saved under the retained `evidence/` folder.
-The aggregate report includes checkout HEAD and a dirty-tree flag, binary/workflow/helper hashes, artifact
-digests, usage and assertions. A passing local report does not establish hosted
-Linux/macOS/Windows evidence.
+Use `.venv\Scripts\python.exe` on Windows. Python 3.11 or newer is required; the requirements file pins the YAML authoring dependency and any case-specific validator. Setup configures the selected interpreter and support tools before creating `local.workflow.yaml`. It does not grant authority through user inputs or vars. Inspect the generated local policy, then use the case's direct commands for approvals, recovery or local service operation.
 
-The [machine-readable catalog](https://github.com/opensourceops/agentctl/blob/main/examples/devops/catalog.json) is an exact inventory of twenty
-directories, dependencies, platforms, features, modes, expected exit codes and
-artifacts. The runner rejects uncatalogued/missing example directories. Static
-`check` success is not execution evidence; a current suite report is required.
+Read [variable precedence](/agentctl/guides/variables/) and [configuration drift](/agentctl/examples/devops/11-configuration-drift/) when adapting inputs. Captured source files belong to one run: edit for a fresh invocation or a reviewed repair, and use recorded replay to reconstruct history.
+
+## Choose a tutorial
 
 | # | Workflow | Observable result |
 |---|---|---|
-| 01 | [CI diagnosis](https://github.com/opensourceops/agentctl/blob/main/examples/devops/01-ci-diagnosis/README.md) | Parsed failure and structured advice with verified log citations |
-| 02 | [JUnit triage](https://github.com/opensourceops/agentctl/blob/main/examples/devops/02-junit-triage/README.md) | Real XML parsing, assertion/infrastructure classification |
-| 03 | [Pipeline review](https://github.com/opensourceops/agentctl/blob/main/examples/devops/03-pipeline-review/README.md) | Permission/timeout violations and a checked, applied Git patch |
-| 04 | [Dockerfile review](https://github.com/opensourceops/agentctl/blob/main/examples/devops/04-dockerfile-review/README.md) | Narrow COPY, non-root user, code checks and separate real image gate |
-| 05 | [Kubernetes review](https://github.com/opensourceops/agentctl/blob/main/examples/devops/05-kubernetes-review/README.md) | Corrected manifest checked against a bundled Deployment subset schema |
-| 06 | [Terraform plan](https://github.com/opensourceops/agentctl/blob/main/examples/devops/06-terraform-plan/README.md) | Plan rules, durable approvals, isolated local-file mutation |
-| 07 | [Dependency update](https://github.com/opensourceops/agentctl/blob/main/examples/devops/07-dependency-update/README.md) | Vendored patch plus failing-before/passing-after behavioral tests |
-| 08 | [SBOM triage](https://github.com/opensourceops/agentctl/blob/main/examples/devops/08-sbom-triage/README.md) | Component joins, severity rules and expiring exceptions |
-| 09 | [Release notes](https://github.com/opensourceops/agentctl/blob/main/examples/devops/09-release-notes/README.md) | Actual fixture Git commits and verified changed-file citations |
-| 10 | [Release readiness](https://github.com/opensourceops/agentctl/blob/main/examples/devops/10-release-readiness/README.md) | Gate and package-digest evidence with an explicit no-go |
-| 11 | [Configuration drift](https://github.com/opensourceops/agentctl/blob/main/examples/devops/11-configuration-drift/README.md) | External variable precedence, replacement and invocation overrides |
-| 12 | [Incident timeline](https://github.com/opensourceops/agentctl/blob/main/examples/devops/12-incident-timeline/README.md) | Sorted events, duration and source-checked runbook advice |
-| 13 | [Canary evaluation](https://github.com/opensourceops/agentctl/blob/main/examples/devops/13-canary-evaluation/README.md) | Both typed promotion/rollback routes with no unselected mutation |
-| 14 | [Local deployment](https://github.com/opensourceops/agentctl/blob/main/examples/devops/14-local-deployment/README.md) | Durable approval and before/after probes of a disposable HTTP service |
-| 15 | [Interrupted deployment](https://github.com/opensourceops/agentctl/blob/main/examples/devops/15-interrupted-deployment/README.md) | Process kill, conservative recovery and exactly one confirmed local mutation |
-| 16 | [Retry and repair](https://github.com/opensourceops/agentctl/blob/main/examples/devops/16-retry-repair/README.md) | Terminal retry and selective repair reuse a successful upstream build |
-| 17 | [Compensated rollout](https://github.com/opensourceops/agentctl/blob/main/examples/devops/17-compensated-rollout/README.md) | Failed health check, explicit inverse and linked reconciliation |
-| 18 | [Parallel matrix](https://github.com/opensourceops/agentctl/blob/main/examples/devops/18-parallel-matrix/README.md) | Four service checks with stable ordered aggregation |
-| 19 | [Role sub-workflow](https://github.com/opensourceops/agentctl/blob/main/examples/devops/19-role-subworkflow/README.md) | Typed planner/reviewer/executor handoffs and distinct tool visibility |
-| 20 | [Bounded remediation](https://github.com/opensourceops/agentctl/blob/main/examples/devops/20-bounded-remediation/README.md) | Validated tool mutation, loop termination and resource/cost audit |
+| 01 | [CI diagnosis](/agentctl/examples/devops/01-ci-diagnosis/) | Parsed failure and structured advice with verified log citations |
+| 02 | [JUnit triage](/agentctl/examples/devops/02-junit-triage/) | Real XML parsing, preserved JUnit error/failure kinds and evidence-based classifications |
+| 03 | [Pipeline review](/agentctl/examples/devops/03-pipeline-review/) | Permission/timeout violations and a checked, applied Git patch |
+| 04 | [Dockerfile review](/agentctl/examples/devops/04-dockerfile-review/) | Narrow COPY, non-root user, code checks and separate real image gate |
+| 05 | [Kubernetes review](/agentctl/examples/devops/05-kubernetes-review/) | Local manifest review with explicitly pinned schema coverage |
+| 06 | [Terraform plan](/agentctl/examples/devops/06-terraform-plan/) | Plan rules, durable approvals, isolated local-file mutation |
+| 07 | [Dependency update](/agentctl/examples/devops/07-dependency-update/) | Vendored patch plus failing-before/passing-after behavioral tests |
+| 08 | [SBOM triage](/agentctl/examples/devops/08-sbom-triage/) | Component joins, severity rules and expiring exceptions |
+| 09 | [Release notes](/agentctl/examples/devops/09-release-notes/) | Existing repository range and verified changed-file citations |
+| 10 | [Release readiness](/agentctl/examples/devops/10-release-readiness/) | Gate and package-digest evidence with an explicit no-go |
+| 11 | [Configuration drift](/agentctl/examples/devops/11-configuration-drift/) | External variable precedence, replacement and invocation overrides |
+| 12 | [Incident timeline](/agentctl/examples/devops/12-incident-timeline/) | Sorted events, duration and source-checked runbook advice |
+| 13 | [Canary evaluation](/agentctl/examples/devops/13-canary-evaluation/) | Both typed promotion/rollback routes with no unselected mutation |
+| 14 | [Local deployment](/agentctl/examples/devops/14-local-deployment/) | Durable approval and before/after probes of a disposable HTTP service |
+| 15 | [Interrupted deployment](/agentctl/examples/devops/15-interrupted-deployment/) | Process kill, conservative recovery and exactly one confirmed local mutation |
+| 16 | [Retry and repair](/agentctl/examples/devops/16-retry-repair/) | Terminal retry and selective repair reuse a successful upstream build |
+| 17 | [Compensated rollout](/agentctl/examples/devops/17-compensated-rollout/) | Failed health check, explicit inverse and linked reconciliation |
+| 18 | [Parallel matrix](/agentctl/examples/devops/18-parallel-matrix/) | Four service checks with stable ordered aggregation |
+| 19 | [Role sub-workflow](/agentctl/examples/devops/19-role-subworkflow/) | Typed planner/reviewer/executor handoffs and distinct tool visibility |
+| 20 | [Bounded remediation](/agentctl/examples/devops/20-bounded-remediation/) | Validated tool mutation, loop termination and resource/cost audit |
 
-## Execution and authority
+## Authority and evidence
 
-Python 3.10+ is required; examples 03, 04, 07 and 09 also use Git. On Windows, provide `--agentctl target/debug/agentctl.exe` or omit that option to use the platform default, and ensure `python3` is on PATH. Workflow files
-use the JSON-compatible subset of YAML so the small standard-library runner
-does not need a YAML dependency. The [reviewed process extension](https://github.com/opensourceops/agentctl/blob/main/examples/devops/fixture.py)
-implements the versioned handshake and returns JSON; workflows validate its
-outputs and write durable reports. Interpreter access is an explicit host
-process grant. Host execution is not an operating-system sandbox; the helper
-can invoke the documented Git/Python subprocesses. Use only reviewed helpers
-on a trusted fixture runner.
+The normal paths work without credentials. Four tutorials also have separately labeled OpenAI workflows; the scripted fake provider establishes deterministic protocol behavior, not live model quality. Other cases perform useful deterministic parsing, patching, validation or routing without artificial model calls.
 
-For Git fixtures, the runner resolves the installed executable before dispatch
-and stages its absolute path and SHA-256 in `fixture-tools.json` beside the
-copied helper. The helper verifies that fingerprint before invoking Git; the
-case report records the same configuration. This is trusted host preparation,
-separate from workflow variables and the compiled plan. It avoids importing
-PATH into cleared process environments, including on Windows. Run these fixtures
-through the suite runner so their support configuration is prepared.
+Offline practical workflows accept supplied local files. Recovery and local-service tutorials are contract demonstrations with explicit disposable fixtures. None applies infrastructure or deploys production services. Report generation can intentionally succeed with `no-go`; tutorials 08 and 10 provide separate CI enforcement paths that fail nonzero and block downstream effects.
 
-The approval cases preserve `approval: mutations`. The runner lists and reviews
-each pending effect, uses actor `devops-fixture-reviewer` with an explicit
-reason, and resumes the same durable run. This framework version records actors
-but has no actor-role authorization system: local database ownership remains a
-trust boundary. The fixture does not disable policy to obtain a green result.
+The Python process grant trusts the reviewed helper and its documented child processes. It is **not an operating-system sandbox** enforcing a separate policy around every Python file access or Git invocation. Setup records support-tool paths and fingerprints; ordinary variables cannot grant new process or filesystem authority. Use trusted local or disposable runners, protect input data and SQLite history, and review complete packages before execution.
 
-All cases execute a policy denial and prove no application artifact was written.
-Runtime lock/CAS scaffolding is allowed. Terminal replays remove the provider
-credential, point HTTP proxies at an unreachable loopback address, temporarily
-hide instruction/variable files, and require zero fresh effects and identical
-application artifact bytes. This is a replay behavior assertion, not an
-operating-system network sandbox.
+Approval commands record the local actor and reason. Local database ownership is the current authority boundary; the fixture does not simulate an actor-role authorization system. Review each pending operation and its content digest before approving it.
 
-The interrupted case preserves confirmed non-idempotent effects. An interrupted
-in-process fake-provider request may remain uncertain; the runner verifies that
-resume refuses it and explicitly records not-applied fixture reconciliation
-before continuing. That evidence does not establish exactly-once remote
-mutation. Compensation likewise proves a declared best-effort inverse, not a
-transactional rollback.
+## Contributor verification
 
-## Real container gate
+The optional acceptance runner packages and prepares the same published workflows, then adds separate denial cases, fault injection, replay assertions and aggregate evidence. A new user does not need the runner to operate an example.
+
+From the framework checkout:
+
+```sh
+cargo build -p agentctl-cli --locked
+python3 -m pip install -r examples/devops/requirements.txt
+python3 examples/devops/run.py --agentctl target/debug/agentctl --report /tmp/agentctl-devops.json
+```
+
+Use `--only 01` to select a case, repeat it to select several, and use `--keep` to retain workspaces. The discoverable suite alias is `cargo xtask devops-examples`. Reports retain source and binary identity, commands, exit codes, semantic assertions and artifact hashes. Passing static `check` alone does not establish execution evidence. The [machine-readable catalog](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/catalog.json) and [recorded validation](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/validation.json) preserve exact inventory and source-labeled results.
+
+Hand-maintained tutorial prose is separate from the deterministic [catalog generator](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/build_catalog.py). Regeneration updates workflows, input fixtures and machine-readable inventory; it must not overwrite these READMEs. Run it after authored generator changes and verify a second pass produces no diff.
+
+### Optional container verification
 
 Example 04's normal mode checks source syntax and the proposed patch. The
 additional image gate requires a usable Docker or Podman engine and an already
@@ -110,11 +93,13 @@ fixture image. Substitute `podman` for Docker in both commands if needed. The
 base image remains cached. No performance or image-size improvement is claimed.
 Without this gate, the report explicitly says container build was not executed.
 
-## Explicit paid OpenAI variants
+### Paid acceptance verification
 
-Only examples 01, 12, 19 and 20 depend on model analysis or model/tool
-collaboration. Each has a deterministic fake-provider workflow and a separate
-`openai.workflow.yaml`. Ordinary CI executes no paid requests. The crash test's
+Examples 01, 12, 19 and 20 provide optional model analysis or model/tool
+collaboration through a separate `openai.workflow.yaml`. The primary 01 and 12
+workflows are deterministic without a provider; their explicit
+`contract.workflow.yaml` files retain scripted fake-agent regression cases.
+All four primary workflows work without a provider. Role and remediation examples also keep bounded fake-agent paths as labeled contracts. Ordinary CI executes no paid requests. The crash test's
 fake provider is fault injection and has no artificial OpenAI variant.
 
 Paid execution requires the runtime `OPENAI_API_KEY`, available `gpt-5-mini`
@@ -126,7 +111,7 @@ python3 examples/devops/run.py --agentctl target/debug/agentctl --mode openai --
 
 Use the **same budget file for the entire launch suite and all retries**. A new
 file would create a new allowance; it must not be used to bypass an existing
-suite limit. [live_budget.py](https://github.com/opensourceops/agentctl/blob/main/examples/devops/live_budget.py) exposes `LiveBudget.reserve` and
+suite limit. [live_budget.py](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/live_budget.py) exposes `LiveBudget.reserve` and
 `reconcile` for other authorized harnesses. Defaults are 100 provider requests,
 200,000 total tokens, 1,800 seconds of paid execution and US$25 estimated cost.
 SQLite transactions reserve each workflow's request/token/time/cost upper
@@ -148,17 +133,3 @@ Budget guard regression checks require no credentials:
 ```sh
 python3 -m unittest discover -s examples/devops -p test_live_budget.py -v
 ```
-
-The [catalog generator](https://github.com/opensourceops/agentctl/blob/main/examples/devops/build_catalog.py) regenerates fixtures, workflow
-documents, per-example READMEs and the catalog without network access. Edit it
-when changing those generated files, then run `python3 examples/devops/build_catalog.py`.
-Runtime evidence belongs to the suite report; never replace a failed gate with
-a static catalog claim.
-
-[Recorded local validation](https://github.com/opensourceops/agentctl/blob/main/examples/devops/validation.json) retains each executed report's source identity, dirty-tree flag, binary hash and results. Refresh this evidence only from actual runner reports:
-
-```sh
-python3 examples/devops/record_evidence.py --deterministic /tmp/agentctl-devops.json --container /tmp/agentctl-devops-container.json
-```
-
-Add `--live /tmp/agentctl-devops-openai.json` only after executing that paid gate. The recording tool preserves failures and never upgrades local evidence into a final release verdict.

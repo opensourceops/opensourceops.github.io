@@ -1,7 +1,7 @@
 ---
 title: "Release readiness"
 description: "Combine deterministic gates with bounded analysis."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/use-cases/RELEASE_READINESS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/use-cases/RELEASE_READINESS.md"
 ---
 ## Problem
 

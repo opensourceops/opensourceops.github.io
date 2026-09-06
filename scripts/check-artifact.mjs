@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,6 +13,7 @@ const required = [
   'agentctl/reference/cli/index.html', 'agentctl/troubleshooting/index.html',
   'agentctl/pagefind/pagefind.js', 'agentctl/meta/agentctl-source.json',
   'agentctl/downloads/workflow.schema.json',
+  'agentctl/downloads/devops/catalog.json',
 ];
 
 for (const relative of required) {
@@ -50,6 +52,17 @@ if (!/^[0-9a-f]{40}$/.test(source.commit) || typeof source.dirty !== 'boolean') 
 }
 if (source.importedFiles !== contentManifest.length || source.imports?.length !== contentManifest.length) {
   errors.push('source metadata does not cover the complete import manifest');
+}
+const packages = JSON.parse(await readFile(path.join(artifact, 'agentctl/downloads/devops/catalog.json'), 'utf8'));
+if (packages.length !== 20 || JSON.stringify(packages) !== JSON.stringify(source.cookbookPackages)) {
+  errors.push('download catalog must cover all twenty source-matched packages');
+}
+for (const item of packages) {
+  const bytes = await readFile(path.join(artifact, item.download));
+  if (item.sourceCommit !== source.commit || item.bytes !== bytes.length || item.sha256 !== createHash('sha256').update(bytes).digest('hex')) {
+    errors.push(`stale or mismatched cookbook package: ${item.directory}`);
+  }
+  if (!records.has(path.join(artifact, item.route, 'index.html'))) errors.push(`package has no tutorial: ${item.directory}`);
 }
 for (const [sourcePath, target] of contentManifest) {
   const imported = source.imports?.filter((item) => item.source === sourcePath) || [];
@@ -136,4 +149,5 @@ for (const file of records.keys()) {
 }
 
 if (errors.length) throw new Error(errors.slice(0, 100).join('\n'));
+execFileSync('python3', [path.join(root, 'scripts/check-cookbook-packages.py')], { stdio: 'inherit' });
 console.log(`Artifact structure, routes, ${files.length} HTML pages, links, anchors, and reachability passed.`);

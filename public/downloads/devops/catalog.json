@@ -1,0 +1,162 @@
+[
+  {
+    "directory": "01-ci-diagnosis",
+    "route": "/agentctl/examples/devops/01-ci-diagnosis/",
+    "download": "/agentctl/downloads/devops/01-ci-diagnosis.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "590a439521584258fb2585326e4693f6db79913146df5a4488a8012423392bed",
+    "bytes": 36682
+  },
+  {
+    "directory": "02-junit-triage",
+    "route": "/agentctl/examples/devops/02-junit-triage/",
+    "download": "/agentctl/downloads/devops/02-junit-triage.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "27e2aff2dbcc2a3296998f3664f14e983d5b48880fc8b024af9b43d898a1cf3d",
+    "bytes": 32640
+  },
+  {
+    "directory": "03-pipeline-review",
+    "route": "/agentctl/examples/devops/03-pipeline-review/",
+    "download": "/agentctl/downloads/devops/03-pipeline-review.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "dba97f70ef7e00e11469e9acd5720e06e1090c56593b10161759d9248a5ac5c1",
+    "bytes": 33591
+  },
+  {
+    "directory": "04-dockerfile-review",
+    "route": "/agentctl/examples/devops/04-dockerfile-review/",
+    "download": "/agentctl/downloads/devops/04-dockerfile-review.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "ccf3c5c2950b691ac90287b2cc517f34b7c1cac0059f6fe571723c5a5f87ad7e",
+    "bytes": 33556
+  },
+  {
+    "directory": "05-kubernetes-review",
+    "route": "/agentctl/examples/devops/05-kubernetes-review/",
+    "download": "/agentctl/downloads/devops/05-kubernetes-review.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "93d66778fc5e6b3c92e4c998e4107a235fef1db88a4f7415dcecf88628dbbf9c",
+    "bytes": 85541
+  },
+  {
+    "directory": "06-terraform-plan",
+    "route": "/agentctl/examples/devops/06-terraform-plan/",
+    "download": "/agentctl/downloads/devops/06-terraform-plan.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "22977a40705a1ff04f017c4810ddcea38a0bfc90023661dad975c72060e7b6c8",
+    "bytes": 33166
+  },
+  {
+    "directory": "07-dependency-update",
+    "route": "/agentctl/examples/devops/07-dependency-update/",
+    "download": "/agentctl/downloads/devops/07-dependency-update.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "40c22ee5f1616e03cf158243d1e73b0b5d2fb8d9b44199ec40c7c83ab9541465",
+    "bytes": 33748
+  },
+  {
+    "directory": "08-sbom-triage",
+    "route": "/agentctl/examples/devops/08-sbom-triage/",
+    "download": "/agentctl/downloads/devops/08-sbom-triage.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "e85af5972ac4c1ff8761d86fce38668fec4f1c2e801d0f9ae008916ec756ce3b",
+    "bytes": 34804
+  },
+  {
+    "directory": "09-release-notes",
+    "route": "/agentctl/examples/devops/09-release-notes/",
+    "download": "/agentctl/downloads/devops/09-release-notes.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "84f0289aeb532efc2c99f8c25590d8d0fdafc8e75b26a4d591fb8edaef8ed5b6",
+    "bytes": 32705
+  },
+  {
+    "directory": "10-release-readiness",
+    "route": "/agentctl/examples/devops/10-release-readiness/",
+    "download": "/agentctl/downloads/devops/10-release-readiness.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "f88689d470acc1b4c028a6f923389d74b9035b0c792d3f59a963ad9dae5d908f",
+    "bytes": 34372
+  },
+  {
+    "directory": "11-configuration-drift",
+    "route": "/agentctl/examples/devops/11-configuration-drift/",
+    "download": "/agentctl/downloads/devops/11-configuration-drift.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "b62b456ff76aad7e4a2ca34de618f987c837d3be2e9607bc47f85b454b1e98b6",
+    "bytes": 33547
+  },
+  {
+    "directory": "12-incident-timeline",
+    "route": "/agentctl/examples/devops/12-incident-timeline/",
+    "download": "/agentctl/downloads/devops/12-incident-timeline.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "1afba438432bdbade1734e7b2054586b413d3ab3df38b1015fe9a5c747b8f1f1",
+    "bytes": 36704
+  },
+  {
+    "directory": "13-canary-evaluation",
+    "route": "/agentctl/examples/devops/13-canary-evaluation/",
+    "download": "/agentctl/downloads/devops/13-canary-evaluation.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "0e621ebc8853119f98978939fd58929ebae84146f9ba47a5ea24fdc3e707395e",
+    "bytes": 32949
+  },
+  {
+    "directory": "14-local-deployment",
+    "route": "/agentctl/examples/devops/14-local-deployment/",
+    "download": "/agentctl/downloads/devops/14-local-deployment.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "2da8d2bfbf7df91a5d3e8178010e92ec5479b37e9dfc10c22de7d6fa6f67673c",
+    "bytes": 33654
+  },
+  {
+    "directory": "15-interrupted-deployment",
+    "route": "/agentctl/examples/devops/15-interrupted-deployment/",
+    "download": "/agentctl/downloads/devops/15-interrupted-deployment.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "c2f86a4abc58fe432c61f46b20eedede182c1af58b369145294a987e20932db5",
+    "bytes": 35509
+  },
+  {
+    "directory": "16-retry-repair",
+    "route": "/agentctl/examples/devops/16-retry-repair/",
+    "download": "/agentctl/downloads/devops/16-retry-repair.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "5485b7c94a76218b9a885aa66cb9d1ffd28bbca9704673ea969a107fdde9a7d3",
+    "bytes": 34108
+  },
+  {
+    "directory": "17-compensated-rollout",
+    "route": "/agentctl/examples/devops/17-compensated-rollout/",
+    "download": "/agentctl/downloads/devops/17-compensated-rollout.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "f03ce6b47e18f384f195a291b5af65980417cadbe35e9c83daf1d03b64190a8b",
+    "bytes": 35224
+  },
+  {
+    "directory": "18-parallel-matrix",
+    "route": "/agentctl/examples/devops/18-parallel-matrix/",
+    "download": "/agentctl/downloads/devops/18-parallel-matrix.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "2e4f0061e4498eb1767f19ba0aaa09a686a7be00f2bd89fd7da9a42c554514fb",
+    "bytes": 33885
+  },
+  {
+    "directory": "19-role-subworkflow",
+    "route": "/agentctl/examples/devops/19-role-subworkflow/",
+    "download": "/agentctl/downloads/devops/19-role-subworkflow.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "088a75a719d9a9351e9a39b06db1029cd2c8054a5aabefb44dc108e63e6e4cbf",
+    "bytes": 40325
+  },
+  {
+    "directory": "20-bounded-remediation",
+    "route": "/agentctl/examples/devops/20-bounded-remediation/",
+    "download": "/agentctl/downloads/devops/20-bounded-remediation.zip",
+    "sourceCommit": "d388954c346865cb34c0f20a5f528e695ba39b8a",
+    "sha256": "51b3f48a054673ef6aec29758bd4d66f5e5ad26e5500e859791d33a9d5654a95",
+    "bytes": 38219
+  }
+]

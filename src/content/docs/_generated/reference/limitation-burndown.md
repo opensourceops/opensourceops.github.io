@@ -1,7 +1,7 @@
 ---
 title: "Limitation burn-down"
 description: "Historical disposition of the thirty-item framework limitation register."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/execution/LIMITATION_BURNDOWN.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/execution/LIMITATION_BURNDOWN.md"
 ---
 This is the retained register for the earlier framework-completeness program. It
 supersedes roadmap language that classified core durability, recovery,
@@ -22,7 +22,7 @@ redesigned, and 4 removed from the supported surface. All 30 program states
 were recorded as verified in that program. These dispositions do not certify a
 new source commit or close the expanded September 2026 launch requirements.
 The [current limitation review](/agentctl/reference/launch-limitation-review/) and
-[execution ledger](https://github.com/opensourceops/agentctl/blob/main/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) record discovered gaps,
+[execution ledger](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) record discovered gaps,
 current evidence, and the release decision for the continuation.
 
 ## Dependency order

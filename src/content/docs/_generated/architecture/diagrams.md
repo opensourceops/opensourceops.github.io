@@ -1,7 +1,7 @@
 ---
 title: "Architecture diagrams"
 description: "Fourteen verified diagrams for compilation, state, effects, recovery, deployment, and crates."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/architecture/DIAGRAMS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/architecture/DIAGRAMS.md"
 ---
 These diagrams explain implemented workflow API v1 behavior. Each diagram is
 paired with text so the relationship is available when Mermaid cannot render.

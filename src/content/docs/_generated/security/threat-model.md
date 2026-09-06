@@ -1,7 +1,7 @@
 ---
 title: "Threat model"
 description: "Map assets and threats to controls and residual risk."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/THREAT_MODEL.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/THREAT_MODEL.md"
 ---
 ## Assets and boundaries
 

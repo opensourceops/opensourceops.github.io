@@ -7,6 +7,7 @@ This repository builds the organization root site and the public `agentctl` docu
 - Node.js 22 or newer
 - pnpm 11.9.0 through Corepack
 - Rust 1.88.0 and Cargo
+- Python 3.11 or newer for cookbook tooling (asset packaging uses the standard library; executing downloaded examples installs their pinned requirements)
 - Playwright Chromium for the full browser gate
 - local checkouts of this repository and `agentctl`
 
@@ -37,4 +38,6 @@ Common failures are a missing `AGENTCTL_REPO`, stale generated source or CLI ref
 
 Source ownership, routes, content digests, and the exact framework commit remain in `public/meta/agentctl-source.json`; imported pages keep their source edit links. The importer does not append provenance boilerplate to the page body. When updating framework content, follow the [paired source update](docs/DEPLOYMENT.md#paired-source-updates) before running the freshness gate.
 
-See [deployment settings](docs/DEPLOYMENT.md) and the [current documentation execution ledger](docs/execution/AGENTCTL_LAUNCH_READINESS_20260906.md). The older execution documents retain evidence from their stated dates.
+All twenty cookbook READMEs are imported at stable `examples/devops/<directory>/` routes. Synchronization calls the framework's standard-library `package.py` to generate each complete downloadable ZIP, including its helper and setup script. ZIP hashes, source revisions, and tutorial routes are recorded in `downloads/devops/catalog.json` and source metadata. Installation commands and source links use the paired framework commit instead of silently pointing candidate readers at `main`.
+
+See [deployment settings](docs/DEPLOYMENT.md) and the [current cookbook review ledger](docs/execution/COOKBOOK_REVIEW_20260906.md). The older execution documents retain evidence from their stated dates.

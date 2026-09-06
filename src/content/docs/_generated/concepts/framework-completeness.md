@@ -1,7 +1,7 @@
 ---
 title: "Framework completeness"
 description: "The implemented deterministic workflow surface and explicit product boundaries."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/execution/FRAMEWORK_COMPLETENESS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/execution/FRAMEWORK_COMPLETENESS.md"
 ---
 ## Product contract
 

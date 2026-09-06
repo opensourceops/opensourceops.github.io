@@ -1,7 +1,7 @@
 ---
 title: "Release process"
 description: "Prepare and verify an exact-commit release without overstating evidence."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/RELEASE_PROCESS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/RELEASE_PROCESS.md"
 ---
 This process applies to agentctl releases carrying workflow API
 `agentctl.dev/v1`. A release is not approved from local evidence alone.

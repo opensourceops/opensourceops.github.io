@@ -25,6 +25,8 @@
     "redispatched", "replayable", "Sigstore", "subworkflows", "Unreviewed", "workstreams",
     "zeroizing", "nonterminal", "Kolkata", "libkrun", "gvproxy", "Workstream",
     "undispatched", "XPLAT", "roundtrips", "keylessly", "unallowlisted", "embedder",
-    "reindexing", "zeroization", "BURNDOWN"
+    "reindexing", "zeroization", "BURNDOWN",
+    "nonconvergence", "nonlocal", "nonpositive", "pathlib", "remediator",
+    "subworkflow", "unvalidated", "venv", "fetchone", "pyflakes"
   ]
 }

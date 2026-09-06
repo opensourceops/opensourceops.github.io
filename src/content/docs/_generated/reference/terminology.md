@@ -1,7 +1,7 @@
 ---
 title: "Terminology"
 description: "Use workflow, task, effect, resume, replay, retry, and fork precisely."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/reference/TERMINOLOGY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/reference/TERMINOLOGY.md"
 ---
 Use these terms consistently in workflows, documentation, issues, and reviews.
 

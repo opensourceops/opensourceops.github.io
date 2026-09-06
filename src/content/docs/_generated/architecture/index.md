@@ -1,7 +1,7 @@
 ---
 title: "Architecture overview"
 description: "Crate boundaries, execution, determinism, concurrency, and packaging."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/ARCHITECTURE.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/ARCHITECTURE.md"
 ---
 ## Dependency shape
 
@@ -33,7 +33,7 @@ successful outputs, disjoint memory deltas, failures, artifact references,
 audit events, and the checkpoint in compiled order in one transaction.
 Unordered overlapping `memoryWrites` fail compilation. Effects and provider
 sessions remain task-local. See ADR 0008 and
-[Deterministic parallel tasks](https://github.com/opensourceops/agentctl/blob/main/docs/guides/PARALLEL_TASKS.md).
+[Deterministic parallel tasks](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/guides/PARALLEL_TASKS.md).
 
 Static foreach lists and matrix axes compile into ordinary namespaced child
 tasks followed by a pure aggregate. Their IDs, bindings, attempts, outputs,
@@ -72,9 +72,9 @@ digest-pinned Docker/Podman image with no pull/network, a read-only
 root/workspace, a non-root identity, dropped capabilities, resource limits,
 and fail-closed backend/image preflight. SQLite is bundled for predictable
 installation and creates private files on Unix. SIGINT and SIGTERM converge on
-durable cancellation. See [Process isolation](https://github.com/opensourceops/agentctl/blob/main/docs/guides/PROCESS_ISOLATION.md) and
+durable cancellation. See [Process isolation](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/guides/PROCESS_ISOLATION.md) and
 ADR 0020. Run budget coordination is described by ADR 0021.
 
 The OCI build is multi-stage: only the optimized Rust binary enters a maintained distroless runtime with CA roots and a non-root identity. `/config` is workflow configuration, `/workspace` is the read-only working tree, `/state` holds SQLite and the content-addressed artifact store, and `/artifacts` receives declared workflow outputs. State must be mounted again for inspect/resume/replay/repair and artifact export. The root filesystem may be read-only. See [Container contract](/agentctl/guides/container/) and ADR 0007.
 
-See the [architecture diagrams](/agentctl/architecture/diagrams/), [ADRs](https://github.com/opensourceops/agentctl/blob/main/docs/adr/), and [Durable execution](/agentctl/durable-execution/) for failure semantics.
+See the [architecture diagrams](/agentctl/architecture/diagrams/), [ADRs](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/adr/), and [Durable execution](/agentctl/durable-execution/) for failure semantics.

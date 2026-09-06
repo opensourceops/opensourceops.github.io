@@ -1,7 +1,7 @@
 ---
 title: "Capability matrices"
 description: "Provider and tool capabilities with exact evidence levels."
-editUrl: "https://github.com/opensourceops/agentctl/edit/main/docs/reference/MATRICES.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/reference/MATRICES.md"
 ---
 ## Provider capabilities and evidence
 
