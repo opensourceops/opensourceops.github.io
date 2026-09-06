@@ -1,9 +1,9 @@
 ---
 title: "Diagnose a failed CI build"
 description: "Separate parsed failure evidence from advisory recommendations."
-editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/01-ci-diagnosis/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/01-ci-diagnosis/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/01-ci-diagnosis.zip). Built from source [`45d0995345ba`](https://github.com/opensourceops/agentctl/tree/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/01-ci-diagnosis). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Candidate example package:** [Download all files](/agentctl/downloads/devops/01-ci-diagnosis.zip). Built from source [`30167c8330b1`](https://github.com/opensourceops/agentctl/tree/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/01-ci-diagnosis). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** CI developer. **Level and evidence:** Beginner; deterministic offline parsing and decision validation. A separate OpenAI workflow is opt-in.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/01-ci-diagnosis/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/01-ci-diagnosis/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -68,7 +68,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The parser distinguishes missing imports, test assertions, malformed configuration, and unknown or mixed evidence. The decision names an allowed action and the exact lines supporting it. A deterministic verifier creates the recommendation from that action; arbitrary advisory prose is retained with `validated: false`.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/01-ci-diagnosis/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/01-ci-diagnosis/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

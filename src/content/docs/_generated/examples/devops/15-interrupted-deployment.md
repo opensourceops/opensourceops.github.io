@@ -1,9 +1,9 @@
 ---
 title: "Recover an interrupted deployment"
 description: "Inspect uncertain effects before reconciliation and resume."
-editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/15-interrupted-deployment/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/15-interrupted-deployment/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/15-interrupted-deployment.zip). Built from source [`45d0995345ba`](https://github.com/opensourceops/agentctl/tree/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/15-interrupted-deployment). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Candidate example package:** [Download all files](/agentctl/downloads/devops/15-interrupted-deployment.zip). Built from source [`30167c8330b1`](https://github.com/opensourceops/agentctl/tree/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/15-interrupted-deployment). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** SRE. **Level and evidence:** Advanced; local recovery contract demonstration. Fault injection is a separate test aid.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/15-interrupted-deployment/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/15-interrupted-deployment/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -66,7 +66,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The local mutation records its effect before execution. After interruption, inspect the run and effect ledger. A confirmed applied mutation can be reused. An uncertain non-idempotent effect requires evidence about the external state before narrowly recording reconciliation.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/15-interrupted-deployment/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/15-interrupted-deployment/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml
@@ -274,7 +274,7 @@ agentctl retry local.fault.workflow.yaml RUN_ID --failed --plan --db state.db --
 agentctl retry local.fault.workflow.yaml RUN_ID --failed --db state.db --workspace . --output json
 ```
 
-The example's fake-delay explanation does not apply to a real provider or deployment operation. An effect inspection by itself cannot prove that a remote service did nothing. For a real mutation, collect provider-side evidence and follow the [effect reconciliation guide](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/docs/guides/EFFECT_RECONCILIATION.md).
+The example's fake-delay explanation does not apply to a real provider or deployment operation. An effect inspection by itself cannot prove that a remote service did nothing. For a real mutation, collect provider-side evidence and follow the [effect reconciliation guide](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/guides/EFFECT_RECONCILIATION.md).
 
 ## Expected result
 

@@ -1,9 +1,9 @@
 ---
 title: "Review a GitHub Actions pipeline"
 description: "Inspect permissions and validate a narrow proposed YAML patch."
-editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/03-pipeline-review/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/03-pipeline-review/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/03-pipeline-review.zip). Built from source [`45d0995345ba`](https://github.com/opensourceops/agentctl/tree/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/03-pipeline-review). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Candidate example package:** [Download all files](/agentctl/downloads/devops/03-pipeline-review.zip). Built from source [`30167c8330b1`](https://github.com/opensourceops/agentctl/tree/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/03-pipeline-review). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** CI developer. **Level and evidence:** Intermediate; offline, Python and Git plus the declared validator.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/03-pipeline-review/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/03-pipeline-review/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -65,7 +65,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The workflow separates local input review from the proposed change and validation. Review the permission rules and the patch before adapting them to a real repository. The local patch workspace preserves unrelated YAML fields.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/03-pipeline-review/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/examples/devops/03-pipeline-review/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

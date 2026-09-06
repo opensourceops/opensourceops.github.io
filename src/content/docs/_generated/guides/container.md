@@ -1,7 +1,7 @@
 ---
 title: "Container guide"
 description: "Run the non-root, read-only OCI image with durable mounts."
-editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/docs/CONTAINER.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/CONTAINER.md"
 ---
 The repository `Containerfile` builds the Rust CLI in a pinned Rust 1.88 builder and copies only the optimized binary into a maintained distroless Debian runtime. The runtime has CA roots, version/source/license OCI labels, runs as `nonroot`, has a deterministic `agentctl` entrypoint, and contains no Node.js runtime, TypeScript source, credentials, workflows, or fixtures.
 
@@ -12,7 +12,7 @@ receives a read-only working-directory mount, no network, a read-only root,
 non-root UID/GID 65532, dropped capabilities, `no-new-privileges`, a bounded
 temporary filesystem, and explicit memory/CPU/PID/output/time limits. The
 engine and exact image are preflighted and never fall back to host execution.
-See [Process isolation](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/docs/guides/PROCESS_ISOLATION.md).
+See [Process isolation](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/guides/PROCESS_ISOLATION.md).
 
 ## Optional build-network CA
 
@@ -45,7 +45,7 @@ spec:
 The adapter adds the bundle to rustls in memory. The bundle is not copied into
 SQLite, effects, traces, or artifact storage. Invalid, empty, private-key, or
 mixed-object PEM input fails before dispatch. See [Network
-policy](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/docs/guides/NETWORK_POLICY.md).
+policy](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/guides/NETWORK_POLICY.md).
 
 ## Mounts and inputs
 
@@ -105,7 +105,7 @@ docker run --rm --read-only --user 65532:65532 \
 ```
 
 The file is read at bounded credential preflight and its value is never copied
-to the state mount. See [Secret references](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/docs/guides/SECRET_REFERENCES.md).
+to the state mount. See [Secret references](https://github.com/opensourceops/agentctl/blob/30167c8330b1a3fb0bb89c2426d6310e1efd6aa4/docs/guides/SECRET_REFERENCES.md).
 
 For selective repair, mount the corrected workflow under `/config` and keep the source database plus its `/state/artifacts` CAS under `/state`. The original workspace output can be absent after successful ingestion. Plan without forwarding provider credentials:
 
