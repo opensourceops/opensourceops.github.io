@@ -136,3 +136,8 @@
     *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
   }
 }
+
+/* Keep copy confirmation opaque throughout its visible animation. */
+.sl-markdown-content .expressive-code .copy .feedback {
+  transition-property: transform;
+}
