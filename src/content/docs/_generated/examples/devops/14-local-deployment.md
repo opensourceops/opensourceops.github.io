@@ -1,9 +1,9 @@
 ---
 title: "Approve a disposable local deployment"
 description: "Review a mutation, deploy local state, and inspect health probes."
-editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/14-local-deployment/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/examples/devops/14-local-deployment/README.md"
 ---
-> **Complete example package:** [Download all files](/agentctl/downloads/devops/14-local-deployment.zip). Built from source [`ce00ab9ad600`](https://github.com/opensourceops/agentctl/tree/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/14-local-deployment). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/14-local-deployment.zip). Built from source [`b91dc4dbc830`](https://github.com/opensourceops/agentctl/tree/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/examples/devops/14-local-deployment). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** Platform engineer. **Level and evidence:** Intermediate; local contract demonstration, Python and a loopback HTTP service.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/14-local-deployment/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/examples/devops/14-local-deployment/workflow.yaml) remains readable and editable source.
 
 On Windows, Python socket startup also requires `SYSTEMROOT`. Setup adds an explicit `SYSTEMROOT` environment reference only to the local `service-probe` actions and a matching `environmentAllowlist` grant. It records the variable name, never its value, and fails if the prerequisite is absent or conflicts with an authored environment setting or explicit allowlist. Review this declared prerequisite in `local.*.yaml`; other host environment variables are not inherited. Keep `SYSTEMROOT` available when running or resuming the workflow.
 
@@ -88,7 +88,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The normal workflow makes deployment and health validation visible. Setup starts the explicitly local service separately; it is not production hosting. Inspect the initial state and intended version before the mutation approval, then compare the post-change probe.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/14-local-deployment/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/examples/devops/14-local-deployment/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

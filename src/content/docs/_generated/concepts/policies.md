@@ -1,7 +1,7 @@
 ---
 title: "Policies and approvals"
 description: "Keep authority outside the model with explicit grants and durable decisions."
-editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/policies.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/policies.md"
 ---
 Policy is evaluated by the runtime, never by a model. A policy defines a
 canonical workspace root, writable roots, allowed environment names, secret
@@ -23,7 +23,7 @@ explicitly enabled. HTTP redirects and Unix-socket transports are disabled.
 Environment proxy discovery is disabled unless `allowProxy` is explicit.
 TLS uses rustls and the platform roots; an optional protected `customCa`
 reference may add a certificate-only PEM bundle. DNS/connect time and response
-bytes are bounded. See [Network policy](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/NETWORK_POLICY.md).
+bytes are bounded. See [Network policy](https://github.com/opensourceops/agentctl/blob/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/guides/NETWORK_POLICY.md).
 
 Process allowlisting checks the executable basename. Process actions then use
 an explicit isolation mode. The default `process` mode launches direct host
@@ -33,8 +33,8 @@ it never falls back to the host, pulls an image, or enables network access.
 The compiled plan exposes the selected mode and resource limits. Secret
 helpers use their separate `secretProcessAllowlist` and stricter 60-second,
 64-KiB maximums as host processes. See [Process
-isolation](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/PROCESS_ISOLATION.md) and [Secret
-references](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/SECRET_REFERENCES.md).
+isolation](https://github.com/opensourceops/agentctl/blob/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/guides/PROCESS_ISOLATION.md) and [Secret
+references](https://github.com/opensourceops/agentctl/blob/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/guides/SECRET_REFERENCES.md).
 
 Tool visibility, tool/capability authorization, resource checks, effect risk, and approval are distinct decisions. `never`, `mutations`, `high_risk`, and `always` are available approval modes. A tool may say `never`, `policy`, or `always`. The default non-interactive behavior is a durable pause and exit code `3`; explicit `deny_approval` and `fail` modes fail closed. Non-interactive execution never prompts or auto-approves.
 

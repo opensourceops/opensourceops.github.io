@@ -1,7 +1,7 @@
 ---
 title: "Environment and paths"
 description: "Credential references, repository variables, and default paths."
-editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/reference/ENVIRONMENT_AND_PATHS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/reference/ENVIRONMENT_AND_PATHS.md"
 ---
 ## Provider credentials
 
@@ -18,7 +18,7 @@ another valid environment reference or use a mounted-file or policy-gated
 process reference. Primary provider credential environment names do not require
 a duplicate environment allowlist entry; custom headers and action environment
 values do. Values never belong in YAML, CLI arguments, ordinary inputs, logs,
-or committed fixtures. See [Secret references](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/SECRET_REFERENCES.md).
+or committed fixtures. See [Secret references](https://github.com/opensourceops/agentctl/blob/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/guides/SECRET_REFERENCES.md).
 
 ## State-encryption keys
 

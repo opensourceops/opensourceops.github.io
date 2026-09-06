@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting"
 description: "Diagnose validation, provider, policy, state, replay, and container failures."
-editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/TROUBLESHOOTING.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/guides/TROUBLESHOOTING.md"
 ---
 Start with the exit code, then inspect the versioned error envelope and durable run state. Do not share provider credentials, complete databases, private prompts, or confidential artifacts in a public issue.
 

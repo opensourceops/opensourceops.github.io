@@ -1,7 +1,7 @@
 ---
 title: "Author workflows"
 description: "Learn workflow YAML in execution order."
-editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/WORKFLOW_AUTHORING.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/b91dc4dbc8300bc12809d9d667e07a5ae7465f8f/docs/guides/WORKFLOW_AUTHORING.md"
 ---
 This guide teaches the YAML model in the order you need it. The generated JSON Schema is the field authority, but start with the execution model rather than the schema dump.
 
