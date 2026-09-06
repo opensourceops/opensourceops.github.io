@@ -1,9 +1,9 @@
 ---
 title: "Run bounded checks across services"
 description: "Edit service inputs and inspect ordered results and failed children."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/18-parallel-matrix/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/18-parallel-matrix/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/18-parallel-matrix.zip). Built from source [`d388954c3468`](https://github.com/opensourceops/agentctl/tree/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/18-parallel-matrix). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Candidate example package:** [Download all files](/agentctl/downloads/devops/18-parallel-matrix.zip). Built from source [`45d0995345ba`](https://github.com/opensourceops/agentctl/tree/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/18-parallel-matrix). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** CI developer. **Level and evidence:** Beginner; offline, Python.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/18-parallel-matrix/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/18-parallel-matrix/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -68,7 +68,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The YAML declares bounded matrix expansion and independent checks. Matrix axis names are sorted deterministically, and values retain their declared order. Here `check` precedes `service`, so the report contains syntax checks for each service followed by configuration checks for each service, regardless of completion order. A failed child remains visible and must not be hidden by a successful sibling.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/18-parallel-matrix/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/18-parallel-matrix/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

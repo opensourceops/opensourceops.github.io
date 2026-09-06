@@ -1,7 +1,7 @@
 ---
 title: "Scheduled execution"
 description: "Use cron, systemd, or Kubernetes as the external scheduler."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/OPERATIONS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/docs/OPERATIONS.md"
 ---
 Scheduling belongs to the external platform. `agentctl` owns deterministic execution, SQLite history, overlap-safe database access, effects, outputs, recovery, and diagnostics; it does not own clocks, calendars, leader election, log rotation, or distributed leases.
 

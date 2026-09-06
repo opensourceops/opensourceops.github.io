@@ -1,7 +1,7 @@
 ---
 title: "First agent workflow"
 description: "Run a bounded tool-using agent without a paid API key."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/guides/FIRST_AGENT_WORKFLOW.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/docs/guides/FIRST_AGENT_WORKFLOW.md"
 ---
 You will run a tool-using agent with the deterministic fake provider. The model path is scripted, but the workflow exercises the real compiler, agent loop, tool policy, tool schemas, effect ledger, SQLite store, assertion, and artifact writer.
 

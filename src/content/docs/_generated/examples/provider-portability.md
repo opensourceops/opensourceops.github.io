@@ -1,7 +1,7 @@
 ---
 title: "Provider portability"
 description: "Keep the workflow contract neutral while capability evidence stays honest."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/use-cases/PROVIDER_PORTABILITY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/docs/use-cases/PROVIDER_PORTABILITY.md"
 ---
 ## Problem
 

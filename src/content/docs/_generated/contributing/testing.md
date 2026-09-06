@@ -1,7 +1,7 @@
 ---
 title: "Testing strategy"
 description: "Credential-free gates, acceptance layers, fuzzing, and live evidence."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/TESTING.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/45d0995345ba048d8a8368466f56c388cc8cb992/docs/TESTING.md"
 ---
 The canonical command is:
 
@@ -65,7 +65,7 @@ the failed two-agent source/selective repair/keyless replay journey. It retains
 its additional 40-request and conservative US$10 guard. The four distinct
 DevOps OpenAI workflows are examples 01, 12, 19, and 20 and are included in the
 example gate; the other examples
-remain deterministic. See their [catalog](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/examples/devops/catalog.json).
+remain deterministic. See their [catalog](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/examples/devops/catalog.json).
 
 After a failure in the composite, `cargo xtask examples-verify-live-openai-composites`
 runs that composite, selective repair, the OCI repair case and the four DevOps
@@ -116,7 +116,7 @@ python3 -m unittest discover -s scripts -p test_live_command.py -v
 python3 -m unittest discover -s scripts -p test_container_agentctl.py -v
 ```
 
-The [execution ledger](https://github.com/opensourceops/agentctl/blob/d388954c346865cb34c0f20a5f528e695ba39b8a/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) records the
+The [execution ledger](https://github.com/opensourceops/agentctl/blob/45d0995345ba048d8a8368466f56c388cc8cb992/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) records the
 actual code-under-test SHA, model IDs, requests, tokens, estimates, and results.
 Historical live evidence is not certification of a changed candidate. Never
 run paid gates for fuzzing, load, or ordinary CI.
