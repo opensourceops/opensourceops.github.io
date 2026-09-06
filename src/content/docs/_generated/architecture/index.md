@@ -1,7 +1,7 @@
 ---
 title: "Architecture overview"
 description: "Crate boundaries, execution, determinism, concurrency, and packaging."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/ARCHITECTURE.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/ARCHITECTURE.md"
 ---
 ## Dependency shape
 
@@ -33,7 +33,7 @@ successful outputs, disjoint memory deltas, failures, artifact references,
 audit events, and the checkpoint in compiled order in one transaction.
 Unordered overlapping `memoryWrites` fail compilation. Effects and provider
 sessions remain task-local. See ADR 0008 and
-[Deterministic parallel tasks](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/PARALLEL_TASKS.md).
+[Deterministic parallel tasks](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/PARALLEL_TASKS.md).
 
 Static foreach lists and matrix axes compile into ordinary namespaced child
 tasks followed by a pure aggregate. Their IDs, bindings, attempts, outputs,
@@ -72,9 +72,9 @@ digest-pinned Docker/Podman image with no pull/network, a read-only
 root/workspace, a non-root identity, dropped capabilities, resource limits,
 and fail-closed backend/image preflight. SQLite is bundled for predictable
 installation and creates private files on Unix. SIGINT and SIGTERM converge on
-durable cancellation. See [Process isolation](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/PROCESS_ISOLATION.md) and
+durable cancellation. See [Process isolation](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/PROCESS_ISOLATION.md) and
 ADR 0020. Run budget coordination is described by ADR 0021.
 
 The multi-stage OCI build retains a minimal distroless runtime with CA roots and a non-root identity. A separate tooling target adds a shell, Python and Git for reviewed process adapters; both retain the agentctl entrypoint. Keep configuration, external instruction files and variable files together beneath `/workspace/config`, inside the read boundary of the usually read-only `/workspace`. `/state` holds SQLite and its content-addressed artifact store; `/artifacts` receives outputs explicitly permitted by writable-root policy. Retain state for inspect/resume/replay/repair and artifact export. The root filesystem may be read-only. See [Container contract](/agentctl/guides/container/) and the current clarification in ADR 0007.
 
-See the [architecture diagrams](/agentctl/architecture/diagrams/), [ADRs](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/adr/), and [Durable execution](/agentctl/durable-execution/) for failure semantics.
+See the [architecture diagrams](/agentctl/architecture/diagrams/), [ADRs](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/adr/), and [Durable execution](/agentctl/durable-execution/) for failure semantics.

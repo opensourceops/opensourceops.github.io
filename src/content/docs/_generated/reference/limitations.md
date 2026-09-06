@@ -1,7 +1,7 @@
 ---
 title: "Limitations"
 description: "Current supported boundary, operational limits, and non-goals."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/LIMITATIONS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/LIMITATIONS.md"
 ---
 These boundaries are part of the product contract. Choose an execution environment,
 provider and recovery strategy that satisfy your workflow's requirements. Features
@@ -155,15 +155,15 @@ These are extension points, not incomplete core runtime behavior:
 - Terminal retry requires an identical workflow digest and a terminal source. It creates a new source-linked run, reuses only proven compatible successful boundaries, and freshly executes the selected closure. Use repair for a changed definition, resume for a non-terminal run, replay for effect-free reconstruction, and fork for knowingly broad fresh execution.
 - Anthropic, Google, Azure OpenAI, MCP, and A2A have native adapters and mock
   coverage; an OpenAI credential does not provide live evidence for those
-  services. The [retained GPT-5.6 matrix](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/execution/LIVE_FRAMEWORK_VERIFICATION.md)
+  services. The [retained GPT-5.6 matrix](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/execution/LIVE_FRAMEWORK_VERIFICATION.md)
   records its July 2026 scenarios and usage. Current model IDs, requests,
   tokens, estimated cost, and final-source results must come from the current
   execution ledger, not that historical matrix.
 - The DevOps catalog labels deterministic/fake-provider workflows, isolated
   local services, and opt-in OpenAI variants separately. Its Terraform,
   Kubernetes, canary, and deployment fixtures do not establish live cloud or
-  production deployment coverage. See the [suite catalog](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/catalog.json)
-  and its [validation evidence](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/validation.json).
+  production deployment coverage. See the [suite catalog](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/catalog.json)
+  and its [validation evidence](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/validation.json).
 - Local Linux arm64 OCI evidence and hosted Linux x64 container, vulnerability,
   and image-SBOM evidence are distinct. Each result applies only to its recorded
   source, image digest, runtime, and architecture.

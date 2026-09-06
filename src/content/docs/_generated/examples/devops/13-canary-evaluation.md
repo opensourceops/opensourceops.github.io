@@ -1,9 +1,9 @@
 ---
 title: "Evaluate a canary"
 description: "Route healthy, unhealthy, and insufficient-data metrics explicitly."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/13-canary-evaluation/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/13-canary-evaluation/README.md"
 ---
-> **Complete example package:** [Download all files](/agentctl/downloads/devops/13-canary-evaluation.zip). Built from source [`68e5b8e738f0`](https://github.com/opensourceops/agentctl/tree/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/13-canary-evaluation). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/13-canary-evaluation.zip). Built from source [`ce00ab9ad600`](https://github.com/opensourceops/agentctl/tree/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/13-canary-evaluation). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** SRE. **Level and evidence:** Beginner; offline local decision, no monitoring-service access.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/13-canary-evaluation/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/13-canary-evaluation/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -65,7 +65,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The workflow validates integer counts, aggregates requests and errors, checks minimum sample and request counts, then uses a typed router. Insufficient evidence selects hold; it must not promote merely because there were zero observed errors.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/13-canary-evaluation/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/13-canary-evaluation/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

@@ -1,9 +1,9 @@
 ---
 title: "Generate evidenced release notes"
 description: "Read a repository and explicit ref range without changing its history."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/09-release-notes/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/09-release-notes/README.md"
 ---
-> **Complete example package:** [Download all files](/agentctl/downloads/devops/09-release-notes.zip). Built from source [`68e5b8e738f0`](https://github.com/opensourceops/agentctl/tree/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/09-release-notes). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/09-release-notes.zip). Built from source [`ce00ab9ad600`](https://github.com/opensourceops/agentctl/tree/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/09-release-notes). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** Release engineer. **Level and evidence:** Beginner; offline, Python and Git.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/09-release-notes/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/09-release-notes/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -65,7 +65,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 Setup may create the disposable fixture history once. The operational action only resolves the supplied refs, reads commits and changed paths, and writes release notes beneath `artifacts`. The range excludes `fromRef` and includes `toRef`, with a 500-commit ceiling.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/09-release-notes/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/09-release-notes/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
 title: "Local operation"
 description: "Manage paths, state, outputs, interruption, recovery, and retention."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/LOCAL_OPERATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/LOCAL_OPERATION.md"
 ---
 Use explicit paths and retain the database whenever you may need inspection, approval, resume, replay, repair, or audit evidence.
 

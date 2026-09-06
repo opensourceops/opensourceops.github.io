@@ -1,7 +1,7 @@
 ---
 title: "A2A"
 description: "Delegate bounded work to pinned A2A peers."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/A2A.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/A2A.md"
 ---
 The client pins [A2A `1.0`](https://a2a-protocol.org/latest/specification/) and discovers an Agent Card. It selects a same-origin JSON-RPC interface advertising version `1.0`, then supports `SendMessage`, bounded `GetTask` polling, `SubscribeToTask` SSE updates, `CancelTask`, terminal states, messages, structured parts, and artifacts.
 

@@ -1,7 +1,7 @@
 ---
 title: "Logs and observability"
 description: "Correlate CLI output, audit events, traces, and usage metrics."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/OBSERVABILITY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/OBSERVABILITY.md"
 ---
 Observability has two audiences: terminal users need a concise final result, while operators need durable evidence for diagnosis and audit. The runtime keeps those contracts separate.
 

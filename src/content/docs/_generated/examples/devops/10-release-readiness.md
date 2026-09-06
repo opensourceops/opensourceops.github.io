@@ -1,9 +1,9 @@
 ---
 title: "Evaluate and enforce release readiness"
 description: "Distinguish report generation from a fail-closed release gate."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/10-release-readiness/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/10-release-readiness/README.md"
 ---
-> **Complete example package:** [Download all files](/agentctl/downloads/devops/10-release-readiness.zip). Built from source [`68e5b8e738f0`](https://github.com/opensourceops/agentctl/tree/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/10-release-readiness). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/10-release-readiness.zip). Built from source [`ce00ab9ad600`](https://github.com/opensourceops/agentctl/tree/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/10-release-readiness). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** Release engineer. **Level and evidence:** Intermediate; offline, no model.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/10-release-readiness/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/10-release-readiness/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -67,7 +67,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 Analysis requires a nonempty list of uniquely named checks with boolean passed values, plus a lowercase SHA-256 digest. It hashes the supplied package and adds its own digest check. Report generation and permission to release are separate boundaries.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/examples/devops/10-release-readiness/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/examples/devops/10-release-readiness/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

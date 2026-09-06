@@ -1,7 +1,7 @@
 ---
 title: "Output and exit codes"
 description: "Versioned machine output, streams, and stable exit categories."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/reference/CLI_OUTPUT.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/reference/CLI_OUTPUT.md"
 ---
 The [generated CLI reference](/agentctl/reference/cli/) is produced from Clap help by `cargo xtask generate`. This page explains the stable process contract used by scripts and CI.
 

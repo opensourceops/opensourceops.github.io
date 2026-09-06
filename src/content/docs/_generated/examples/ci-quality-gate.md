@@ -1,7 +1,7 @@
 ---
 title: "CI quality gate"
 description: "Turn typed evidence into stable process output."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/use-cases/CI_QUALITY_GATE.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/use-cases/CI_QUALITY_GATE.md"
 ---
 ## Problem
 

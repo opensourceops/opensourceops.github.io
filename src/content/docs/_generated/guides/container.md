@@ -1,7 +1,7 @@
 ---
 title: "Container guide"
 description: "Run the non-root, read-only OCI image with durable mounts."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/CONTAINER.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/CONTAINER.md"
 ---
 Use the minimal image for workflows implemented by the Rust runtime. Use the tooling image when a reviewed process adapter needs Python or Git, or a CI Run step needs a shell. Both run as UID/GID 65532 by default and have `/usr/local/bin/agentctl` as their entrypoint.
 
@@ -32,7 +32,7 @@ Appending a shell command after the image name without `--entrypoint /bin/sh` pa
 
 The default final build target is minimal. The [release process](/agentctl/contributing/release/) records supported platforms, source relationships, checksums and image digests. A tooling image permits more executables to exist; the workflow must still explicitly authorize each process action. Allowing Python or a shell grants the capabilities of that interpreter to the reviewed script; it is not a file-level sandbox.
 
-This whole-workflow container is separate from action-level `isolation: container`, where a host agentctl process invokes an exact local Docker/Podman image with restricted mounts, resources and networking. Neither image includes an engine, and the following walkthrough mounts no engine socket. See [Process isolation](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/PROCESS_ISOLATION.md).
+This whole-workflow container is separate from action-level `isolation: container`, where a host agentctl process invokes an exact local Docker/Podman image with restricted mounts, resources and networking. Neither image includes an engine, and the following walkthrough mounts no engine socket. See [Process isolation](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/PROCESS_ISOLATION.md).
 
 ## Run your first image workflow
 
@@ -152,7 +152,7 @@ To clean up this disposable walkthrough, remove its `agentctl-container-first-ru
 
 Use `--inputs-file /workspace/config/inputs.json` or repeated `--input KEY=VALUE` for typed `inputs`. Use ordered `--vars-file /workspace/config/overrides.yaml` and explicit `--var KEY=JSON` for `vars`. The namespaces stay separate. `explain` reports winning variable origins without printing their values. Instruction files are reviewed text, not credentials. Ordinary variables are retained configuration and must not contain keys or tokens.
 
-A model-dependent workflow may receive `--env OPENAI_API_KEY` from a protected host environment or a read-only secret file. Forward only the name, never a literal value in the command. Remove `--network none` only for a reviewed network-enabled run, retain the workflow's destination policy, and apply the platform's egress controls. A credential does not grant network authority. [Secret references](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/SECRET_REFERENCES.md) gives the mounted-file contract.
+A model-dependent workflow may receive `--env OPENAI_API_KEY` from a protected host environment or a read-only secret file. Forward only the name, never a literal value in the command. Remove `--network none` only for a reviewed network-enabled run, retain the workflow's destination policy, and apply the platform's egress controls. A credential does not grant network authority. [Secret references](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/SECRET_REFERENCES.md) gives the mounted-file contract.
 
 ## Pipeline examples
 
@@ -278,7 +278,7 @@ spec:
 The adapter adds the bundle to rustls in memory. The bundle is not copied into
 SQLite, effects, traces, or artifact storage. Invalid, empty, private-key, or
 mixed-object PEM input fails before dispatch. See [Network
-policy](https://github.com/opensourceops/agentctl/blob/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/guides/NETWORK_POLICY.md).
+policy](https://github.com/opensourceops/agentctl/blob/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/guides/NETWORK_POLICY.md).
 
 ## Validation level
 

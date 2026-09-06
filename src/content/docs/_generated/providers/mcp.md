@@ -1,7 +1,7 @@
 ---
 title: "MCP"
 description: "Use pinned MCP Streamable HTTP tools under explicit policy."
-editUrl: "https://github.com/opensourceops/agentctl/edit/68e5b8e738f099487c7af9fe1b043ab2c1a5d0b0/docs/MCP.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ce00ab9ad600bbe6f95e75ef8cf4d800efc67bba/docs/MCP.md"
 ---
 The client pins the stable MCP protocol version `2025-11-25` from the [official specification](https://modelcontextprotocol.io/specification/2025-11-25). It uses Streamable HTTP JSON-RPC and implements initialization/version negotiation, initialized notification, session IDs, protocol headers, tool listing, input/output schemas, tool calls, structured content, bounded SSE response parsing, timeout, and best-effort cancellation notification.
 
