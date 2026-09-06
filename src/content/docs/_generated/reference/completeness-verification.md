@@ -1,7 +1,7 @@
 ---
 title: "Completeness verification"
 description: "Deterministic, container, security, and independent review evidence."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/execution/COMPLETENESS_VERIFICATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/execution/COMPLETENESS_VERIFICATION.md"
 ---
 This record accumulates sanitized evidence for the framework-completeness
 program. It contains no credentials, raw provider responses, prompt

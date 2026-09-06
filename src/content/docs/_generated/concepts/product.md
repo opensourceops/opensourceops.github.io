@@ -1,7 +1,7 @@
 ---
 title: "Product definition"
 description: "What agentctl does, who it serves, and where its boundary ends."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/PRODUCT.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/PRODUCT.md"
 ---
 ## Thesis and boundaries
 
@@ -48,7 +48,7 @@ Version 0.3 uses workflow API `agentctl.dev/v1`, including compatible additive
 fields. The repository contains executable acceptance scenarios and historical
 evidence for local, scheduled, and generic-container journeys. A new release
 candidate still requires its own [current evidence and
-verdict](https://github.com/opensourceops/agentctl/blob/9090a761f819014b905db6bb448388a534bb3943/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md). The CLI and crates remain
+verdict](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md). The CLI and crates remain
 pre-1.0, so callers must pin the binary or image version for runtime, provider,
 and storage behavior outside the workflow document contract.
 

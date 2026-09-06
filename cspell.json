@@ -27,6 +27,6 @@
     "undispatched", "XPLAT", "roundtrips", "keylessly", "unallowlisted", "embedder",
     "reindexing", "zeroization", "BURNDOWN",
     "nonconvergence", "nonlocal", "nonpositive", "pathlib", "remediator",
-    "subworkflow", "unvalidated", "venv", "fetchone", "pyflakes"
+    "subworkflow", "unvalidated", "venv", "fetchone", "pyflakes", "SYSTEMROOT"
   ]
 }

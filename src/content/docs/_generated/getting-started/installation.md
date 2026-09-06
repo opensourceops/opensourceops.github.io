@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 description: "Build or install agentctl 0.3 with workflow API v1 from reviewed source."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/guides/INSTALLATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/INSTALLATION.md"
 ---
 The Rust CLI and crates are **pre-1.0**. `agentctl.dev/v1` identifies the workflow document format; it does not mean the product is a stable 1.0 release. These tutorials use candidate features from the paired source revision. A previously published crate or container may not contain them.
 
@@ -10,10 +10,10 @@ The Rust CLI and crates are **pre-1.0**. `agentctl.dev/v1` identifies the workfl
 You need Git, Rust 1.88.0, and Cargo. Installation downloads build dependencies and needs no provider key. The documentation site renders the exact source revision and copyable command here:
 
 
-This documentation describes candidate source [`9090a761f819014b905db6bb448388a534bb3943`](https://github.com/opensourceops/agentctl/tree/9090a761f819014b905db6bb448388a534bb3943). The CLI and crates are pre-1.0; workflow API `agentctl.dev/v1` names the document format. Install this exact candidate:
+This documentation describes candidate source [`4a22f7f733c5c722263b956b59f36107ec398fc7`](https://github.com/opensourceops/agentctl/tree/4a22f7f733c5c722263b956b59f36107ec398fc7). The CLI and crates are pre-1.0; workflow API `agentctl.dev/v1` names the document format. Install this exact candidate:
 
 ```sh
-cargo install --locked --git https://github.com/opensourceops/agentctl --rev 9090a761f819014b905db6bb448388a534bb3943 agentctl-cli
+cargo install --locked --git https://github.com/opensourceops/agentctl --rev 4a22f7f733c5c722263b956b59f36107ec398fc7 agentctl-cli
 agentctl version
 ```
 

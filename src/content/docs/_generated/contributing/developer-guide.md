@@ -1,7 +1,7 @@
 ---
 title: "Developer guide"
 description: "Understand the Rust workspace, deterministic core, effects, persistence, and tests."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/development/REPOSITORY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/development/REPOSITORY.md"
 ---
 ## Repository layout
 

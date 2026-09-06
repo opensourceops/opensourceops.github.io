@@ -1,7 +1,7 @@
 ---
 title: "Getting started"
 description: "Run and inspect a credential-free deterministic workflow."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9090a761f819014b905db6bb448388a534bb3943/docs/guides/GETTING_STARTED.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/GETTING_STARTED.md"
 ---
 You will validate, plan, run, and inspect a credential-free workflow from a clean directory. The run performs one deterministic assignment, persists its history to SQLite, and returns a typed output.
 
