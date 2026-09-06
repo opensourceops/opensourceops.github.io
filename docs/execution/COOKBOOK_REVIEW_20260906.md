@@ -133,3 +133,11 @@ The next framework source is `4a22f7f733c5c722263b956b59f36107ec398fc7`. Hosted 
 The passing docs `b250fb5` / framework `9090a76` checkpoint and its evidence-only docs commit `3577670` remain valid for their recorded sources. Its actual downloaded package manifests were additionally byte-identical to those used by the twenty passing installed-binary direct journeys. New source checks and artifact evidence follow separately; earlier successful or failed runs are not relabeled.
 
 The focused spelling check initially reported six occurrences of the new Windows environment variable name. `SYSTEMROOT` was added as one precise dictionary term; no assertion or prose-check exclusion changed.
+
+## Windows-corrected paired evidence
+
+Code under test: docs `8b3cdda50dea34a7282365f0d09dc7eef219848c`, framework `4a22f7f733c5c722263b956b59f36107ec398fc7`, both clean for the local run. All fourteen local site components passed, including 122 browser tests in 2.9 minutes with only the existing duplicate generic mobile search test skipped. The report `work/final-site-8b3cdda/result.json` hashes to `d491e2832415211a855c622fafc1876076650962d1856f669389fe24b559e682`. Updated desktop/mobile screenshots were visually inspected.
+
+[The new hosted paired run](https://github.com/opensourceops/opensourceops.github.io/actions/runs/34024704916) passed full `pnpm verify:agentctl`, including 122 browser tests in 3.8 minutes and the same existing skip. Validation succeeded; deployment was skipped. The actual downloaded artifact `9986762734` contains 4,358,390 bytes and hashes to `3ca6d20ecce358c40981be658a254fd9935437ca143c1a6b2c8fa34144af7333`, matching the Actions digest. Independent verification passed `.nojekyll`, 93 HTML pages, clean exact-source metadata, all twenty complete package ZIPs and every nested manifest digest, and absent visible source boilerplate.
+
+New artifacts and logs are retained separately under `work/hosted-4a22f7f/`; `work/final-docs-evidence-8b3cdda.json` consolidates the result and hashes. Earlier source checkpoints remain unchanged. This final ledger addition is evidence-only; it does not alter the tested site, workflow pin or download bytes. No paid call or deployment was performed.
