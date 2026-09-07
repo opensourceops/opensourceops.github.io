@@ -1,9 +1,9 @@
 ---
 title: "Review a Terraform plan"
 description: "Inspect plan JSON and approve an isolated test mutation without apply."
-editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/06-terraform-plan/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/06-terraform-plan/README.md"
 ---
-> **Complete example package:** [Download all files](/agentctl/downloads/devops/06-terraform-plan.zip). Built from source [`42922f9479f9`](https://github.com/opensourceops/agentctl/tree/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/06-terraform-plan). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/06-terraform-plan.zip). Built from source [`ed604369fb73`](https://github.com/opensourceops/agentctl/tree/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/06-terraform-plan). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** Platform engineer. **Level and evidence:** Intermediate; offline plan analysis and a local approval demonstration. No Terraform apply.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/06-terraform-plan/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/06-terraform-plan/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -75,7 +75,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The analysis consumes plan JSON and identifies governed changes. A separate task pauses before the local mutation. An approval binds to the pending operation reviewed in the plan; it is not blanket permission to apply infrastructure.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/06-terraform-plan/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/06-terraform-plan/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

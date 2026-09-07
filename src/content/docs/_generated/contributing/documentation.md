@@ -1,7 +1,7 @@
 ---
 title: "Write documentation"
 description: "Own content in the right repository and verify it end to end."
-editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/development/DOCUMENTATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/docs/development/DOCUMENTATION.md"
 ---
 ## Ownership
 

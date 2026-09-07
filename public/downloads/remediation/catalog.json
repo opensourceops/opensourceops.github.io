@@ -3,8 +3,8 @@
     "directory": "21-container-remediation",
     "route": "/agentctl/examples/devops/21-container-remediation/",
     "download": "/agentctl/downloads/remediation/21-container-remediation.zip",
-    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
-    "sha256": "5e3a884988d00f5bbadc3b35de4e284bb7fd9398f58458292b1dcd5e6f3c926b",
-    "bytes": 66995
+    "sourceCommit": "ed604369fb73a3d1bba65d8a2026927f59b14e97",
+    "sha256": "eadad255992e5a7e11453a0c3da416c1f276c36885cf86f6d83242359c5eccd4",
+    "bytes": 68331
   }
 ]

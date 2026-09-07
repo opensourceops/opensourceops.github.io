@@ -1,9 +1,9 @@
 ---
 title: "Review a Dockerfile"
 description: "Inspect a Dockerfile patch and optionally build a disposable image."
-editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/04-dockerfile-review/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/04-dockerfile-review/README.md"
 ---
-> **Complete example package:** [Download all files](/agentctl/downloads/devops/04-dockerfile-review.zip). Built from source [`42922f9479f9`](https://github.com/opensourceops/agentctl/tree/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/04-dockerfile-review). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/04-dockerfile-review.zip). Built from source [`ed604369fb73`](https://github.com/opensourceops/agentctl/tree/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/04-dockerfile-review). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** Platform engineer. **Level and evidence:** Intermediate; offline review uses Python and Git. An optional real image gate needs Docker or Podman.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/04-dockerfile-review/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/04-dockerfile-review/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -66,7 +66,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The helper generates and checks a patch in a disposable directory. Source checks establish the proposed bytes and Python syntax. Building and probing an actual image is a separate opt-in operation, so its evidence cannot be inferred from a successful text review.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/04-dockerfile-review/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/04-dockerfile-review/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

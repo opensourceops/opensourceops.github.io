@@ -1,7 +1,7 @@
 ---
 title: "Add a provider"
 description: "Add capabilities, native mapping, mock evidence, and honest claims."
-editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/development/ADD_PROVIDER.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/docs/development/ADD_PROVIDER.md"
 ---
 Provider support means a native adapter with explicit capabilities and deterministic protocol evidence. A provider name alone is not support.
 

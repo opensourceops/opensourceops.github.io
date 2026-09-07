@@ -1,7 +1,7 @@
 ---
 title: "Migrate from TypeScript"
 description: "Translate supported legacy workflows to strict workflow API v1 YAML."
-editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/MIGRATING_FROM_TYPESCRIPT.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/docs/MIGRATING_FROM_TYPESCRIPT.md"
 ---
 1. Preserve a copy of the old workflow and run the archived test suite if its behavior matters: `NODE_OPTIONS=--no-deprecation npm test`.
 2. Run `cargo run -p agentctl-cli -- migrate old.yaml --write workflow.yaml`.

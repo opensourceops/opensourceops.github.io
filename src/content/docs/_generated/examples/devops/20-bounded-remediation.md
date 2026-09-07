@@ -1,9 +1,9 @@
 ---
 title: "Run a bounded remediation loop"
 description: "Validate actual repair artifacts under explicit iteration and resource limits."
-editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/20-bounded-remediation/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/20-bounded-remediation/README.md"
 ---
-> **Complete example package:** [Download all files](/agentctl/downloads/devops/20-bounded-remediation.zip). Built from source [`42922f9479f9`](https://github.com/opensourceops/agentctl/tree/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/20-bounded-remediation). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/20-bounded-remediation.zip). Built from source [`ed604369fb73`](https://github.com/opensourceops/agentctl/tree/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/20-bounded-remediation). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** SRE. **Level and evidence:** Intermediate for the deterministic offline path; advanced for the separate fake-agent or paid OpenAI proposal variants.
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/20-bounded-remediation/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/20-bounded-remediation/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -68,7 +68,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The primary YAML declares `prepare` → `repair` → `analyze` → `report`. `repair` is a deterministic action loop with at most three iterations; it reads the previous artifact, performs one bounded timeout reduction and computes completion from the actual resulting configuration. `analyze` rereads the final artifact and checks the threshold, preserved fields and digest before reporting success.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/20-bounded-remediation/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/ed604369fb73a3d1bba65d8a2026927f59b14e97/examples/devops/20-bounded-remediation/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml
