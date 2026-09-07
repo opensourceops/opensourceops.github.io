@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 description: "Install the CLI or container image and select reproducible source and artifact identities."
-editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/docs/guides/INSTALLATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/9640102855bc513e2849d0a08344c1f13e50028a/docs/guides/INSTALLATION.md"
 ---
 Choose a published CLI package, a container image, or an exact-source build. Use the
 same source and artifacts when reproducing a workflow. `agentctl.dev/v1` identifies
@@ -48,10 +48,10 @@ needs no provider key. The documentation site renders the exact source revision
 and copyable command here:
 
 
-This documentation describes source [`ed604369fb73a3d1bba65d8a2026927f59b14e97`](https://github.com/opensourceops/agentctl/tree/ed604369fb73a3d1bba65d8a2026927f59b14e97). Install this exact source revision:
+This documentation describes source [`9640102855bc513e2849d0a08344c1f13e50028a`](https://github.com/opensourceops/agentctl/tree/9640102855bc513e2849d0a08344c1f13e50028a). Install this exact source revision:
 
 ```sh
-cargo install --locked --git https://github.com/opensourceops/agentctl --rev ed604369fb73a3d1bba65d8a2026927f59b14e97 agentctl-cli
+cargo install --locked --git https://github.com/opensourceops/agentctl --rev 9640102855bc513e2849d0a08344c1f13e50028a agentctl-cli
 agentctl version
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: "CI/CD integration"
 description: "Use the generic OCI contract in pipelines and Kubernetes."
-editUrl: "https://github.com/opensourceops/agentctl/edit/ed604369fb73a3d1bba65d8a2026927f59b14e97/docs/guides/CI_CD.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/9640102855bc513e2849d0a08344c1f13e50028a/docs/guides/CI_CD.md"
 ---
 The CI system checks out source, schedules work, selects a reviewed image, injects secrets and retains results. agentctl validates and executes one bounded workflow with durable local history. A model can propose a change only through its declared tools; the outer pipeline remains responsible for build, scan and publication authority.
 
