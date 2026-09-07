@@ -1,7 +1,7 @@
 ---
 title: "Security model"
 description: "Review controls, trust boundaries, and residual risks."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9640102855bc513e2849d0a08344c1f13e50028a/docs/SECURITY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/c223d012727a75de62112923d4da8befbe2068f2/docs/SECURITY.md"
 ---
 ## Controls
 

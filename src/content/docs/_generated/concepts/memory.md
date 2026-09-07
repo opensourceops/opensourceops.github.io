@@ -1,7 +1,7 @@
 ---
 title: "State and memory"
 description: "Separate runtime state, working memory, long-term memory, and prompt cache."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9640102855bc513e2849d0a08344c1f13e50028a/docs/memory.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/c223d012727a75de62112923d4da8befbe2068f2/docs/memory.md"
 ---
 Four mechanisms remain intentionally separate:
 

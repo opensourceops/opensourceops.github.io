@@ -2,7 +2,7 @@
   "product": "agentctl",
   "version": "0.4.0",
   "workflowApi": "agentctl.dev/v1",
-  "commit": "9640102855bc513e2849d0a08344c1f13e50028a",
+  "commit": "c223d012727a75de62112923d4da8befbe2068f2",
   "dirty": false,
   "sourceRepository": "https://github.com/opensourceops/agentctl",
   "importedFiles": 80,
@@ -10,402 +10,402 @@
     {
       "source": "docs/PRODUCT.md",
       "route": "/agentctl/concepts/product/",
-      "contentSha256": "ce46711cbce36762802fa7782dcf6f093608bec19ab365fed67f624a105bc5e9"
+      "contentSha256": "030c459041c00ffa5ae24a5e0b4c276b3de1607b4b494537592958ce3736d36a"
     },
     {
       "source": "docs/DSL.md",
       "route": "/agentctl/concepts/workflow-model/",
-      "contentSha256": "790975c5d95971d904f00a869c6f89d5039b3ce77951ff2a31fb2fae9231914d"
+      "contentSha256": "d5ce160b49294d93cb57eb0b392c66b25306da4dac04287ec3b7a72f86a16e11"
     },
     {
       "source": "docs/VARIABLES.md",
       "route": "/agentctl/guides/variables/",
-      "contentSha256": "c7e1738564ae1b4718c429c08fa4ca8783d5a45080c55782e2fc7a12aaa677da"
+      "contentSha256": "c5be22b1f2476663fdef40460bd0c47b838656b88428013c13d164cd19c6b854"
     },
     {
       "source": "docs/policies.md",
       "route": "/agentctl/concepts/policies/",
-      "contentSha256": "ad7a5473c3c76fa34ff0d39bc900442ddd80d62fd31245ebfefddd6ce135fd9e"
+      "contentSha256": "29fe2682454c0c776034049fe420ca73cd4872677896649047dce488c8622e38"
     },
     {
       "source": "docs/TOOLS.md",
       "route": "/agentctl/concepts/tools/",
-      "contentSha256": "2a21f6d6c00ff7e885325eb975e655a64fe2ee5318d691d266274d0a86e7815d"
+      "contentSha256": "df7d299841138de90b9c1fafc7cf1f79359a760596bdfb1e793615d2cb3d4749"
     },
     {
       "source": "docs/memory.md",
       "route": "/agentctl/concepts/memory/",
-      "contentSha256": "2d668c32c775f05790207a5ed58762bb329e0db28f9d89e1a64085cf97370cb1"
+      "contentSha256": "f467b5bbd51efd899c1d9b24c193d7a884313930cf932fc5fac30c942be10bcd"
     },
     {
       "source": "docs/PACKS.md",
       "route": "/agentctl/concepts/packs/",
-      "contentSha256": "7b98e022715ca648d946fdbeb9406c508c912baf37f232dd81d1495a1f0220cd"
+      "contentSha256": "9c543caac627ddf6199150dd024a5f678a1f1b09ec736caa8e6e4baddd716592"
     },
     {
       "source": "docs/guides/INSTALLATION.md",
       "route": "/agentctl/getting-started/installation/",
-      "contentSha256": "5127d81da9232a8e312860b85cbc6db5a1aaab25e6f9a5fa98ea0f8cf217156e"
+      "contentSha256": "13ed08636093f278284d9f52e6970e8a0171a7e311e4cc3b9f475ce7b0ec96a9"
     },
     {
       "source": "docs/guides/GETTING_STARTED.md",
       "route": "/agentctl/getting-started/",
-      "contentSha256": "e419f0d89438ed9028a9fff7be0621242333e1bdc15214218a82915af31fbcfd"
+      "contentSha256": "4eb098f816bf00a0fc4e8dd633e808baa248e70e16c8c4422c571cf100a29e44"
     },
     {
       "source": "docs/guides/FIRST_AGENT_WORKFLOW.md",
       "route": "/agentctl/getting-started/first-agent/",
-      "contentSha256": "7351f53096116acfe784292ab60322a03a18adb87c91c558c54008b4da06752d"
+      "contentSha256": "8d8fd132bd6fbc0ac20a6b3ac6ae4c953a3f8b0fe7a13a7d262618504e67066a"
     },
     {
       "source": "docs/guides/WORKFLOW_AUTHORING.md",
       "route": "/agentctl/guides/workflow-authoring/",
-      "contentSha256": "749b47027a0b0b3aaa23d662cc800145c575375ce4d3355e539691ea5bc20f8a"
+      "contentSha256": "31f31910fefea22dd3ec935eadf4d87f64dd9dcaa53046683466b7414f51781c"
     },
     {
       "source": "docs/guides/LOCAL_OPERATION.md",
       "route": "/agentctl/guides/local-operation/",
-      "contentSha256": "ed05f66e2dcc124a4f81773cb41ca8107ae01989ce0373a6f09c37b8c2e95f36"
+      "contentSha256": "8bbbfd76e03208132b96d0c2c0e705b567b1d9e12ceaa0b96bd8afcb33851d36"
     },
     {
       "source": "docs/guides/repair-a-failed-workflow.md",
       "route": "/agentctl/guides/selective-repair/",
-      "contentSha256": "fea40b5aaa9a8b06ba5bdaaf648dacde502dbbea3615b71e7dbcec25ee539119"
+      "contentSha256": "1949234258041ddfff2d97c63915893390103960747df2c7f099b51db4cdc02f"
     },
     {
       "source": "docs/guides/CI_CD.md",
       "route": "/agentctl/guides/ci-cd/",
-      "contentSha256": "a721b5edb62c208a72ea58d4b71cedd41baa4aecf506a68f1076b1673ec9e822"
+      "contentSha256": "0e5acbef2c2a3dfa9c0b0c9ffee41094eefa60092e9634664db5b0b0e7d71aa2"
     },
     {
       "source": "docs/CONTAINER.md",
       "route": "/agentctl/guides/container/",
-      "contentSha256": "07f98100d1066209b0f0726d99751f02cfc20acc3fdaf70d3b1cc73b23cf0852"
+      "contentSha256": "c040ff071d49dd0be2d446906a4c5519d1fd4a8f9a7f65e1a00b27ed63b551d9"
     },
     {
       "source": "docs/OPERATIONS.md",
       "route": "/agentctl/operations/scheduled/",
-      "contentSha256": "ed479a5b62b631468ef3f9db40be64cfc6db08b920abfff28930a3d67a229fc7"
+      "contentSha256": "d9e27ce21aee97e790bbc8524f41aac296e5edc1b082ff8652cf0f388a7ff480"
     },
     {
       "source": "docs/DURABLE_EXECUTION.md",
       "route": "/agentctl/durable-execution/",
-      "contentSha256": "6e6a2642641978e4f27d85b11590efe2c861432e6d6196b239f806534685a995"
+      "contentSha256": "ee573072e14e0e40b78dc33b2b9610c3495303ce5dd4e4c609e122227ba38adb"
     },
     {
       "source": "docs/OBSERVABILITY.md",
       "route": "/agentctl/observability/",
-      "contentSha256": "492ec04d7de86596e66259399d58e0b464c0813f12c9eee4d211cc2f1991611c"
+      "contentSha256": "e397223e14707b163034406a6141e3df3e3b18e0f050cef30ade51655e6de263"
     },
     {
       "source": "docs/PROVIDERS.md",
       "route": "/agentctl/providers/",
-      "contentSha256": "a7ccd5d56201e290ba502a898375a61ad0bad9f401d84f52f92876219167b63b"
+      "contentSha256": "eb40b061d55532f5412cfb874c0cf54889f3da052105802f92d253ae50baee35"
     },
     {
       "source": "docs/MCP.md",
       "route": "/agentctl/providers/mcp/",
-      "contentSha256": "bcb12ed61349adecc011f3c5ec7ef8cda1099655731c6544b089ecb627a8f2b5"
+      "contentSha256": "0157de24a0e4c1f282977bcacfbde7b30e05ff4190a51be88a4812338cc8baf5"
     },
     {
       "source": "docs/A2A.md",
       "route": "/agentctl/providers/a2a/",
-      "contentSha256": "7f50fc639e6e38959732ed7bc23fd7ed8158a42d879370c0c0a3eea3056a7af8"
+      "contentSha256": "ab890af462d86627637568a7559c78a82e161d506042c343f5067bdeb0f253ec"
     },
     {
       "source": "docs/SECURITY.md",
       "route": "/agentctl/security/",
-      "contentSha256": "930ca5c6d74983f9fd94bc59760ced971badc7f6637070176746afd14b92edc2"
+      "contentSha256": "0ffac577de0dee2bb5338ba185ff3627908e47ddd75b4f9708cac93e863d6d79"
     },
     {
       "source": "docs/THREAT_MODEL.md",
       "route": "/agentctl/security/threat-model/",
-      "contentSha256": "9d20c496609a7fc2c6a39053e8d191d39a34af8a92253a8149df08c2b05d2d5e"
+      "contentSha256": "2a4a80fbe51bee3f61c18d5519fdc13c3f73cd51d43facb2d5bc5ed6bf9d843a"
     },
     {
       "source": "docs/guides/TROUBLESHOOTING.md",
       "route": "/agentctl/troubleshooting/",
-      "contentSha256": "e313f951d3bf1587863c15a443262efaf85b9ccbb120d6efb929e590120c1da1"
+      "contentSha256": "7297d46b7cbde58bf911f9c7e3e35a66d0101284fcad85642dd2714424acb007"
     },
     {
       "source": "docs/use-cases/REPOSITORY_AUDIT.md",
       "route": "/agentctl/examples/repository-audit/",
-      "contentSha256": "a258f366d44eff3dae358ef158e77201fc8ec528ca01977789401221414db332"
+      "contentSha256": "48619b664b4a5075d6fb540cd363731ff5449c6f01713fba94400cfffdd8fde2"
     },
     {
       "source": "examples/devops/README.md",
       "route": "/agentctl/examples/devops/",
-      "contentSha256": "3b204731a7442b1d5b9724f888dcdcf54ff35e86c311e67a15be47095dc2555a"
+      "contentSha256": "74c1065581ca0472d8f806d87e4923de971708c261d47a1807c136f69339fddf"
     },
     {
       "source": "examples/devops/01-ci-diagnosis/README.md",
       "route": "/agentctl/examples/devops/01-ci-diagnosis/",
-      "contentSha256": "6ab0159a9aa773e28252a7763752be757e5d2075d5390cbe9d7b625908504b93"
+      "contentSha256": "172b445f762d6b0efc838ed6303436f8463e0a8394a5e36c162c0f2a338207f3"
     },
     {
       "source": "examples/devops/02-junit-triage/README.md",
       "route": "/agentctl/examples/devops/02-junit-triage/",
-      "contentSha256": "cee92e9a4ad11bd0e16baa288e1c23343fa600c71948d298a050519971605359"
+      "contentSha256": "fd68a0dc68f0ced02a41356224ae264d939109ea488b4244ee01bf20aab22703"
     },
     {
       "source": "examples/devops/03-pipeline-review/README.md",
       "route": "/agentctl/examples/devops/03-pipeline-review/",
-      "contentSha256": "b5646ef6838a231b82a0882884c9739b7715876072554a9149ad86560e4d6053"
+      "contentSha256": "9dd2c9d40a58bd623f7371d396f3084c186f135054e2f49f7ba1f7c78d6d8719"
     },
     {
       "source": "examples/devops/04-dockerfile-review/README.md",
       "route": "/agentctl/examples/devops/04-dockerfile-review/",
-      "contentSha256": "e9bdcfcd6fb7630fd84e7cbce4cba9469447d1b918941afa60f8ebeab71d6e5a"
+      "contentSha256": "5c497c70b5de97c703b8afd941aee45a1890fa0bd2c4604bff6e507c21c70b10"
     },
     {
       "source": "examples/devops/05-kubernetes-review/README.md",
       "route": "/agentctl/examples/devops/05-kubernetes-review/",
-      "contentSha256": "cebc44145c648561bca370942336705280c238a23421626361c972ba1bee5948"
+      "contentSha256": "1e77acdd6d41e2f0a742f5597945da7c8a6e520f228eb30092c7a2ecaf36f75c"
     },
     {
       "source": "examples/devops/06-terraform-plan/README.md",
       "route": "/agentctl/examples/devops/06-terraform-plan/",
-      "contentSha256": "c808deadedfbb95d23c4e6a2bdb8e2d2baf24393840a418d16eea019d5b6f2ee"
+      "contentSha256": "e4d447f5af7b4c6ff09a4c936d0a125178cb558d75c38b3c63d8f2527082ae2f"
     },
     {
       "source": "examples/devops/07-dependency-update/README.md",
       "route": "/agentctl/examples/devops/07-dependency-update/",
-      "contentSha256": "bd985b96e0e13ea3a92a8673f08ccef6d6e3b4fa350d69988f4645c8f845f73a"
+      "contentSha256": "562430d4665131e1608c082b301142253d887603ee9effa0cb3216b628927170"
     },
     {
       "source": "examples/devops/08-sbom-triage/README.md",
       "route": "/agentctl/examples/devops/08-sbom-triage/",
-      "contentSha256": "cd8ce01ea00bfd41e1a025206586f8e325bd01f27352ad4ea72031c074ef9ba5"
+      "contentSha256": "ae8ce16119734bb8230753cf426de19dc1e1fae5bbd78ddbba4381ca15230dab"
     },
     {
       "source": "examples/devops/09-release-notes/README.md",
       "route": "/agentctl/examples/devops/09-release-notes/",
-      "contentSha256": "8a9e5565282456102e789263bd359a553eacb1c955f14911b41561b049264d42"
+      "contentSha256": "53bd49a219c57a40fee7291f23d9af7bcd4c2df8b845a35a554cae457eed78ab"
     },
     {
       "source": "examples/devops/10-release-readiness/README.md",
       "route": "/agentctl/examples/devops/10-release-readiness/",
-      "contentSha256": "1613a15e9352c386fbdf267b3c4edf6bdda630cbd7344a946bcdf4ce077d66ad"
+      "contentSha256": "11c278b9088402351e4b549d23f965a6dfd91a4c90f9003786c19d529f743b26"
     },
     {
       "source": "examples/devops/11-configuration-drift/README.md",
       "route": "/agentctl/examples/devops/11-configuration-drift/",
-      "contentSha256": "bee900824f23fd80f5b906853692fc940980d2a2dafe5a98c61a1658107ac82f"
+      "contentSha256": "c03a1a0f5a967fa1756b79307e275eefe12757949cb894291b896b8359d55a90"
     },
     {
       "source": "examples/devops/12-incident-timeline/README.md",
       "route": "/agentctl/examples/devops/12-incident-timeline/",
-      "contentSha256": "d7b0aa4dfb1b783dec85ce3c507fc8d906c58693c4e3a99740c13c9e18fbf866"
+      "contentSha256": "54e97bbc792051122aaee90d69b7f83c412cea17e37d6101f05bd31d82230aa5"
     },
     {
       "source": "examples/devops/13-canary-evaluation/README.md",
       "route": "/agentctl/examples/devops/13-canary-evaluation/",
-      "contentSha256": "8a876f64761fb7e12ae6024385ed0f585f9098b5c8dfd95abc92a5942470b474"
+      "contentSha256": "4403a882897589079313e4df8de9d5baf6ce11d5feb44c2ce3702d11b6b71d83"
     },
     {
       "source": "examples/devops/14-local-deployment/README.md",
       "route": "/agentctl/examples/devops/14-local-deployment/",
-      "contentSha256": "adc30b7fd2bce584a21efdd1912d0a1a2b667c940d7baff1c1c498b4aef87986"
+      "contentSha256": "f483c4c59235c841a39d58b935ee78c1b62117ab2f063d7fce5c176c63dcfcd7"
     },
     {
       "source": "examples/devops/15-interrupted-deployment/README.md",
       "route": "/agentctl/examples/devops/15-interrupted-deployment/",
-      "contentSha256": "e34b7ca12ba6bb00bbe17d76cb0cd486f14b03230730baab7d319b1b0f9949e7"
+      "contentSha256": "90d8033c3db0acd74b293373e336de53fb8d667409e80578b3b2b39eb3ebda92"
     },
     {
       "source": "examples/devops/16-retry-repair/README.md",
       "route": "/agentctl/examples/devops/16-retry-repair/",
-      "contentSha256": "c76bbbd9b74fce4f3920876a9620de8544fdb036db641b14de084b52bb09097b"
+      "contentSha256": "f0af08bd5477019c20d86d1a5115a9751f4867c4183e1d74e0919e77fd37d60f"
     },
     {
       "source": "examples/devops/17-compensated-rollout/README.md",
       "route": "/agentctl/examples/devops/17-compensated-rollout/",
-      "contentSha256": "73d389d4bab3bb5de4e2ae6151e993a8c860790c12a7e73ffdd3a55fbb447fe3"
+      "contentSha256": "c72fdaa2908f201b029062bf37e76d60033d5127df464f55350dd30accb52e76"
     },
     {
       "source": "examples/devops/18-parallel-matrix/README.md",
       "route": "/agentctl/examples/devops/18-parallel-matrix/",
-      "contentSha256": "06586dece7f986e7dce4632f7130ea80cbe8d8ba43967ce4536a7a7424b6daf0"
+      "contentSha256": "3347e3dcd5eb09c3102dd9ecd6a9c66dfe798b54014bbc1a6dc199c598b29ffa"
     },
     {
       "source": "examples/devops/19-role-subworkflow/README.md",
       "route": "/agentctl/examples/devops/19-role-subworkflow/",
-      "contentSha256": "7ca2e6ca6b1ea1c0e2e8a64624280488bc99a84ef396b25809dbccce261b54bb"
+      "contentSha256": "b48b641a763f65ea425e8b25d25dc6b2c9d75e6ee14fac05fda5e4b43dbd544e"
     },
     {
       "source": "examples/devops/20-bounded-remediation/README.md",
       "route": "/agentctl/examples/devops/20-bounded-remediation/",
-      "contentSha256": "78ad2a2e2055c787a1bd427a4a0dd8244ec333296c91004f9f53165b17c80aab"
+      "contentSha256": "af19739c100ed3ad594cc70106581e14b361c74454767f6624db3c13e5f6de32"
     },
     {
       "source": "examples/devops/21-container-remediation/README.md",
       "route": "/agentctl/examples/devops/21-container-remediation/",
-      "contentSha256": "7017f43166151c712e3ad0b2778fd3d7e3a49cf3cc6bcd86278ecd45f19c1206"
+      "contentSha256": "919b432a81fdfbc4e8962045ccabf1b14a7362dd6314fa2a9eabf565d969194d"
     },
     {
       "source": "docs/use-cases/RELEASE_READINESS.md",
       "route": "/agentctl/examples/release-readiness/",
-      "contentSha256": "f18a34597600aca765aee0e2a9c78efcc2df99df236db19bd27992096dac4585"
+      "contentSha256": "c09aab5379be296f60851c900c040498f3be05d4f89c4f5fbb5322cc9c0bb49a"
     },
     {
       "source": "docs/use-cases/SCHEDULED_REVIEW.md",
       "route": "/agentctl/examples/scheduled-review/",
-      "contentSha256": "f756abc3c8baf4b7513db275e048024e01349d338679aaaa157108fa0535c2f6"
+      "contentSha256": "1cd0e3d6db79ab89e007898f9dc33d1b69c7fe6ba626bcd0b17d162c1db07517"
     },
     {
       "source": "docs/use-cases/CI_QUALITY_GATE.md",
       "route": "/agentctl/examples/ci-quality-gate/",
-      "contentSha256": "88ba19293c0645dee1e0e25c61b7892fff2776e263aab634116406eb32dbdb06"
+      "contentSha256": "13a22412bf2cadff464f00428dc8ded5e6a5ac72dbcacab5ea44b1f7c8eed2ab"
     },
     {
       "source": "docs/use-cases/APPROVAL_GATED_ACTION.md",
       "route": "/agentctl/examples/approval-gated/",
-      "contentSha256": "0ca8fcaf845fbec7a9ec6f07d01256da57c8e111f8db83bd3ae728d8f2f899d6"
+      "contentSha256": "fca855d00a29c7c795983e6f4993ab7f6dd12b9f1c630590f729f59009ef11b3"
     },
     {
       "source": "docs/use-cases/RECORDED_REPLAY.md",
       "route": "/agentctl/examples/recorded-replay/",
-      "contentSha256": "b7169977db54fb6859828703b5c6d11641f7ff5e45acec62fc4282ed1ae5e3c2"
+      "contentSha256": "e41f5e8791201fa753b555b34b63b9b3c8d4bcfd73fb1f71bcd448411e4df601"
     },
     {
       "source": "docs/use-cases/PROVIDER_PORTABILITY.md",
       "route": "/agentctl/examples/provider-portability/",
-      "contentSha256": "345abc26b15e8f5b4596fbbfe8824ec47492135c7dad7ddac5452082976b36b1"
+      "contentSha256": "fd5ce97fc0336d496b283e00d2817882586a2dfc9faa1658608eff4d7410285b"
     },
     {
       "source": "docs/reference/YAML.md",
       "route": "/agentctl/reference/yaml/",
-      "contentSha256": "b28906822c5c3d69460cea03fb7502bf44bd9ed7755381e222c3cdf78cadda80"
+      "contentSha256": "4a5e30344a3d4eec599d12ba24f89e2ecf9d6680a9e48fbac196aa511c92c690"
     },
     {
       "source": "docs/generated/CLI.md",
       "route": "/agentctl/reference/cli/",
-      "contentSha256": "bd92aa4c5f381bbf57f09544e701fb867b68b4d8ca49fea85496973390a064c5"
+      "contentSha256": "98c02b4dc0d54e886d0143a27276fbbccdc92a4c70a1cb6175dcca6a9be92bb6"
     },
     {
       "source": "docs/reference/CLI_OUTPUT.md",
       "route": "/agentctl/reference/output/",
-      "contentSha256": "e802f5e1817a4369d928ed7c073dc07f2cb42a9bdc5df161d9d8e796e2d5c149"
+      "contentSha256": "1fe2256b6b48976c16cb72e2b542cbfa684ae7fbb05414ceba15246d8738e10f"
     },
     {
       "source": "docs/reference/ENVIRONMENT_AND_PATHS.md",
       "route": "/agentctl/reference/environment/",
-      "contentSha256": "19cc966e6a9dc7855472094911785f83599603174dbbd42660b52be7445e1a25"
+      "contentSha256": "d783f777d5ee11fbf097404ab76a886317e172c81aa6b3efb0941ba21a014797"
     },
     {
       "source": "docs/reference/MATRICES.md",
       "route": "/agentctl/reference/capabilities/",
-      "contentSha256": "ed89d01b5da94aba11dc9ca866fa1e00d7b1a8a7fa1dcb89b37ad5cfa6444337"
+      "contentSha256": "23ac921c8416cff1099f33cb651e0f26f435ce5b2eb7ef80ac7230baec33236f"
     },
     {
       "source": "docs/reference/DATABASE.md",
       "route": "/agentctl/reference/database/",
-      "contentSha256": "e8dcce18870fcdde6a0aaed737b47ee99c10637066626ecbff9f5d6e9036318c"
+      "contentSha256": "3a0a8993dec97ab926a82ebaa4853bce8df6d12baf0eb6a848696319ab01021d"
     },
     {
       "source": "docs/reference/TERMINOLOGY.md",
       "route": "/agentctl/reference/terminology/",
-      "contentSha256": "3e35a44b2bd81ae1c49ed0d029c5513043ab7d8f1f5cd16216ad8d5ee117c58c"
+      "contentSha256": "3750d82a3fa5ab947cd0dcdc1c64ab141d78aaa1c9038c79173cbb92eda1e89a"
     },
     {
       "source": "docs/LIMITATIONS.md",
       "route": "/agentctl/reference/limitations/",
-      "contentSha256": "6437a21a3999a6145079228cef193df396cd22885f300a5926790386005b75e0"
+      "contentSha256": "0695f70663f9eca4169090f9fcc82c434e92b7080a43f657c9d277f69135eb7b"
     },
     {
       "source": "docs/COMPATIBILITY.md",
       "route": "/agentctl/reference/compatibility/",
-      "contentSha256": "8ca8425ab01c1ad6cb2cefe5ca9e79afab050a4097dd921e4e7fa023fb17795a"
+      "contentSha256": "a15494a3b41dee547791828b0b437045aaf3aaf24da7d697089d48fc99096255"
     },
     {
       "source": "docs/MIGRATING_FROM_TYPESCRIPT.md",
       "route": "/agentctl/reference/migration/",
-      "contentSha256": "7cb0437c44674f861c2ac0e9e4f4ce30172dfb61651ff67b4a5bad715451a2b0"
+      "contentSha256": "0943db232684993d2898b52d8d1e004e1b0e984afad36284b7640f65a57d3032"
     },
     {
       "source": "docs/ARCHITECTURE.md",
       "route": "/agentctl/architecture/",
-      "contentSha256": "e228240db05831291c5bbea873c8f3d6fecf589a8905bdd6a27c08cf176b182f"
+      "contentSha256": "31b4c1c1fb78ebf0556f9572c84198d1573c33ecd6b3fa6c88f9030c5cbefc1e"
     },
     {
       "source": "docs/architecture/DIAGRAMS.md",
       "route": "/agentctl/architecture/diagrams/",
-      "contentSha256": "64bccf6c0e74be19d10fdf974e2c962c87da8fab0a3a9ea4734de22ccef19a99"
+      "contentSha256": "0014f7311f91ea37b5f68b9c657bc5556008a9a266f479f734f600514ec52fcf"
     },
     {
       "source": "docs/adr/0001-deterministic-core-explicit-effects.md",
       "route": "/agentctl/architecture/decisions/0001/",
-      "contentSha256": "44629253fd1fcec68f941df7f6b4233b7a76a42afa759ee63a8b30cd79804c4c"
+      "contentSha256": "531a6090412cb515bfe43edf0a7ef98b54f9ce60fed74ce7d571230a9203de1c"
     },
     {
       "source": "docs/adr/0002-versioned-strict-workflow-envelope.md",
       "route": "/agentctl/architecture/decisions/0002/",
-      "contentSha256": "236fcbb668fad1440d845f5479cc33cb1ea05d4e6c5eba54a0a05203dc467a7e"
+      "contentSha256": "c2440daafbbdadd43bc560e0a7894b4c51bc55a07064c2d716d4ec2cddfa0cad"
     },
     {
       "source": "docs/adr/0003-sqlite-history-and-conservative-recovery.md",
       "route": "/agentctl/architecture/decisions/0003/",
-      "contentSha256": "eb1bf32e178ab05985f5d5906cb86c2ed766b5aeb3716dd0573d83daafd17f52"
+      "contentSha256": "0823d92757bdd43877d12d6051968aa257022ec7a8fcef2e5cc23eed94dcc64c"
     },
     {
       "source": "docs/adr/0004-native-provider-adapters.md",
       "route": "/agentctl/architecture/decisions/0004/",
-      "contentSha256": "2d30a168200e812b5b045181010c7ee285d00aa896cf39cfe5b70d7456996d41"
+      "contentSha256": "5c53e7f63a10281a4153982ebd2ba1f3639415dcbfd0937007dc3a6a5c913d35"
     },
     {
       "source": "docs/adr/0005-narrow-v1-scheduling-and-extensions.md",
       "route": "/agentctl/architecture/decisions/0005/",
-      "contentSha256": "9236eb4f7c605f1ac597a9da9c1c07cb383e89b01f4e6cc0e83533789f21f1ef"
+      "contentSha256": "ac173986e4b5ea51dfa97c37696648cf8edc2916e2a007d140b28a832b8af313"
     },
     {
       "source": "docs/adr/0006-schedulable-runtime-and-noninteractive-contract.md",
       "route": "/agentctl/architecture/decisions/0006/",
-      "contentSha256": "3f40e99e16e88b603b92f250f817f85a9254d2b232242e84a69b56f2d9181377"
+      "contentSha256": "d807f1892913783f71e1a14e3ba04662bc96b2eaff3a57c9dc61a637f7b701a1"
     },
     {
       "source": "docs/adr/0007-generic-oci-step-contract.md",
       "route": "/agentctl/architecture/decisions/0007/",
-      "contentSha256": "3c0892564c79153a2fd44aa983e6e8b74b7d384cfeef6f18737ae8513f7caa66"
+      "contentSha256": "942b9b911446cd7e443a6d1f312e1c9c28af8c422f154bb33df5ebc78e8f9d68"
     },
     {
       "source": "docs/CONTRIBUTING.md",
       "route": "/agentctl/contributing/",
-      "contentSha256": "b4d552f64dcb1c8ac077e25c3e44e5d6a55683ef67012dc2812e9f44ae75102c"
+      "contentSha256": "9bc21a44522161b88655453310ab36f1e2174a7fd85af2f55850c7b76a877a37"
     },
     {
       "source": "docs/development/REPOSITORY.md",
       "route": "/agentctl/contributing/developer-guide/",
-      "contentSha256": "04725a93e11f3139853525aee4625b69a02594a504171d12d2f5d37ac21fe9cb"
+      "contentSha256": "89e64347585af1479e4e9f5c1892e30e8ed21358f8d76e9de3d4f0424692c8e5"
     },
     {
       "source": "docs/development/ADD_ACTION.md",
       "route": "/agentctl/contributing/add-action/",
-      "contentSha256": "fedaca4ec57998fa9b851e31d7b66bd25d4c25b863c004f6b875d790fbdc758b"
+      "contentSha256": "578d45f8e5c30215f7fd565ba081a569d3830578ae9f5cf818bf0471f6d94c87"
     },
     {
       "source": "docs/development/ADD_PROVIDER.md",
       "route": "/agentctl/contributing/add-provider/",
-      "contentSha256": "4f33f0c2d67b39a5450e44cb17534f0bb05115d03659abb78b983540e0a63d98"
+      "contentSha256": "659ff20e494b46ec9beb0559000d3033c7bf9e1b50f442012f304a6c84627780"
     },
     {
       "source": "docs/development/ADD_MIGRATION.md",
       "route": "/agentctl/contributing/add-migration/",
-      "contentSha256": "e21c7585d8fb6365fc783edb336c2bf79e37a42f8041405647d19b5cc7df6ed6"
+      "contentSha256": "32c8a9255104e1fb69e66fefa2c779fde0b60e574b768fe92cf38cd507aba2e6"
     },
     {
       "source": "docs/development/DOCUMENTATION.md",
       "route": "/agentctl/contributing/documentation/",
-      "contentSha256": "368d9529101cb8b884a5131e52390abae88606085d0a87faa9634d1078211fb1"
+      "contentSha256": "3bd39d2a46bd6b6b2e287b79bc03cb00f33042616bbd7d92d00c5a14dc389bfd"
     },
     {
       "source": "docs/TESTING.md",
       "route": "/agentctl/contributing/testing/",
-      "contentSha256": "7becbb9f6ecda8f7857cec7dcbfe558dd5a8f5dab109956785598e927d919afb"
+      "contentSha256": "aa44d2555c0e000d29278adedbdf228a6898e01fc1cb2d7bcde1486f8d83a288"
     },
     {
       "source": "docs/RELEASE_PROCESS.md",
       "route": "/agentctl/contributing/release/",
-      "contentSha256": "cfda71a3fbd084c1793be92a1e6c5ace82e79ee86790af8d62c048971cddf1ce"
+      "contentSha256": "831c493947a8855245848b24b6d897a8b628da1c4f78cf72d21a743ad59957a1"
     }
   ],
   "cookbookPackages": [
@@ -413,169 +413,169 @@
       "directory": "01-ci-diagnosis",
       "route": "/agentctl/examples/devops/01-ci-diagnosis/",
       "download": "/agentctl/downloads/devops/01-ci-diagnosis.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "82f3b9127b73e3814ae1dd8fab339d3371270c2651334be4c86e332887ae7b87",
-      "bytes": 37381
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "7ee2a63afbbf90454f40337b6b13e103ea92eaced115f737b0b2b8175e0a4526",
+      "bytes": 37380
     },
     {
       "directory": "02-junit-triage",
       "route": "/agentctl/examples/devops/02-junit-triage/",
       "download": "/agentctl/downloads/devops/02-junit-triage.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "540f210325e6cd5da8c874bad1564dcfc33e8f5cf484aa651457b3391f5d6173",
-      "bytes": 33339
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "3a5ecc0c017cb9afd29932201aca74e08d86cfe3ed4675a051310a9a611cd2a7",
+      "bytes": 33338
     },
     {
       "directory": "03-pipeline-review",
       "route": "/agentctl/examples/devops/03-pipeline-review/",
       "download": "/agentctl/downloads/devops/03-pipeline-review.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "ceadbc4dda3ab834ce4fbfe7e76e0d6f10b5d946c2bd8a935f04684d0607f058",
-      "bytes": 34290
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "100f10887d3753d9c53bdbf92808e8ad39fbc5185045a926251d9abc76b4ed6e",
+      "bytes": 34288
     },
     {
       "directory": "04-dockerfile-review",
       "route": "/agentctl/examples/devops/04-dockerfile-review/",
       "download": "/agentctl/downloads/devops/04-dockerfile-review.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "bc5850dc79a706487e757ee23d2da920c71853115c9d9b502a50e3e951b4a6cb",
-      "bytes": 34254
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "8471693410d37f73eaeb131d8f5689c8d96287a7ecddac69990fcba0ab31354b",
+      "bytes": 34252
     },
     {
       "directory": "05-kubernetes-review",
       "route": "/agentctl/examples/devops/05-kubernetes-review/",
       "download": "/agentctl/downloads/devops/05-kubernetes-review.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "241434aef1b56f81c5b8d80002a6c4037e16f0e2392a650a42fcbfda5879a4e8",
-      "bytes": 86243
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "4a08c295b1ec63fc384f9c86c72c3d753822ccc2cf3d4a9b8276e7954d8f9941",
+      "bytes": 86241
     },
     {
       "directory": "06-terraform-plan",
       "route": "/agentctl/examples/devops/06-terraform-plan/",
       "download": "/agentctl/downloads/devops/06-terraform-plan.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "5a9022596ad31b7d697738fdc59f41aefad732bfae52a5730149273ff5852246",
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "296e4794d03a9e47a4ba0e5b4f54940adeaab50479ce485276515fb6dedb790b",
       "bytes": 33862
     },
     {
       "directory": "07-dependency-update",
       "route": "/agentctl/examples/devops/07-dependency-update/",
       "download": "/agentctl/downloads/devops/07-dependency-update.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "bc0f9cd657aeb1746fe008ed001e281832be4051c80989848792df8214fa53c0",
-      "bytes": 34445
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "67a064a55ceb8ed0f42df7eee2813837add4d45277bd63e96fe6ad73783cd6e0",
+      "bytes": 34442
     },
     {
       "directory": "08-sbom-triage",
       "route": "/agentctl/examples/devops/08-sbom-triage/",
       "download": "/agentctl/downloads/devops/08-sbom-triage.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "4a510984847e6c75fbaf33c0578713f1355479b63db959db1539fde3d6533c0e",
-      "bytes": 35502
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "3a6571603279e272248d725e2cc4f91f9930807c52acb5c5e4cc398ce71ea8ec",
+      "bytes": 35500
     },
     {
       "directory": "09-release-notes",
       "route": "/agentctl/examples/devops/09-release-notes/",
       "download": "/agentctl/downloads/devops/09-release-notes.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "ef097c3d8af7a843ab2b2c1749d84a1b2e1c74365d851bdbac3df6ed66940746",
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "8fb4c264c97c6c253e662b913ebf22a4e4c7a5e78e144b332465868d2d06545d",
       "bytes": 33404
     },
     {
       "directory": "10-release-readiness",
       "route": "/agentctl/examples/devops/10-release-readiness/",
       "download": "/agentctl/downloads/devops/10-release-readiness.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "8d3264debb2a458daa0e345d76df01b59522b33810fbfa706f38583f5020fa63",
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "61abc120f010b6f206fbf2322f0ccb2db64c3d53df7a309c102807d9dc2cbeac",
       "bytes": 35070
     },
     {
       "directory": "11-configuration-drift",
       "route": "/agentctl/examples/devops/11-configuration-drift/",
       "download": "/agentctl/downloads/devops/11-configuration-drift.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "af45a12935a6dc6d43389bd48fa3a9ce9d379d02ba916480fff9bde72f44a8cb",
-      "bytes": 34245
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "f1f0974c49d04479db00e12f27347194d0314349b4f837f03733eb465174b177",
+      "bytes": 34244
     },
     {
       "directory": "12-incident-timeline",
       "route": "/agentctl/examples/devops/12-incident-timeline/",
       "download": "/agentctl/downloads/devops/12-incident-timeline.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "cd60cad9b169e37be5ad94b4affab11cfb39ca5c8930336b5d6acbc652db3515",
-      "bytes": 37404
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "374b222ee28c75a1da7946be1f3ac6ff29f6efa59d3d929d3f0e517b8257d72d",
+      "bytes": 37401
     },
     {
       "directory": "13-canary-evaluation",
       "route": "/agentctl/examples/devops/13-canary-evaluation/",
       "download": "/agentctl/downloads/devops/13-canary-evaluation.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "f84b9afe433eebb48248d640fe448e426e709c5ae3b95f87464c94ca4df8505f",
-      "bytes": 33653
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "835be1eb443921f09115bd04c9fe7b79a425b23431fb072de1ea569249044c9c",
+      "bytes": 33652
     },
     {
       "directory": "14-local-deployment",
       "route": "/agentctl/examples/devops/14-local-deployment/",
       "download": "/agentctl/downloads/devops/14-local-deployment.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "299287d0059156d9594172d79d435ab2424e6e01558030d7dc14a3e4ec55902d",
-      "bytes": 34565
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "efdf075613bdca40b7fb1eaba1fcd2e0f44dbc40357c8f383c2950ba4e910ca5",
+      "bytes": 34564
     },
     {
       "directory": "15-interrupted-deployment",
       "route": "/agentctl/examples/devops/15-interrupted-deployment/",
       "download": "/agentctl/downloads/devops/15-interrupted-deployment.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "802c038eddf37ef8ab4851fec14445249d1c3cf291da2d1691027c025dca4f65",
-      "bytes": 36210
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "870b8dc1958e626087a9156856f762049c1b838172dac2212a35101d3214eef4",
+      "bytes": 36208
     },
     {
       "directory": "16-retry-repair",
       "route": "/agentctl/examples/devops/16-retry-repair/",
       "download": "/agentctl/downloads/devops/16-retry-repair.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "767bbf55cd7dd495c90dcc780f256a95c119e41f77a97ef621eacb57fbcd3eaa",
-      "bytes": 34808
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "bbf4d5e5de07f9d33fbc87027e915b471994b3dbc0f92780cd168637529e495b",
+      "bytes": 34805
     },
     {
       "directory": "17-compensated-rollout",
       "route": "/agentctl/examples/devops/17-compensated-rollout/",
       "download": "/agentctl/downloads/devops/17-compensated-rollout.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "f82f0ac894e036dbefc9f6d20f97dd62e1cc2dcc7d6b025fe86087c6ce2d3852",
-      "bytes": 36126
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "70ebc9bef270ec0b95ce7c62a8e2058cfd430096b348812f0a692110742cde46",
+      "bytes": 36122
     },
     {
       "directory": "18-parallel-matrix",
       "route": "/agentctl/examples/devops/18-parallel-matrix/",
       "download": "/agentctl/downloads/devops/18-parallel-matrix.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "22e526f2594793b7fc26f44f4c55150a6df9e1765751c2933baf2464a356ae0b",
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "895dccf90a7a74359e7c23001d78030dc8f0b0e1e1c47070b3a5d0106ae014bb",
       "bytes": 34581
     },
     {
       "directory": "19-role-subworkflow",
       "route": "/agentctl/examples/devops/19-role-subworkflow/",
       "download": "/agentctl/downloads/devops/19-role-subworkflow.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "75e689858d12fbadcdb659f09269c150a6a8785c6e8de6d3c9e1bbd015eb8d28",
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "c9a87a79fee7869ce1ca552a7f88911cccbc877a475b42f6122a487a33106d8a",
       "bytes": 41023
     },
     {
       "directory": "20-bounded-remediation",
       "route": "/agentctl/examples/devops/20-bounded-remediation/",
       "download": "/agentctl/downloads/devops/20-bounded-remediation.zip",
-      "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-      "sha256": "8b3a1a2b30346ba205fd7e6d0b6af5543ac9bdc51ef76f3d46bd9a0c3da48404",
-      "bytes": 38923
+      "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+      "sha256": "b284dcb0a2952fe1640197059eb6f36cd050f1f366fa9cf7c40668cde49000d4",
+      "bytes": 38922
     }
   ],
   "remediationPackage": {
     "directory": "21-container-remediation",
     "route": "/agentctl/examples/devops/21-container-remediation/",
     "download": "/agentctl/downloads/remediation/21-container-remediation.zip",
-    "sourceCommit": "9640102855bc513e2849d0a08344c1f13e50028a",
-    "sha256": "8f87ed212d0d06dabc03900f4a1597d43697593810a637b157f72fc23420bbce",
-    "bytes": 68712
+    "sourceCommit": "c223d012727a75de62112923d4da8befbe2068f2",
+    "sha256": "7c4c0d556a94460914a3b507b4a82fbc3c37713a13deab57cd04be647efaf83d",
+    "bytes": 68718
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: "Providers"
 description: "Compare native adapters, capabilities, authentication, and evidence levels."
-editUrl: "https://github.com/opensourceops/agentctl/edit/9640102855bc513e2849d0a08344c1f13e50028a/docs/PROVIDERS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/c223d012727a75de62112923d4da8befbe2068f2/docs/PROVIDERS.md"
 ---
 The core defines provider-neutral messages, text/reasoning/tool content, strict tool schemas, tool calls/results, finish reasons, usage, and opaque continuation. The compiler compares each agent’s requested structured output, tools, reasoning, cache, and continuation needs with typed provider capabilities.
 
@@ -19,7 +19,7 @@ answer to prevent resolution drift. Private addresses and environment proxies
 are denied by default. Redirects and Unix-socket transports are disabled.
 Response bytes and DNS/connect time are bounded, composed with the provider
 task timeout and the adapter's lower hard limit. See [Network
-policy](https://github.com/opensourceops/agentctl/blob/9640102855bc513e2849d0a08344c1f13e50028a/docs/guides/NETWORK_POLICY.md).
+policy](https://github.com/opensourceops/agentctl/blob/c223d012727a75de62112923d4da8befbe2068f2/docs/guides/NETWORK_POLICY.md).
 Credentials and configured headers accept environment, mounted-file, or
 policy-gated process references. Provider credentials in the fresh execution
 closure are preflighted before a new run record or effect; custom headers
@@ -27,7 +27,7 @@ resolve while building a required adapter.
 Standard authentication headers override custom headers. Successful/error
 response JSON keys and values plus provider request IDs are scrubbed of
 configured secrets before parsing or persistence. Calls honor timeout and
-cancellation. See [Secret references](https://github.com/opensourceops/agentctl/blob/9640102855bc513e2849d0a08344c1f13e50028a/docs/guides/SECRET_REFERENCES.md).
+cancellation. See [Secret references](https://github.com/opensourceops/agentctl/blob/c223d012727a75de62112923d4da8befbe2068f2/docs/guides/SECRET_REFERENCES.md).
 
 `agentctl providers inspect <workflow>` reports declared capabilities without calling a service. OpenAI has the broadest mock request/response/tool/usage/error coverage. Azure OpenAI, Anthropic, and Google have native mapping and focused mock-protocol coverage at the maturity shown below; normal tests have no credentials. Live provider workflows are opt-in: historical examples end in `-live.yaml`, while the four DevOps variants use `openai.workflow.yaml`.
 
@@ -72,7 +72,7 @@ dispatch, reconcile complete durable usage, and retain uncertain reservations.
 Unknown accounting fails the gate even if the child CLI returned success.
 Reviewed price schedules are versioned operator inputs. Unpriced model
 selections fail closed; estimates are not invoices. See the [current execution
-ledger](https://github.com/opensourceops/agentctl/blob/9640102855bc513e2849d0a08344c1f13e50028a/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) for actual live results and
+ledger](https://github.com/opensourceops/agentctl/blob/c223d012727a75de62112923d4da8befbe2068f2/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md) for actual live results and
 usage, rather than treating earlier GPT-5.6 evidence as a new-source result.
 
 OpenAI provider options are an allowlisted map (`store`, `reasoningContext`, `promptCacheMode`, `promptCacheTtl`, `parallelToolCalls`, and `safetyIdentifier`). Unknown options or invalid values fail compilation. Tool-using OpenAI and Azure OpenAI agents may set `store: false`; the adapter requests encrypted reasoning content and replays the complete ordered response-item and function-output history. `stream: true` selects typed Responses SSE for fake, OpenAI, and Azure OpenAI agents. Anthropic and Google streaming fail capability negotiation. Programmatic tool calling remains unsupported and fails rather than being ignored. Parallel function calls are parsed and correlated, but one agent task executes them serially in response order. Independent workflow tasks can use bounded parallel scheduling.
@@ -107,9 +107,19 @@ capability negotiation. Token-only run budgets remain enforceable from native
 usage without pricing. Retry is limited to explicit task bounds and definitive
 retryable HTTP responses. Timeout, cancellation, or a transport loss after
 dispatch is considered ambiguous and is not automatically reissued. See
-[Resource and cost budgets](https://github.com/opensourceops/agentctl/blob/9640102855bc513e2849d0a08344c1f13e50028a/docs/guides/RESOURCE_BUDGETS.md).
+[Resource and cost budgets](https://github.com/opensourceops/agentctl/blob/c223d012727a75de62112923d4da8befbe2068f2/docs/guides/RESOURCE_BUDGETS.md).
+
+OpenAI responses must include nonnegative integer `input_tokens` and
+`output_tokens` usage counters. Missing or malformed required counters leave the
+model effect uncertain and retain its original budget reservation. Same-run
+resume requires reconciliation; unavailable usage is not treated as zero and the
+request is not automatically repeated. Explicit retry or repair can authorize
+fresh model work under a new run budget while preserving the old reservation.
+Explicit numeric zero is valid. Optional cache and reasoning breakdowns may be
+absent. This validation also applies to Azure OpenAI through the shared Responses adapter; it does not
+establish live Azure coverage.
 
 Streaming persists each accepted fragment before reading more transport data.
 Records are bounded and redacted, while the terminal response still follows
 the normal validation path. See [Durable provider
-streaming](https://github.com/opensourceops/agentctl/blob/9640102855bc513e2849d0a08344c1f13e50028a/docs/guides/DURABLE_STREAMING.md).
+streaming](https://github.com/opensourceops/agentctl/blob/c223d012727a75de62112923d4da8befbe2068f2/docs/guides/DURABLE_STREAMING.md).
