@@ -1,7 +1,7 @@
 ---
 title: "Release process"
 description: "Prepare and verify an exact-commit release without overstating evidence."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d3f4338a7735ff610947c1232ebf7797f584993d/docs/RELEASE_PROCESS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/RELEASE_PROCESS.md"
 ---
 An agentctl release supplies native GitHub binary downloads and two Docker Hub image flavors. It does not publish crates to crates.io or deploy a service. Preparation builds and tests exact source; publication promotes the retained OCI bytes without rebuilding.
 

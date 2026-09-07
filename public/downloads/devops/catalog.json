@@ -3,160 +3,160 @@
     "directory": "01-ci-diagnosis",
     "route": "/agentctl/examples/devops/01-ci-diagnosis/",
     "download": "/agentctl/downloads/devops/01-ci-diagnosis.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "2068d1940efaab94622ff7122afbb898bba28cc02ac94523e28c9453323ad7d4",
-    "bytes": 37384
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "b272f93ff2d3a0a77a38fc661f4aa60995e9f391edc880c2dd4f70e3258d7a3a",
+    "bytes": 37378
   },
   {
     "directory": "02-junit-triage",
     "route": "/agentctl/examples/devops/02-junit-triage/",
     "download": "/agentctl/downloads/devops/02-junit-triage.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "3d9458b8c5f1fd3133efc64a0fedbd6b8950add4b157a8ccfc428ba93697107c",
-    "bytes": 33341
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "e853032afc4338de1ffb1129137d275549b4f6cb6737dcc468e39b3185b0ac4a",
+    "bytes": 33338
   },
   {
     "directory": "03-pipeline-review",
     "route": "/agentctl/examples/devops/03-pipeline-review/",
     "download": "/agentctl/downloads/devops/03-pipeline-review.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "a4f87bd94fa035bc6b65cc1128d2b74e160518822d615fc27b6db886753c2a52",
-    "bytes": 34291
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "e04478d3162549ee020e97d365c3568617150281f0c8f3dc18c74084ae3b8f69",
+    "bytes": 34290
   },
   {
     "directory": "04-dockerfile-review",
     "route": "/agentctl/examples/devops/04-dockerfile-review/",
     "download": "/agentctl/downloads/devops/04-dockerfile-review.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "b5e650e04c7703a1d89fb67d6e96285c31357298a72df6f807ddccb6e0dfc770",
-    "bytes": 34256
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "a7bff51193b4f4d797b1c092a1bdec8847bad81cfbf4e512ce9cfd2b7ecfd555",
+    "bytes": 34251
   },
   {
     "directory": "05-kubernetes-review",
     "route": "/agentctl/examples/devops/05-kubernetes-review/",
     "download": "/agentctl/downloads/devops/05-kubernetes-review.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "3336a02f4ea18e9547098bcb2c52c0ba2df52aaaf5e5559611a5bca217e8140e",
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "194670e0fcbdebbd8e95269b7dc8d3a4ecaa16a497e76d08e617382a56e113f7",
     "bytes": 86243
   },
   {
     "directory": "06-terraform-plan",
     "route": "/agentctl/examples/devops/06-terraform-plan/",
     "download": "/agentctl/downloads/devops/06-terraform-plan.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "d912b4d52deee61fe6efb51db32aa6bb531c4909608cf0bb727c4936d4500874",
-    "bytes": 33866
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "1b0f72b06c113fe43d8d0528af6289194e7394814bd398a7c9200b4306e458bc",
+    "bytes": 33861
   },
   {
     "directory": "07-dependency-update",
     "route": "/agentctl/examples/devops/07-dependency-update/",
     "download": "/agentctl/downloads/devops/07-dependency-update.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "23c527c77e06695762dbf3ce3493214367078ef83d4a19675a22886a6644fa43",
-    "bytes": 34447
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "1245185c36b200c2755906da6e8e589834525577eb36f81a68467a620acd300a",
+    "bytes": 34442
   },
   {
     "directory": "08-sbom-triage",
     "route": "/agentctl/examples/devops/08-sbom-triage/",
     "download": "/agentctl/downloads/devops/08-sbom-triage.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "d30e840a2fae0bb85d5031b73fe237e7ef1f420631a36924c2de3298462e6cde",
-    "bytes": 35505
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "b960b116d566e1997a957927fc5013a19ee278e47283e64ab4d6b4a7198e0721",
+    "bytes": 35502
   },
   {
     "directory": "09-release-notes",
     "route": "/agentctl/examples/devops/09-release-notes/",
     "download": "/agentctl/downloads/devops/09-release-notes.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "6d31a8fcac0c8314ff42784b52c3da8042a341d9822246e0383f93759c2b391a",
-    "bytes": 33407
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "b84840be3b765a8c1176f2dbd2bdf08e28b34dd0c890f7bb56a4a7da4388daf9",
+    "bytes": 33404
   },
   {
     "directory": "10-release-readiness",
     "route": "/agentctl/examples/devops/10-release-readiness/",
     "download": "/agentctl/downloads/devops/10-release-readiness.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "0b8af48697bf9bd634b5f7070c4164e430e75fbfd1cbc373210f759ee41271b8",
-    "bytes": 35076
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "d937d8eeaf00d1ef02377c89d1c55c1027aa1a37e2acc11c27bf93edc22afe90",
+    "bytes": 35072
   },
   {
     "directory": "11-configuration-drift",
     "route": "/agentctl/examples/devops/11-configuration-drift/",
     "download": "/agentctl/downloads/devops/11-configuration-drift.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "cdaf79674e8a8eadc72b8b15612ddddd7e3d334bf89e7dbbb2cae98015d1f42c",
-    "bytes": 34247
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "46c7a78df3e19191182de94c2111fb0b6523741f6a74bb586de03c416a12c60f",
+    "bytes": 34242
   },
   {
     "directory": "12-incident-timeline",
     "route": "/agentctl/examples/devops/12-incident-timeline/",
     "download": "/agentctl/downloads/devops/12-incident-timeline.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "57b469b66b72b1888b8dc76dd8f51f4426cd08575020bb1eabbae154a61c80a8",
-    "bytes": 37405
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "fabd7864e6d5aaba19ebcfb355825cbf757acfd81d795bad9180f9357e010375",
+    "bytes": 37400
   },
   {
     "directory": "13-canary-evaluation",
     "route": "/agentctl/examples/devops/13-canary-evaluation/",
     "download": "/agentctl/downloads/devops/13-canary-evaluation.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "3188c0a6be1d433d9d5faa52c998f922890daa6e19255a7226356ea4a31accc5",
-    "bytes": 33655
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "e1ee053a132ace0074eb99f3fcf87883b0931f866f02b7dda8dfffc340517218",
+    "bytes": 33651
   },
   {
     "directory": "14-local-deployment",
     "route": "/agentctl/examples/devops/14-local-deployment/",
     "download": "/agentctl/downloads/devops/14-local-deployment.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "93298dbbec68c0fccc79844efcc0b3d5a0fcafdc280b848f32722bed0b06ae74",
-    "bytes": 34569
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "8e1d8b48f3b90d62c2e59b21e2f691357ed94f4c2e78c9ff2800dcda06b04f54",
+    "bytes": 34565
   },
   {
     "directory": "15-interrupted-deployment",
     "route": "/agentctl/examples/devops/15-interrupted-deployment/",
     "download": "/agentctl/downloads/devops/15-interrupted-deployment.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "388aa6f0c9909a3c4b5b4dda32b35219db14ddf23f233b0f83c78929cd63159c",
-    "bytes": 36214
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "970b70b815c97c349836fde2d1047775f8ad03f423b9e59b335849b7eebec7ab",
+    "bytes": 36209
   },
   {
     "directory": "16-retry-repair",
     "route": "/agentctl/examples/devops/16-retry-repair/",
     "download": "/agentctl/downloads/devops/16-retry-repair.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "f1fb508c3012c801852e0945fb640b1227f4ea04cad36bed64e473e13fbba24d",
-    "bytes": 34810
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "a6fe478bf836ee8a467c850663409533c363259ad581cae04b78728e29e91fdc",
+    "bytes": 34804
   },
   {
     "directory": "17-compensated-rollout",
     "route": "/agentctl/examples/devops/17-compensated-rollout/",
     "download": "/agentctl/downloads/devops/17-compensated-rollout.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "27df9dafa112d725a13872f3df424e4ffa4908dcb0857125856c14699045d143",
-    "bytes": 36125
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "05d9cfb1400912aec4409bef6ebdba8d3073a13550a2bec1b0388f8196ff71d7",
+    "bytes": 36124
   },
   {
     "directory": "18-parallel-matrix",
     "route": "/agentctl/examples/devops/18-parallel-matrix/",
     "download": "/agentctl/downloads/devops/18-parallel-matrix.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "c7f2075f504efa6ea414054ae83a4641c17c29df9c70a80112f2578815aa4850",
-    "bytes": 34585
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "a0e494e8243df9ecbf01eb1bd374a4a01bd2efe83e74b912cf34d71bd5be5652",
+    "bytes": 34581
   },
   {
     "directory": "19-role-subworkflow",
     "route": "/agentctl/examples/devops/19-role-subworkflow/",
     "download": "/agentctl/downloads/devops/19-role-subworkflow.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "305a4507d7ba723a8c7db09c5f3ea337602e7484519560d9a84a5482143402bc",
-    "bytes": 41029
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "3debea3b9b5490621cf978670deb55a13375fe1dd3ea41556789a40339571845",
+    "bytes": 41024
   },
   {
     "directory": "20-bounded-remediation",
     "route": "/agentctl/examples/devops/20-bounded-remediation/",
     "download": "/agentctl/downloads/devops/20-bounded-remediation.zip",
-    "sourceCommit": "d3f4338a7735ff610947c1232ebf7797f584993d",
-    "sha256": "308397d278bca2958ccc21f74766935e65a19d3753f03369259fcbe186c99419",
-    "bytes": 38927
+    "sourceCommit": "42922f9479f9b9cda360c36cf9b113ae4ce50f9a",
+    "sha256": "2aff7f08acd6c941cd3d8feec1ec823c46be3a7d123459976c61d363c67a84fa",
+    "bytes": 38924
   }
 ]

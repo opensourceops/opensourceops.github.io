@@ -1,7 +1,7 @@
 ---
 title: "Durable execution"
 description: "Understand checkpoints, effects, resume, replay, fork, and uncertain outcomes."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d3f4338a7735ff610947c1232ebf7797f584993d/docs/DURABLE_EXECUTION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/DURABLE_EXECUTION.md"
 ---
 SQLite is the local history and correctness boundary. Run, task, effect, approval, checkpoint, audit, provider-session, tool-call, and long-term-memory records are schema-versioned. Future database, runtime, plan, effect, or checkpoint versions fail explicitly instead of being ignored.
 
@@ -11,7 +11,7 @@ with actual usage. Parallel tasks share the same SQLite coordinator. The
 wall-time deadline is derived from run creation, so pause and resume cannot
 reset it. Recorded replay and reused retry or repair boundaries dispatch
 nothing and consume no fresh effect units. See [Resource and cost
-budgets](https://github.com/opensourceops/agentctl/blob/d3f4338a7735ff610947c1232ebf7797f584993d/docs/guides/RESOURCE_BUDGETS.md).
+budgets](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/guides/RESOURCE_BUDGETS.md).
 
 ## Operations
 

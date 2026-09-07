@@ -1,7 +1,7 @@
 ---
 title: "CLI reference"
 description: "Generated command and flag reference for the current Rust CLI."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d3f4338a7735ff610947c1232ebf7797f584993d/docs/generated/CLI.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/generated/CLI.md"
 ---
 Generated from the Rust CLI by `cargo xtask generate`. Do not edit by hand.
 

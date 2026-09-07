@@ -1,7 +1,7 @@
 ---
 title: "DevOps and CI/CD examples"
 description: "Run twenty bounded local examples and inspect their semantic evidence, artifacts, and recovery behavior."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d3f4338a7735ff610947c1232ebf7797f584993d/examples/devops/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/README.md"
 ---
 Choose a complete local workflow for a concrete CI, platform, SRE, release or security problem. The twenty tutorials below lead with editable YAML, input files and direct `agentctl` commands. `agentctl.dev/v1` names the workflow document format.
 
@@ -71,9 +71,9 @@ python3 -m pip install -r examples/devops/requirements.txt
 python3 examples/devops/run.py --agentctl target/debug/agentctl --report /tmp/agentctl-devops.json
 ```
 
-Use `--only 01` to select a case, repeat it to select several, and use `--keep` to retain workspaces. The discoverable suite alias is `cargo xtask devops-examples`. Reports retain source and binary identity, commands, exit codes, semantic assertions and artifact hashes. Passing static `check` alone does not establish execution evidence. The [machine-readable catalog](https://github.com/opensourceops/agentctl/blob/d3f4338a7735ff610947c1232ebf7797f584993d/examples/devops/catalog.json) and [recorded validation](https://github.com/opensourceops/agentctl/blob/d3f4338a7735ff610947c1232ebf7797f584993d/examples/devops/validation.json) preserve exact inventory and source-labeled results.
+Use `--only 01` to select a case, repeat it to select several, and use `--keep` to retain workspaces. The discoverable suite alias is `cargo xtask devops-examples`. Reports retain source and binary identity, commands, exit codes, semantic assertions and artifact hashes. Passing static `check` alone does not establish execution evidence. The [machine-readable catalog](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/catalog.json) and [recorded validation](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/validation.json) preserve exact inventory and source-labeled results.
 
-Hand-maintained tutorial prose is separate from the deterministic [catalog generator](https://github.com/opensourceops/agentctl/blob/d3f4338a7735ff610947c1232ebf7797f584993d/examples/devops/build_catalog.py). Regeneration updates workflows, input fixtures and machine-readable inventory; it must not overwrite these READMEs. Run it after authored generator changes and verify a second pass produces no diff.
+Hand-maintained tutorial prose is separate from the deterministic [catalog generator](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/build_catalog.py). Regeneration updates workflows, input fixtures and machine-readable inventory; it must not overwrite these READMEs. Run it after authored generator changes and verify a second pass produces no diff.
 
 ### Optional container verification
 
@@ -111,7 +111,7 @@ python3 examples/devops/run.py --agentctl target/debug/agentctl --mode openai --
 
 Use the **same budget file for the entire launch suite and all retries**. A new
 file would create a new allowance; it must not be used to bypass an existing
-suite limit. [live_budget.py](https://github.com/opensourceops/agentctl/blob/d3f4338a7735ff610947c1232ebf7797f584993d/examples/devops/live_budget.py) exposes `LiveBudget.reserve` and
+suite limit. [live_budget.py](https://github.com/opensourceops/agentctl/blob/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/examples/devops/live_budget.py) exposes `LiveBudget.reserve` and
 `reconcile` for other authorized harnesses. Defaults are 100 provider requests,
 200,000 total tokens, 1,800 seconds of paid execution and US$25 estimated cost.
 SQLite transactions reserve each workflow's request/token/time/cost upper

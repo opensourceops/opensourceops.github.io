@@ -1,7 +1,7 @@
 ---
 title: "Reusable packs"
 description: "Use versioned local content with integrity verification."
-editUrl: "https://github.com/opensourceops/agentctl/edit/d3f4338a7735ff610947c1232ebf7797f584993d/docs/PACKS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/42922f9479f9b9cda360c36cf9b113ae4ce50f9a/docs/PACKS.md"
 ---
 A pack is reviewed reusable workflow content. It is not an in-process native
 plugin. The manifest API is `agentctl.dev/pack/v1alpha1` and uses a fully
