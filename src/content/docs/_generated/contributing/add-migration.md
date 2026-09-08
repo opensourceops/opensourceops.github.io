@@ -1,7 +1,7 @@
 ---
 title: "Add a store migration"
 description: "Version and test forward SQLite migrations."
-editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/development/ADD_MIGRATION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/bb8fb0a5a28d876fee26c49c49a8a5bf1c8390e2/docs/development/ADD_MIGRATION.md"
 ---
 The SQLite schema is versioned with `PRAGMA user_version`. Migrations are forward-only and run in order.
 
