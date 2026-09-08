@@ -1,7 +1,7 @@
 ---
 title: "Compatibility"
 description: "Preserved, migrated, changed, removed, and explicit non-goal contracts."
-editUrl: "https://github.com/opensourceops/agentctl/edit/bb8fb0a5a28d876fee26c49c49a8a5bf1c8390e2/docs/COMPATIBILITY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/7dee64e1d1b6fd38c1883d0d235d712590c30fbe/docs/COMPATIBILITY.md"
 ---
 ## Preserved
 
@@ -34,11 +34,11 @@ Unversioned YAML is compatibility-only and warns. The TypeScript package exposes
 
 Tool-level `compensation` metadata was never executable and is rejected. Declare
 an effectful inverse action on each source task with `compensate`; see
-[Compensation](https://github.com/opensourceops/agentctl/blob/bb8fb0a5a28d876fee26c49c49a8a5bf1c8390e2/docs/guides/COMPENSATION.md).
+[Compensation](https://github.com/opensourceops/agentctl/blob/7dee64e1d1b6fd38c1883d0d235d712590c30fbe/docs/guides/COMPENSATION.md).
 
 Free-form `team:` orchestration is rejected. Convert each role to an explicit
 agent task and each payload transfer to a typed handoff task; see
-[Structured role handoffs](https://github.com/opensourceops/agentctl/blob/bb8fb0a5a28d876fee26c49c49a8a5bf1c8390e2/docs/guides/STRUCTURED_HANDOFFS.md).
+[Structured role handoffs](https://github.com/opensourceops/agentctl/blob/7dee64e1d1b6fd38c1883d0d235d712590c30fbe/docs/guides/STRUCTURED_HANDOFFS.md).
 
 Legacy exact local pack references remain readable and warn until
 `agentctl packs lock` writes `agentctl.pack.lock`. Convert `path` and

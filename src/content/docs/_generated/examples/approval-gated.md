@@ -1,7 +1,7 @@
 ---
 title: "Approval-gated action"
 description: "Pause a mutation until an operator resolves a durable request."
-editUrl: "https://github.com/opensourceops/agentctl/edit/bb8fb0a5a28d876fee26c49c49a8a5bf1c8390e2/docs/use-cases/APPROVAL_GATED_ACTION.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/7dee64e1d1b6fd38c1883d0d235d712590c30fbe/docs/use-cases/APPROVAL_GATED_ACTION.md"
 ---
 ## Problem
 

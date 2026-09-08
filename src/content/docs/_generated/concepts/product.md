@@ -1,7 +1,7 @@
 ---
 title: "Product definition"
 description: "What agentctl does, who it serves, and where its boundary ends."
-editUrl: "https://github.com/opensourceops/agentctl/edit/bb8fb0a5a28d876fee26c49c49a8a5bf1c8390e2/docs/PRODUCT.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/7dee64e1d1b6fd38c1883d0d235d712590c30fbe/docs/PRODUCT.md"
 ---
 ## Thesis and boundaries
 
