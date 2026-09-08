@@ -1,7 +1,7 @@
 ---
 title: "Database and migrations"
 description: "SQLite records, schema migration, locking, backup, and retention."
-editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/reference/DATABASE.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/bb8fb0a5a28d876fee26c49c49a8a5bf1c8390e2/docs/reference/DATABASE.md"
 ---
 The local SQLite database and its sibling artifact root are history and part of the correctness boundary. The current database schema version is `15`.
 
