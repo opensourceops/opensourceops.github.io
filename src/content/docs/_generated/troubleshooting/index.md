@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting"
 description: "Diagnose validation, provider, policy, state, replay, and container failures."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/TROUBLESHOOTING.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/guides/TROUBLESHOOTING.md"
 ---
 Start with the exit code, then inspect the versioned error envelope and durable run state. Do not share provider credentials, complete databases, private prompts, or confidential artifacts in a public issue.
 
@@ -181,7 +181,7 @@ and do not weaken TLS to make the probe pass.
 **Resolve:** Use native absolute paths and quote paths with spaces. Windows
 cannot express Unix database mode bits, so rely on the user profile ACL. The
 exact-head hosted Windows verification, acceptance, completeness, and package
-gates pass for the current candidate.
+gates pass for the source and artifacts you intend to use.
 
 ## Safe issue report
 

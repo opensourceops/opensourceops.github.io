@@ -1,7 +1,7 @@
 ---
 title: "Variables and instruction files"
 description: "Resolve ordered variables, instruction templates, read policy, and captured recovery inputs."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/VARIABLES.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/VARIABLES.md"
 ---
 Use `varsFiles` for ordinary configuration shared across workflow tasks, agent defaults, and task overrides. Use `instructionsFile` for an agent's reviewed instruction text. Both are captured configuration inputs; they grant no filesystem, process, network, tool, or approval authority.
 
@@ -47,7 +47,7 @@ An ordinary object such as `{file: report.txt}` or `{env: REGION}` remains data;
 
 Variable values are data, not recursively evaluated expressions. A string that contains template syntax does not trigger another expansion pass after it is selected by a template. Put template expressions in the consuming task fields or instruction text.
 
-Do not put credentials, tokens, or confidential secret material in ordinary variables or CLI flags. Use dedicated [secret references](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/SECRET_REFERENCES.md). Variable values can enter prompts, task outputs, artifacts, and retained execution state. [Sensitive-state encryption](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/SENSITIVE_STATE_ENCRYPTION.md) protects selected persisted fields when configured; it does not turn an ordinary variable file into a secret reference.
+Do not put credentials, tokens, or confidential secret material in ordinary variables or CLI flags. Use dedicated [secret references](https://github.com/opensourceops/agentctl/blob/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/guides/SECRET_REFERENCES.md). Variable values can enter prompts, task outputs, artifacts, and retained execution state. [Sensitive-state encryption](https://github.com/opensourceops/agentctl/blob/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/guides/SENSITIVE_STATE_ENCRYPTION.md) protects selected persisted fields when configured; it does not turn an ordinary variable file into a secret reference.
 
 ## A credential-free example
 

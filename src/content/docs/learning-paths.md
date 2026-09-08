@@ -12,10 +12,17 @@ description: Follow a short path for evaluation, first use, workflow authoring, 
 
 ## I want to run my first workflow
 
-1. [Install from source](/agentctl/getting-started/installation/).
+1. [Install agentctl](/agentctl/getting-started/installation/).
 2. Complete the credential-free [Getting started](/agentctl/getting-started/) tutorial.
 3. Run the [first bounded agent workflow](/agentctl/getting-started/first-agent/).
 4. Learn [local operation](/agentctl/guides/local-operation/).
+
+## I want to run an image
+
+1. [Choose minimal or tooling](/agentctl/guides/container/#choose-an-image) for the executables your reviewed workflow needs.
+2. Run the complete [first image workflow](/agentctl/guides/container/#run-your-first-image-workflow) without credentials or network access.
+3. Review [mounts and inputs](/agentctl/guides/container/#mounts-and-inputs) for instruction files, variables, reports and secrets.
+4. [Inspect and replay](/agentctl/guides/container/#inspect-replay-and-recover) the retained run before integrating a pipeline.
 
 ## I want to author workflows
 
@@ -34,7 +41,7 @@ description: Follow a short path for evaluation, first use, workflow authoring, 
 ## I want to integrate agentctl into CI/CD
 
 1. Read the [container contract](/agentctl/guides/container/).
-2. Apply the [CI/CD integration guide](/agentctl/guides/ci-cd/).
+2. Apply the [CI/CD integration guide](/agentctl/guides/ci-cd/) and the maintained [GitHub Actions](/agentctl/guides/container/#github-actions) or [Harness Run step](/agentctl/guides/container/#harness-ci-run-step).
 3. Review the [CI quality gate example](/agentctl/examples/ci-quality-gate/).
 4. Run the [DevOps and CI/CD suite](/agentctl/examples/devops/) and plan protected state retention for approvals and recovery.
 
@@ -44,6 +51,14 @@ description: Follow a short path for evaluation, first use, workflow authoring, 
 2. Learn the [Rust workspace and effect boundaries](/agentctl/contributing/developer-guide/).
 3. Run the [testing strategy](/agentctl/contributing/testing/).
 4. Use the focused guide for an [action or tool](/agentctl/contributing/add-action/), [provider](/agentctl/contributing/add-provider/), [migration](/agentctl/contributing/add-migration/), or [documentation](/agentctl/contributing/documentation/) change.
+
+## I want to remediate a container finding
+
+Follow the [standalone container remediation tutorial](/agentctl/examples/devops/21-container-remediation/). It separates the real build/scan, two bounded agent roles, deterministic patch validation, rebuild/rescan and trusted draft-PR publisher. Use its complete download and explicit framework image mode; its own execution records distinguish offline contract checks from actual external evidence.
+
+## I maintain a release
+
+Follow the [release process](/agentctl/contributing/release/) for repository secrets, exact-source preparation, binary assets, image verification and publication. The runtime and source metadata retain their actual versions even though the usage guides are evergreen. Preparation and validation do not publish a release.
 
 ## Follow a complete cookbook journey
 

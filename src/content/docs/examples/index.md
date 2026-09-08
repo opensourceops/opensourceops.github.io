@@ -3,9 +3,9 @@ title: Cookbook
 description: Choose a complete workflow for CI, platform engineering, SRE, release, or security work.
 ---
 
-Start with a concrete problem. Every tutorial has a complete candidate package, readable workflow YAML, direct CLI commands, editable inputs, and an explanation of what its checks establish. The acceptance suite is a separate contributor tool.
+Start with a concrete problem. Every tutorial has a complete example package, readable workflow YAML, direct CLI commands, editable inputs, and an explanation of what its checks establish. The acceptance suite is a separate contributor tool.
 
-The CLI remains pre-1.0. The `v1` in `agentctl.dev/v1` identifies the workflow document API, not a stable 1.0 product release. Install the [matching candidate binary](/agentctl/getting-started/installation/) before downloading a package.
+The `v1` in `agentctl.dev/v1` identifies the workflow document API. Install the [matching agentctl binary](/agentctl/getting-started/installation/) before downloading a package.
 
 ## CI developers
 
@@ -43,6 +43,7 @@ The CLI remains pre-1.0. The `v1` in `agentctl.dev/v1` identifies the workflow d
 
 | Problem | Tutorial | Prerequisites beyond agentctl |
 | --- | --- | --- |
+| A direct dependency finding needs a validated source fix | [Remediate a container vulnerability](/agentctl/examples/devops/21-container-remediation/) | Docker/Podman, Trivy, bounded provider access; separate demo publisher token |
 | A vulnerability may have an exception | [Triage an SBOM](/agentctl/examples/devops/08-sbom-triage/) | Python |
 | Release notes need source evidence | [Generate release notes](/agentctl/examples/devops/09-release-notes/) | Python, Git |
 | Reports must become a release gate | [Enforce release readiness](/agentctl/examples/devops/10-release-readiness/) | Python |

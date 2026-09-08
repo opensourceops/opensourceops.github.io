@@ -1,7 +1,7 @@
 ---
 title: "Product definition"
 description: "What agentctl does, who it serves, and where its boundary ends."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/PRODUCT.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/PRODUCT.md"
 ---
 ## Thesis and boundaries
 
@@ -23,7 +23,7 @@ Core use cases are local repository automation, approval-gated changes, structur
 reusable while preserving explicit authority. Workflow, agent, and task files
 have documented origins and precedence; explicit invocation variables are
 separate from typed inputs. Captured configuration binds fresh work and
-recovery to reviewed content. The [twenty DevOps examples](/agentctl/examples/devops/)
+recovery to reviewed content. The [DevOps examples](/agentctl/examples/devops/)
 turn these journeys into inspectable local artifacts and explicit fixture/live
 evidence rather than advice-only prompts.
 
@@ -35,7 +35,7 @@ Reusable packs have a versioned manifest, fully qualified name, semantic version
 
 Workflow and pack authors are trusted to request work, but their requests remain policy constrained. Model output, tool output, remote descriptions, file content, MCP annotations, A2A cards, and network responses are untrusted. Environment variables may contain secrets and are read only at adapter boundaries after allowlist checks. Primary provider credentials are loaded immediately before dispatch; configured header references are loaded during adapter construction, before run creation. SQLite is local durable state, not a secret vault.
 
-## Compatibility and maturity
+## Compatibility
 
 The current document API is `agentctl.dev/v1`. Additive compatible changes may
 extend it; incompatible workflow changes require a new document API version and
@@ -44,13 +44,11 @@ checkpoints, database schema, audit events, and protocol continuation all carry
 independent versions. Deprecations are documented for at least one compatibility
 window; incompatible durable state fails explicitly.
 
-Version 0.3 uses workflow API `agentctl.dev/v1`, including compatible additive
-fields. The repository contains executable acceptance scenarios and historical
-evidence for local, scheduled, and generic-container journeys. A new release
-candidate still requires its own [current evidence and
-verdict](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/execution/AUTONOMOUS_LAUNCH_READINESS.md). The CLI and crates remain
-pre-1.0, so callers must pin the binary or image version for runtime, provider,
-and storage behavior outside the workflow document contract.
+Pin the binary checksum or image digest when reproducibility matters. The workflow
+document API, provider capabilities and durable-state formats have distinct
+compatibility boundaries. Review [compatibility](/agentctl/reference/compatibility/) and
+[operational limits](/agentctl/reference/limitations/) before upgrading, and retain evidence for
+the exact source and artifacts used in your deployment.
 
 ## Differentiation
 

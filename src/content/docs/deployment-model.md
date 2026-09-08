@@ -19,7 +19,7 @@ Next: [Scheduled execution](/agentctl/operations/scheduled/).
 
 ## OCI container
 
-Choose the generic image contract when you need a repeatable non-root process with a read-only root filesystem. Mount `/config` and `/workspace` read-only, then retain writable `/state` and `/artifacts`.
+Choose the minimal image for direct agentctl execution or the tooling image when a reviewed process adapter needs a shell, Python or Git. Both support a non-root process with a read-only root. Keep configuration and external instruction/variable files beneath read-only `/workspace/config`, inside the workspace read boundary. Retain writable `/state` and explicitly authorized `/artifacts` mounts.
 
 Next: [Container guide](/agentctl/guides/container/).
 
@@ -33,7 +33,7 @@ Next: [CI/CD integration](/agentctl/guides/ci-cd/).
 
 Choose a Job for one invocation or a CronJob for a cluster-managed schedule. Use a ConfigMap for reviewed workflow files, a Secret environment reference for credentials, persistent storage when resume or replay matters, a hardened security context, `backoffLimit: 0`, and `concurrencyPolicy: Forbid` when overlapping effects are unsafe.
 
-Kubernetes examples in the current documentation are reviewed, not hosted execution evidence for this candidate.
+Kubernetes examples document configuration and runtime boundaries. They do not establish that a particular cluster or hosted runner has been tested.
 
 ## What agentctl does not provide
 

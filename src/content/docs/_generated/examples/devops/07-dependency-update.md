@@ -1,9 +1,9 @@
 ---
 title: "Validate a vendored-code patch"
 description: "Apply a supplied patch and compare failing and passing tests."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/07-dependency-update/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/07-dependency-update/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/07-dependency-update.zip). Built from source [`4a22f7f733c5`](https://github.com/opensourceops/agentctl/tree/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/07-dependency-update). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/07-dependency-update.zip). Built from source [`0d4542cccdbd`](https://github.com/opensourceops/agentctl/tree/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/07-dependency-update). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** CI developer. **Level and evidence:** Intermediate; offline, Python and Git.
 
@@ -11,7 +11,7 @@ Apply a supplied patch to vendored code in a disposable workspace and prove a be
 
 ## Get the complete example
 
-Install the [matching candidate binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
+Install the [matching agentctl binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
 
 ```sh
 python3 examples/devops/package.py --example 07 --output ./example-07
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/07-dependency-update/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/07-dependency-update/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -67,7 +67,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The workflow keeps the original target, supplied change and test evidence inspectable. A clean patch application alone is insufficient: the behavioral test must demonstrate the defect and its correction.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/07-dependency-update/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/07-dependency-update/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

@@ -19,6 +19,7 @@ const nextRoot = path.join(siteRoot, 'src/content/docs/_generated.next');
 const backupRoot = path.join(siteRoot, 'src/content/docs/_generated.previous');
 const basePath = '/agentctl/';
 const sourceRepository = 'https://github.com/opensourceops/agentctl';
+const remediationDirectory = '21-container-remediation';
 
 const candidates = [
   process.env.AGENTCTL_REPO,
@@ -144,10 +145,10 @@ async function transform(sourcePath, title, description) {
   }
   markdown = markdown.replace(/^#\s+[^\n]+\n+/, '');
   markdown = markdown.replace(
-    '<!-- agentctl-candidate-install -->',
+    '<!-- agentctl-source-install -->',
     dirty
       ? `\nThis local preview includes uncommitted framework changes after [\`${commit}\`](${sourceRepository}/tree/${commit}). Use the local-checkout installation below to try those changes. A Git installation at the recorded commit cannot include them.\n`
-      : `\nThis documentation describes candidate source [\`${commit}\`](${sourceRepository}/tree/${commit}). The CLI and crates are pre-1.0; workflow API \`agentctl.dev/v1\` names the document format. Install this exact candidate:\n\n\`\`\`sh\ncargo install --locked --git ${sourceRepository} --rev ${commit} agentctl-cli\nagentctl version\n\`\`\`\n`,
+      : `\nThis documentation describes source [\`${commit}\`](${sourceRepository}/tree/${commit}). Install this exact source revision:\n\n\`\`\`sh\ncargo install --locked --git ${sourceRepository} --rev ${commit} agentctl-cli\nagentctl version\n\`\`\`\n`,
   );
   markdown = await expandIncludes(sourcePath, markdown);
   markdown = await rewriteImages(sourcePath, markdown);
@@ -158,7 +159,13 @@ async function transform(sourcePath, title, description) {
   const cookbook = sourcePath.match(/^examples\/devops\/(\d\d-[^/]+)\/README\.md$/);
   if (cookbook) {
     const example = cookbook[1];
-    markdown = `> **Candidate example package:** [Download all files](${basePath}downloads/devops/${example}.zip). Built from source [\`${commit.slice(0, 12)}\`](${sourceRepository}/tree/${commit}/examples/devops/${example})${dirty ? ' with uncommitted local changes' : ''}. It includes the helper and setup step used below; download the complete package before editing a workflow.\n\n${markdown}`;
+    const download = example === remediationDirectory
+      ? `${basePath}downloads/remediation/${example}.zip`
+      : `${basePath}downloads/devops/${example}.zip`;
+    const contents = example === remediationDirectory
+      ? 'It includes the standalone application, workflows, instructions, adapters and CI workflow. Follow its explicit image and secret setup before running the live journey.'
+      : 'It includes the helper and setup step used below; download the complete package before editing a workflow.';
+    markdown = `> **Complete example package:** [Download all files](${download}). Built from source [\`${commit.slice(0, 12)}\`](${sourceRepository}/tree/${commit}/examples/devops/${example})${dirty ? ' with uncommitted local changes' : ''}. ${contents}\n\n${markdown}`;
   }
 
   const frontmatter = [
@@ -241,7 +248,7 @@ await rm(downloadRoot, { recursive: true, force: true });
 await mkdir(downloadRoot, { recursive: true });
 for (const [source] of contentManifest) {
   const match = source.match(/^examples\/devops\/(\d\d-[^/]+)\/README\.md$/);
-  if (!match) continue;
+  if (!match || match[1] === remediationDirectory) continue;
   const directory = match[1];
   const archive = path.join(downloadRoot, `${directory}.zip`);
   execFileSync('python3', [
@@ -263,6 +270,29 @@ for (const [source] of contentManifest) {
 if (cookbookPackages.length !== 20) throw new Error('The site must package all twenty cookbook tutorials.');
 await writeFile(path.join(downloadRoot, 'catalog.json'), `${JSON.stringify(cookbookPackages, null, 2)}\n`);
 
+const remediationDownloadRoot = path.join(siteRoot, 'public/downloads/remediation');
+await rm(remediationDownloadRoot, { recursive: true, force: true });
+await mkdir(remediationDownloadRoot, { recursive: true });
+const remediationArchive = path.join(remediationDownloadRoot, `${remediationDirectory}.zip`);
+const remediationArgs = [
+  path.join(agentctlRoot, `examples/devops/${remediationDirectory}/remediation/export.py`),
+  '--output', path.join(packageRoot, remediationDirectory),
+  '--framework-sha', commit,
+  '--archive', remediationArchive,
+];
+if (dirty) remediationArgs.push('--allow-dirty-preview');
+execFileSync('python3', remediationArgs, { cwd: agentctlRoot, stdio: 'pipe' });
+const remediationBytes = await readFile(remediationArchive);
+const remediationPackage = {
+  directory: remediationDirectory,
+  route: `${basePath}examples/devops/${remediationDirectory}/`,
+  download: `${basePath}downloads/remediation/${remediationDirectory}.zip`,
+  sourceCommit: commit,
+  sha256: createHash('sha256').update(remediationBytes).digest('hex'),
+  bytes: remediationBytes.length,
+};
+await writeFile(path.join(remediationDownloadRoot, 'catalog.json'), `${JSON.stringify([remediationPackage], null, 2)}\n`);
+
 const metadata = {
   product: 'agentctl',
   version,
@@ -273,6 +303,7 @@ const metadata = {
   importedFiles: contentManifest.length,
   imports,
   cookbookPackages,
+  remediationPackage,
 };
 await writeFile(
   path.join(siteRoot, 'src/data/agentctl-source.json'),

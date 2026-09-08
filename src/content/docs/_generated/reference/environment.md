@@ -1,7 +1,7 @@
 ---
 title: "Environment and paths"
 description: "Credential references, repository variables, and default paths."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/reference/ENVIRONMENT_AND_PATHS.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/reference/ENVIRONMENT_AND_PATHS.md"
 ---
 ## Provider credentials
 
@@ -18,7 +18,7 @@ another valid environment reference or use a mounted-file or policy-gated
 process reference. Primary provider credential environment names do not require
 a duplicate environment allowlist entry; custom headers and action environment
 values do. Values never belong in YAML, CLI arguments, ordinary inputs, logs,
-or committed fixtures. See [Secret references](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/guides/SECRET_REFERENCES.md).
+or committed fixtures. See [Secret references](https://github.com/opensourceops/agentctl/blob/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/guides/SECRET_REFERENCES.md).
 
 ## State-encryption keys
 
@@ -48,11 +48,11 @@ Normal `cargo xtask docs-verify`, `cargo xtask verify`, and `cargo xtask accepta
 
 | Path | Access |
 | --- | --- |
-| `/config` | reviewed read-only configuration |
+| `/workspace/config` | reviewed read-only workflow, instruction, variable and pack files inside the workspace read boundary |
 | `/workspace` | normally read-only workspace |
 | `/state` | writable SQLite and content-addressed durable state |
-| `/artifacts` | writable workflow output/export mount |
+| `/artifacts` | writable workflow output/export mount explicitly granted through `writableRoots` |
 | `/run/secrets` | optional read-only mounted secret files granted through `secretFileRoots` |
 | `/tmp` | small runtime tmpfs when the root filesystem is read-only |
 
-State and artifacts must be writable by UID/GID 65532 in the production image.
+Both image flavors default to UID/GID 65532. Provision state and artifacts for that identity, or explicitly select the matching non-root host UID/GID when bind-mounting host-owned directories. The minimal image has no shell or process tooling; the tooling flavor adds a shell, Python and Git. See the [container walkthrough](/agentctl/guides/container/) for complete commands.

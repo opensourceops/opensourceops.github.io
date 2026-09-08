@@ -1,9 +1,9 @@
 ---
 title: "Evaluate a canary"
 description: "Route healthy, unhealthy, and insufficient-data metrics explicitly."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/13-canary-evaluation/README.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/13-canary-evaluation/README.md"
 ---
-> **Candidate example package:** [Download all files](/agentctl/downloads/devops/13-canary-evaluation.zip). Built from source [`4a22f7f733c5`](https://github.com/opensourceops/agentctl/tree/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/13-canary-evaluation). It includes the helper and setup step used below; download the complete package before editing a workflow.
+> **Complete example package:** [Download all files](/agentctl/downloads/devops/13-canary-evaluation.zip). Built from source [`0d4542cccdbd`](https://github.com/opensourceops/agentctl/tree/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/13-canary-evaluation). It includes the helper and setup step used below; download the complete package before editing a workflow.
 
 **For:** SRE. **Level and evidence:** Beginner; offline local decision, no monitoring-service access.
 
@@ -11,7 +11,7 @@ Route a candidate to promote, rollback or hold using supplied request/error coun
 
 ## Get the complete example
 
-Install the [matching candidate binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
+Install the [matching agentctl binary](/agentctl/getting-started/installation/). Download this tutorial's complete package from the documentation site and extract it into an empty directory. When working from the source checkout, create the same package with:
 
 ```sh
 python3 examples/devops/package.py --example 13 --output ./example-13
@@ -25,7 +25,7 @@ python3 -m venv .venv
 .venv/bin/python setup.py
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/13-canary-evaluation/workflow.yaml) remains readable and editable source.
+On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`. Setup records the selected interpreters and prepares `local.workflow.yaml` with a matching explicit interpreter-basename grant. Review that generated workflow before running it. The authored [workflow.yaml](https://github.com/opensourceops/agentctl/blob/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/13-canary-evaluation/workflow.yaml) remains readable and editable source.
 
 The complete package contains:
 
@@ -65,7 +65,7 @@ agentctl inspect RUN_ID --db state.db --output json --color never
 
 The workflow validates integer counts, aggregates requests and errors, checks minimum sample and request counts, then uses a typed router. Insufficient evidence selects hold; it must not promote merely because there were zero observed errors.
 
-[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/4a22f7f733c5c722263b956b59f36107ec398fc7/examples/devops/13-canary-evaluation/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
+[Open the complete workflow](https://github.com/opensourceops/agentctl/blob/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/examples/devops/13-canary-evaluation/workflow.yaml) to inspect its inputs, task dependencies, grants and bounds. The site embeds the same source below; editing a helper does not replace review of its host-process authority.
 
 
 ```yaml

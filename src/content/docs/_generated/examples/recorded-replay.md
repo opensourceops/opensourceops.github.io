@@ -1,7 +1,7 @@
 ---
 title: "Offline recorded replay"
 description: "Reconstruct a terminal run without credentials or effects."
-editUrl: "https://github.com/opensourceops/agentctl/edit/4a22f7f733c5c722263b956b59f36107ec398fc7/docs/use-cases/RECORDED_REPLAY.md"
+editUrl: "https://github.com/opensourceops/agentctl/edit/0d4542cccdbd22cb96e3dec25cdffb66d0938ced/docs/use-cases/RECORDED_REPLAY.md"
 ---
 ## Problem
 
