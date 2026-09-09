@@ -58,8 +58,10 @@ jobs:
 
       - name: Install site dependencies and browser
         run: |
+          set -euo pipefail
           pnpm install --frozen-lockfile
-          pnpm exec playwright install --with-deps chromium
+          bash scripts/install-browser-deps.sh
+          pnpm exec playwright install chromium
 
       - name: Verify canonical docs and final site artifact
         env:
