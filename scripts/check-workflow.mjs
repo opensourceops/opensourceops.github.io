@@ -40,6 +40,9 @@ for (const required of [
   'pages: write',
   'id-token: write',
   'path: site/_site',
+  'bash scripts/install-browser-deps.sh',
+  'pnpm exec playwright install chromium',
+  'run: pnpm verify:agentctl',
 ]) {
   if (!workflow.includes(required)) errors.push(`missing workflow contract: ${required}`);
 }
